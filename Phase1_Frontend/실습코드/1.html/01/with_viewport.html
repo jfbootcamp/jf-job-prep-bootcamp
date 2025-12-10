@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <!-- ✅ viewport 메타 태그 적용-->
+        <!-- 뷰포트 설정: width=device-width(기기 화면 너비에 맞춤), inital-scale=1.0 (초기 확대 비율 100%) -->
+        <meta name="viewport" content="width=device-width, inital-scale=1.0">
+        <title>viewport 테스트</title>  <!-- 브라우저 탭에 표시되는 제목 -->
+    </head>
+    <body style="font-family: Arial, sans-serif; padding: 20px;">  <!-- font-family : 글꼴 지정, padding : 내부 여백 (상하좌우 20px) -->
+        <h1 style="color: #2563eb;">
+            Viewport 테스트 페이지 
+        </h1>
+        <hr>
+
+        <h2>🔍 모바일에서 확인해보세요</h2>     <!-- h2: 소제목 -->
+
+        <ul>                                 <!-- ul: 순서 없는 목록 (Unordered List) -->
+            <li>글자 크기가 어떤가요?</li>      <!-- li: 목록 항목 (List item) -->
+            <li>버튼을 누르기 쉬운가요?</li>
+            <li>가로 스크롤이 생기나요?</li>
+        </ul>
+        <hr>
+
+        <h2>🪧예시: 간단한 상품 목록</h2>
+
+        <!-- table: 표 작성,  border="1" : 테두리 두께 1px, width: 100% : 부모 요소 너비에 맞춤, border-collapse: collapse : 테두리 겸침 처리-->
+        <table border="1" style="width: 100%; border-collapse: collapse;">
+            <tr style="background-color: #e0f2f2;">  <!-- tr: 표의 행 (Table Row) -->
+                <th style="padding: 10px;">상품명</th>  <!-- th: 표 헤더 (굵게 표시됨) -->
+                <th style="padding: 10px;">가격</th>
+                <th style="padding: 10px;">구매</th>
+            </tr>
+
+            <tr>
+                <td style="padding: 10px;">노트북</td>  <!-- td: 표 데이터 셀 -->
+                <td style="padding: 10px;">1,200,000원</td>
+                <td style="padding: 10px;">
+                    <button>구매하기</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="padding: 10px;">키보드</td>  <!-- td: 표 데이터 셀 -->
+                <td style="padding: 10px;">89,000원</td>
+                <td style="padding: 10px;"><button>구매하기</button></td>
+            </tr>       
+            
+            <tr>
+                <td style="padding: 10px;">마우스</td>  <!-- td: 표 데이터 셀 -->
+                <td style="padding: 10px;">45,000원</td>
+                <td style="padding: 10px;"><button>구매하기</button></td>
+            </tr>              
+        </table>
+        <hr>
+
+        <h2>📄회원가입 폼 예시</h2>
+        <form>     <!-- form: 입력 양식 컨테이너 -->         
+            <p>
+                <label>이름: </label>       <!-- label: 입력 필드 설명 -->
+                <br>                        <!-- br: 줄바꿈 -->
+                <input type="text"
+                        placeholder="이름을 입력하세요"
+                        style="padding: 8px; width: 250px;">
+            </p>
+
+            <p>
+                <label>이메일: </label>       <!-- label: 입력 필드 설명 -->
+                <br>                        <!-- br: 줄바꿈 -->
+                <input type="email"
+                        placeholder="이메일을 입력하세요"
+                        style="padding: 8px; width: 250px;">
+            </p>  
+            
+            <p>
+                <label>비밀번호: </label>       <!-- label: 입력 필드 설명 -->
+                <br>                        <!-- br: 줄바꿈 -->
+                <input type="password"
+                        placeholder="비밀번호를 입력하세요"
+                        style="padding: 8px; width: 250px;">
+            </p>   
+            
+            <p>
+                <!-- type="submit" : 폼 제출 버튼, border: none : 테두리 없음 -->
+                <button type="submit"               
+                        style="padding: 10px 30px;
+                                background-color: #2563eb;
+                                color: white;
+                                border: none;">
+                    가입하기
+                </button>
+            </p>
+        </form>
+        
+        <hr>
+        <p style="color: #6b7280; font-size: 14px;">
+            💡팁: 크롬 개발자 도구(F12)
+        </p>        
+    </body>
+</html>

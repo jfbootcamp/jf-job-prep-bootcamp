@@ -1,0 +1,84 @@
+/*
+    CSS 변수 정의 (테마 색상)
+    :root는 문서의 최상위 요소(html)를 선택하는 가상 클래스
+     여기서 정의한 변수 var(--변수명) 형태로 어디서든 사용 가능
+     장점: 색상을 한 곳에서 관리하여 테마 변경이 쉬움 
+*/
+:root {
+    --primary-soft: #dbeafe;    /* 메인 색상의 밝은 버전 - 로고, 제목 강조에 이용 */
+    /* 텍스트 색상 */
+    --text: #e5e7eb;        /* 기본 텍스트 - 본문에 사용되는 밝은 회색 */
+}
+
+/* 전역 리셋 스타일 */
+* {
+    box-sizing: border-box;     /* 패딩/보더를 너비에 포함 */
+    padding: 0;
+    margin: 0;
+}
+
+/* body 스타일 */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* 방사형 그라데이션 배경
+        - circle at top : 상단 중앙에서 원형으로 퍼짐
+        - #1e293b 0% : 그라데이션 시작점 (슬레이트 블루)
+        - #020617 55% : 그라데이션 전체 거리의 55% 지점 (다크 네이버)
+        - #000 100% : 그라데이션 끝점 (완전한 검정)  
+        - 페이지 상단은 밝은 슬레이트 블루에서 시작해서 아래로 갈수록 점점 어두워지는 효과가 생김
+    */
+    background: radial-gradient(circle at top, #1e293b 0, #020617 55%, #000 100%); 
+    color: var(--text); 
+    line-height: 1.6;  /* 줄 간격: 가독성 향상 */
+}
+
+/* 컨텐츠 중앙 정렬 
+    콘텐츠의 최대 너비를 제한하고 중앙에 배치하는 역할 - 레이아웃 패턴 중 하나 
+*/
+.container {
+    /*min() 함수 : 두 값 중 더 작은 값을 선택
+        - 큰 화면(1100px 이상) :  1100px 고정 너비
+        - 작은 화면 (1100px 미만): 양쪽 1rem 여백 확보 */
+    width: min(1100px, 100% - 2rem);
+    /* margin: 0 auto 패턴
+        - 상하 여백 : 0
+        - 좌우 여백 : auto (남은 공간을 균등 분배 ==> 중앙 정렬)
+    */
+    margin: 0 auto;
+}
+
+.site-header {
+    position: sticky; /* 스크롤시 상단 고정 */
+    top: 0;
+    backdrop-filter: blur(16px); /* 배경 블러 효과, 뒤 배경 16px 흐림 */
+    background: rgba(15, 23, 42, 0.85); /* 반투명 배경, 85% 불투명 (15% 투명)*/
+    z-index: 10;    /* 다른 요소 위에 표시 */
+}
+
+/* 헤더 내부 레이아웃 : 로고와 네비게이션 양쪽 배치 */
+.site-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;   /* 양쪽 정렬 */
+    padding: 1rem 0;
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;     /* 자간 */
+    color: var(--primary-soft);
+}
+
+.nav a {
+    margin-left: 1.25rem;
+    font-size: 0.95rem;
+    color: #cbd5f5;
+    text-decoration: none;
+    position: relative;
+}
+
+/* 네비게이션 호버 효과 : 밑줄 애니메이션 */
+.nav a::after {
+    
+}
