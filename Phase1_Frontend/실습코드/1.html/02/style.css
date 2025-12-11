@@ -5,6 +5,8 @@
      장점: 색상을 한 곳에서 관리하여 테마 변경이 쉬움 
 */
 :root {
+    --primary: #2563eb;         /* 메인 색상 - 링크, 버튼 등 주요 UI에 사용 */
+    --accent: #22c55e;          /* 강조 색상 - 그라데이션, 호버 효과에 사용 */
     --primary-soft: #dbeafe;    /* 메인 색상의 밝은 버전 - 로고, 제목 강조에 이용 */
     /* 텍스트 색상 */
     --text: #e5e7eb;        /* 기본 텍스트 - 본문에 사용되는 밝은 회색 */
@@ -80,5 +82,149 @@ body {
 
 /* 네비게이션 호버 효과 : 밑줄 애니메이션 */
 .nav a::after {
-    
+    content: "";           /* 필수: 빈 가상 요소 생성 */
+    position: absolute;    /* 부모 (.nav a)를 기준으로 위치 지정 */
+    left: 0;               /* 왼쪽 끝에서 시작 */ 
+    bottom: -0.2rem;       /* 텍스트 아래에 배치 */ 
+    width: 0;              /* 기본 상태: 너비 0 (안 보임) */ 
+    height: 2px;           /* 밑줄 두께 */
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    transition: width 0.2s ease-out;   /* 너비 변화를 0.2초 동안 부드럽게 애니메이션 */
+}
+
+.nav a:hover::after {
+    width: 100%;            /* 호버시 전체 너비로 확장 */
+}
+
+main {
+    padding-bottom: 4rem;       /* 하단 여백 64px - 푸터와 충분한 간격 확보 */
+}
+
+.section {
+    padding: 4rem 0;            /* 섹션 간 구분함 */
+}
+
+.section-alt {
+    background: radial-gradient(circle at top, #1d283a, #020617);
+}
+
+.hero {
+    padding-top: 3rem;          /* 상단 48px 여백 - 해더와의 간격 */
+}
+
+/*
+    그리드 레이아웃 2 : 1.2 비율의 2열
+    - 왼쪽: 텍스트 콘텐츠 (더 넓음)
+    - 오른쪽: 프로필 카드 (약간 좁음)
+
+    minmax(0, xfr): 최소 0, 비율에 따라 확장
+    - 2fr : 1.2fr = 약 62.5% : 37.5% 비율
+*/
+.hero-grid {
+    display: grid;              /*  CSS Grid 레이아웃 활성화 */
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr);
+    gap: 2.5rem;                /* 열 사이 간격 (40px) */
+    align-items: center;        /* 그리드 아이템 세로 중앙 정렬 */
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    color: #cbd5f5;
+    margin-bottom: 0.5rem;
+}
+
+.profile-card {
+    background: linear-gradient(145deg, rgba(15,23,42,0.9), rgba(15,23,42,0.4));
+    border-radius: 1.25rem;         /* 20px 둥근 모서리 */
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    padding: 1.5rem;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.8);
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 999px;       /* 큰 값으로 완전한 원형 만들기 */
+    background: radial-gradient(circle at 30% 30%, var(--primary-soft), var(--primary));
+    display: flex;              /* Flexbox로 내부 정렬 */
+    align-items: center;        /* 세로 중앙 정렬 */
+    justify-content: center;    /* 가로 중앙 정렬 */
+    font-weight: 700;
+    margin-bottom: 1rem;        /* 아래 16px 여백 */
+}
+
+.profile-card ul {
+    list-style: none;
+    font-size: 0.95rem;
+    color: #e5e7eb;
+}
+
+/*
+    인접 형제 선택자
+        - 문법:  A + B (A 바로 다음에 오는 B를 선택)
+        - 결과: 첫번째 li만 제외하고 나머지 li에 스타일 적용 
+                항목 사이에만 간격이 생김
+*/
+.profile-card li + li {
+    margin-top: 0.4rem;
+}
+
+/*
+repeat(auto-fit, minmax(220px, 1fr))
+    - auto-fit: 컨테이너 너비에 맞춰 자동으로 열 개수 조절
+    - minmax(220px, 1fr) : 최소 220px, 남은 공간 균등 분배
+*/
+.skills-grid {
+    display: grid;              /* CSS Grid 활성화 */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.skill-card h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+    color: var(--primary-soft);
+}
+
+.skill-card ul {
+    list-style: disc;
+    padding-left: 1.1rem;
+    font-size: 0.95rem;
+    color: #cbd5f5;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7rem 1.4rem;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 1rem;
+    box-shadow: 0 12px 30px rgba(37, 99, 235, 0.5);
+}
+
+.btn:hover {
+    filter: brightness(1.05);       /* 밝기 5% 증가 */
+    transform: translateY(-1px);    /* y축으로 -1px 이동 (살짝 위로) */
+    transition: all 0.15s ease-out;  /* all: 모든 속성에 트랜지션 적용, 0.15s: 150ms 동안, ease-out: 끝으로 갈수록 느려지는 가속도 */
+}
+
+.site-footer {
+    border-top: 1px solid rgba(148, 163, 184, 0.3);     /* 상단 구분선 */
+    padding: 1.5rem 0;
+    background: rgba(15, 23, 42, 0.98);
+}
+
+.site-footer small {
+    color: #9ca3af;
+    font-size: 0.8rem;
 }
