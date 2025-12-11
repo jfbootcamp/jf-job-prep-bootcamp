@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>::after 가상 요소</title>
+    <style>
+        body {
+            font-family: system-ui,sans-serif;
+            padding: 2rem;
+            background: #1e293b;
+            color: #e5e7eb;            
+        }
+
+        .with-span a {
+            color: #cbd5f5;
+            text-decoration: none;
+            position: relative;         /* 자식요소의 absolute 기준점*/
+        }
+
+        .with-after a {
+            color: #cbd5f5;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .with-span .underline {
+            position: absolute;     /* 부모(a) 기준으로 위치 지정 */
+            left: 0;                /* 왼쪽 정렬 */
+            bottom: -4px;           /* 텍스트 아래 배치 */
+            width: 100%;            /* 전체 너비 */    
+            height: 2px;            /* 밑줄 두께 */
+            background: linear-gradient(135deg, #2563eb, #22c55e);   /* 그라데이션 */
+        }
+
+        .with-after a::after {
+            content: "";           /* 필수! 빈 문자열로 가상 요소 생성 */
+            position: absolute;    /* 부모(a) 기준으로 위치 지정 */ 
+            left: 0;               /* 왼쪽 정렬 */
+            bottom: -4px;          /* 텍스트 아래 배치 */
+            width: 100%;            /* 전체 너비 */    
+            height: 2px;            /* 밑줄 두께 */
+            background: linear-gradient(135deg, #2563eb, #22c55e);   /* 그라데이션 */            
+        }
+    </style>
+</head>
+<body>
+    <h1>::after 가상 요소 비교</h1>
+
+    <h2>1. HTML span 사용</h2>
+    <p class="with-span">
+        <a href="#">
+            소개
+            <span class="underline"></span>  <!-- 이 span이 밑줄 역할 -->
+        </a>
+    </p>
+
+    <h2>2. CSS ::after 사용</h2>
+    <p class="with-after">
+        <a href="#">소개</a>                <!-- HTML은 이게 전부! -->
+    </p>
+</body>
+</html>

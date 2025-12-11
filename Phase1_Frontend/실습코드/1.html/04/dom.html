@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>안녕</title>
+</head>
+<body>
+    <h1>DOM 트리 만들기</h1>
+    <div>
+        <strong>랩1:</strong> 아래 가족 관계를 표현하세요.
+    </div>
+
+    <div>
+        <pre>
+할아버지 (이순신)
+|
+|--아버지 (이영수)
+|    |-- 첫째 (이민지)            
+|    |-- 둘째 (이민수)
+|    |-- 셋째 (이민호)
+|--삼촌 (이영호)
+     |
+     |-- 사촌 (이지우)
+     |-- 사촌 (이지민)
+        </pre>
+    </div>
+
+    <div>
+        <!--여기에 코드를 작성하세요-->
+        <h3>정답:</h3>
+        <ul>
+            <li>할아버지 (이순신)
+                <ul>
+                    <li>
+                        아버지 (이영수)
+                        <ul>
+                            <li>첫째 (이민지)</li>
+                            <li>둘째 (이민수)</li>
+                            <li>셋째 (이민호)</li>
+                        </ul>
+                    </li>
+                    <li>
+                        삼촌 (이영호)
+                        <ul>
+                            <li>사촌 (이지우)</li>
+                            <li>사촌 (이지민)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

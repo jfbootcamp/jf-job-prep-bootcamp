@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position: relative와 absolute 관계</title>
+    <style>
+        body {
+            font-family: system-ui,sans-serif;
+            padding: 2rem;
+            background: #1e293b;
+            color: #e5e7eb;
+        }
+
+        h2 { margin: 2rem 0 1rem; }
+
+        /* 부모 요소: .box */
+        .box {
+            width: 200px;
+            height: 150px;
+            background: #334155;
+            border: 2px solid #64748b;
+            margin: 2rem 0;
+        }
+
+        /* 자식 요소: .badge */
+        .badge {
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(135deg, #2563eb, #22c55e);
+            border-radius: 50%;    /* 원형 */
+            display: flex;         /* 내부 텍스트 정렬용 */ 
+            align-items: center;        /* 수직 중앙 */
+            justify-content: center;    /* 수평 중앙 */
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .without-relative .box{
+            /* position 지정 안함 (기본값 static) */
+        }
+
+        .without-relative .badge {
+            position: absolute;    /* 부모가 아닌 뷰포트 기준! */ 
+            top: 10px;
+            right: 10px;
+        }
+
+        .with-relative .box {
+            position: relative;     /* 자식 absolute의 기준점 */
+        }
+
+        .with-relative .badge {
+            position: absolute;    /* 부모(.box) 기준으로 위치 */ 
+            top: 10px;             /* 부모 상단에서 10px */ 
+            right: 10px;           /* 부모 우측에서 10px */ 
+        }
+
+    </style>
+</head>
+<body>
+    <h1>position: relative와 absolute 관계</h1>
+
+    <h2>1. 부모에 relative 없음(문제)</h2>
+    <div class="without-relative">
+        <div class="box">
+            <div class="badge">1</div>
+            <p style="padding: 1rem;">박스 내용</p>
+        </div>
+    </div>
+
+    <h2>2. 부모에 relative 있음(정상)</h2>
+    <div class="with-relative">
+        <div class="box">
+            <div class="badge">1</div>
+            <p style="padding: 1rem;">박스 내용</p>
+        </div>
+    </div>    
+</body>
+</html>

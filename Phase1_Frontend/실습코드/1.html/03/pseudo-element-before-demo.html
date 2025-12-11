@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: system-ui,sans-serif;
+            padding: 2rem;
+            background: #1e293b;
+            color: #e5e7eb;
+        }
+       
+        .with-pen li {
+            list-style: none;       /* 기본 불릿 제거 */
+            margin-bottom: 0.5rem;
+        }
+
+        .with-before li {
+            list-style: none;
+            margin-bottom: 0.5rem;
+            position: relative;   /* ::before의 기준점 */
+            padding-left: 1.2rem;   /* 아이콘 공간 확보 */
+        }
+
+
+        .with-pen .icon {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: linear-gradient(135deg, #2563eb, #22c55e);   /* 그라데이션 */
+            border-radius: 50%;         /* 원형 */
+            margin-right: 0.5rem;       /* 텍스트와 간격 */
+        }
+
+        .with-before li::before {
+            content: "";        /* 필수! 빈 문자열로 가상 요소 생성 */
+            position: absolute;     /* 부모(li) 기준으로 위치 지정 */
+            left: 0;                /* 왼쪽에 배치 */
+            top: 0.5rem;            /* 텍스트와 수직 정렬 */
+            width: 8px;             /* 아이콘 너비 */
+            height: 8px;            /* 아이콘 높이 */
+            background: linear-gradient(135deg, #2563eb, #22c55e);   /* 그라데이션 */
+            border-radius: 50%;         /* 원형 */
+        }
+
+         
+
+    </style>
+</head>
+<body>
+    <h1>::before 가상 요소 비교</h1>
+    
+    <h2>1. HTML span 사용</h2>
+    <ul class="with-pen">
+        <li>
+            <span class="icon"></span>   <!-- 이 span이 아이콘 역할 -->
+            HTML5 / CSS3
+        </li>
+        <li>
+            <span class="icon"></span>
+            JavaScript
+        </li>
+        <li>
+            <span class="icon"></span>
+            React
+        </li>                
+    </ul>
+
+    <h2>2. CSS ::before 사용</h2>
+    <ul class="with-before">
+        <li>HTML5 / CSS3</li>
+        <li>JavaScript</li>
+        <li>React</li>
+    </ul>
+</body>
+</html>
