@@ -1,0 +1,78 @@
+1. DOM의 정의
+    1) Document Object Model의 약자임
+    2) 문서 객체 모델 
+    3) DOM은 브라우저가 HTML 문서를 이해하는 방식임.
+        - 브라우저는 HTML 파일을 읽고, 이를 트리(tree) 구조로 변환함 
+
+2. HTML 문서가 DOM이 되는 과정 
+    1) 개발자가 작성하는 것 
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>안녕</title>
+        </head>
+        <body>
+            <h1>2025년 굿바이</h1>
+            <p>2026년 웰컴</p>
+        </body>
+        </html>  
+
+    2) 브라우저가 만드는 것          
+
+        html 
+         |
+         |-head 
+         |   |
+         |   |--title
+         |        |
+         |        |--"안녕"    
+         | 
+         |-body 
+            |
+            |--h1 
+            |   |
+            |   |--"2025년 굿바이"
+            |
+            |--p
+            |  |
+            |  |--"2026년 웰컴" 
+            |
+
+3. 왜 DOM을 알야야 하는가?
+    1) HTML 
+        - HTML 태그를 작성하면, 각 태그가 DOM의 요소(Element)가 됨.   
+    2) CSS 
+        - CSS 선택자는 DOM에서 특정 요소를 찾아 스타일을 적용함.   
+    3) JavaScript  
+        - JavaScript는 DOM을 통해 요소를 추가, 삭제, 수정함.
+    4) HTML,CSS, JavaScript는 모두 DOM을 대상으로 작업함.
+
+4. 비유로 DOM 이해하기 
+    1) HTML 코드 = 가족 구성원 목록 (텍스트로 된 정보)
+    2) DOM = 가족 관계도 (누가 부모이고, 누가 자식인지 구조화된 정보)
+    3) 브라우저는 HTML이라는 "목록"을 받아서, DOM이라는 "관계도"로 만듦.                                  
+        - 이 관계도가 있어야 "할아버지의 첫째 아들의 딸"처럼 특정 구성원을 찾을 수 있음.
+
+5. 트리(Tree) 구조란?
+    1) 데이타를 계층적으로 표현하는 방식임.
+    2) 실제 나무를 거꾸로 뒤집은 모양과 비슷함
+        - 뿌리(root)에서 시작해서 가지(Branch)가 뻗어나가고,
+          각 가지 끝에 잎(Leaf)이 달려 있는 구조임.
+    3) 용어
+        - 루트(Root)
+            - 트리의 시작점, 가장 상위 요소 (<html>)
+        - 노드(Node)
+            - 트리의 각 항목 (모든 태그, 텍스트)
+        - 부모(Parent)
+            - 바로 위에 있는 요소 (<body>는 <header>의 부모) 
+        - 자식(Child)
+            - 바로 아래에 있는 요소 (<h1>은 <header>의 자식)
+        - 형제(Sibling)
+            - 같은 부모를 가진 요소 (<h1>과 <nav>는 형제)
+        - 조상(Ancestor)
+            - 부모의 부모, 그 위.... (<html>은 모든 요소의 조상)
+        - 자손(Descendant)
+            - 자식의 자식, 그 아래.... (<a>는 <body>의 자손)        
+
