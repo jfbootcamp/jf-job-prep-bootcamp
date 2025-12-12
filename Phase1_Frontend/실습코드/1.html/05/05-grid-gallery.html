@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid 갤러리</title>
+    <style>
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery img {
+            width: 100%;    /* 그리드 셀 너비에 맞춤 */
+            height: 150px;  /* 모든 이미지 높이 통일 */
+            object-fit: cover;  /* 비율 유지하면서 영역 채움, 넘치는 부분 잘림 */
+            border-radius: 8px;  /* 모서리 둥글게 */
+            transition: transform 0.3s;   /* 0.3초에 걸쳐 부드럽게 변화 */
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+<body>
+    <h1>CSS Grid 갤러리</h1>
+    <div>
+        <h3>1. 3열 그리드 만들기</h3>
+        <p>.gallery에 display: grid, grid-template-columns, gap을 추가하세요</p>
+        <div class="result">
+            <div class="gallery">
+                <img src="../images/tangerines.jpg" alt="레드향">
+                <img src="../images/salad.jpg" alt="샐러드">
+                <img src="../images/mic.jpg" alt="마이크">
+                <img src="../images/top.jpg" alt="배너">
+                <img src="../images/pf.jpg" alt="프로필">
+                <img src="../images/bg.jpg" alt="배경">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

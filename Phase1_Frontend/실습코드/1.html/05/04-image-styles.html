@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 스타일링</title>
+    <style>
+        .img-circle { border-radius: 50%; }
+        .img-shadow { 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .img-hover {
+            transition:  transform 0.3s;   /* transition: 속성 변화시 애니메이션 효과, transform 속성이 0.3초에 걸쳐 부드럽게 변함 */
+            cursor: pointer;    /* 마우스 커서를 숟가락 모양으로 변경 */
+        }
+        .img-hover:hover {
+            transform: scale(1.1);  /* 요소를 110% 크기로 확대 */
+        }
+    </style>
+</head>
+<body>
+    <h1>이미지 스타일링</h1>
+    <div>
+        <h3>1.원형 이미지</h3>
+        <p>.img-circle 클래스를 만들어 프로필 이미지를 원형으로 만드세요.</p>
+        <div class="result">
+            <img src="../images/pf.jpg" width="150" height="150" alt="프로필" class="img-circle">
+        </div>
+    </div>
+
+    <div>
+        <h3>2. 그림자 효과</h3>
+        <p>.img-shadow 클래스를 만들어 그림자를 추가하세요</p>
+        <div class="result">
+            <img src="../images/tangerines.jpg" width="300" alt="레드향" class="img-shadow">
+        </div>
+    </div>
+
+    <div>
+        <h3>3. 호버 확대 효과</h3>
+        <p>.img-hover 클래스를 만들어 마우스 오버 시 확대되게 하세요</p>
+        <div class="result">
+            <img src="../images/salad.jpg" width="300" alt="샐러드" class="img-hover">
+        </div>
+    </div>
+
+</body>
+</html>
