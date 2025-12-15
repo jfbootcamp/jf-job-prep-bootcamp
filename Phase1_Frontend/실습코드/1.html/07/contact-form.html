@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문의하기 폼</title>
+    <style>
+        body {
+            font-family: 'Malgun Gothic', sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 500px;       /* 최대 너비 제한 */
+            margin: 0 auto;         /* 좌우 마진 auto => 중앙 정렬 */
+            background: #fff;     /* 흰색 배경 */
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        /* 레이블 스타일 */
+        .form-group label {
+           display: block;          /* 블록 요소로 변경 (줄바꿈) */ 
+           margin-bottom: 8px;
+           font-weight: bold;
+           color: #555;
+        }
+
+        /* 입력 필드 공통 스타일 */
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid;
+            border-radius: 6px;
+            font-size: 14px;
+            box-sizing: border-box;     /* padding을 포함하여 나비 계산 */
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📧문의하기</h1>
+        <form action="/submit" method="POST" name="contactForm">
+            <div class="form-group">
+                <label for="name">이름: *</label>
+                <input type="text" id="name" name="name" required placeholder="이순신">
+            </div>
+            <div class="form-group">
+                <label for="email">이메일: *</label>
+                <input type="email" id="email" name="email" required placeholder="example@email.com">
+            </div>
+            <div class="form-group">
+                <label for="phone">연락처: </label>
+                <input type="tel" id="phone" name="phone" placeholder="010-1234-6573">
+            </div>   
+            <div class="form-group">
+                <label for="catagory">문의 유형 *</label>
+                <select id="catagory" name="catagory" required>
+                    <option value="">선택하세요</option>  
+                    <option value="general">일반 문의</option>  <!-- value는 서버로 전송, 텍스트는 화면에 표시 -->
+                    <option value="product">제품 문의</option> 
+                    <option value="support">기술 지원</option> 
+                    <option value="partnership">제휴 문의</option>                       
+                </select>
+            </div> 
+            <div class="form-group">
+                <label for="message">문의 내용 *</label>
+                <textarea id="message" name="message" rows="5" required placeholder="문의 내용 입력하세요">
+                </textarea>
+            </div>             
+
+            <button type="submit" class="btn">문의하기</button>
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
