@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube 임베드 실습</title>
+    <style>
+        body {
+            font-family: 'Malgun Gothic', sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 800px;       /* 최대 너비 제한 */
+            margin: 0 auto;         /* 좌우 마진 auto => 중앙 정렬 */
+        }
+        
+        h1 {
+            color: #c00;
+            margin-bottom: 30px;
+        }        
+
+        h2 {
+            color: #333;
+            margin: 30px 0 15px;        /* 위 30px, 아래 15px */
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        .video-wrapper {
+            position: relative;         /* 자식의 absolute 기준점 */
+            padding-bottom: 56.25%;     /* 16:9 비율 유지 핵심 */
+            height: 0;                  /* 높이는 padding으로 대체 */
+            overflow: hidden;           /* 넘치는 부분 숨김 */
+            border-radius: 8px;         /* 둥근 모서리 */
+            margin-bottom: 15px;        /* 하단 여백 */
+        }
+
+        /* iframe을 부모 전체에 채움 */
+        .video-wrapper iframe {
+            position: absolute;         /* 부모 기준 절대 위치 */
+            top: 0;                     /* 상단에 붙임 */
+            left: 0;                    /* 좌측에 붙임 */
+            width: 100%;                /* 부모 너비 100% */
+            height: 100%;               /* 부모 높이 100% */
+            border: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>▶️ YouTube 동영상 임베드</h1>
+        <h2>1. 기본 임베드</h2>
+        <div class="video-wrapper">
+            <iframe
+                src="https://www.youtube.com/embed/b7k0a5hYnSI"
+                title="Natasha Bedingfield - Unwritten"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+        <div class="info-box">
+            <h3>🎤 영상 정보</h3>
+            <ul>
+                <li><strong>아티스트:</strong> Natasha Bedingfield (나타샤 배딩필드)</li>
+                <li><strong>출생:</strong> 1981년, 영국</li>
+                <li><strong>곡명:</strong> Unwritten</li>
+                <li><strong>발매:</strong> 2004년</li>
+                <li><strong>특징:</strong> 야외/자연 배경, 희망적이고 긍정적인 메시지</li>
+                <li><strong>기록:</strong> 빌보드 5위, 미국 드라마 "The Hills" 테마곡</li>
+            </ul>
+        </div>
+
+
+        <h2>2. 옵션 적용 예</h2>
+        <div class="video-wrapper">
+            <iframe
+                src="https://www.youtube.com/embed/AWGqoCNbsvM?start=30&end=50&autoplay=1&mute=1&cc_load_policy=1"
+                title="Colbie Caillat - Bubbly (옵션 적용)"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>            
+        </div>
+    </div>
+</body>
+</html>
