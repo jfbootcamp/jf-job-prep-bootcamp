@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자손 선택자 vs 자식 선택자</title>
+    <link rel="stylesheet" href="02-selector.css">
+</head>
+<body>
+    <div class="practice-box">
+        <h4>자손 선택자 vs 자식 선택자</h4>
+
+        <div class="parent-demo">
+            <p>직접 자식 p (parent > p로 선택됨 => 빨간색) </p>
+            <div class="child">
+                <p>손자 p (parent p로만 선택됨 => 파란색)</p>
+            </div>
+            <p>직접 자식 p (parent > p로 선택됨 => 빨간색) </p>
+        </div>
+
+        <div class="code-explanation">
+            <code>.parent-demo p</code> => 모든 p 선택 (자손)<br>
+            <code>.parent-demo > p</code> => 직접 자식 p만 선택 
+        </div>
+    </div>
+
+    <div class="practice-box">
+        <h4>그룹 선택자</h4>
+        <div class="group-demo">
+            <h4>h4 제목</h4>
+            <h5>h5 데모</h5>
+            <h6>h6 데모</h6>
+        </div>
+    </div>
+
+    <div class="practice-box">
+        <h4>복합 클래스 선택자</h4>
+
+        <div class="button-demo">
+            <button class="btn">기본 버튼</button>
+            <button class="btn primary">주요 버튼</button>
+            <button class="btn danger">위험 버튼</button>
+        </div>
+    </div>
+
+</body>
+</html>

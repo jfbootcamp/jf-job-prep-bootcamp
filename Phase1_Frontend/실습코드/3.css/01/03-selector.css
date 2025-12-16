@@ -1,0 +1,87 @@
+/*
+    선택자 우선순위 실습
+        - 우선순위 테스트를 위한 스타일들
+        - 동일한 요소에 여러 선택자가 적용될 때
+        - 점수가 높은 선택자의 스타일이 적용됨 
+*/
+
+/* 태그 선택자 : 1점 */
+p {
+    color: gray;
+}
+
+/* 클래스 선택자 : 10점 */
+.text-blue {
+    color: blue;
+}
+
+/* 아이디 선택자 : 100점 (가장 높음 => 적용됨) */
+#special-text {
+    color: green;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* 같은 우선순위일 때: 나중에 선언된 스타일 적용 */
+/* 먼저 선언됨 - 10점*/
+.color-first {
+    background-color: #3498db;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+/* 나중에 선언됨 - 10점 (같은 점수지만 이게 적용됨)*/
+.color-second {
+    background-color: #e74c3c;
+}
+
+#important-demo {
+    background-color: #9b59b6 !important;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.important-demo {
+    background-color: pink;
+}
+
+.quiz-box {
+    background: #f8f9fa;
+}
+
+.quiz-item {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+}
+
+.quiz-item code {
+    display: block;
+    background: #2d2d2d;
+    color: #f8f8f2;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-family: 'Consolas', monospace;
+    margin-bottom: 10px;
+}
+
+.quiz-item details {
+    margin-top: 10px;
+}
+
+.quiz-item summary {
+    color: #3498db;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.quiz-item summary:hover {
+    color: #2980b9;
+}

@@ -1,0 +1,51 @@
+/*
+    속성 선택자 
+*/
+.demo-form {
+    display: grid;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #333;
+    font-size: 14px;
+}
+
+.form-group input {
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+/*
+    [type="..."] 속성 선택자 
+    input 태그의 type 속성값에 따라 다른 스타일 적용    
+*/
+
+input[type="text"] {
+    border-color: #3498db;
+}
+
+input[type="email"] {
+    border-color: #9b59b6;
+}
+
+input[type="password"] {
+    border-color: #e67e22;
+}
+
+input[disabled] {
+    background-color: #f5f5f5;
+    color: #999;
+    cursor: not-allowed;    /* 금지 커서 */
+    opacity: 0.7;
+}

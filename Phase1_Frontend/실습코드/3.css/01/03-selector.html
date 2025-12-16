@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자 우선순위</title>
+    <link rel="stylesheet" href="03-selector.css">
+</head>
+<body>
+    <div class="practice-box">
+        <h4>1. 우선 순위 비교 - 어떤 색이 적용될까요?</h4>
+        <p class="text-blue" id="special-text">
+            이 텍스트의 색상은?
+        </p>
+    </div>
+
+    <div class="practice-box">
+        <h4>2. 같은 우선순위일 때</h4>
+        <div class="color-first color-second">
+            두 클래스 모두 배경색을 지정 => 나중에 선언된 스타일 적용
+        </div>
+    </div>
+
+    <div class="practice-box">
+        <h4>3. !important (주의해서 사용하세요!) </h4>
+        <div id="important-demo" class="important-demo" style="background-color: yellow;">
+            인라인 스타일(노란색)이 있지만 CSS에서 !important 사용 
+        </div>
+    </div>
+
+    <div class="practice-box quiz-box">
+        <h4>✍️ 퀴즈 : 우선순위 점수를 계산해 보세요! </h4>
+        <div class="quiz-item">
+            <code>div.container p.text</code>
+            <details>
+                <summary>정답보기</summary>
+                <p>1 + 10 + 1 + 10 = <strong>22점</strong></p>
+                <small>div(1) + .container(10) + p(1) + .text(10)</small>
+            </details>
+        </div>
+
+        <div class="quiz-item">
+            <code>#main .sidebar ul li a</code>
+            <details>
+                <summary>정답보기</summary>
+                <p>100 + 10 + 1 + 1 = <strong>113점</strong></p>
+                <small>#main(100) + .sidebar(10) + ul(1) + li(1) + a(1)</small>
+            </details>
+        </div>        
+
+        <div class="quiz-item">
+            <code>body #content .article h2.title</code>
+            <details>
+                <summary>정답보기</summary>
+                <p>1 + 100 + 10 + 1 + 10 = <strong>122점</strong></p>
+                <small>body(1) + #content(100) + .article(10) + h2(1) + .title(10)</small>
+            </details>
+        </div>           
+    </div>
+</body>
+</html>
