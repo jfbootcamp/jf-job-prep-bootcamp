@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>설문조사 폼</title>
+    <style>
+        body {
+            font-family: 'Malgun Gothic', sans-serif;
+            padding: 20px;
+            background: #e8f5e9;
+        }        
+        .container {
+            max-width: 600px;       /* 최대 너비 제한 */
+            margin: 0 auto;         /* 좌우 마진 auto => 중앙 정렬 */
+            background: #fff;     /* 흰색 배경 */
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }     
+        h1 {
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }  
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+        }  
+        fieldset {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }  
+        legend {
+            font-weight: bold;
+            color: #2e7d32;
+            padding: 0 10px;
+        }  
+        .option-group {
+            margin: 10px 0;
+        }   
+        .option-group label {
+            display: flex;                  /* flexbox로 정렬*/
+            align-items: center;            /* 세로 중앙 정렬 */
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+        .option-group label:hover {
+            background: #f5f5f5;
+        }
+        .option-group input {
+            margin-right: 10px;
+        }
+        .btn {
+            width: 100%;
+            padding: 14px;
+            background: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #388e3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📄고객 만족도 설문조사</h1>
+        <p class="subtitle">소중한 의견을 들려주세요 (소요시간: 약 2분)</p>
+        <form action="/survey" method="post">
+            <fieldset>
+                <legend>1. 서비스 이용 빈도</legend>
+                <div class="option-group">
+                    <label>
+                        <input type="radio" name="frequency" value="daily" required>
+                        매일
+                    </label>
+                    <label>
+                        <input type="radio" name="frequency" value="weekly">
+                        주 1-2회
+                    </label>
+                    <label>
+                        <input type="radio" name="frequency" value="monthly">
+                        월 1-2회
+                    </label>
+                    <label>
+                        <input type="radio" name="frequency" value="rarely">
+                        거의 사용 안함
+                    </label>                                                            
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>2. 주로 이용하는 서비스 (복수 선택 가능) </legend>
+                <div class="option-group">
+                    <label>
+                        <input type="checkbox" name="services" value="shopping">
+                        쇼핑
+                    </label>
+                    <label>
+                        <input type="checkbox" name="services" value="delivery">
+                        배달
+                    </label>
+                    <label>
+                        <input type="checkbox" name="services" value="reservation">
+                        예약
+                    </label>
+                    <label>
+                        <input type="checkbox" name="services" value="community">
+                        커뮤니티
+                    </label> 
+                    <label>
+                        <input type="checkbox" name="services" value="other">
+                        기타
+                    </label>                                                                                
+                </div>                
+            </fieldset>
+
+            <fieldset>
+                <legend>3. 전반적인 만족도</legend>
+                <div style="padding: 10px 0;">
+                    <input type="range"
+                           id="satisfaction"
+                           name="satisfaction"
+                           min="1"
+                           max="10"
+                           value="5"
+                           style="width: 100%;" >
+                    <div style="display: flex; justify-content: space-between; font-size: 12px; color: #888;">
+                        <span>1 (매우 불만족)</span>
+                        <span>5 (보통)</span>
+                        <span>10 (매우 만족)</span>
+                    </div>       
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>4. 추천 의향 (0-10점)</legend>
+                <input type="number" 
+                       name="recommend"
+                       min="0"
+                       max="10"
+                       value="7"
+                       style="width: 100px; padding: 10px; font-size: 18px; text-align: center;" >
+                <span style="margin-left: 10px; color: #666;">점</span>       
+            </fieldset>
+
+            <fieldset>
+                <legend>5. 개선사항 또는 건의사항</legend>
+                <textarea name="feedback"
+                          rows="4"
+                          placeholder="자유롭게 의견을 남겨주세요"
+                          style="width: 100%;
+                                 padding: 12px;
+                                 border: 1px solid #ddd;
+                                 border-radius: 6px;
+                                 box-sizing: border-box;"  ></textarea>
+            </fieldset>
+
+            <button type="submit" class="btn">설문 제출하기</button>
+        </form>
+    </div>
+</body>
+</html>
