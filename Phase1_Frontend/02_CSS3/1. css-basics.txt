@@ -76,10 +76,10 @@
 4. 박스 모델 (Box Model)
     1) 박스 모델 구조 
     2) box-sizing 속성(필수!)
-              값        설명        계산방식
-       -----------------------------------------------------------       
-        - content-box  기본값    실제너비 = width + padding + border 
-        - border-box   권장     실제너비 = width(padding, border 포함)  
+              값        설명        계산방식                                특징
+       ---------------------------------------------------------------------------------       
+        - content-box  기본값    실제너비 = width + padding + border       예측하기 어려움 
+        - border-box   권장     실제너비 = width(padding, border 포함)     직관적 
     
     3) 왜 border-box가 좋은가?
         .box {
@@ -90,7 +90,7 @@
         }
 
         .box {
-            box-sizing: border-box
+            box-sizing: border-box          /* 이 한줄 추가 */
             width: 100px;
             padding: 10px;
             border: 1px solid;
@@ -122,3 +122,14 @@
         rem    루트(html) 폰트 크기 기준  font-size: 1rem;
         vh     뷰포트 높이의 %           min-height: 100vh; 
         vw     뷰포트 너비의 %           width: 50vw;
+
+    2) display 속성
+
+        값                  설명            특징
+     --------------------------------------------------------------
+       block            블록 요소       한 줄 전체 차지, width/height 지정 가능   
+       inline           인라인 요소     콘텐츠 크기만큼 차지,  width/height 무시 
+       inline-block     인라인 블록     한줄에 여러 개, width/height 지정 가능
+       flex             플렉스 컨테이너  자식 요소 유연하게 배치 
+       grid             그리드 컨테이너  2차원 레이아웃    
+       none             숨김            공간도 차지하지 않음  
