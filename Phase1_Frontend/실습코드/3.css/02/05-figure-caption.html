@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>블로그 이미지 + 캡션 중앙 정렬</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }  
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7fafc;
+            padding: 40px 20px;
+            min-height: 100vh;      /* 최소한 화면 전체 높이를 확보 */
+        }     
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }        
+
+        .header h1 {
+            color: #2d3748;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }        
+
+        .header p {
+            color: #718096;
+            font-size: 14px;
+        }
+        
+        .blog-post {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-post h2 {
+            color: #1a202c;
+            font-size: 28px;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .blog-post p {
+            color: #4a5568;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        /*
+            1. 시나리오
+                - 블로그 글 중간에 이미지가 들어감
+                - 이미지와 그 설명(캡션)을 함께 중앙 정렬해야 함.
+
+            2. HTML5 시맨틱 태그 
+                - <figure>: 이미지, 다이어그램, 코드 등 독립적인 콘텐츠 
+                - <figcaption>:  figure에 대한 설명/캡션 
+                    
+            3. 중앙 정렬
+                - figure를 블록 요소처럼 중앙 정렬 
+                - 내부 img도 중앙 정렬
+                - figcaption 텍스트 중앙 정렬 
+            
+            4. 추가해야 할 속성
+                - .blog-figure에 width: fit-content;
+                                 margin: 30px auto;
+                - .blog-figure img에 display: block
+                - .blog-figure figcaption에 text-align: center;                                
+
+        */
+        .blog-figure {
+
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>블로그 이미지 + 캡션 중앙 정렬</h1>
+        <p>실제 블로그 글처럼 이미지와 설명을 함께 중앙 배치하기</p>
+    </header>      
+
+    <article class="blog-post">
+        <h2>CSS 박스 모델의 이해</h2>
+
+        <p>
+            웹 페이지를 구성하는 모든 HTML 요소는 박스(Box) 형태로 표현합니다.
+            이 박스는 콘텐츠(content), 패딩(padding), 테두리(border), 마진(margin)으로 구성되어 있습니다.
+        </p>
+
+        <figure class="blog-figure">
+            <img src="https://picsum.photos/400/250"
+                alt="CSS 박스 모델 다이어그램">
+            <figcaption>그림 1. CSS 박스 모델의 구조 (margin -> border -> padding -> content)</figcaption>    
+        </figure>
+
+        <p>
+            위 그림에서 볼 수 있듯이, 가장 안쪽에 실제 콘텐츠가 위치하고,
+            그 바깥으로 padding, border, margin이 차례로 감싸고 있습니다.
+            이 구조를 이해하면 요소의 크기와 간격을 정확하게 제어할 수 있습니다.
+        </p>
+
+        <p>
+            특히 <code>box-sizing: border-box</code>를 사용하면 
+            with에 padding과 border가 포함되어 계산이 훨씬 직관적이 됩니다.
+        </p>
+    </article>
+
+
+</body>
+</html>

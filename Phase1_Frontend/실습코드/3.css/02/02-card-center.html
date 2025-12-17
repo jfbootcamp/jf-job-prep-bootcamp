@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 컴포넌트 중앙 정렬</title>
+    <style>
+        /* 기본 리셋 스타일 
+            - 모든 요소의 기본 margin, padding 제거
+            - box-sizing을 border-box로 통일
+        */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }  
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #faf5ff;
+            padding: 40px 20px;
+            min-height: 100vh;      /* 최소한 화면 전체 높이를 확보 */
+        }    
+        .practice-area {
+            background: white;
+            border: 2px dashed #cbd5e0;
+            border-radius: 12px;
+            padding: 40px 20px;
+            min-height: 250px;
+            margin-bottom: 30px;            
+        }
+        /*
+            현재 상태: 카드가 전체 너비를 차지함
+            목표 : 카드를 max-width로 제한하고 중앙 정렬
+            힌트: 
+                - max-width: 400px (최대 너비 제한)
+                - margin-left: auto
+                - margin-right: auto  
+                
+            * width vs max-width   
+                - width: 고정 너비 (화면에 좁아도 유지)
+                - max-width: 최대 너비 (화면이 좁으면 줄어듦)
+        */
+        /*
+            1. 왜 max-width: 400px인가?
+                - [카드 UI의 적정 너비]
+                    - 카드는 보통 300px ~ 500px 사이가 적당
+                    - 너무 좁으면 : 내용이 답답해 보임
+                    - 너무 넓으면 : 카드처럼 안 보이고 색션처럼 보임 
+                - [400px를 선택]
+                    - 프로필 카드에 이름, 직책, 소개글이 들어감
+                    - 한 줄에 20~30자 정도가 읽기 편함 (가독성)
+                    - 400px면 한글 기준 약 25자 정도 => 적당!
+
+
+        */
+        .profile-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin-left: auto;      /* 왼쪽 마진 자동 */
+            margin-right: auto;     /* 오른쪽 마진 자동 */
+        }    
+
+        /* 아바타(프로필 이미지) 스타일 - 원형의 이니셜 표시 */
+        .profile-card .avatar {
+            width: 80px;            /* 아바타 너비 (정사각형) */
+            height: 80px;
+            background: linear-gradient(
+                135deg,             /* 대각선 방향 (좌상->우하) */
+                #48bb78 0%,       /* 시작 색상 */  
+                #38a169 100%      /* 끝 색상 */
+            );
+            border-radius: 50%;     /* 원형으로 만들기 (반지름 50%) */
+            margin: 0 auto 15px auto;
+            display: flex;          /* Flexbox 컨테이너로 설정 */
+            align-items: center;        /* 세로 중앙 정렬 */
+            justify-content: center;    /* 가로 중앙 정렬 */
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
+        } 
+        .profile-card h3 {
+            color: #2d3748;
+            text-align: center;
+            margin-bottom: 8px;
+        }  
+        .profile-card .role {
+            color: #718096;
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }  
+        .profile-card .bio {
+            color: #4a5568;
+            font-size: 14px;
+            line-height: 1.6;           /* 줄 간격: 1.6배 (가독성 향상) */
+            text-align: center;
+            padding: 15px;
+            background: #f0fff4;
+            border-radius: 8px;
+        }   
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>카드 컴포넌트 중앙 정렬</h1>
+    </header>    
+
+    <div class="practice-area">
+        <div class="profile-card">
+            <div class="avatar">L</div>
+            <h3>이개발</h3>
+            <p class="role">Backend Developer</p>
+            <p class="bio">
+                Java와 Springboot를 주로 사용하며,
+                사용자 경험을 중요시하는 개발자입니다.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

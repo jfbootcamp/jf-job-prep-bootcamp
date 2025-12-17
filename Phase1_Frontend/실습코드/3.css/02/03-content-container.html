@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>컨텐츠 컨테이너 중앙 정렬</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }  
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a202c;
+            padding: 40px 20px;
+            min-height: 100vh;      /* 최소한 화면 전체 높이를 확보 */
+        }     
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #f7fafc;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            color: #a0aec0;
+            font-size: 14px;
+        }
+
+        .practice-area {
+            background: #2d3748;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+        .practice-label {
+            color: #68d391;
+            font-size: 12px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        /*
+            시나리오:
+                - 블로그나 뉴스 사이트의 본문 영역처럼 너무 넓으면 읽기 불편하므로
+                - 너비 제한, 중앙 정렬하면 시선이 자연스럽게 콘텐츠에 집중됨
+                - 본문 너비를 제한하면 가독성이 좋아짐 
+                - 이것이 실제 웹사이트에서 가장 많이 쓰이는 패턴!
+                    - 네이버 블로그: 본문 max-width 약 750px
+                    - 티스토리: 본문 max-width 약 800px
+
+            추가해야 할 속성
+                - max-width: 700px (본문 최대 너비)
+                - margin: 0 auto (좌우 중앙 정렬)        
+        */
+
+        .content-container {
+            background: #4a5568;
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .content-container h2 {
+            color: #f7fafc;
+            font-size: 24px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #718096;
+            padding-bottom: 10px;
+        }
+
+        .content-container p {
+            color: #e2e8f0;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .content-container .highlight {
+            background: #48bb78;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .content-container .author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #718096;
+        }
+
+        .content-container .author-avatar {
+            width: 40px;            /* 아바타 너비 (정사각형) */
+            height: 40px;
+            background: linear-gradient(
+                135deg,             /* 대각선 방향 (좌상->우하) */
+                #667eea 0%,       /* 시작 색상 */  
+                #764ba2 100%      /* 끝 색상 */
+            );
+            border-radius: 50%;     /* 원형으로 만들기 (반지름 50%) */
+            display: flex;          /* Flexbox 컨테이너로 설정 */
+            align-items: center;        /* 세로 중앙 정렬 */
+            justify-content: center;    /* 가로 중앙 정렬 */
+            color: white;
+            font-weight: bold;            
+        }
+
+        .content-container .author-info {
+            color: #a0aec0;
+            font-size: 14px;
+        }
+
+        .content-container .author-info strong {
+            color: #f7fafc;
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>컨텐츠 컨테이너 중앙 정렬</h1>
+        <p>블로그/뉴스 사이트에서 가장 많이 쓰이는 레이아웃 패턴</p>
+    </header>     
+
+    <div class="practice-area">
+        <p class="practice-label">콘텐츠가 중앙에 정렬됨!</p>
+
+        <article class="content-container">
+            <h2>CSS 박스 모델 완벽 가이드</h2>
+            <p>
+                웹 페이지의 모든 요소는 <span class="highlight">박스(Box)</span>로 이루어져 있습니다.
+                이 박스들이 어떻게 구성되고, 서로 어떻게 배치되는지 이해하는 것이 CSS 레이아웃의 핵심입니다.
+            </p>
+            <p>
+                본문 영역의 너비가 너무 넓으면 한 줄에 너무 많은 글자가 들어가서 읽기 불편합니다. 
+                일반적으로 한 줄에 45~75자 정도가 가장 읽기 편하다고 알려져 있습니다.
+                그래서 max-width로 너비를 제한하고 중앙에 배치하는 것이 좋습니다.
+            </p>
+
+            <div class="author">
+                <div class="author-avatar">L</div>
+                <div class="author-info">
+                    <strong>이개발</strong>   
+                    2025년 12월 17일                  
+                </div>
+            </div>            
+        </article>
+
+
+    </div>
+</body>
+</html>
