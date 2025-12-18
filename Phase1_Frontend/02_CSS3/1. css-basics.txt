@@ -111,7 +111,7 @@
         padding-bottom: 30px
         padding-left: 40px
  
- 5. 자주 쓰는 CSS 속성
+5. 자주 쓰는 CSS 속성
     1) 크기 단위
 
         단위        설명                사용 예
@@ -133,3 +133,36 @@
        flex             플렉스 컨테이너  자식 요소 유연하게 배치 
        grid             그리드 컨테이너  2차원 레이아웃    
        none             숨김            공간도 차지하지 않음  
+
+    3) figure + figcaption 중앙 정렬 
+        - 전체 구조 
+            <figure>
+                <img>
+                <figcaption>
+            </figure>   
+
+        - 전략
+            - figure 자체를 중앙 정렬 (부모 역할)
+                - width: fit-content --> 내용물 크기에 맞춤
+                    - 너비를 이미지 크기에 맞추기 위함 
+                    - 이미지가 400px이면 figure도 400px 
+                    - 이렇게 해야 캡션도 이미지 너비에 맞춰 정렬됨  
+                - margin: 30px auto --> 상하 여백 + 좌우 중앙  
+
+            - img를 블록으로 변환
+                - display: block --> inline 기본값 제거 
+                - 이렇게 해야 figure 안에서 깔끔하게 배치됨 
+
+            - figcaption 텍스트 중앙 정렬 
+                - text-align: center --> 캡션 텍스트 가운데 
+
+6. 02-navbar.html
+    1) 메뉴 링크 스타일 
+        - <a> 태그는 기본적으로 inline 요소 
+        - inline 요소에는 transform 속성이 적용되지 않음
+        - inline-block 또는 block으로 변경해야 transform 적용 가능함 
+
+        - transition에 transform 추가 
+            - hover시 위로 올라가는 애니메이션을 부드럽게 함 
+
+                                                        
