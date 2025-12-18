@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네비게이션 바 레이아웃</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }  
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7fafc;
+            min-height: 100vh;      /* 최소한 화면 전체 높이를 확보 */
+        }     
+        
+        .header {
+            text-align: center;
+            padding: 40px 20px 30px;
+        }        
+
+        .header h1 {
+            color: #1a365d;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }        
+
+        .header p {
+            color: #4a5568;
+            font-size: 14px;
+        }         
+
+        .page-container {
+            padding: 0 20px 40px 20px;
+        }
+
+        .practice-section {
+            margin-bottom: 30px;
+        }
+
+        .practice-label {
+            color: #c53030;
+            font-size: 14px;
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-align: center;            
+        }
+
+        /*
+            현재 상태 : 로고, 메뉴, 버튼이 세로로 쌓여있음
+            목표 : 로고 왼쪽, 메뉴 중앙, 버튼 오른쪽 배치
+
+            작업할 속성
+                - display: flex             (Flex 컨테이너 만들기)
+                - justify-content : space-between  (양끝 배치)
+                - align-items : center      (세로 중앙 정렬)
+        */
+        .navbar {
+            background: #1a202c;
+            padding: 15px 30px;
+            border-radius: 8px;
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;      /* .navbar를 Flex Container로 만듦, 자식요소(logo,menu,btn)가 Flex Items가 됨 */
+            justify-content: space-between;    /* 첫번째 아이템: 왼쪽 끝에 배치, 마지막 아이템: 오른쪽 끝에 배치, 나머지 아이템: 사이 공간 균등 분배 */
+            align-items: center;  /* 높이가 다른 요소들을 세로 기준 가운데 정렬, 교차축(세로) 기준으로 가운데 맞춤 */
+        }
+
+        /* 네비게이션 내부 요소 스타일 */
+        .navbar .logo {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* 메뉴 리스트도 flex로 가로 배치
+            - 메뉴 아이템들(li)을 가로로 나열하기 위해 
+            - gap으로 메뉴 간격을 깔끔하기 설정
+            - 내비게이션 안에서 또 다른 flex 컨테이너 
+        */
+        .navbar .menu {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+/* 
+        .navbar .menu a {
+            color: #a0aec0;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .navbar .menu a:hover {
+            color: white;
+        }
+*/
+        .navbar .menu a {
+            color: #a0aec0;
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-block;
+            transition: color 0.2s, transform 0.2s;
+        }
+
+        .navbar .menu a:hover {
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .navbar .btn-login {
+            background: #48bb78;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .navbar .btn-login:hover {
+            background: #3182ce;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>네비게이션 바 레이아웃</h1>
+        <p>실무에서 가장 많이 쓰는 Flexbox 패턴</p>
+    </header>    
+
+    <div class="page-container">
+        <div class="practice-section">
+            <div class="practice-label">아래 코드를 수정하세요</div>
+            <nav class="navbar">
+                <div class="logo">MyBrand</div>
+                <ul class="menu">
+                    <li><a href="#">홈</a></li>
+                    <li><a href="#">서비스</a></li>
+                    <li><a href="#">소개</a></li>
+                    <li><a href="#">문의</a></li>
+                </ul>
+                <button class="btn-login">로그인</button>
+            </nav>
+        </div>
+    </div>
+</body>
+</html>

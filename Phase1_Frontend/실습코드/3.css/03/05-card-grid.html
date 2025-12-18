@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 그리드 레이아웃</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }  
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7fafc;
+            padding: 40px 20px;
+            min-height: 100vh;      /* 최소한 화면 전체 높이를 확보 */
+        }     
+        
+        .header {
+            text-align: center;
+            padding: 30px;
+        }        
+
+        .header h1 {
+            color: #1a365d;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }        
+
+        .header p {
+            color: #4a5568;
+            font-size: 14px;
+        }         
+        
+        .practice-area {
+            background: white;
+            border: 2px dashed #cbd5e0;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .practice-area > h3 {
+            color: #2d3748;
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .preview-section {
+            margin-bottom: 40px;
+        }
+
+        .preview-label {
+            color: #276749;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .preview-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .preview-card {
+            background: #f0fff4;
+            border: 2px solid #48bb78;
+            border-radius: 12px;
+            padding: 20px;
+            width: calc(33.333% - 14px);
+            min-width: 200px;
+            margin-bottom: 15px;
+        }
+
+        .preview-card h4 {
+            color: #276749;
+            margin-bottom: 8px;
+        }
+
+        .preview-card p {
+            color: #38a169;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>카드 그리드 레이아웃</h1>
+        <p>flex-wrap으로 반응형 카드 목록 만들기 </p>
+    </header>       
+
+    <div class="practice-area">
+        <h3>그리드 만들기</h3>
+
+        <div class="preview-section">
+            <div class="preview-label">목표: 이렇게 만들어야 합니다.(창 크기 줄이면 2개 => 1개로 변함)</div>
+            <div class="preview-grid">
+                <div class="preview-card">
+                    <h4>카드 1</h4>
+                    <p>목표 레이아웃</p>
+                </div>
+                <div class="preview-card">
+                    <h4>카드 2</h4>
+                    <p>목표 레이아웃</p>
+                </div>
+                <div class="preview-card">
+                    <h4>카드 3</h4>
+                    <p>목표 레이아웃</p>
+                </div>                                
+            </div>
+        </div>
+
+        <div class="preview-section">
+            <div class="preview-label">실습: 아래 코드를 수정하세요</div>
+            <div class="card-grid">
+                <div class="card">
+                    <h4>Spring 프로젝트</h4>
+                    <p>Java와 Spring을 활용한 ERP 프로젝트입니다.</p>
+                    <span class="tag">Spring</span>
+                </div>
+                <div class="card">
+                    <h4>React 쇼핑몰</h4>
+                    <p>React Composition API로 만든 이커머스 프로젝트입니다.</p>
+                    <span class="tag">React</span>
+                </div>
+                <div class="card">
+                    <h4>Node.js API</h4>
+                    <p>Express와 MogoDB를 활용한 Rest API 서버입니다.</p>
+                    <span class="tag">Node.js</span>
+                </div>
+                <div class="card">
+                    <h4>Flutter 앱</h4>
+                    <p>Flutter로 개발한 크로스플랫폼 모바일 앱입니다.</p>
+                    <span class="tag">Flutter</span>
+                </div>
+                <div class="card">
+                    <h4>Python ML</h4>
+                    <p>Python과 TensorFlow를 활용한 머신러닝 프로젝트입니다.</p>
+                    <span class="tag">Python</span>
+                </div>
+                <div class="card">
+                    <h4>AWS 인프라</h4>
+                    <p>AWS 서비스를 활용한 클라우드 인프라 구축 프로젝트입니다.</p>
+                    <span class="tag">AWS</span>
+                </div>                                                                                               
+            </div>            
+        </div>
+    </div>
+</body>
+</html>

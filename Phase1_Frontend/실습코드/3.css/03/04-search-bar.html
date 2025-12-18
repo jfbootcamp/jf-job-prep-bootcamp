@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>검색바 레이아웃</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }  
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7fafc;
+            padding: 20px;
+            min-height: 100vh;      /* 최소한 화면 전체 높이를 확보 */
+        }     
+        
+        .header {
+            text-align: center;
+            padding: 30px;
+        }        
+
+        .header h1 {
+            color: #1a365d;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }        
+
+        .header p {
+            color: #4a5568;
+            font-size: 14px;
+        }  
+
+        .practice-area {
+            margin-bottom: 30px;
+        }
+
+        .practice-label {
+            color: #276749;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .search-bar {
+            display: flex;
+            gap: 10px;
+            padding: 10px;
+            background: #f0fff4;
+            border: 2px solid #48bb78;
+            border-radius: 8px;
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 2px solid #e3e8f0;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .search-bar .search-btn {
+            padding: 12px 24px;
+            background: #48bb78;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>검색바 레이아웃</h1>
+        <p>flex: 1로 남은 공간 채우기 - 실무 필수 패턴</p>
+    </header>       
+
+    <div class="practice-area">
+        <h3>검색바 레이아웃 만들기</h3>
+        <div class="practice-label">아래 코드를 추가하세요.</div>
+        <div class="search-bar">
+            <input type="text" class="search-input" placeholder="검색어를 입력하세요...">
+            <button class="search-btn">검색</button>
+        </div>
+    </div>
+</body>
+</html>
