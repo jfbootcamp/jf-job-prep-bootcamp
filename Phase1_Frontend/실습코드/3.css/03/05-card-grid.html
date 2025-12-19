@@ -87,6 +87,51 @@
             color: #38a169;
             font-size: 13px;
         }
+
+        .card-grid {
+            display: flex;          /* 컨테이너를 Flex Container로 만듦 */             
+            flex-wrap: wrap;        /* 모든 아이템이 공간 부족시 다음 줄로 이동 */
+            gap: 20px;              /* 카드들 사이에 20px 간격 - 행 간격과 열 간격 모두 적용 */
+        }        
+
+        .card {
+            background: white;
+            border: 1px solid #c6f6d5;
+            border-radius: 12px;
+            padding: 20px;
+            width: calc(33.333% - 14px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);   /* 카드 아래에 연한 초록색 그림자 (입체감) */
+            min-width: 220px;
+            transition: transform 0.2s, box-shadow 0.2s;    /* 위치 변화 0.2초, 그림자도 0.2초 */
+        } 
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(72, 187, 120, 0.15);
+        }
+
+        .card h4 {
+            color: #276749;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }  
+        
+        .card p {
+            color: #4a5568;
+            font-size: 13px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }    
+        
+        .card .tag {
+            display: inline-block;
+            background: #c6f6d5;
+            color: #276749;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 500;
+        }
     </style>
 </head>
 <body>
