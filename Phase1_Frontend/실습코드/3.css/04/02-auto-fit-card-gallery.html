@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>auto-fit 예 - 상품 카드 갤러리</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }  
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            padding: 20px;
+            line-height: 1.5;
+        }  
+        
+        .header {
+            text-align: center;
+            padding: 30px;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 16px;
+        }        
+
+        .header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }        
+
+        .header p {
+            font-size: 1rem;
+            opacity: 0.9;           /* 약간 투명하게 */
+        }   
+        
+        /* 상품 그리드 컨테이너 
+            
+           repeat(auto-fit, minmax(250px, 1fr))
+            - repeat() : 반복해서 컬럼 생성
+                - auto-fit : 공간에 맞춰 자동으로 컬럼 수 결정 
+                - minmax(250px, 1fr)
+                    - 250px : 최소 너비 (이보다 작아지면 컬럼 수 줄임)
+                    - 1fr : 남은 공간 균등 분배 (꽉 채우기!)
+                   
+                    - 예) 화면 800px일때    
+                        - 250px * 3 = 750px => 3칼럼, 각각 약 267px 늘어남 
+                    - 예) 화면 500px일때    
+                        - 250px * 2 = 500px => 2칼럼, 각각 250px
+                    - 예) 화면 400px일때    
+                        - 250px * 1 = 250px => 1칼럼, 400px로 늘어남                                         
+        
+        */
+        .product-grid {
+            display: grid;          /* Grid 레이아웃 활성화 */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;              /* 카드 사이 간격 */
+            padding: 20px;          /* 그리드 내부 영역 */
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;       /* 넘치는 내용 숨김 (이미지 둥글게)*/
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);      /* 그림자 효과 */
+            transition: transform 0.3s, box-shadow 0.3s;      /* 호버 애니메이션 */  
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);                    /* 위로 살짝 올라가는 효과 */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);  /* 그림자 더 진하게 */  
+        }
+
+        .product-image {
+            width: 100%;                                    /* 카드 너비에 맞춤 */
+            height: 180px;
+            object-fit: cover;                              /* 비율 유지하며 채우기 */
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;                                  /* 가운데 정렬용 */
+            align-items: center;                            /* 세로 가운데 */
+            justify-content: center;                        /* 가로 가운데 */    
+            font-size: 3rem;                                /* 이모지 크기 */
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .product-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #e53e3e;            
+        }
+
+        .product-rating {
+            color: #fbbf24;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .add-to-cart {
+            width: 100%;
+            padding: 12px;
+            background: #4f46e5;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;            /* 호버 애니메이션 */
+        }
+
+        .add-to-cart:hover {
+            background: #4338ca;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>🛒 베스트 상품</h1>
+        <p>auto-fit으로 만든 반응형 상품 갤러리 (화면 크기를 조절해보세요!)</p>
+    </header>
+
+    <section class="product-grid">
+
+        <!-- 상품 카드1 -->
+        <article class="product-card">
+            <div class="product-image">👟</div>         <!-- 상품 이미지 영역 -->
+            <div class="product-info">
+                <h3 class="product-name">나이키 에어맥스</h3>                    
+                <p class="product-price">179,000원</p>
+                <p class="product-rating">⭐⭐⭐⭐⭐(128)</p>
+                <button class="add-to-cart">장바구니 담기</button>
+            </div>
+        </article>
+
+        <article class="product-card">
+            <div class="product-image">👜</div>         <!-- 상품 이미지 영역 -->
+            <div class="product-info">
+                <h3 class="product-name">미니 크로스백</h3>                    
+                <p class="product-price">89,000원</p>
+                <p class="product-rating">⭐⭐⭐⭐(85)</p>
+                <button class="add-to-cart">장바구니 담기</button>
+            </div>
+        </article>        
+
+        <article class="product-card">
+            <div class="product-image">⌚</div>         <!-- 상품 이미지 영역 -->
+            <div class="product-info">
+                <h3 class="product-name">스마트 워치</h3>                    
+                <p class="product-price">299,000원</p>
+                <p class="product-rating">⭐⭐⭐⭐⭐(256)</p>
+                <button class="add-to-cart">장바구니 담기</button>
+            </div>
+        </article>     
+        
+        <article class="product-card">
+            <div class="product-image">🎧</div>         <!-- 상품 이미지 영역 -->
+            <div class="product-info">
+                <h3 class="product-name">무선 이어폰</h3>                    
+                <p class="product-price">159,000원</p>
+                <p class="product-rating">⭐⭐⭐⭐(312)</p>
+                <button class="add-to-cart">장바구니 담기</button>
+            </div>
+        </article>      
+        
+        <article class="product-card">
+            <div class="product-image">📱</div>         <!-- 상품 이미지 영역 -->
+            <div class="product-info">
+                <h3 class="product-name">폰 케이스</h3>                    
+                <p class="product-price">25,000원</p>
+                <p class="product-rating">⭐⭐⭐⭐⭐(89)</p>
+                <button class="add-to-cart">장바구니 담기</button>
+            </div>
+        </article>     
+        
+        <article class="product-card">
+            <div class="product-image">👒</div>         <!-- 상품 이미지 영역 -->
+            <div class="product-info">
+                <h3 class="product-name">블캡 모자</h3>                    
+                <p class="product-price">35,000원</p>
+                <p class="product-rating">⭐⭐⭐⭐(67)</p>
+                <button class="add-to-cart">장바구니 담기</button>
+            </div>
+        </article>          
+
+    </section>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>auto-fit vs auto-fill 비교</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }  
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a2e;
+            color: #eee;
+            padding: 40px;
+            line-height: 1.6;
+        }      
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #4fc3f7;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 40px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+            background: #16213e;
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;    /* 세로 가운데 정렬 */
+            gap: 10px;              /* 아이콘과 텍스트 간격 */
+        }
+
+        .section-title.fit { color: #4ade80; }
+        .section-title.fill { color: #60a5fa; }
+
+        /* 컨테이너 */
+        .container {
+            width: 800px;               /* 컨테이너 고정 너비 */
+            border: 2px solid #444;
+            display: grid;              /* Grid 레이아웃 활성화 */
+            margin-bottom: 20px;
+            padding: 10px;
+            background: #1e1e3f;
+            border-radius: 8px;
+        }
+
+        /* auto-fit : 아이템 수에 맞춰 남은 공간을 늘어나서 채움 
+                      5개 아이템 => 800px을 5등분하여 160px
+        
+           grid-template-columns 속성
+            - Grid 컨테이너의 "열(colum)구조"를 정의
+            - 각 열의 너비를 지정 
+            - repeat() 함수로 반복 패턴 생성 가능
+
+           repeat(auto-fit,...) => 컨테이너 너비에 맞춰 자동으로 컬럼 수 결정
+           minmax(100px, 1fr) => 각 컬럼의 최소 100px, 최대 1fr
+           auto-fit 특징: 남은 공간을 기존 아이템이 나눠 가짐 (늘어남!)
+                         아이템이 늘어나서 빈 공간 채움
+                         빈 트랙은 0px로 축소됨 
+                         항상 꽉 찬 레이아웃 
+                         아이템 수가 적어도 예쁘게 보임  
+                         카드 갤러리, 상품목록
+
+        */
+        .container-fit {
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        }
+
+        /*
+            auto-fill: 가능한 많은 트랙을 생성하고 빈 트랙이 공간을 차지함 
+                       남은 공간에 "보이지 않는" 빈 트랙 생성(크기 유지!!)
+                       아이템은 최소 크기 유지
+                       일관된 아이템 크기 
+                       동적 콘텐츠에 적합 
+                       800px / 100px = 8트랙 생성, 5개만 채우고 3개는 빈 공간 
+
+
+        */
+        .container-fill {
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr))
+        }
+
+        /* 그리드 아이템 스타일 */
+        .item {
+            background: #4fc3f7;
+            color: #000;
+            padding: 20px;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 6px;
+            font-size: 1.2rem;
+        }
+
+        .container-fit .item {
+            background: #4ade80;
+        }
+
+        .container-fill .item {
+            background: #60a5fa;
+        }        
+
+        .item:nth-child(2) {
+            filter: brightness(0.8);            /* 약간 어둡게 */
+        }
+
+    </style>
+</head>
+<body>
+    <h1>🔁auto-fit vs auto-fill 비교</h1>
+    <p class="subtitle">CSS Grid의 repeat() 함수에서 사용하는 두 키워드의 차이점</p>
+
+    <section class="section">
+        <h2 class="section-title fit">
+            <span>✅</span> auto-fit (맞추기)
+        </h2>
+
+        <p class="result-label">
+            결과: 5개 아이템의 <span>800px 전체를 균등하게 나눠 가짐</span>
+        </p>
+
+        <div class="container container-fit">
+            <div class="item">1</div>       <!-- 첫번째 아이템 -->
+            <div class="item">2</div>       <!-- 두번째 아이템 -->
+            <div class="item">3</div>       <!-- 세번째 아이템 -->
+            <div class="item">4</div>       <!-- 네번째 아이템 -->
+            <div class="item">5</div>       <!-- 다섯번째 아이템 -->
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title fill">
+            <span>✅</span> auto-fill (채우기)
+        </h2>
+        
+        <p class="result-label">
+            결과: 5개 아이템의 <span>최소 크기를 유지</span>하고 남은 공간은 빈 트랙으로 예약 
+        </p>        
+
+        <!-- 실제 Grid -->
+        <div class="container container-fill">
+            <div class="item">1</div>       <!-- 첫번째 아이템 -->
+            <div class="item">2</div>       <!-- 두번째 아이템 -->
+            <div class="item">3</div>       <!-- 세번째 아이템 -->
+            <div class="item">4</div>       <!-- 네번째 아이템 -->
+            <div class="item">5</div>       <!-- 다섯번째 아이템 -->
+        </div>        
+
+    </section>
+</body>
+</html>
