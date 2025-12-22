@@ -1,0 +1,6 @@
+1. 기본 배치 (숫자로 라인 지정)
+    1) grid-row-start, grid-row-end : 행 시작/끝 라인 
+    2) grid-column-start, grid-column-end : 열 시작/끝 라인 
+    3) 예) Item1이 row 1~2, column 2~4에 배치 (오른쪽 2열 전체)
+
+    
