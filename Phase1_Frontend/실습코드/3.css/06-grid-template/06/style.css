@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #1a1a2e;
+    min-height: 100vh;
+}
+
+/*
+    rows: header + 콘텐츠 + footer
+    columns: 사이드바 + 메인 
+
+    포인트
+        - 1fr = 남은 공간을 차지
+        - px = 고정 크기, 반응형에서 고정 영역에 사용 
+        - 고정 + 유동 조합이 실무 레이아웃의 핵심 
+*/
+.dashboard {
+    display: grid;
+    grid-template-rows: 60px 1fr 40px ;   /* 행정의 - 헤더 60px, 메인, 푸터 40px */
+    grid-template-columns: 200px 1fr;     /* 열정의 - 사이드바 200px, 메인 유동 */  
+    min-height: 100vh;
+    gap: 1px;                             /* 구분선 */
+    background: #333;
+}
+
+/* 헤더 : 전체 너비 차지 
+    grid-column: 그리드 아이템이 차지할 열의 시작 / 끝 라인을 지정하는 속성
+        - 형식: grid-column: 시작 라인 / 끝 라인
+            - 예) 1번 ~ 3번 라인 (2칸 차지) => grid-column: 1 / 3
+                  1번 ~ 끝 라인 (전체 너비) => grid-column: 1 / -1
+                  현재 위치에서 2칸 차지 => grid-column: span 2
+        - 음수(-1)는 끝에서부터 카운트 (-1은 마지막 라인)
+*/
+.header {
+    grid-column: 1 / -1 ;  /* 1번 라인 ~ 마지막 라인(-1) = 전체 너비 */
+    background: #16213e;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* 사이드 바:  고정 너비 */
+.sidebar {
+    background: #1a1a2e;
+    padding: 20px 0;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    padding: 12px 20px;
+    color: #888;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.sidebar li:hover {
+    background: #16213e;
+    color: white;
+}
+
+/*
+    메인 컨텐츠 : 내부에도 그리드 사용 (중첩 그리드, Nested Grid)
+        - 실무 필수 
+
+*/
+.main-content {
+    background: #1a1a2e;
+    padding: 20px;
+    display: grid;                  /* 중첩 그리드 */
+    grid-template-columns: repeat(3, 1fr);   /* 3열 균등 분배 */ 
+    grid-template-rows: auto 1fr;  /* 첫번째 행:  컨텐츠 크기(auto), 두번째 행: 남은 공간 채움(1fr) */  
+    gap: 20px;
+} 
+
+/* 통계 카드 */
+.stat-card {
+    background: #16213e;
+    border-radius: 8px;
+    padding: 20px;
+    color: white;
+}
+
+.stat-card h3 {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.stat-number {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.stat-change {
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.stat-change.positive {
+    background: #00ff8820;
+    color: #00ff88;
+}
+
+.stat-change.negative {
+    background: #ff000020;
+    color: #ff0000;
+}
+
+/* 차트 영역 - 3열 전체 차지 */
+.chart-area {
+    grid-column: 1 / -1;    /* 첫번째 열 라인(1)부터 마지막 열 라인(-1)까지 */
+    background: #16213e;
+    border-radius: 8px;
+    padding: 20px;
+    color: white;
+}
+
+.chart-area h3 {
+    margin-bottom: 15px;
+}
+
+.chart-placeholder {
+    height: 200px;
+    background: #1a1a2e;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+}
+
+
+.footer {
+    grid-column: 1 / -1;    /* 첫번째 열 라인(1)부터 마지막 열 라인(-1)까지 */
+    background: #16213e;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
