@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실무 예: 히어로 섹션 (겹치는 요소)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--
+        Grid 겹치기
+            - 비유: 종이를 같은 자리에 순서대로 쌓는 것
+            - CSS는 어디에 배치할지만 정하고, 쌓이는 순서는 HTML 작성 순서가 결정함
+    
+    -->
+    <section class="hero">
+        <div class="hero-bg">🌄</div>     <!-- 1번째: 맨 아래 레이어 (배경) -->   
+        <div class="hero-overlay"></div>  <!-- 2번째: 그 위에 레이어 (반투명 오버레이) -->   
+        <div class="hero-content">         <!-- 3번째: 맨 위에 레이어 (실제 콘텐츠) -->  
+            <h1>Create Amazing Experiences</h1>
+            <p>그리드를 활용한 현대적인 웹 레이아웃을 만들어보세요</p>
+            <button class="cta-button">시작하기 → </button>
+        </div>
+        <div class="hero-badge">NEW</div>  <!-- position : absolute로 별도 배치 --> 
+    </section>
+</body>
+</html>

@@ -1,0 +1,18 @@
+.container {
+    display: grid;
+    grid-template-areas: 
+        "header header header"                  /* 1행: header가 3열 전체 */
+        "main . aside"                          /* 2행: main 1열, 빈 셀, aside*/
+        "footer footer footer"                  /* 3행: footer가 3열 전체 */
+    ;
+}
+
+.container > * {
+    border: 10px solid red;
+}
+/* grid-area: 아이템에 영역 이름 할당 */
+header { grid-area: header; }
+main { grid-area: main; }
+aside { grid-area: aside; }
+footer { grid-area: footer; }
+

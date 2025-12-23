@@ -1,0 +1,17 @@
+.container {
+    width: 600px;           /* 켄테이너 너비 고정 */
+    display: grid;
+    grid-template-rows: 100px 100px;        /* 2개의 행, 각각 100px 높이 */
+    /* [center-start],[center-end]는 2번째 열의 시작과 끝 라인에 붙인 이름 */
+    grid-template-columns: 1fr [center-start] 1fr [center-end] 1fr;     /* 3개의 열, 동일한 비율(1:1:1)로 분배 */
+}
+
+.item {
+    border: 10px solid red;
+}
+
+/* 첫번째 아이템을  center-start부터 center-end까지 배치 
+   즉, 2번째 열 전체를 차지하게 됨 (가운데 열에 배치)*/
+.item:nth-child(1) {
+    grid-column: center-start / center-end;
+}

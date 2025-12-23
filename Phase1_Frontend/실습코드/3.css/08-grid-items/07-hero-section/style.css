@@ -1,0 +1,137 @@
+/*
+    겹치는 요소 레이아웃 
+        - 핵심 : 모든 요소를 "같은 셀"에 배치하면 자연스럽게 겹침.
+            - grid-row : 1 / 2
+            - grid-column : 1 / 2
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*
+    히어로 컨테이너 (Grid 설정)
+        - 1행 1열 그리드를 만들고
+        - 모든 자식을 같은 셀 (1행 1열)에 배치하면 겹침.
+ */
+
+ .hero {
+    display: grid;
+    grid-template-rows: 1fr;        /* 단일 행 - 컨테이너 높이만큼 */
+    grid-template-columns: 1fr;     /* 단일 열 - 컨테이너 너비만큼 */
+    min-height: 500px;              /* 최소 높이 보장 */
+    position: relative;             /* 배치(absolute)의 기준점 */
+ }
+
+ /* 1층: 배경 이미지 영역
+    - 가장 먼저 배치되므로 맨 아래 레이어가 됨 
+    - grid-row : 1 / 2       (1행)
+    - grid-column : 1 / 2    (1열) 
+ */
+ .hero-bg {
+    grid-row: 1 / 2;        /* 1행 전체 차지 */
+    grid-column:  1 / 2;    /* 1열 전체 차지 */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 200px;
+    opacity: 0.3;
+ }
+
+ /*
+    2층 : 오버레이 (반투명 레이어)
+        - 배경 위에 어두운 그라데이션을 덮어서 텍스트 가독성을 높임.
+        - 같은 셀(1/2, 1/2)에 배치 => 자동으로 겹침
+ */
+
+ .hero-overlay {
+    grid-row: 1 / 2;        /* 1행 전체 차지 */
+    grid-column:  1 / 2;    /* 1열 전체 차지 */
+                            /* 위쪽: 30% 어둡게, 아래쪽: 70% 어둡게 */
+    background: linear-gradient(
+        to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7) 
+    );
+ }
+
+ /*
+    3층 : 콘텐츠 영역 (텍스트 + 버튼)
+
+    z-index: 쌓임 순서(z축)를 지정함
+        - 화면을 3D로 생각
+            - x축 : 가로 (left/right)
+            - y축 : 세로 (top/bottom)
+            - z축 : 깊이 (앞/뒤, 사용자 눈 방향)
+        - z-index
+            - 숫자가 클수록 위로 (사용자에게 가깝게)
+                - 1 (기본보다 위)
+                - 10 (더 위)
+                - 100 (훨씬 위)
+                - 9999 (최상 위)
+            - 숫자가 작을수록 아래로 (사용자에게 멀게)
+            - 기본값: auto (HTML 순서대로)            
+            - 음수도 가능 : -1 (맨 뒤로)
+ */
+ .hero-content {
+    grid-row: 1 / 2;        /* 1행 전체 차지 */
+    grid-column:  1 / 2;    /* 1열 전체 차지 */   
+    display: flex;
+    flex-direction: column;  /* 세로 방향 정렬 */   
+    align-items: center;     /* 가로 중앙 정렬 */
+    justify-content: center;  /* 세로 중앙 정렬 */
+    text-align: center;
+    color: white;
+    padding: 20px;
+    z-index: 1;
+ }
+
+ .hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 16px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);   /* 텍스트 그림자 */
+ } 
+
+ .hero-content p {
+    font-size: 18px;
+    margin-bottom: 24px;
+    opacity: 0.9;
+ } 
+
+ /*CTA (Call To Action) : 사용자 행동 유도 */
+ .cta-button {
+    background: #fff;
+    color: #764ba2;
+    border: none;
+    padding: 16px 32px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: tranform 0.2s box-shadow 0.2s;
+ }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  }
+
+/* 4층 : 배지 
+  Grid가 아닌 position: absolute를 사용함
+    - 특정 위치 (우측 하단)에 고정해야 하기 때문 
+*/  
+  .hero-badge {
+    position: absolute;     /* Grid 흐름에서 벗어남 */
+    bottom: 20px;
+    right: 20px;
+    background: #ff6b6b;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 14px;
+  }

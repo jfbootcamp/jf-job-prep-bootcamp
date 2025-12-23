@@ -1,0 +1,29 @@
+/*
+    grid-auto-flow: dense
+        - dense는 "빈틈 없이 채워라"라는 의미임.
+        - row는 기본값. 행 방향으로 배치.
+        - column은 열 방향으로 배치.
+
+    이슈: 아이템1이 가운데 열(2번째)에 배치되면, 1번째 열이 비어버림
+    해결: dense를 사용하면 뒤따라오는 아이템들이 빈 공간을 자동으로 채움.
+              
+*/
+
+.container {
+    width: 600px;           /* 켄테이너 너비 고정 */
+    display: grid;
+    grid-template-rows: 100px 100px;        /* 2개의 행, 각각 100px 높이 */
+    /* [center-start],[center-end]는 2번째 열의 시작과 끝 라인에 붙인 이름 */
+    grid-template-columns: 1fr [center-start] 1fr [center-end] 1fr;     /* 3개의 열, 동일한 비율(1:1:1)로 분배 */
+    grid-auto-flow: dense;  /* 빈 공간이 생기면 뒤의 아이템으로 자동 채움 */
+}
+
+.item {
+    border: 10px solid red;
+}
+
+/* 첫번째 아이템을  center-start부터 center-end까지 배치 
+   즉, 2번째 열 전체를 차지하게 됨 (가운데 열에 배치)*/
+.item:nth-child(1) {
+    grid-column: center-start / center-end;
+}
