@@ -1,0 +1,10 @@
+1. grid-template-areas
+    1) 지정된 그리드 영역 이름(grid-area)을 참조해 그리드 템플릿을 생성함.
+        - 영역 이름으로 레이아웃 정의 
+        - 각 문자열 = 한 행 (row)
+        - 같은 이름 반복 = 영역 확장 (span)
+    2) grid-area는 Grid Item에 적용하는 속성임.
+
+2. 빈 영역 표기법 
+    1) .(마침표) = 빈 셀 (empty cell)
+    2) none = 빈 셀 (마침표와 동일)     

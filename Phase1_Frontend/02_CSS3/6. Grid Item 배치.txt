@@ -1,6 +1,27 @@
+0. 그리드 아이템 (Item)을 배치하기 위해 
+   그리드 선(Line)의 '시작 위치'와 '끝 위치'를 지정함.
+   - 숫자 지정
+   - 라인 이름 지정 
+   - span 키워드 
+
 1. 기본 배치 (숫자로 라인 지정)
     1) grid-row-start, grid-row-end : 행 시작/끝 라인 
     2) grid-column-start, grid-column-end : 열 시작/끝 라인 
     3) 예) Item1이 row 1~2, column 2~4에 배치 (오른쪽 2열 전체)
+    4) 주의
+        - 라인 번호는 1부터 시작함.
+        - 셀 번호가 아닌 라인 번호임 
 
+2. span 키워드 
+    1) 라인 확장을 더 쉽게 지정하는 방법 
+        - 몇 칸을 차지할지를 지정함 
+        - ex) span 2 <---- 2칸 차지함 
+    2) 명시하지 않으면 span 1이 기본값임 
+    3) 계산 공식
+        - 끝 위치에 span:  start + span = end 
+        - 시작 위치에 span:  end - span = start            
+
+3. grid-row / grid-column 단축 속성 
+    1) start와 end를 한 줄로 작성
+    2) 각 속성을 / 로 구분함 
     

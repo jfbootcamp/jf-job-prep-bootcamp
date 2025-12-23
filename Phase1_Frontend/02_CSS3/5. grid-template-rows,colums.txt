@@ -13,4 +13,13 @@
         - 컨테이너가 가변해도 열 크기가 자동 조절됨 
     3) repeat() 함수 
     4) 라인 이름 정의 가능함    
-     
+
+3. Named Grid Lines (이름 있는 그리드 라인)    
+    1) 숫자 대신 의미 있는 이름으로 아이템을 배치함 
+        - 가독성 향상, 유지보수 용이, 실무 필수 
+    2) 기본 문법
+        - 라인 이름 정의 방법
+            - [이름]  <---- 대괄호 안에 이름 작성 
+        - .container {
+            grid-template-columns: 1fr [center-start] 1fr [center-end] 1fr     
+          }             

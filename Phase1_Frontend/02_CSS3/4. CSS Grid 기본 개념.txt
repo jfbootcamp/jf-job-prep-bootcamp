@@ -17,6 +17,8 @@
             - display : 그리드 컨테이너를 정의
             - grid-template-columns : 명시적 열(Track)의 크기를 정의 
             - grid-template-rows : 명시적 행(Track)의 크기를 정의
+            - grid-auto-flow : 자동 배치 알고리즘 방식을 정의 (빈 공간을 자동으로 채우는 알고리즘)
+            - grid-template-areas : 영역(Area) 이름을 참조해 템플릿 생성 
     2) Grid Item Properties    
         - 자식 요소(Item)에 적용되는 속성 
         - 개별 아이템의 위치, 크기(span), 정렬 
@@ -24,6 +26,7 @@
         - grid-column : 열 시작/끝 위치 
         - grid-column-start : 그리드 아이템의 열 시작 위치 지정 
         - grid-column-end : 그리드 아이템의 열 끝 위치 지정 
+        - grid-area : 영역 이름 설정 또는 grid-row/column 단축 속성
 
 4. display
     1) 그리드를 사용하기 위해 컨테이너에 필수로 정의함 
