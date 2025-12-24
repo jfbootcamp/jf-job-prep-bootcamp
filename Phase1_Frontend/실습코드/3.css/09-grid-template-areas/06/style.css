@@ -1,0 +1,38 @@
+/*
+    컨테이너 너비 600px 고정 
+    
+    gap: 30px 15px
+        - 첫번째 값: row-gap (행간격) 
+        - 두번째 값: column-gap (열간격)
+    */
+.container {
+    width: 600px;
+    display: grid;
+    grid-template-rows: repeat(3, 100px);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+        "header header header"         /* 1행: header가 3열 전체 */
+        "main . aside"              
+        " . footer footer";        
+    /* row-gap: 30px;                      행 사이 간격 */   
+    /* column-gap: 15px;                   열 사이 간격 */ 
+    gap: 30px 15px;                   
+}
+
+.item {
+    border: 10px solid red;
+}
+
+/* nth-child로 각 아이템에 grid-area 할당 */
+.item:nth-child(1) {                    /* 1번째 아이템 */
+    grid-area: header;                  /* header 영역에 배치 */    
+}
+.item:nth-child(2) {                    /* 2번째 아이템 */
+    grid-area: main;                  /* main 영역에 배치 */    
+}
+.item:nth-child(3) {                    /* 3번째 아이템 */
+    grid-area: aside;                  /* aside 영역에 배치 */    
+}
+.item:nth-child(4) {                    /* 4번째 아이템 */
+    grid-area: footer;                  /* footer 영역에 배치 */    
+}

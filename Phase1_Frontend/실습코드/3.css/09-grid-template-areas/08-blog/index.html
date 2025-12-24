@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실무 예: 블로그 레이아웃</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="blog-layout">
+        <header class="header">
+            <h1>🗞️Tech Blog</h1>
+            <nav>홈 | 카테고리 | 소개</nav>
+        </header>
+
+        <main class="main-article">
+            <article>
+                <h2>CSS Grid로 현대적인 레이아웃 만들기</h2>
+                <p class="meta">2025.12.24 · 23분 읽기</p>
+                <p>CSS Grid는 웹 레이아웃의 혁명입니다. grid-template-areas를 사용하면
+                   복잡한 레이아웃도 직관적으로 구현할 수 있습니다.</p>
+                <p>이 글에서는 실무에서 자주 사용되는 블로그 레이아웃을 
+                   grid-template-areas로 구현하는 방법을 알아봅니다. 
+                </p>   
+                <div class="code-block">
+                    grid-template-areas:<br>
+                     "header header header"<br>
+                     "main main sidebar"<br>
+                     "footer footer footer";                        
+                </div>
+            </article>
+        </main>
+
+        <aside class="sidebar">
+            <div class="widget">
+                <h3>📌 인기 글</h3>
+                <ul>
+                    <li>Flexbox vs Grid</li>
+                    <li>반응형 디자인 팁</li>
+                    <li>CSS 변수 활용법</li>
+                </ul>
+            </div>
+            <div class="widget">
+                <h3>🏷️ 태그</h3>
+                <div class="tags">
+                    <span>CSS</span>
+                    <span>Grid</span>
+                    <span>Layout</span>
+                </div>
+            </div>            
+        </aside>
+
+        <footer class="footer">
+            <p>© 2026 Tech Blog. Built with CSS Grid 💜</p>
+        </footer>
+    </div>
+</body>
+</html>

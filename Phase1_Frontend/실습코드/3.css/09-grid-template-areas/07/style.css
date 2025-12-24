@@ -1,0 +1,20 @@
+/*
+    2행, 150px
+    3열, 균등분할
+    gap 20px 10px 
+*/
+
+.container {
+    display: grid;
+    grid-template-rows: repeat(2, 150px);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px 10px;
+}
+
+.item {
+    border: 10px solid red;
+    font-size: 30px;
+    display: flex;
+    align-items: center;            /* 수직 중앙 정렬 */
+    justify-content: center;        /* 수평 중앙 정렬 */
+}
