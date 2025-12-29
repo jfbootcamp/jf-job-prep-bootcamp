@@ -1,0 +1,37 @@
+1. Web의 생성 배경 (feat. Browser)
+    1) HTML, HTTP, URL, 1989 -- 팀 버너스리
+    2) Mosaic Browser (모자이크), 1993
+    3) Netscape Navigator, 1995 브라우저 점유율 75% 
+        - 브라우저는 준비되었는데... 사이트가 별로 없음
+        - Java Applet
+
+2. JS의 생성과 발전 
+    1) 웹사이트를 쉽게 구동시키위한 환경을 Netscape에 Embed하자 
+    2) Brendan Eich(브렌던 아이크)이 Netscape에 영입
+        - LiveScript 완성 (1995.9)
+        - JavaScript 이름 변경.
+    3) TC39 위원회    
+        - ECMA에 찾아가 표준으로 제안함 
+    4) 버전
+        - 1995 LiveScript -> JavaScript
+        - 1997 ECMAScript 1
+        - 2015 ECMAScript 6 (ES6 = ES2015)  
+        - 2016 ECMAScript 7
+        - ECMAScript 2017....      
+
+3. JavaScript 런타임 (식당)
+    1) JavaScript 코드가 실행되는 환경 
+        - JS 엔진 (요리사)
+            - 메모리 관리 
+                - 변수, 객체 저장소...
+            - 콜스택
+                - 함수 실행
+                - 순서 관리        
+        - APIs (주방 도구)
+            - 환경이 제공하는 기능 
+                - DOM : 화면 조작 
+                - fetch() : 서버 통신 
+                - console.log() 등    
+        - 대기열 (주문번호표 대기줄)
+            - Callback Queue  
+        - 이벤트 루프 (번호 부르는 직원)                                                
