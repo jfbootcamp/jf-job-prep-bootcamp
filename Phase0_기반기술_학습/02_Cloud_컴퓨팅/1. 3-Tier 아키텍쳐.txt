@@ -1,0 +1,42 @@
+1. 3-Tier 아키텍처
+    1) 애플리케이션을 세 개의 논리적 계층으로 분리하는 소프트웨어 아키텍처 패턴임.
+
+2. 왜 3-Tier를 사용하는가?
+    1) 보안 (Security)    
+        인터넷 --> [Public Subnet] --> [Private Subnet] --> [Private Subnet]
+                  (Web Server)         (App Server)          (Database) 
+        - DB는 인터넷에서 직접 접근 불가
+        - 각 계층별 보안 그룹으로 접근 제어  
+            - 보안 그룹 (Security Group)
+                : 연결된 리소스에 도달하고 나갈수 있는 트래픽을 제어하는 가상 방화벽 
+        - 중요 데이터 보호   
+    2) 확장성 (Scalabilty)                                        
+        - 트래픽 증가 시 :
+            - Web Tier만 확장 : Nginx 2대 -> 4대
+            - App Tier만 확장 : Tomcat 2대 -> 4대 
+            - DB Tier만 확장 : 추가 
+        - 필요한 계층만 독립적으로 확장 가능 
+        - 비용 효율적인 리소스 관리 
+    3) 유지보수성 (Maintainability)  
+            Web Team            App Team            DB Team
+            (프런트)              (백엔드)              (DBA)
+                |                   |                   |
+               \|/                 \|/                 \|/
+              Nginx               Tomcat               MySQL 
+        - 각 팀이 독립적으로 개발/배포 가능
+        - 한 계층의 변경이 다른 계층에 영향을 최소화   
+    4) 고가용성 (High Availabilty)  
+
+            가용 영역 A             가용 영역 C  
+            Nginx | Tomcat         Nginx | Tomcat
+            ------  ------         ------  ------ 
+            MySQL   MySQL          MySQL   MySQL
+            (Active)               (Active)                  
+
+        - 하나의 가용 영역 (Availabilty Zone, AZ)이 장애가 발생해도 서비스 지속 가능 
+        - 데이터 손실 방지 
+
+
+
+
+

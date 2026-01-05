@@ -1,0 +1,52 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.2.9 Chrome/140.0.7339.249 Electron/38.7.2 Safari/537.36" version="29.2.9">
+  <diagram name="페이지-1" id="O1d4-Uismd0ohrYF5Vc7">
+    <mxGraphModel dx="815" dy="481" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="XN-4sVmZgeuzFfCTqKZb-3" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="391" y="90" as="sourcePoint" />
+            <mxPoint x="436" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XN-4sVmZgeuzFfCTqKZb-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="사용자 (Users)" vertex="1">
+          <mxGeometry height="50" width="410" x="235" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="XN-4sVmZgeuzFfCTqKZb-9" edge="1" parent="1" source="XN-4sVmZgeuzFfCTqKZb-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="XN-4sVmZgeuzFfCTqKZb-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XN-4sVmZgeuzFfCTqKZb-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;" value="1.&amp;nbsp; Web Tier (프레젠테이션 계층)&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;사용자 요청을 받고 정적 콘텐츠 제공&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="500" x="190" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="XN-4sVmZgeuzFfCTqKZb-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Nginx" vertex="1">
+          <mxGeometry height="40" width="70" x="270" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="XN-4sVmZgeuzFfCTqKZb-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Nginx" vertex="1">
+          <mxGeometry height="40" width="70" x="370" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="XN-4sVmZgeuzFfCTqKZb-13" edge="1" parent="1" source="XN-4sVmZgeuzFfCTqKZb-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="XN-4sVmZgeuzFfCTqKZb-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XN-4sVmZgeuzFfCTqKZb-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;" value="2.&amp;nbsp; App Tier (애플리케이션 계층)&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;비즈니스 로직 처리&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="500" x="190" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="XN-4sVmZgeuzFfCTqKZb-7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Tomcat" vertex="1">
+          <mxGeometry height="40" width="70" x="270" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="XN-4sVmZgeuzFfCTqKZb-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Tomcat" vertex="1">
+          <mxGeometry height="40" width="70" x="370" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="XN-4sVmZgeuzFfCTqKZb-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;" value="3.&amp;nbsp; DB Tier (데이터 계층)&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;데이터 저장 및 관리&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="500" x="190" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="XN-4sVmZgeuzFfCTqKZb-11" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="MySQL" vertex="1">
+          <mxGeometry height="40" width="70" x="270" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="XN-4sVmZgeuzFfCTqKZb-12" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="MySQL" vertex="1">
+          <mxGeometry height="40" width="70" x="370" y="540" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
