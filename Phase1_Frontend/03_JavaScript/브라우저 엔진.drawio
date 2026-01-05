@@ -1,0 +1,75 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.2.9 Chrome/140.0.7339.249 Electron/38.7.2 Safari/537.36" version="29.2.9">
+  <diagram name="페이지-1" id="HDWcYcgztf2k6b8gQtKP">
+    <mxGraphModel dx="815" dy="481" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="DK5Xeyk711oYBjx4obyN-7" edge="1" parent="1" source="DK5Xeyk711oYBjx4obyN-1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="380" y="80" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DK5Xeyk711oYBjx4obyN-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="120" width="240" x="40" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DK5Xeyk711oYBjx4obyN-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="HTML" vertex="1">
+          <mxGeometry height="40" width="240" x="40" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DK5Xeyk711oYBjx4obyN-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="120" width="240" x="40" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="DK5Xeyk711oYBjx4obyN-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="CSS" vertex="1">
+          <mxGeometry height="40" width="240" x="40" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="DK5Xeyk711oYBjx4obyN-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="120" width="240" x="40" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="DK5Xeyk711oYBjx4obyN-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="JavaScript" vertex="1">
+          <mxGeometry height="40" width="240" x="40" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="DK5Xeyk711oYBjx4obyN-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="HTML 분석기&lt;div&gt;(HTML Parser)&lt;/div&gt;&lt;div&gt;------------------&lt;/div&gt;&lt;div&gt;구조를 분석하여&lt;/div&gt;&lt;div&gt;DOM 트리 생성&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="170" x="390" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="DK5Xeyk711oYBjx4obyN-9" edge="1" parent="1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="280" y="268" as="sourcePoint" />
+            <mxPoint x="380" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DK5Xeyk711oYBjx4obyN-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="CSS 분석기&lt;div&gt;(CSS Parser)&lt;/div&gt;&lt;div&gt;------------------&lt;/div&gt;&lt;div&gt;스타일을 분석하여&lt;/div&gt;&lt;div&gt;CSSOM 생성&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="170" x="390" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="DK5Xeyk711oYBjx4obyN-11" edge="1" parent="1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="280" y="438" as="sourcePoint" />
+            <mxPoint x="380" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DK5Xeyk711oYBjx4obyN-12" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="JavaScript 해석기&lt;div&gt;(JS Engine-V8)&lt;/div&gt;&lt;div&gt;------------------&lt;/div&gt;&lt;div&gt;코드를 실행하여&lt;/div&gt;&lt;div&gt;DOM/CSSOM 조작&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="170" x="390" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="DK5Xeyk711oYBjx4obyN-13" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="랜더 트리&lt;div&gt;Render Tree&lt;/div&gt;&lt;div&gt;DOM + CSSOM 결합&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="170" x="620" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="DK5Xeyk711oYBjx4obyN-14" edge="1" parent="1" source="DK5Xeyk711oYBjx4obyN-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.001;entryY=0.069;entryDx=0;entryDy=0;entryPerimeter=0;" target="DK5Xeyk711oYBjx4obyN-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DK5Xeyk711oYBjx4obyN-15" edge="1" parent="1" source="DK5Xeyk711oYBjx4obyN-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.059;entryY=0.4;entryDx=0;entryDy=0;entryPerimeter=0;" target="DK5Xeyk711oYBjx4obyN-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DK5Xeyk711oYBjx4obyN-16" edge="1" parent="1" source="DK5Xeyk711oYBjx4obyN-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.352;entryY=1.021;entryDx=0;entryDy=0;entryPerimeter=0;" target="DK5Xeyk711oYBjx4obyN-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DK5Xeyk711oYBjx4obyN-17" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="소스 코드 (개발자가 작성)" vertex="1">
+          <mxGeometry height="30" width="150" x="85" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="DK5Xeyk711oYBjx4obyN-18" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="브라우저 엔진 (분석 &amp;amp; 해석)" vertex="1">
+          <mxGeometry height="30" width="150" x="410" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="DK5Xeyk711oYBjx4obyN-19" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="랜터링 결과-사용자가 보는 화면" vertex="1">
+          <mxGeometry height="30" width="170" x="630" y="180" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
