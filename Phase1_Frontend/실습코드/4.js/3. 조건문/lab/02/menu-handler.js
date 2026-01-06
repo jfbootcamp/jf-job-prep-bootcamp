@@ -138,3 +138,117 @@ selectElement.addEventListener("change", function() {
     console.log(`HTTP ${statusCode}: ${message}`);
 
 } )
+
+/*
+    문제 4
+        결제 대기중
+        결제를 완료해주세요
+
+        결제 완료
+        상품을 준비중입니다
+
+        상품 준비중
+        곧 발송될 예정입니다
+
+        배송중
+        배송 조회가 가능합니다
+
+        배송 완료
+        구매 확정을 눌러주세요 
+
+        주문 취소됨
+        환불이 진행합니다
+
+        알 수 없는 상태
+        고객센터에 문의하세요
+
+*/
+/*
+    객체 (Object)로 여러 값을 한 번에 반환하기 
+
+    함수에서는 return으로 값을 하나만 반환할 수 있음
+    하지만 여러 값을 "묶어서" 객체로 만들면 한 번에 전달 가능!
+
+    (ES6 문법)
+    {
+        icon: icon,
+        statusMessage: statusMessage,
+        nextAction: nextAction
+    }
+    
+    위와 같이 객체의 변수명과 속성명이 같으면 축약 가능함
+    { icon, statusMessage, nextAction }
+
+*/
+
+/*
+    innerHTML 개념
+*/
+
+console.log("\n===문제 4 : 주문 상태 ===");
+
+// DOM에서 select와 결과 표시 영역 가져오기
+    // HTML : <select id="orderStatusSelect"> ==> js 변수로 가져옴
+    const orderSelectElement = document.getElementById("orderStatusSelect"); 
+    const orderResultElement = document.getElementById("orderResult");
+
+// 주문 상태 코드 처리 함수 
+function handleOrderStatus(status) {
+    let statusMessage;
+    let nextAction;
+    let icon;
+
+    switch(status) {
+        case "pending":
+            icon = "⌛";
+            statusMessage = "결제 대기중";
+            nextAction = "결제를 완료해주세요";
+            break;
+        case "paid":
+            icon = "⌛";
+            statusMessage = "결제 완료";
+            nextAction = "상품을 준비중입니다";
+            break;
+        case "preparing":
+            icon = "⌛";
+            statusMessage = "상품 준비중";
+            nextAction = "곧 발송될 예정입니다";
+            break;
+        case "shipping":
+            icon = "⌛";
+            statusMessage = "배송중";
+            nextAction = "배송 조회가 가능합니다";
+            break;
+        case "delivered":
+            icon = "⌛";
+            statusMessage = "배송 완료";
+            nextAction = "구매 확정을 눌러주세요";
+            break;
+        case "cancelled":
+            icon = "⌛";
+            statusMessage = "주문 취소됨";
+            nextAction = "환불이 진행합니다";
+            break;
+        default:
+            icon = "⌛";
+            statusMessage = "알 수 없는 상태";
+            nextAction = "고객센터에 문의하세요";                                                                     
+    }
+
+    return { icon, statusMessage, nextAction };
+}
+
+// 주문 상태 select 변경 이벤트 리스너
+orderSelectElement.addEventListener("change", function() {
+    const status = orderSelectElement.value;
+
+    const result = handleOrderStatus(status);
+    console.log(`주문 상태: ${status} => ${result.statusMessage} `);
+
+    orderResultElement.innerHTML = `
+        <p><strong>${result.icon} 상태 : </strong>${result.statusMessage}</p>
+        <p><strong>📢 안내: </strong>${result.nextAction}</p>
+    `;
+
+
+});
