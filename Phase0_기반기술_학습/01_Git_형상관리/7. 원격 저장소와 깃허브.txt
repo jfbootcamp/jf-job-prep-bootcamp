@@ -21,4 +21,22 @@
     2) 원격 저장소 연결하기 
         - git remote add origin 주소 
                      remove          
-        - git remote -v                                 
+        - git remote -v 
+
+5. 지역 저장소와 원격 저장소 동기화하기 
+    1) 원격 저장소에 커밋 처음으로 올리기 
+        - git push -u origin main        
+            - origin(원격 저장소의 별칭)의 main 브랜치로 푸시하라는 명령 
+            - -u 옵션
+                - 지역 저장소의 브랜치를 원격 저장소의 브랜치에 연결하는 것
+                - 처음에 한 번만 사용하면 됨 
+
+    2) 원격 저장소에 파일 옭리기 
+        - git push                         
+
+    3) 원격 저장소에서 직접 커밋하기 
+
+    4) 원격 저장소에서 커밋 내려받기 - git pull 
+        - 원격 저장소와 지역 저장소의 상태가 같아지도록 원격 저장소의 커밋을 
+          지역 저장소로 가져옴 
+        - git pull origin main   
