@@ -1,0 +1,14 @@
+1. 깃허브 접속 방식 
+    1) HTTPS 방식 
+    2) SSH 방식
+
+2. SSH 원격 접속 
+    1) secure shell의 줄임말 
+    2) 보안이 강화된 안전한 방법으로 정보를 교환하는 방식임 
+    3) 기본적으로 프라이빗 키(private key)와 퍼블릭 키(public key)를 
+       한 쌍으로 묶어서 컴퓨터를 인증함 
+        - 퍼블릭 키 : 외부로 공개됨 
+        - 프라이빗 키 : 아무도 알수 없게 사용자 컴퓨터에만 저장됨 
+
+3. SSH 키 생성하기 
+    1) ssh-keygen -t ed25519 -C jfbootcamp@gmail.com
