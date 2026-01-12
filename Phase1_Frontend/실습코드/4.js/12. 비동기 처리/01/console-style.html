@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Console Style Lab</title>
+    <style></style>
+</head>
+<body>
+    <h1>Console Style Lab</h1>
+    <p>개발자 도구(F12)의 콘솔을 확인하세요.</p> 
+    
+    <script>
+        // 1. 기본 스타일 적용
+        console.log('%c 1. 기본 스타일 ',   // %c 뒤의 텍스트에 스타일이 적용됨 
+           'background: #00d9ff; color: #000; font-size: 16px; font-weight: bold; padding: 5px;'  // 두번째 인자가 CSS 스타일
+         )
+
+        console.log('%c안녕하세요, 호진님!',
+            'color: #00d9ff; font-size: 20px;'
+        ) 
+
+        //2. 다양한 배경색 적용
+        console.log('%c 2. 다양한 배경색',
+            'background: #ff6b6b; color: #fff; font-size: 16px; font-weight: bold;padding: 5px;'
+
+        )
+
+    </script>
+</body>
+</html>
