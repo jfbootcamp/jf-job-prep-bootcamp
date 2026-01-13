@@ -1,0 +1,35 @@
+1. Promise의 resolve/reject와 .then()/.catch() 관계
+
+    1) 핵심 개념 
+        - Promise는 "약속"임.
+        - Promise를 만듦 = "나중에 결과를 알려주겠다"는 약속을 하는 것
+            - resolve(값) = 약속을 지킴! "성공했어, 여기 결과야" --> .then()이 이 값을 받음
+            - reject(에러) = 약속을 못 지킴! "실패했어, 이유는 이거야" --> .catch()가 이 에러를 받음
+
+    2) 비유: 피자 주문 
+        const 피자주문 = new Promise((성공시연락, 실패시연락) => {
+            // 피자 만드는 중...(비동기 작업)
+            성공시연락(피자);       // resolve() = 피자 완성!
+            실패시연락(재료부족);   // reject() = 피자 못 만듦 
+        });  
+
+        피자주문.then(피자받음).catch(환불요청);           
+
+2. 연결 흐름도
+
+                            |-----> resolve(값) 호출됨                    값 전달  
+    new Promise 생성    -----|      : Promise 상태: fullfilled(이행됨)  ---------> .then((값)=> {...}); 
+                            |            "약속 지켰어"                                resolve()가 전달한 값을 받음!  token, user, posts 등       
+                            |
+                            |-----> reject(에러) 호출됨
+                                   : Promise 상태: rejected(거부됨)    ---------> .catch((에러) => {...});                                                            
+                                         "역소 못 지켰어..."                          reject()가 전달한 에러를 받음!  Error 객체, 에러 메시지 등
+
+3. Promise.all() 병렬 처리 
+    1) 여러 Promise를 배열로 전달 
+    2) 모든 Promise가 "동시에" 실행됨 (병렬처리!)
+    3) 모든 Promise가 resolve 되면 --> .then()에 결과 배열로 전달 
+    4) 하나라도 reject되면 --> 즉시 .catch()로 이동 
+    5) 결과 배열은 입력 순서가 보장됨 (완료 순서 X)
+
+

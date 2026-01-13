@@ -20,7 +20,17 @@
     4) 작업 성공: Fulfilled 
     5) 작업 실패: Rejected
 
-5. Promise의 then, catch, finally
+5. Promise 동작 원리 
+    1) Promise 객체 생성 시 콜백 함수를 인자로 전달 
+    2) 콜백 함수는 2개의 인자를 가짐 
+        - 성공 시 호출 될 함수(resolve)와 실패 시  호출할 함수(rejected)
+    3) 비동기 작업을 수행하는 코드는 이 콜백 함수 내부에 작성됨       
+    4) 비동기 작업이 성공적으로 끝나면 콜백 함수의 첫번째 인자인 resolve를 호출하여 
+       Promise 상태를 fullfilled로 변경하고 결과 값을 전달함 
+    5) 비동기 작업 중 에러가 발생하면 두번째 인자인 reject를 호출하여 
+       Promise 상태를 rejected로 변경하고 에러 객체를 전달함       
+
+6. Promise의 then, catch, finally
     1) then
         - Promise의 상태가 Fulfilled(성공)가 되었을 때 호출됨 
         - then 메서드는 연쇄적으로 (chaining) 사용할 수 있으며,
