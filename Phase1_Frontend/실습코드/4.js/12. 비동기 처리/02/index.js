@@ -19,7 +19,7 @@ console.groupEnd();
 
 const myPromise = new Promise((resolve, reject) => {
     setTimeout(() => {
-        const success = false; 
+        const success = true; 
         if(success) {
             resolve('작업 성공!');  
         } else {
