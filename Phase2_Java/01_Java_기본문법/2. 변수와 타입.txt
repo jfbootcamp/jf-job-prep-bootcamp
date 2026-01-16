@@ -16,14 +16,77 @@
             - 환율 계산
             - 소수점 정확도가 중요한 모든 경우    
 
-    2) 숫자 타입의 범위
+    2) 기본 타입(Primitive Types)의 범위
 
-            타입        크기        범위                실무 사용 예
-          --------------------------------------------------------
-            byte        1B       -128~127             거의 안 씀   
-            short       2B       -32,768~32,767       거의 안 씀  
-            int         4B        +- 21억             기본 선택 
-            long        8B        +- 922경             큰 ID 
+       분류     타입        크기        범위                실무 사용 예       기본값
+       ----------------------------------------------------------------------------
+       정    byte        1 byte       -128~127             거의 안 씀         0
+       수    short       2 bytes       -32,768~32,767       거의 안 씀         0 
+       형    int         4 bytes        +- 21억             기본 선택          0
+            long         8 bytes        +- 922경             큰 ID            0L
 
-            float       4B         7자리 정밀도         거의 안씀       
-            double      8B        15자리 정밀도         실수 기본 선택    
+       실     float       4 bytes         7자리 정밀도         거의 안씀         0.0f         
+       수     double      8 bytes        15자리 정밀도         실수 기본 선택     0.0
+       형
+
+       문자형   char       2 bytes        유니코드 1문자 ('A')                   '\u0000'
+
+       논리형   boolean      1bit           true / false                       false   
+
+2. 참조 타입 (Reference Types)
+    1) String (문자열)
+    2) 기본 타입 vs 참조 타입
+        -  구분         기본 타입       참조 타입
+          -----------------------------------------------
+          저장값         실제 값         메모리 주소
+          메모리         Stack          Heap
+          예시           int, double    String, 배열, 객체                 
+
+3. 타입 변환 (Type Casting)
+    1) 자동 타입 변환 (Promotion)
+        - 작은 타입 --> 큰 타입 자동 변환 
+            - byte -> short -> int -> long -> float -> double
+                      char 
+
+    2) 강제 타입 변환 (Casting)
+        - 큰 타입 --> 작은 타입으로 명시적 변환     
+
+    3) 연산에서의 타입 변환 
+        - 정수 연산 
+            - 예) byte a = 10;  
+                  byte b = 20;
+                  byte c = a + b;  // 에러: 연산 결과는 int  
+                  int c = a + b;
+        - 실수 연산 
+            - 예) int x = 5;   
+                  int y = 2;
+                  double result1 = x / y;  // 2.0 (정수/정수 => 정수)   
+                  double result1 = (double)x / y;  // 2.0 (실수/정수 => 실수)   
+
+4. 상수 (Constants)
+    1) final 키워드 "변경 불가"를 의미함 
+        - final 변수: 한 번 할당하면 변경 불가 (상수)
+        - final 메서드: 오버라이딩 불가 
+        - final 클래스: 상속 불가 (예: String 클래스)
+
+    2) 상수 명명 규칙 
+        - 대문자 + 언더스코어로 작성
+        - 단어 사이는 _로 구분 
+
+    3) static final vs final
+        - final: 인스턴스마다 다른 값을 가질수 있음 
+        - static final : 클래스 레벨 상수, 모든 인스턴스가 공유  
+
+5. 기본 출력 방법들 
+    1) System.out 의 3가지 출력 메서드 
+        - println(String x)
+            - 시그니처: public void println(String x)
+            - 문자열 출력 후 자동으로 줄바꿈(\n) 추가                       
+            - 가장 많이 사용되는 출력 메서드 
+
+        - print(String x)
+            - 시그니처: public void print(String x)
+            - 문자열만 출력 (줄바꿈 없음)                     
+            - 같은 줄에 여러 값을 이어서 출력할 때              
+
+        - public PrintStream printf(String format, Object... args)            
