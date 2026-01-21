@@ -1,0 +1,75 @@
+1. Early Return 패턴
+    1) 좋은 코드 
+        - 코드 읽기 쉬움, 버그 찾기 쉬움, 유지보수 쉬움
+        public void processOrder(Order order) {
+            if (order == null) return;
+            if (order.getItems() == null) return;
+            if (order.getPayment() == null) return;
+
+            // 진짜 로직
+            processVaildOrder(order);
+
+        }
+
+2. null 체크 방법
+    1) NullPointerException 방지
+
+        String status = order.getStatus();
+
+        // 이렇게 하면 status가 null일때 NullPointerException 터짐
+        if(status.equals("COMPLETED")) { }
+
+        // 이렇게 하면 안전
+        if("COMPLETED".equals(status)) { }
+
+3. Java 14+ switch 표현식
+    1) 화살표 문법 - break 필요 없음!
+
+    String grade = "B";
+
+    String result = switch(grade) {
+        case "A" -> "우수";         // 바로 값 반환
+        case "B" -> "양호";
+        case "C" -> "보통";
+        default -> "미흡";
+    }
+
+    // 여러 케이스 한번에 
+    int day = 6;
+
+    String dayType = switch(day) {
+        case 1, 2, 3, 4, 5 -> "평일";
+        case 6, 7 -> "주말;
+        default -> "잘못된 요일";
+    }
+
+    // 복잡한 로직이 필요하면 yield 사용
+    int score = 85;
+
+    String grade = switch(score/10) {
+        case 10, 9 -> "A";
+        case 8 -> "B";
+        case 7 -> "C";
+        default -> {
+            System.out.println("분발하세요");
+            yield "F";          // 블록 안에서는 yield로 반환    
+        }
+    }
+
+4. 향상된 for문 (for-each)
+    1) 배열 순회 
+
+    String[] names = {"이", "김", "박"};
+    for(String name : names) {
+        System.out.println(name);
+    }
+
+    //List 순회
+    List<String> fruits = Arrays.asList("사과", "바나나", "포도");
+    for(String fruit : fruits) {
+        System.out.println(fruit);
+    }
+
+    2) 언제 기본 for vs for-each 
+        - 인덱스 필요하면 --> 기본 for 
+        - 그냥 순회만 하면 --> for-each (더 깔끔)
