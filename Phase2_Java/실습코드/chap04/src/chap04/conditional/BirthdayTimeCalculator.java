@@ -164,11 +164,17 @@ public class BirthdayTimeCalculator {
 				if(leapYears.length()>0) {   // 첫번째 윤년이 아니면 (목록에 내용이 있으면)
 					leapYears.append(", ");
 				}
-				leapYears.append(year);
+				leapYears.append(year);		// 윤년 연도를 목록에 추가 
 			}
 		}
-				
 		
+		System.out.printf("살아온 기간 동안의 윤년 수: %d개%n", leapYearCount); 	// 총 윤년 개수 출력
+		if(leapYearCount > 0 && leapYearCount <= 10) {		// 윤년이 1-10개 사이면
+			System.out.println("윤년 목록 : " + leapYears);   // 윤년 목록 전체 출력
+		} else if(leapYearCount > 10) {						// 윤년이 10개 초과면
+			System.out.println("(윤년이 많아 목록 생략)");  		// 목록이 너무 길어서 생략 메시지 출력	
+		}
+				
 		scanner.close();
 	}
 
@@ -180,8 +186,12 @@ public class BirthdayTimeCalculator {
 	 *  - 단, 400으로 나누어 떨어지면 윤년
 	 */
 	private static boolean isLeapYear(int year) {
-		// TODO Auto-generated method stub
-		return false;
+		// 400으로 나누어 떨어지면 윤년
+		if(year % 400 == 0) return true;
+		// 100으로 나누어 떨어지면 평년
+		if(year % 100 == 0) return false;
+		// 4로 나누어 떨어지면 윤년
+		return year % 4 == 0;
 	}
 }
 
