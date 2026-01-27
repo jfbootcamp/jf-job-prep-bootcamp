@@ -1,0 +1,64 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.3.0 Chrome/140.0.7339.249 Electron/38.7.2 Safari/537.36" version="29.3.0">
+  <diagram name="페이지-1" id="YE7QJ1p_wEbZJXoCB6KU">
+    <mxGraphModel dx="679" dy="400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="MXQTGKy0WxTnaI289b_U-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=14;fontStyle=1" value="ObjectCreate -&amp;nbsp; 클래스 다이어그램&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="220" x="220" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="MXQTGKy0WxTnaI289b_U-11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#271FFF;" value="" vertex="1">
+          <mxGeometry height="250" width="250" x="70" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="MXQTGKy0WxTnaI289b_U-12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#001DBC;fillColor=#0050ef;fontColor=#ffffff;" value="Dog" vertex="1">
+          <mxGeometry height="30" width="250" x="70" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="MXQTGKy0WxTnaI289b_U-13" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" value="" vertex="1">
+          <mxGeometry height="90" width="250" x="70" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="MXQTGKy0WxTnaI289b_U-14" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="name : String&lt;div&gt;breed : String&lt;/div&gt;&lt;div&gt;age : int&lt;/div&gt;&lt;div&gt;energy : int&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="90" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="MXQTGKy0WxTnaI289b_U-15" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#82b366;fillColor=#d5e8d4;" value="" vertex="1">
+          <mxGeometry height="130" width="250" x="70" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="MXQTGKy0WxTnaI289b_U-16" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="bark() : void&lt;div&gt;eat() : void&lt;/div&gt;&lt;div&gt;play() : void&lt;/div&gt;&lt;div&gt;sleep() : void&lt;/div&gt;&lt;div&gt;displayInfo() : void&lt;/div&gt;&lt;div&gt;greet(Dog other) : void&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="130" x="90" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="MXQTGKy0WxTnaI289b_U-17" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#fff2cc;strokeColor=#d6b656;align=left;" value="에너지 시스템&lt;div&gt;- bark() : -5&lt;/div&gt;&lt;div&gt;- eat() : +20&lt;/div&gt;&lt;div&gt;- play() : -15&lt;/div&gt;&lt;div&gt;- sleep() : = 100&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="120" x="390" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="MXQTGKy0WxTnaI289b_U-18" edge="1" parent="1" source="MXQTGKy0WxTnaI289b_U-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.136;entryDx=0;entryDy=0;entryPerimeter=0;dashed=1;strokeColor=#95955A;" target="MXQTGKy0WxTnaI289b_U-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MXQTGKy0WxTnaI289b_U-19" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#271FFF;" value="" vertex="1">
+          <mxGeometry height="220" width="250" x="70" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="MXQTGKy0WxTnaI289b_U-20" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#b85450;fillColor=#f8cecc;" value="Product" vertex="1">
+          <mxGeometry height="30" width="250" x="70" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="MXQTGKy0WxTnaI289b_U-21" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" value="" vertex="1">
+          <mxGeometry height="90" width="250" x="70" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="MXQTGKy0WxTnaI289b_U-22" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="name : String&lt;div&gt;price : int&lt;/div&gt;&lt;div&gt;stock : int&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="90" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="MXQTGKy0WxTnaI289b_U-23" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#82b366;fillColor=#d5e8d4;" value="" vertex="1">
+          <mxGeometry height="100" width="250" x="70" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="MXQTGKy0WxTnaI289b_U-24" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;br&gt;&lt;div&gt;displayInfo() : void&lt;/div&gt;&lt;div&gt;sell(int quantity) : boolean&lt;/div&gt;&lt;div&gt;restock(int quantity) : void&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="190" x="90" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="MXQTGKy0WxTnaI289b_U-25" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#fff2cc;strokeColor=#d6b656;align=left;" value="sell() 반환값&lt;div&gt;&amp;nbsp;- true: 판매성공&lt;/div&gt;&lt;div&gt;&amp;nbsp;- false: 재고 부족&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="120" x="380" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="MXQTGKy0WxTnaI289b_U-26" edge="1" parent="1" source="MXQTGKy0WxTnaI289b_U-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;dashed=1;strokeColor=#95955A;exitX=0.016;exitY=0.471;exitDx=0;exitDy=0;exitPerimeter=0;" target="MXQTGKy0WxTnaI289b_U-21">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="400" y="440" as="sourcePoint" />
+            <mxPoint x="330" y="518" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
