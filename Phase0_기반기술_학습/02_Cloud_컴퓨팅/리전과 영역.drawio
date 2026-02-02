@@ -1,0 +1,166 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.3.6 Chrome/140.0.7339.249 Electron/38.8.0 Safari/537.36" version="29.3.6">
+  <diagram name="페이지-1" id="AIxPcJLAIvaS6HpKjTvF">
+    <mxGraphModel dx="2015" dy="701" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" value="&lt;font style=&quot;font-size: 17px;&quot;&gt;&lt;b&gt;GCP 리전(Region)과 영역(Zone) 이해하기&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="520" x="200" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="" vertex="1">
+          <mxGeometry height="350" width="420" x="-50" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" value="&lt;font style=&quot;font-size: 17px;&quot;&gt;&lt;b&gt;리전(Region) = 지리적 위치&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="260" x="30" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="140" width="160" x="-30" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" value="" vertex="1">
+          <mxGeometry height="50" width="60" x="-20" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" value="" vertex="1">
+          <mxGeometry height="50" width="60" x="50" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" value="" vertex="1">
+          <mxGeometry height="50" width="60" x="-20" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" value="" vertex="1">
+          <mxGeometry height="50" width="60" x="50" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;" value="" vertex="1">
+          <mxGeometry height="140" width="180" x="160" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" value="&lt;font style=&quot;font-size: 17px;&quot;&gt;&lt;b&gt;리전이란&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="80" x="170" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;특정 지리적 위치에 있는 데이터센터의 집합&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="160" x="170" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;예시:&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;asia-norttheast3 (서울)&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;us-central1 (아이오와)&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="160" x="170" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-13" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fad7ac;strokeColor=#b46504;" value="" vertex="1">
+          <mxGeometry height="100" width="410" x="-45" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-15" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;리젼 = 도시 (City)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="160" x="-45" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-16" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fad9d5;strokeColor=#ae4132;" value="" vertex="1">
+          <mxGeometry height="350" width="420" x="450" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-17" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d80073;strokeColor=#A50040;fontColor=#ffffff;" value="&lt;b style=&quot;color: rgb(255, 255, 255); font-size: 17px;&quot;&gt;영역(Zone) = 데이터센터 (DC)&amp;nbsp;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="40" width="260" x="520" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-18" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="140" width="160" x="470" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-19" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" value="" vertex="1">
+          <mxGeometry height="50" width="60" x="480" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-20" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" value="" vertex="1">
+          <mxGeometry height="50" width="60" x="550" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-21" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" value="" vertex="1">
+          <mxGeometry height="50" width="60" x="480" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-22" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" value="" vertex="1">
+          <mxGeometry height="50" width="60" x="550" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-23" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;" value="" vertex="1">
+          <mxGeometry height="160" width="220" x="640" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-24" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" value="&lt;font style=&quot;font-size: 17px;&quot;&gt;&lt;b&gt;영역이란&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="80" x="670" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-25" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;리전 내에 있는 개별 데이터 센터&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;DC = Data Center&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;AZ = Availabilty Zone (가용영역)&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="48" width="240" x="640" y="212" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-26" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;예시:&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;asia-norttheast3-a&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;asia-norttheast3-b&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;asia-norttheast3-c&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="180" x="660" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-27" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fad7ac;strokeColor=#b46504;align=left;" value="" vertex="1">
+          <mxGeometry height="80" width="410" x="455" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-28" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;span style=&quot;font-size: 15px;&quot;&gt;영역 = 건물 (Building)&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="160" x="455" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-29" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" value="" vertex="1">
+          <mxGeometry height="20" width="20" x="489" y="195" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-30" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" value="" vertex="1">
+          <mxGeometry height="20" width="20" x="514" y="195" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-31" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" value="" vertex="1">
+          <mxGeometry height="20" width="20" x="490" y="218" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-32" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" value="" vertex="1">
+          <mxGeometry height="20" width="20" x="514" y="219" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-36" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" value="" vertex="1">
+          <mxGeometry height="20" width="20" x="555" y="192" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-37" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" value="" vertex="1">
+          <mxGeometry height="20" width="20" x="580" y="192" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-38" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" value="" vertex="1">
+          <mxGeometry height="20" width="20" x="556" y="215" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-39" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;span style=&quot;font-size: 15px;&quot;&gt;서울(리전)에 있는 A빌딩, B빌딩, C빌딩처럼 같은 도시 내 다른 건물들!&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="405" x="455" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-40" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;span style=&quot;font-size: 15px;&quot;&gt;서울, 도코, 뉴욕처럼 어느 도시에 서버를 둘까?&amp;nbsp;&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="325" x="-45" y="375" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-41" parent="1" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 8;strokeColor=#0000FF;" value="" vertex="1">
+          <mxGeometry height="410" width="1052" x="-22" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-42" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" value="&lt;span style=&quot;font-size: 17px;&quot;&gt;&lt;b&gt;GCP&lt;/b&gt;&lt;/span&gt;" vertex="1">
+          <mxGeometry height="40" width="260" x="10" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-43" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" value="" vertex="1">
+          <mxGeometry height="270" width="850" x="10" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-44" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" value="&lt;span style=&quot;font-size: 17px;&quot;&gt;&lt;b&gt;KR 리전: asia-northeast3(서울)&lt;/b&gt;&lt;/span&gt;" vertex="1">
+          <mxGeometry height="40" width="260" x="20" y="585" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-45" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#b85450;fillColor=#f8cecc;" value="" vertex="1">
+          <mxGeometry height="140" width="210" x="40" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-47" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#82b366;fillColor=#d5e8d4;" value="" vertex="1">
+          <mxGeometry height="140" width="210" x="324" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-48" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#9673a6;fillColor=#e1d5e7;" value="" vertex="1">
+          <mxGeometry height="140" width="210" x="600" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-49" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" value="&lt;span style=&quot;font-size: 17px;&quot;&gt;&lt;b&gt;영역:&amp;nbsp;&lt;/b&gt;&lt;/span&gt;&lt;b style=&quot;font-size: 17px;&quot;&gt;asia-northeast-a&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="200" x="45" y="690" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-50" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#008a00;strokeColor=#005700;fontColor=#ffffff;" value="&lt;span style=&quot;font-size: 17px;&quot;&gt;&lt;b&gt;영역:&amp;nbsp;&lt;/b&gt;&lt;/span&gt;&lt;b style=&quot;font-size: 17px;&quot;&gt;asia-northeast-b&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="200" x="329" y="690" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-51" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d80073;strokeColor=#A50040;fontColor=#ffffff;" value="&lt;span style=&quot;font-size: 17px;&quot;&gt;&lt;b&gt;영역:&amp;nbsp;&lt;/b&gt;&lt;/span&gt;&lt;b style=&quot;font-size: 17px;&quot;&gt;asia-northeast-c&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="200" x="605" y="690" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-52" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.office_building;" value="" vertex="1">
+          <mxGeometry height="58" width="37.18" x="121.41" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-53" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="데이터센터 A&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="60" x="160" y="750" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-54" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.office_building;" value="" vertex="1">
+          <mxGeometry height="58" width="37.18" x="400" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-55" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="데이터센터 B" vertex="1">
+          <mxGeometry height="30" width="60" x="438.59000000000003" y="750" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-59" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.office_building;" value="" vertex="1">
+          <mxGeometry height="58" width="37.18" x="670" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWiDjZu9a0MPiBfaujiH-60" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="데이터센터 C" vertex="1">
+          <mxGeometry height="30" width="60" x="708.59" y="750" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
