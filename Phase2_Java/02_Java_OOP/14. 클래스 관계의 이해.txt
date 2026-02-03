@@ -1,0 +1,40 @@
+1. 클래스 관계
+    1) is-a (상속)
+        - Inheritance 
+    2) has-a (집합)
+        - Aggregation
+
+2. is-a 관계 
+    1) "~은 ~이다" 관계 
+    2) 예
+        - Circle is a Shape (원은 도형이다)        
+        - Rectangle is a Shape (사격형은 도형이다)
+        - Dog is an Animal (개는 동물이다)
+    3) 키워드 
+        - extends
+            - class Circle extends Shape { }
+    4) 자식 클래스가 부모 클래스의 타입이 됨 (Circle은 Shape 타입으로 사용 가능)   
+    5) UML 표기법 
+        - 빈 삼각형 화살표      
+
+3. has-a 관계 (집합, Aggregation)
+    1) "~은~을 가진다" 관계
+    2) 예
+        - Car has an Engine (자동차는 엔진을 가진다)                
+        - Library has Books (도서관은 책들을 가진다)
+        - Calculator has Shapes (계산기는 도형을 가진다)
+    3) 키워드 
+        - 멤버 변수로 포함 
+            - class Calculator { Shape[] shapes; }    
+    4) 다른 객체를 포함하여 기능을 활용함 (Calculator가 Shape들을 관리)  
+    5) UML 표기법 
+        - 빈 다이아몬드 + 점선       
+    6) 집합 관계의 특징 
+        - 포함 관계 
+            - ShapeCalculator가 여러 Shape 객체를 포함하여 관리 
+        - 독립적 생명주기 
+            - Shape 객체들은 ShapeCalculator와 별도로 생성/소멸 가능     
+        - 일괄 처리 
+            - 모든 도형의 면적 합계, 둘레 합계 등을 한 번에 계산 
+        - 다형성 활용 
+            - Shape[] 배열에 Circle, Rectangle, Triangle 등 다양한 도형 저장                   
