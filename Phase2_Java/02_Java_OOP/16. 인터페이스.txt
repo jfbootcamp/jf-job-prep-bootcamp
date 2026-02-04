@@ -1,0 +1,92 @@
+1. 인터페이스(Interface)란?
+    1) 클래스가 구현해야 할 메서들의 명세(계약)
+    2) "무엇을 할 수 있는가(can-do)"를 정의
+    3) 예
+                Flyable
+            + fly(): void 
+
+        Bird(새)    Airplane(비행기) 
+    4) 서로 관련 없는 클래스이지만 둘다 "날 수 있음"   
+    5) 현실 세계의 인터페이스 비유 
+        - USB 포트 
+            - 표준 인터페이스 규격 
+        - 전원 콘센트
+            - 220v 규격에 맞으면 사용 가능 
+        - 리모컨 버튼 
+            - 전원, 음량, 채널 버튼 규격          
+
+2. is-a (무엇이다) vs can-do (할수있다)
+
+            추상클래스: is-a 관계                   인터페이스: can-do 관계
+        ------------------------------------------------------------------------------
+           Dog is an Animal (개는 동물이다)          Bird can fly (새는 날수 있다)  
+           Cat is an Animal (고양이는 동물이다)       Airplane can fly (비행기는 날수 있다)
+            --> 같은 계층 구조, 공통 속성 공유         --> 관련 없는 클래스, 같은 능력 공유          
+
+3. 인터페이스 특징 및 규칙
+    1) 상수만 가능 (자동으로 public static final)            
+    2) 추상 메서드 (자동으로 public abstract)
+    3) 다중 구현 가능 (implements A, B, C)
+    4) 일반 변수 불가 (int x 불가)
+    5) 구현된 메서드 불가 (Java 8 이전)
+    6) 생성자 없음
+    7) new 인터페이스() 불가 (인스턴스 생성 불가)
+
+4. Java 버전별 인터페이스 멤버 추가
+    1) java1 ~ java7     
+        - 상수 + 추상메서드 
+
+    2) java8 
+        - default 메서드 
+            - 구현부가 있는 메서드 (기본 구현 제공)
+            - 구현 클래스에서 선택적으로 오버라이드 
+            - 예)
+                interface Movable {
+                    void move();
+                    default void stop() {
+                        System.out.println("정지");
+                    }
+                    default void reverse() {
+                        System.out.println("후진");
+                    }                    
+                }
+        - static 메서드 
+            - 인터페이스에 속한 유틸리티 메서드 
+            - 인터페이스.메서드()로 호출 
+            - 구현 클래스에서 오버라이드 불가   
+            - 예)
+                interface Calculator {
+                    int calculate(int a, int b);
+
+                    static int add(int a, int b) {
+                        return a + b;
+                    }
+                }
+
+    3) java9
+        - private 메서드   
+            - 인터페이스 내부에서만 사용하는 헬퍼 메서드 
+            - 구현 클래스에서 접근 불가 
+            - 예)
+                interface Logger {
+                    default void logInfo(String msg) {
+                        log("INFO", msg)
+                    }
+                    default void logError(String msg) {
+                        log("ERROR", msg)
+                    }     
+                    private void log(String lvl, String msg) {
+                        System.out.println("lvl" + ":" + msg);
+                    }               
+                }    
+    4) 인터페이스 멤버 요약 (Java 17기준)
+
+        멤버 종류       Java 버전       접근제어자          구현부          오버라이드   용도 
+        -----------------------------------------------------------------------------------------------------------
+        상수(필드)       1.0+       public static final    초기화(필수)       X      공통 상수값 정의  
+        추상 메서드      1.0+       public abstract            X           필수     구현 클래스가 반드시 구현해야할 메서드 
+        default 메서드    8+           public                 O(필수)      선택      기본 구현 제공 
+        static  메서드    8+           public                 O(필수)        X      유틸리티 메서드
+        private 메서드    9+           private                O(필수)        X      내부 헬퍼 메서드, 중복 코드 제거 
+
+
