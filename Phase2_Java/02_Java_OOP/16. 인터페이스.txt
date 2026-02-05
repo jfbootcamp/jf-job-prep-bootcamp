@@ -89,4 +89,3 @@
         static  메서드    8+           public                 O(필수)        X      유틸리티 메서드
         private 메서드    9+           private                O(필수)        X      내부 헬퍼 메서드, 중복 코드 제거 
 
-
