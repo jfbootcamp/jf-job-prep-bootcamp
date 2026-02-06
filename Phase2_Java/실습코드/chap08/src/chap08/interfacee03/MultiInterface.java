@@ -248,6 +248,13 @@ class DocumentManager {
 	public void saveAllSaveable(String basePath) {
 		System.out.println("\n[저장 가능한 문서 저장]");
 		System.out.println("-".repeat(50));
+		for(int i = 0; i < count; i++) {
+			if(documents[i] instanceof Saveable s) {
+				System.out.println("▶ " + documents[i].getClass().getSimpleName());
+				s.save(basePath +"/doc"+i);
+				System.out.println();
+			}
+		}
 		
 	}
 	
