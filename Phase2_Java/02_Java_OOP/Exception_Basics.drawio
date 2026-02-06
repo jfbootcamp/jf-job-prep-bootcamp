@@ -1,0 +1,136 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.3.6 Chrome/140.0.7339.249 Electron/38.8.0 Safari/537.36" version="29.3.6">
+  <diagram name="페이지-1" id="Zg-td0YRB6fGYsTebzb7">
+    <mxGraphModel dx="1678" dy="989" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="g1dmJTwPruFw36NpW5DS-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="Java 예외 계층 구조 (Exception Hierarchy)" vertex="1">
+          <mxGeometry height="30" width="410" x="209" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="g1dmJTwPruFw36NpW5DS-3" parent="1" style="html=1;whiteSpace=wrap;fillColor=#D5E8D4;strokeColor=#82b366;" value="&lt;h1 title=&quot;Class Throwable&quot; class=&quot;title&quot; style=&quot;font-size: 1.425em; max-height: 1000em; color: rgb(44, 69, 87); margin: 10px 0px 12px; font-family: &amp;quot;DejaVu Sans&amp;quot;, Arial, Helvetica, sans-serif; text-align: start; background-color: rgb(255, 255, 255);&quot;&gt;Throwable&lt;/h1&gt;" vertex="1">
+          <mxGeometry height="30" width="110" x="370" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="g1dmJTwPruFw36NpW5DS-4" parent="1" style="html=1;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;" value="&lt;h1 title=&quot;Class Error&quot; class=&quot;title&quot; style=&quot;font-size: 1.425em; max-height: 1000em; color: rgb(44, 69, 87); margin: 10px 0px 12px; font-family: &amp;quot;DejaVu Sans&amp;quot;, Arial, Helvetica, sans-serif; text-align: start; background-color: rgb(255, 255, 255);&quot;&gt;Error&lt;/h1&gt;" vertex="1">
+          <mxGeometry height="30" width="110" x="180" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="g1dmJTwPruFw36NpW5DS-5" edge="1" parent="1" source="g1dmJTwPruFw36NpW5DS-4" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;entryX=0.157;entryY=1.014;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" target="g1dmJTwPruFw36NpW5DS-3" value="Extends">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="340" y="210" as="sourcePoint" />
+            <mxPoint x="500" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g1dmJTwPruFw36NpW5DS-6" parent="1" style="html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;h1 title=&quot;Class Exception&quot; class=&quot;title&quot; style=&quot;font-size: 1.425em; max-height: 1000em; color: rgb(44, 69, 87); margin: 10px 0px 12px; font-family: &amp;quot;DejaVu Sans&amp;quot;, Arial, Helvetica, sans-serif; text-align: start; background-color: rgb(255, 255, 255);&quot;&gt;Exception&lt;/h1&gt;" vertex="1">
+          <mxGeometry height="30" width="110" x="630" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="g1dmJTwPruFw36NpW5DS-7" edge="1" parent="1" source="g1dmJTwPruFw36NpW5DS-6" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" target="g1dmJTwPruFw36NpW5DS-3" value="Extends">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="420" y="360" as="sourcePoint" />
+            <mxPoint x="572" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g1dmJTwPruFw36NpW5DS-8" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="복구 불가능 (시스템 레벨) - catch 하지 않음" vertex="1">
+          <mxGeometry height="30" width="240" x="40" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="g1dmJTwPruFw36NpW5DS-10" parent="1" style="html=1;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;" value="&lt;h1 title=&quot;Class Error&quot; class=&quot;title&quot; style=&quot;font-size: 1.425em; max-height: 1000em; color: rgb(44, 69, 87); margin: 10px 0px 12px; font-family: &amp;quot;DejaVu Sans&amp;quot;, Arial, Helvetica, sans-serif; text-align: start; background-color: rgb(255, 255, 255);&quot;&gt;&lt;span style=&quot;color: rgb(24, 24, 24); font-size: 14.2px; font-weight: 400;&quot;&gt;OutOfMemoryError&lt;/span&gt;&lt;/h1&gt;" vertex="1">
+          <mxGeometry height="30" width="140" x="110" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="g1dmJTwPruFw36NpW5DS-11" edge="1" parent="1" source="g1dmJTwPruFw36NpW5DS-10" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;exitX=0.307;exitY=0.024;exitDx=0;exitDy=0;exitPerimeter=0;" target="g1dmJTwPruFw36NpW5DS-4" value="Extends">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="330" y="260" as="sourcePoint" />
+            <mxPoint x="482" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g1dmJTwPruFw36NpW5DS-12" parent="1" style="html=1;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;" value="&lt;h1 title=&quot;Class StackOverflowError&quot; class=&quot;title&quot; style=&quot;font-size: 1.425em; max-height: 1000em; color: rgb(44, 69, 87); margin: 10px 0px 12px; font-family: &amp;quot;DejaVu Sans&amp;quot;, Arial, Helvetica, sans-serif; text-align: start; background-color: rgb(255, 255, 255);&quot;&gt;StackOverflowError&lt;/h1&gt;" vertex="1">
+          <mxGeometry height="30" width="180" x="270" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="g1dmJTwPruFw36NpW5DS-13" edge="1" parent="1" source="g1dmJTwPruFw36NpW5DS-12" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;entryX=0.669;entryY=1.11;entryDx=0;entryDy=0;exitX=0.436;exitY=-0.09;exitDx=0;exitDy=0;exitPerimeter=0;entryPerimeter=0;" target="g1dmJTwPruFw36NpW5DS-4" value="Extends">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="210" y="311" as="sourcePoint" />
+            <mxPoint x="265" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g1dmJTwPruFw36NpW5DS-14" parent="1" style="html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;h1 title=&quot;Class Exception&quot; class=&quot;title&quot; style=&quot;font-size: 1.425em; max-height: 1000em; color: rgb(44, 69, 87); margin: 10px 0px 12px; font-family: &amp;quot;DejaVu Sans&amp;quot;, Arial, Helvetica, sans-serif; text-align: start; background-color: rgb(255, 255, 255);&quot;&gt;Checked Exception&lt;/h1&gt;" vertex="1">
+          <mxGeometry height="30" width="180" x="450" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="g1dmJTwPruFw36NpW5DS-15" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="컴파일러가 처리 강제" vertex="1">
+          <mxGeometry height="30" width="160" x="450" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="g1dmJTwPruFw36NpW5DS-16" parent="1" style="html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;h1 title=&quot;Class Exception&quot; class=&quot;title&quot; style=&quot;font-size: 1.425em; max-height: 1000em; color: rgb(44, 69, 87); margin: 10px 0px 12px; font-family: &amp;quot;DejaVu Sans&amp;quot;, Arial, Helvetica, sans-serif; text-align: start; background-color: rgb(255, 255, 255);&quot;&gt;&lt;span style=&quot;color: rgb(24, 24, 24); font-size: 14.2px; font-weight: 400;&quot;&gt;IOException&lt;/span&gt;&lt;/h1&gt;" vertex="1">
+          <mxGeometry height="30" width="120" x="440" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="g1dmJTwPruFw36NpW5DS-17" edge="1" parent="1" source="g1dmJTwPruFw36NpW5DS-16" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;exitX=0.458;exitY=-0.033;exitDx=0;exitDy=0;exitPerimeter=0;" target="g1dmJTwPruFw36NpW5DS-6" value="Extends">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="821" y="280" as="sourcePoint" />
+            <mxPoint x="630" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g1dmJTwPruFw36NpW5DS-18" parent="1" style="html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;h1 title=&quot;Class FileNotFoundException&quot; class=&quot;title&quot; style=&quot;font-size: 1.425em; max-height: 1000em; color: rgb(44, 69, 87); margin: 10px 0px 12px; font-family: &amp;quot;DejaVu Sans&amp;quot;, Arial, Helvetica, sans-serif; text-align: start; background-color: rgb(255, 255, 255);&quot;&gt;FileNotFoundException&lt;/h1&gt;" vertex="1">
+          <mxGeometry height="30" width="200" x="380" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="g1dmJTwPruFw36NpW5DS-19" edge="1" parent="1" source="g1dmJTwPruFw36NpW5DS-18" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;entryX=0.575;entryY=1.033;entryDx=0;entryDy=0;exitX=0.438;exitY=0.071;exitDx=0;exitDy=0;exitPerimeter=0;entryPerimeter=0;" target="g1dmJTwPruFw36NpW5DS-16" value="Extends">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="520" y="419" as="sourcePoint" />
+            <mxPoint x="683" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g1dmJTwPruFw36NpW5DS-20" parent="1" style="html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;h1 title=&quot;Class SQLException&quot; class=&quot;title&quot; style=&quot;font-size: 1.425em; max-height: 1000em; color: rgb(44, 69, 87); margin: 10px 0px 12px; font-family: &amp;quot;DejaVu Sans&amp;quot;, Arial, Helvetica, sans-serif; text-align: start; background-color: rgb(255, 255, 255);&quot;&gt;SQLException&lt;/h1&gt;" vertex="1">
+          <mxGeometry height="30" width="120" x="590" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="g1dmJTwPruFw36NpW5DS-21" edge="1" parent="1" source="g1dmJTwPruFw36NpW5DS-20" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="g1dmJTwPruFw36NpW5DS-6" value="Extends">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="570" y="399" as="sourcePoint" />
+            <mxPoint x="733" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g1dmJTwPruFw36NpW5DS-22" parent="1" style="html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;h1 title=&quot;Class RuntimeException&quot; class=&quot;title&quot; style=&quot;font-size: 1.425em; max-height: 1000em; color: rgb(44, 69, 87); margin: 10px 0px 12px; font-family: &amp;quot;DejaVu Sans&amp;quot;, Arial, Helvetica, sans-serif; text-align: start; background-color: rgb(255, 255, 255);&quot;&gt;RuntimeException&lt;/h1&gt;" vertex="1">
+          <mxGeometry height="30" width="180" x="770" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="g1dmJTwPruFw36NpW5DS-23" edge="1" parent="1" source="g1dmJTwPruFw36NpW5DS-22" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;entryX=0.838;entryY=1.052;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.471;exitY=0.014;exitDx=0;exitDy=0;exitPerimeter=0;" target="g1dmJTwPruFw36NpW5DS-6" value="Extends">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="680" y="410" as="sourcePoint" />
+            <mxPoint x="711" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g1dmJTwPruFw36NpW5DS-24" parent="1" style="html=1;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;" value="&lt;h1 title=&quot;Class Exception&quot; class=&quot;title&quot; style=&quot;font-size: 1.425em; max-height: 1000em; color: rgb(44, 69, 87); margin: 10px 0px 12px; font-family: &amp;quot;DejaVu Sans&amp;quot;, Arial, Helvetica, sans-serif; text-align: start; background-color: rgb(255, 255, 255);&quot;&gt;unChecked Exception&lt;/h1&gt;" vertex="1">
+          <mxGeometry height="30" width="230" x="900" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="g1dmJTwPruFw36NpW5DS-25" parent="1" style="html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;h1 title=&quot;Class NullPointerException&quot; class=&quot;title&quot; style=&quot;font-size: 1.425em; max-height: 1000em; color: rgb(44, 69, 87); margin: 10px 0px 12px; font-family: &amp;quot;DejaVu Sans&amp;quot;, Arial, Helvetica, sans-serif; text-align: start; background-color: rgb(255, 255, 255);&quot;&gt;NullPointerException&lt;/h1&gt;" vertex="1">
+          <mxGeometry height="30" width="180" x="820" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="g1dmJTwPruFw36NpW5DS-26" edge="1" parent="1" source="g1dmJTwPruFw36NpW5DS-25" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;entryX=0.583;entryY=1.046;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.552;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" target="g1dmJTwPruFw36NpW5DS-22" value="Extends">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="1013" y="298" as="sourcePoint" />
+            <mxPoint x="880" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g1dmJTwPruFw36NpW5DS-27" parent="1" style="html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;h1 title=&quot;Class NullPointerException&quot; class=&quot;title&quot; style=&quot;font-size: 1.425em; max-height: 1000em; color: rgb(44, 69, 87); margin: 10px 0px 12px; font-family: &amp;quot;DejaVu Sans&amp;quot;, Arial, Helvetica, sans-serif; text-align: start; background-color: rgb(255, 255, 255);&quot;&gt;&lt;span style=&quot;color: rgb(24, 24, 24); font-size: 14.2px; font-weight: 400;&quot;&gt;ArrayIndexOutOfBoundsException&lt;/span&gt;&lt;/h1&gt;" vertex="1">
+          <mxGeometry height="30" width="255" x="970" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="g1dmJTwPruFw36NpW5DS-28" edge="1" parent="1" source="g1dmJTwPruFw36NpW5DS-27" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;entryX=0.824;entryY=1.046;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.444;exitY=0.08;exitDx=0;exitDy=0;exitPerimeter=0;" target="g1dmJTwPruFw36NpW5DS-22" value="Extends">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="964" y="409" as="sourcePoint" />
+            <mxPoint x="920" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g1dmJTwPruFw36NpW5DS-29" parent="1" style="html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;h1 title=&quot;Class ArithmeticException&quot; class=&quot;title&quot; style=&quot;font-size: 1.425em; max-height: 1000em; color: rgb(44, 69, 87); margin: 10px 0px 12px; font-family: &amp;quot;DejaVu Sans&amp;quot;, Arial, Helvetica, sans-serif; text-align: start; background-color: rgb(255, 255, 255);&quot;&gt;ArithmeticException&lt;/h1&gt;" vertex="1">
+          <mxGeometry height="30" width="255" x="1000" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="g1dmJTwPruFw36NpW5DS-30" edge="1" parent="1" source="g1dmJTwPruFw36NpW5DS-29" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" target="g1dmJTwPruFw36NpW5DS-22" value="Extends">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="964" y="429" as="sourcePoint" />
+            <mxPoint x="920" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g1dmJTwPruFw36NpW5DS-31" parent="1" style="html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;h1 title=&quot;Class NumberFormatException&quot; class=&quot;title&quot; style=&quot;font-size: 1.425em; max-height: 1000em; color: rgb(44, 69, 87); margin: 10px 0px 12px; font-family: &amp;quot;DejaVu Sans&amp;quot;, Arial, Helvetica, sans-serif; text-align: start; background-color: rgb(255, 255, 255);&quot;&gt;NumberFormatException&lt;/h1&gt;" vertex="1">
+          <mxGeometry height="30" width="255" x="715" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="g1dmJTwPruFw36NpW5DS-32" edge="1" parent="1" source="g1dmJTwPruFw36NpW5DS-31" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;entryX=0.066;entryY=0.977;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;" target="g1dmJTwPruFw36NpW5DS-22" value="Extends">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="964" y="409" as="sourcePoint" />
+            <mxPoint x="920" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

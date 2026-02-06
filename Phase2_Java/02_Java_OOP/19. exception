@@ -1,0 +1,41 @@
+1. 예외(exception)의 개념
+    1) 프로그램 실행 중에 발생하는 비정상적인 상황
+    2) 에러 vs 예외
+                                Throwable
+                  Error                         Exception 
+           -------------------------------------------------------
+             시스템 레벨 문제                   애플리케이션 레벨 문제
+             복구 불가능                        복구 가능
+             처리하지 않음                      반드시 처리해야 함   
+
+    3) Checked vs UnChecked 예외                                
+
+                Checked Exception           UnChecked Exception
+          ---------------------------------------------------------------
+             Exception의 직접 하위클래스        RuntimeException 하위 클래스
+             컴파일 시점에 체크                 런타임  시점에만 발생
+             반드시 try~catch 또는             처리 강제하지 않음 
+              throws 필요    
+
+2. try-catch-finally 
+    1)  try {
+            // 예외가 발생할 수 있는 코드
+            risky code here;
+
+        } catch(Exception e) {
+            // 예외 처리 코드 
+            handle the exception
+
+        } finally {
+            // 항상 실행되는 코드 (선택)
+            clenup code;
+        }
+
+3. try-with-resouces 문
+    1) close() 메서드를 명시적으로 호출하지 않아도 
+       try 블록내에서 열린 리소스를 자동으로 닫도록 만들 수 있음.
+    2) 인터페이스 AutoCloseable를 구현해야 함 
+    3) 리소스를 try() 소괄호 내부에서 선언해야 함 
+    4) 자바 7부터 제공함     
+
+
