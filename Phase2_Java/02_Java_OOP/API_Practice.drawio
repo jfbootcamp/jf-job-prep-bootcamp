@@ -1,0 +1,43 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.3.6 Chrome/140.0.7339.249 Electron/38.8.0 Safari/537.36" version="29.3.6">
+  <diagram name="페이지-1" id="FHkqf69WpAY851zyi8B-">
+    <mxGraphModel dx="679" dy="400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="eyq2yjElfdo59WzvXnmM-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;직원 관리 시스템 아키텍처&lt;/b&gt;&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="220" x="300" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="eyq2yjElfdo59WzvXnmM-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Main.java&lt;div&gt;(메인 클래스)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="380" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="eyq2yjElfdo59WzvXnmM-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Employee.java&lt;div&gt;(도메인 객체)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="370" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="eyq2yjElfdo59WzvXnmM-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="EmployeeService.java&lt;div&gt;(비즈니스 로직)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="140" x="370" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="eyq2yjElfdo59WzvXnmM-5" edge="1" parent="1" source="eyq2yjElfdo59WzvXnmM-2" style="endArrow=classic;html=1;rounded=0;exitX=0.469;exitY=1.016;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.473;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="eyq2yjElfdo59WzvXnmM-4" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="460" y="230" as="sourcePoint" />
+            <mxPoint x="510" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eyq2yjElfdo59WzvXnmM-6" edge="1" parent="1" source="eyq2yjElfdo59WzvXnmM-4" style="endArrow=classic;html=1;rounded=0;exitX=0.439;exitY=1.008;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.508;entryY=0.056;entryDx=0;entryDy=0;entryPerimeter=0;" target="eyq2yjElfdo59WzvXnmM-3" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="540" y="220" as="sourcePoint" />
+            <mxPoint x="540" y="259" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eyq2yjElfdo59WzvXnmM-7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="역할 : 데이터 입력, 결과 출력" vertex="1">
+          <mxGeometry height="60" width="160" x="550" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="eyq2yjElfdo59WzvXnmM-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="역할 : CRUD + 통계 + 보고서" vertex="1">
+          <mxGeometry height="60" width="180" x="550" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="eyq2yjElfdo59WzvXnmM-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="역할 : 데이터 + 비즈니스 메서드" vertex="1">
+          <mxGeometry height="60" width="180" x="550" y="280" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
