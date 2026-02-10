@@ -6,6 +6,9 @@
                 - hashCode() 
                 - toString() : 의미 있는 정보 출력 
 
+            - equals()를 오버라이드하면 hashCode도 반드시 오버라이드해야 함
+              equals가 true인 두 객체는 같은 hashCode를 가져야하는 규약 때문임.                
+
             - new 할 때 JVM이 하는 일
                 - Heap 메모리에 공간 확보 
                 - 필드 초기화 
@@ -25,3 +28,22 @@
                 ----------------------------------------------------------------------
                 재정의X   메모리주소          hashCode 다름         호출안됨    못찾음(버그)
                 재정의O   id필드 값          hashCode 같음          호출됨     찾음 (정상)
+
+        - String
+            - 불변성(immutable)과 메모리 구조 
+                - 예
+                    String s1 = "Hello";
+                    String s2 = "Hello";
+                    String s3 = new String("Hello")
+
+                    s1 = s1 + " World";
+                    // s1은 이제 새 객체를 참조
+                    // 원래 "Hello"는 변경되지 않음
+
+    2) Wrapper(포장) 클래스 
+        1) 기본형 <---> Wrapper 클래스 
+
+           int         Integer
+           char        Character 
+
+        2) 박싱 (Boxing) / 언박싱 (Unboxing)                                    
