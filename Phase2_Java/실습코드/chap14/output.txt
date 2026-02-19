@@ -1,0 +1,4 @@
+Hello World!
+Java File I/O 학습 중!
+---추가된 내용---
+이 줄은 append 모드로 추가되었습니다.
