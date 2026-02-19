@@ -1,0 +1,120 @@
+1. 스트림 (stream)
+    1) 자료가 오고갈 수 있는 가상 통로
+        - 데이터의 흐름  
+    2) 네트워크와 관련된 자료 흐름이 물의 흐름과 같다는 의미에서 유래됨 
+    3) 자료를 읽어 들이려는 소스(source)와 자료를 쓰려는 대상(target)에 
+       각각 다른 스트림 클래스 제공됨 
+
+2. 스트림의 종류 
+    1) 입력 스트림과 출력 스트림 
+        - 스트림은 단방향으로 자료가 이동함
+            - 물이 한 방향으로 흐르듯, 데이터도 한 방향으로 흐름 
+        - 입력과 출력을 동시에 할수 없음
+        - 입력 스트림 (데이터를 읽는다)
+            데이터 소스                       - InputStream             Java 프로그램               
+           (파일, 네트워크, 키보드)  ====>      - Reader        ====>     (데이터 수신)
+        - 출력 스트림 (데이터를 쓴다)
+             Java 프로그램                    - OutputStream            데이터 목적지
+             (데이터 생성) ====>              - Writer        =====>    (파일, 네트워크, 화면)
+        - FIFO(First In, First Out): 데이터가 들어온 순서대로 나감 
+        - 반드시 닫아야 함: try-with-resouce 사용 (자원 누수 방지)    
+        - flush(): 버퍼에 남은 데이터를 강제로 출력            
+
+    2) 바이트 단위 스트림과 문자 단위 스트림 
+        - 바이트 스트림 
+            - 원래 자바 스트림은 바이트(byte) 단위로 자료의 입출력이 이루어짐 
+            - 그림, 동영상, 음악 등
+            - ~~InputStream, ~~OutputStream
+        - 문자 스트림 
+            - 문자 하나를 나타내는 char형은 2바이트임
+            - ~~Reader, ~~Writer   
+
+    3) 기반 스트림과 보조 스트림 
+        - 기반 스트림 
+            - 읽어 들일 곳이나 써야 할 곳에서 직접 읽고 쓸수 있는 스트림 
+            - 입출력 대상에 직접 연결되어 생성되는 스트림 
+        - 보조 스트림 
+            - 직접 읽고 쓰는 기능은 없음 
+            - 항상 다른 스트림을 포함하여 생성됨 
+            - 다른 스트림에 기능을 추가하는 보조 스트림 
+        - 예)
+            - 기반 스트림 + 보조 스트림A + 보조 스트림B 
+
+
+3. 바이트 입력 스트림 
+    1) InputStream (추상 클래스)
+    2) 주요 클래스 
+        - FileInputStream : 파일에서 바이트 읽기 
+        - BufferedInputStream : 버퍼링으로 성능 향상
+        - ByteArrayInputStream : 메모리에서 바이트 읽기 
+        - DataInputStream : 기본 타입 읽기 
+    3) 핵심 메서드 
+        - int read() : 1바이트 읽기 (-1이면 EOF)        
+        - int read(byte[] b) : 배열만큼 읽기 
+        - void close() : 스트림 닫기 
+
+4. 바이트 출력 스트림 
+    1) OutputStream (추상 클래스)
+    2) 주요 클래스 
+        - FileOutputStream : 파일에 바이트 쓰기 
+        - BufferedOutputStream : 버퍼링으로 성능 향상
+        - ByteArrayOutputStream : 메모리에 바이트 쓰기 
+        - DataOutputStream : 기본 타입 쓰기 
+    3) 핵심 메서드 
+        - int write() : 1바이트 쓰기    
+        - int write(byte[] b) : 배열만큼 쓰기 
+        - void close() : 스트림 닫기  
+        - void flush() : 버퍼 강제 출력       
+
+5. 문자 입력 스트림 
+    1) Reader (추상 클래스) 
+    2) 주요 클래스 
+        - FileReader : 파일에서 문자 읽기 
+        - BufferedReader : 줄 단위 읽기 + 버퍼링 
+        - InputStreamReader : 바이트 --> 문자 변환(인코딩)  
+    3) 핵심 메서드 
+        - int read() : 1문자 읽기 (-1이면 EOF)
+        - String readLine() : 한 줄 읽기 (BufferedReader) 
+        - void close() : 스트림 닫기 
+
+6. 문자 출력 스트림 
+    1) Writer (추상 클래스) 
+    2) 주요 클래스 
+        - FileWriter : 파일에 문자 쓰기 
+        - BufferedWriter : 줄 단위 쓰기 + 버퍼링 
+        - OutputStreamWriter : 문자 --> 바이트 변환(디코딩)  
+        - PrintWriter : println()/printf() 지원 
+    3) 핵심 메서드 
+        - void write() : 문자 쓰기 
+        - void write(String str) : 문자열 쓰기 
+        - println(String) : 줄 바꿈 포함 쓰기 (PrintWriter) 
+        - void close() : 스트림 닫기 
+        - void flush()     
+
+7. 보조 스트림 
+    1) Wrapper 스트림이라고 함
+        - 다른 스트림을 감쌈
+        - 생성자의 매개변수로 다른 스트림을 받음 
+    2) FilterInputStream과 FilterOutputStream 생성자
+        - protected FilterInputStream(InputStream in)   
+            - 생성자의 매개변수로 InputStream을 받음
+        - FilterOutputStream(OutputStream out)
+            - 생성자의 매개변수로 OutputStream을 받음 
+    3) 구성
+        - 바이트 단위 파일 입력 스트림 + 문자로 변환 기능 추가 + 버퍼링 기능 추가  
+
+    4) Buffered 스트림 
+        - BufferedInputStream
+            - 바이트 단위로 읽는 스트림에 버퍼 기능을 제공
+        - BufferedOutputStream
+            - 바이트 단위로 출력하는 스트림에 버퍼 기능을 제공
+        - BufferedReader
+            - 문자 단위로 읽는 스트림에 버퍼링 기능 제공
+        - BufferedWriter        
+            - 문자 단위로 출력하는 스트림에 버퍼링 기능 제공       
+                                
+8. Java NIO
+    1) 핵심 개념 
+        - Paths = 파일/디렉토리 경로를 나타내는 인터페이스 (java.io.File의 현대적 대처) 
+        - Files =  파일/디렉토리 조작 정적 메서드 모음 (읽기, 쓰기, 복사, 이동, 삭제)
+        - Files.walk() = 디렉토리를 재귀적으로 탐색하여 Stream<Path> 반환
