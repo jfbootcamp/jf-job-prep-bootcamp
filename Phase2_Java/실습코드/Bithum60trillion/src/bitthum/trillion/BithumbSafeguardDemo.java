@@ -43,6 +43,25 @@ public class BithumbSafeguardDemo {
 		
 		pauseForUser(scanner);
 		
+		// 3단계 : 정상 통과 체험
+		System.out.println("----------------------------------------");
+		System.out.println("\n [3단계]: 정상 통과 체험 (추천: 2000 / KRW / 1)\n ");		
+		
+		EventReward stage3 = getUserInput(scanner, "2000", "1:KRW", "1");
+		if (stage3 != null) safePaymentSystem.processPayment(stage3, scanner);
+		
+		pauseForUser(scanner);
+		
+		// 4단계 : 자유 테스트
+		System.out.println("----------------------------------------");
+		System.out.println("\n [자유 테스트]: 금액 0 입력 시 종료\n ");
+		while(true) {
+			EventReward custom = getUserInput(scanner, null, null, null);
+			if (custom == null) break;
+			System.out.println();
+			safePaymentSystem.processPayment(custom, scanner);
+			System.out.println();
+		}
 		
 		scanner.close();
 	}
