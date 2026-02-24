@@ -1,0 +1,7 @@
+1.  핵심 매핑 정리 (ORM, Object Relational Mapping)
+    
+        Java OOP            RDBMS                   설명
+      -------------------------------------------------------------
+       Class (클래스)       Table(테이블)      설계도 = 테이블 구조 정의 
+       Field (필드)         Column(컬럼)      속성 하나 = 열 하나 
+       Object (instance)    Row (행)        
