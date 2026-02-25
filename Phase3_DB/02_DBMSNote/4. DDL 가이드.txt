@@ -1,0 +1,138 @@
+1. 데이터베이스(Database)
+    1) 구조화된 데이터의 집합으로, 효율적으로 저장, 관리, 검색할 수 있도록 
+       조직된 정보의 모음임.
+
+    2) 파일 시스템   vs     데이터베이스 
+      ----------------------------------
+       데이터 중복           데이터 무결성 
+       일관성 유지 어려움     보안 및 백업 
+       동시 접근 문제        동시성 제어       
+
+2. DBMS (Database Management System)
+    1) 데이터베이스를 관리하기 위한 소프트웨어 시스템임 
+    2) 유형 
+        - RDBMS
+            - 관계형, 테이블 기반, SQL 사용 
+        - NoSQL 
+            - 비관계형, 유연한 스키마 
+            - MongoDB, Redis  
+                    
+3. RDBMS 핵심 개념
+    1) 테이블 (Table) = 릴레이션 (Relation)                    
+        - 행 (Row) = 튜플 (Tuple) = 레코드 (Recode)
+        - 열 (Column) = 속성 (Attribute) = 필드 (Field)
+        - 기본키 (Primary Key) = 행을 고유하게 식별 
+        - 외래키 (Foreign Key) = 다른 테이블 참조 
+        - 인덱스 (Index) = 검색 속독 향상 
+
+4. SQL 명령어 분류
+    1) 용도에 따라 4가지로 분류 (비유: 건축) 
+        - DDL (Data Definition Language) : 설계도 & 건물 (건물 짓기/허물기)
+        - DML (Data Manipulation Language) : 입주 & 생활 (가구 배치/이동)
+        - DCL (Data Control Language) : 보안 관리 (출입증 발급)
+        - TCL (Transaction Control Language) : 안전 장치 (공사 확정/취소) 
+
+5. DDL 
+    1) 구조 정의 
+    2) 데이터베이스/테이블의 구조를 만들고 변경하고 삭제 
+    3) 명령어
+        - CREATE : DB/테이블/인덱스 생성
+        - Alter : 테이블 구조 변경 (컬럼 추가/수정/삭제)
+        - DROP : DB/테이블 완전 삭제 (구조+데이터)
+        - TRUNCATE : 테이블 데이터만 전체 삭제 (구조유지)
+    4) 핵심 특징
+        - DDL은 Auto Commit! 
+            - 실행 즉시 확정되어 ROLLBACK 불가함!     
+    5) 학습순서 
+        - ① CREATE DATABASE (DB 생성)
+          ② 데이터 타입 정하기 BIGINT, VARCHAR...
+          ③ CREATE TABLE (테이블 생성)
+          ④ 제약조건 정하기 PK, FK, NOT NULL 
+          ⑤ Alter TABLE 구조 변경
+          ⑥ DROP/TRUNCATE 삭제  
+
+6. DML
+    1) 데이터를 조작 (CRUD)
+    2) 명령어
+        - SELECT : 조회
+        - INSERT : 삽입
+        - UPDATE : 수정
+        - DELETE : 삭제     
+    3) DML은 TCL로 ROLLBACK 가능함, DDL은 Auto Commit이라 불가함.        
+
+7. DCL
+    1) 권한을 관리
+    2) 명령어
+        - GRANT : 권한 부여
+        - REVOKE : 권한 회수 
+
+8. TCL
+    1) 트랜잭션을 제어
+    2) 명령어
+        - COMMIT : 변경 확정
+        - ROLLBACK : 변경 취소 
+        - SAVEPOINT : 중간 저장점               
+
+9. 데이터 타입 정리 
+    1) 숫자 타입 (정수 & 실수)
+        INT                 정수             -21억 ~ 21억           ★가장 많이 사용
+        BIGINT              큰 정수          -922경 ~ 922경          ★ PK(AUTO_INCREMENT)에 권장
+        TINYINT             
+        DECIMAL(p,s)        고정 소수         정확환 소수점           ★ 금액에 필수! (FLOAT 금지)                             
+        FLOAT/DOUBLE        
+
+    2) 문자열 타입
+        VARCHAR(n)          가변 길이           최대 n자              ★가장 많이 사용
+        CHAR(n)             고정 길이
+        TEXT                긴 텍스트           최대 65,535자
+        LONGTEXT                               최대 4GB                
+
+    3) 날짜/시간 타입 
+        DATE                날짜만             '2026-02-26'         생년월일, 가입일
+        DATETIME            날짜+시간           '2026-02-26 14:18:00'
+        TIMESTAMP           날짜+시간           UTC 기반 자동 변환    ★ created_at, updated_at  
+        YEAR                연도만              2026                출판년도
+
+    4) 기타 유용한 타입
+        BOOLEAN
+        ENUM(...)           지정된 값 중 하나만 선택
+        JSON                JSON 형식 데이터 저장 
+        BLOB                바이너리 대용량 데이터                    이미지 (URL 저장 권장)
+
+10. 테이블 생성 
+    1) 기본 문법 구조 
+        - CREATE TABLE 테이블명 (
+            컬럼명1     데이터타입      [제약조건],
+            컬럼명2     데이터타입      [제약조건],
+            ...
+            [테이블 레벨 제약조건]
+        ) ENGINE=InnoDB
+          default charset=utf8mb4
+          comment='도서관 회원';
+
+11. 제약조건(Constraints)
+    1) 데이터를 지키는 규칙 
+    2) 입력 양식의 유효성 검사!
+    3) 종류
+        - primary key (기본값)
+            - 각 행을 고유하게 식별하는 컬럼
+            - not null + unique 자동 적용
+            - 테이블당 1개만 가능 
+            - 자동으로 인덱스 생성
+
+        - not null (필수값)
+            - NULL(빈값)을 허용하지 않음
+            - 반드시 값이 있어야 INSERT 가능  
+
+        - unique (고유값)     
+            - 중복 값을 허용하지 않음 
+            - NULL은 여러개 가능
+
+        - FOREIGN KEY (외래키)
+            - 다른 테이블의 PK를 참조하는 컬럼 
+            - 참조 무결성 보장 (없는 값 참조 불가)
+                - 비유 : 주문의 고객ID --> 고객 테이블에 실제 존재해야함 
+            - InnoDB만 지원
+            
+                       
+

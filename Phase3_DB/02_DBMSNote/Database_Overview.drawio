@@ -1,4 +1,4 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.2 Chrome/142.0.7444.265 Electron/39.6.1 Safari/537.36" version="29.5.2" pages="3">
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.2 Chrome/142.0.7444.265 Electron/39.6.1 Safari/537.36" version="29.5.2" pages="5">
   <diagram name="Database_Overview" id="SFPTNU7OrfWXyEpBhWe1">
     <mxGraphModel dx="1188" dy="701" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -238,6 +238,97 @@
         </mxCell>
         <mxCell id="rOakBlXU9EOCCTdvdLn7-13" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="&lt;b&gt;⑤ 자원 해제&lt;/b&gt;&lt;br&gt;&lt;div&gt;&lt;b&gt;rs.close()&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;st.close()&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;conn.close()&lt;/b&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="70" width="230" x="1320" y="540" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="BMXPly38dgHQ4SmH-XEF" name="계층 구조">
+    <mxGraphModel dx="1388" dy="701" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="RpZUF2r8j4YcJ_AwdVpw-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;b style=&quot;&quot;&gt;계층 구조 흐름도 -- 테이블까지 가는 경로&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="380" x="230" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="RpZUF2r8j4YcJ_AwdVpw-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font color=&quot;#3333ff&quot;&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;&lt;b&gt;MySQL 경로&amp;nbsp; (2단계)&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="380" x="100" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="RpZUF2r8j4YcJ_AwdVpw-6" edge="1" parent="1" source="RpZUF2r8j4YcJ_AwdVpw-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#3333FF;strokeWidth=2;" target="RpZUF2r8j4YcJ_AwdVpw-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RpZUF2r8j4YcJ_AwdVpw-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;font style=&quot;font-size: 16px; color: rgb(51, 51, 255);&quot;&gt;&lt;b&gt;MySQL Server&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px; color: rgb(51, 51, 255);&quot;&gt;&lt;b&gt;(mysqld 프로세스)&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="260" x="40" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="RpZUF2r8j4YcJ_AwdVpw-9" edge="1" parent="1" source="RpZUF2r8j4YcJ_AwdVpw-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#3333FF;strokeWidth=2;" target="RpZUF2r8j4YcJ_AwdVpw-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RpZUF2r8j4YcJ_AwdVpw-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontColor=#ffffff;" value="&lt;font style=&quot;color: rgb(255, 255, 255);&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b style=&quot;&quot;&gt;Database&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px; color: rgb(255, 255, 255);&quot;&gt;&lt;b style=&quot;&quot;&gt;(=Schema)&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="247" x="413" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="RpZUF2r8j4YcJ_AwdVpw-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="CREATE DATABASE&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="180" x="270" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="RpZUF2r8j4YcJ_AwdVpw-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0050ef;strokeColor=#001DBC;fontColor=#ffffff;" value="&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;Table&lt;/b&gt;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;(View, Index 등)&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="260" x="827" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="RpZUF2r8j4YcJ_AwdVpw-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="USE db;&amp;nbsp;&lt;div&gt;CREATE TABLE&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="180" x="640" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="RpZUF2r8j4YcJ_AwdVpw-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font color=&quot;#3333ff&quot;&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;&lt;b&gt;Oracle 경로&amp;nbsp; (3단계)&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="380" x="100" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="RpZUF2r8j4YcJ_AwdVpw-20" edge="1" parent="1" source="RpZUF2r8j4YcJ_AwdVpw-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=2;" target="RpZUF2r8j4YcJ_AwdVpw-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RpZUF2r8j4YcJ_AwdVpw-13" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fad9d5;strokeColor=#ae4132;" value="&lt;div&gt;&lt;font style=&quot;font-size: 16px; color: rgb(51, 51, 255);&quot;&gt;&lt;b&gt;Oracle Instance&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px; color: rgb(51, 51, 255);&quot;&gt;&lt;b&gt;(프로세스)&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="260" x="40" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="RpZUF2r8j4YcJ_AwdVpw-14" edge="1" parent="1" source="RpZUF2r8j4YcJ_AwdVpw-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=3;" target="RpZUF2r8j4YcJ_AwdVpw-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RpZUF2r8j4YcJ_AwdVpw-15" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;gradientColor=#ea6b66;" value="&lt;font style=&quot;color: rgb(255, 255, 255);&quot;&gt;&lt;b style=&quot;font-size: 16px;&quot;&gt;Schema&lt;/b&gt;&lt;br&gt;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px; color: rgb(255, 255, 255);&quot;&gt;&lt;b style=&quot;&quot;&gt;(= User)&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="247" x="740" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="RpZUF2r8j4YcJ_AwdVpw-16" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="CREATE TABLESPACE" vertex="1">
+          <mxGeometry height="30" width="180" x="240" y="585" as="geometry" />
+        </mxCell>
+        <mxCell id="RpZUF2r8j4YcJ_AwdVpw-17" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d80073;strokeColor=#A50040;fontColor=#ffffff;" value="&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;Table&lt;/b&gt;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;(View, Index 등)&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="260" x="1100" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="RpZUF2r8j4YcJ_AwdVpw-18" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="&lt;div&gt;CREATE TABLE&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="180" x="930" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="RpZUF2r8j4YcJ_AwdVpw-21" edge="1" parent="1" source="RpZUF2r8j4YcJ_AwdVpw-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#FF0000;strokeWidth=2;" target="RpZUF2r8j4YcJ_AwdVpw-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RpZUF2r8j4YcJ_AwdVpw-19" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6d0de;strokeColor=#996185;gradientColor=#d5739d;" value="&lt;div&gt;&lt;font style=&quot;font-size: 16px; color: rgb(51, 51, 255);&quot;&gt;&lt;b&gt;Tablespace&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px; color: rgb(51, 51, 255);&quot;&gt;&lt;b&gt;(물리적 저장 공간)&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="260" x="370" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="RpZUF2r8j4YcJ_AwdVpw-22" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="CREATE USER" vertex="1">
+          <mxGeometry height="30" width="180" x="560" y="580" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="Mzc66ysEF84dwZRUEMuS" name="MySQL 아키텍처">
+    <mxGraphModel dx="983" dy="580" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Ye4m1U0tbG30Hs2bXMAd-2" edge="1" parent="1" source="KQEy7ey31eM24jLnloTe-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="Ye4m1U0tbG30Hs2bXMAd-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KQEy7ey31eM24jLnloTe-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b1ddf0;strokeColor=#10739e;" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;Client&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;(MySQL Workbench, CLI, JDBC)&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="450" x="30" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Ye4m1U0tbG30Hs2bXMAd-4" edge="1" parent="1" source="Ye4m1U0tbG30Hs2bXMAd-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="Ye4m1U0tbG30Hs2bXMAd-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Ye4m1U0tbG30Hs2bXMAd-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;gradientColor=#97d077;" value="&lt;span style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;MySQL Server&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;(SQL 파싱,&amp;nbsp; 최적화, 실행)&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="450" x="30" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="Ye4m1U0tbG30Hs2bXMAd-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;gradientColor=#ffd966;" value="&lt;span style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;Storage Engine&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;(InnoDB - 트랜잭션, FK 지원)&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="450" x="30" y="320" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
