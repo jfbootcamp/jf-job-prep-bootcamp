@@ -1,0 +1,313 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.2 Chrome/142.0.7444.265 Electron/39.6.1 Safari/537.36" version="29.5.2" pages="4">
+  <diagram name="00_기획서 표지" id="rXIBQyoEQ8lwi4oZctY_">
+    <mxGraphModel dx="983" dy="580" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ZhMkdE-m-O8qrAoFCqv6-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" value="" vertex="1">
+          <mxGeometry height="410" width="1650" as="geometry" />
+        </mxCell>
+        <mxCell id="ZhMkdE-m-O8qrAoFCqv6-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="&lt;b style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 51px;&quot;&gt;&lt;font style=&quot;color: rgb(255, 255, 255);&quot;&gt;온라인 도서&lt;/font&gt;&lt;font style=&quot;color: rgb(255, 255, 255);&quot;&gt;관 시스템&lt;/font&gt;&lt;/font&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="970" x="380" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="ZhMkdE-m-O8qrAoFCqv6-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="&lt;b style=&quot;&quot;&gt;&lt;font style=&quot;color: rgb(241, 156, 153); font-size: 35px;&quot;&gt;소프트웨어 요구사항 명세서 (SRS)&lt;/font&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="970" x="380" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="ZhMkdE-m-O8qrAoFCqv6-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="&lt;font style=&quot;color: rgb(255, 255, 255); font-size: 28px;&quot;&gt;Software Requirement Specification - Online Library Management System&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="1040" x="370" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="ZhMkdE-m-O8qrAoFCqv6-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#3333FF;strokeColor=#001DBC;fontColor=#ffffff;" value="" vertex="1">
+          <mxGeometry height="160" width="1650" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="ZhMkdE-m-O8qrAoFCqv6-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#486AEF;fontColor=#ffffff;strokeColor=#001DBC;" value="" vertex="1">
+          <mxGeometry height="130" width="750" x="470" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="ZhMkdE-m-O8qrAoFCqv6-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font color=&quot;#ffffff&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;문서 버전: v1.0 |&amp;nbsp; 작성일: 2026-02-26 | 상태: 최종 승인&lt;/span&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="460" x="610" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="ZhMkdE-m-O8qrAoFCqv6-8" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font color=&quot;#ffffff&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;프로젝트명: LibraryHub |&amp;nbsp; &amp;nbsp;팀 : 풀스택 개발1팀&lt;/span&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="460" x="610" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="ZhMkdE-m-O8qrAoFCqv6-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;font style=&quot;color: rgb(255, 204, 153);&quot;&gt;Tech Stack: Java 17 - Spring Boot 3 - MySQL8 - React 18&lt;/font&gt;&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="460" x="610" y="490" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="yQxHCHsN2koM2Ovil3eq" name="01_프로젝트 배경 &amp; 이해관계자">
+    <mxGraphModel dx="815" dy="481" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="IZCw5QWp0CzGGMIEZsr2-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0037A4;fontColor=#ffffff;strokeColor=#001DBC;" value="" vertex="1">
+          <mxGeometry height="70" width="1660" as="geometry" />
+        </mxCell>
+        <mxCell id="hT2PrA5A_NPWoq05b6bM-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;fontSize=16;" value="&lt;font color=&quot;#ffffff&quot;&gt;&lt;span style=&quot;font-size: 45px;&quot;&gt;&lt;b&gt;&amp;nbsp;CHAPTER 1 - 프로젝트 배경 &amp;amp; 이해관계자&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="970" x="10" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="hT2PrA5A_NPWoq05b6bM-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;rounded=0;fontSize=16;" value="&lt;font style=&quot;font-size: 20px; color: rgb(204, 204, 255);&quot;&gt;&lt;b style=&quot;&quot;&gt;온라인 도서관 시스템 SRS v1.0&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="450" x="1200" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="hT2PrA5A_NPWoq05b6bM-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 22px;&quot;&gt;1.1 프로젝트 배경 및 목적&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="440" x="70" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="hT2PrA5A_NPWoq05b6bM-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;gradientColor=#7ea6e0;align=left;" value="&lt;b&gt;배경 (Background)&lt;/b&gt;&lt;div&gt;&amp;nbsp;교육청 A 도서관은 현재 수기 장부와 엑셀로 회원 가입 및 도서 대출을 관리하고 있습니다.&lt;/div&gt;&lt;div&gt;&amp;nbsp;연간 방문자 12,000명 보유 도서 80,000권 규모로 성장하면서 다음 문제가 발생하고 있습니다.&lt;/div&gt;&lt;div&gt;&amp;nbsp;* 대출 기록 조회에 평균 &lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;&lt;b&gt;10분 이상 &lt;/b&gt;&lt;/font&gt;소요 (검색 불가)&lt;/div&gt;&lt;div&gt;&amp;nbsp;* 연체 도서 파악 불가 --&amp;gt; 분실 증가&lt;/div&gt;&lt;div&gt;&amp;nbsp;* 도서 재고(보유 수량) 실시간 파악 불가&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;목적 (Objective)&lt;/b&gt;&lt;div&gt;&amp;nbsp;웹 기반 통합 도서관 관리 시스템을 구축하여 업무 효율 70% 향상 및 회원 서비스 품질 개선&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="270" width="560" x="70" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="hT2PrA5A_NPWoq05b6bM-5" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 22px;&quot;&gt;1.2 프로젝트 범위 (Scope)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="440" x="70" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="hT2PrA5A_NPWoq05b6bM-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;" value="&lt;br&gt;&lt;div&gt;&lt;div&gt;* 회원 가입 / 정보 관리 (CRUD)&lt;/div&gt;&lt;/div&gt;&lt;div&gt;* 도서 등록 / 정보 관리 (CRUD)&lt;/div&gt;&lt;div&gt;* 도서 대출 / 반납 처리&lt;/div&gt;&lt;div&gt;* 대출 현황 조회 (개인 / 관리자)&lt;/div&gt;&lt;div&gt;* 연체 도서 현황 파악&lt;/div&gt;&lt;div&gt;* 도서 재고 수량 관리&lt;/div&gt;&lt;div&gt;* 관리자 통계 대시보드&lt;/div&gt;" vertex="1">
+          <mxGeometry height="170" width="270" x="70" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="hT2PrA5A_NPWoq05b6bM-7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" value="&lt;b&gt;✅포함 (IN Scope)&amp;nbsp;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="255" x="75" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="hT2PrA5A_NPWoq05b6bM-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcccc;strokeColor=#36393d;align=left;" value="&lt;br&gt;&lt;div&gt;&lt;div&gt;* 전자책 / 오디오북 서비스&lt;/div&gt;&lt;/div&gt;&lt;div&gt;* 온라인 결재 (연체료 등)&lt;/div&gt;&lt;div&gt;* 외부 도서관 연계 API&lt;/div&gt;&lt;div&gt;* 모바일 앱 (1차 개발 제외)&lt;/div&gt;&lt;div&gt;* 도서 추천 AI 기능&lt;/div&gt;&lt;div&gt;&amp;nbsp; --&amp;gt; (Phase 2에서 검토 예정)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="170" width="270" x="350" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="hT2PrA5A_NPWoq05b6bM-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" value="&lt;b&gt;❌제외 (OUT of Scope)&amp;nbsp;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="255" x="355" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="hT2PrA5A_NPWoq05b6bM-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 22px;&quot;&gt;1.3 이해관계자 (Stakeholders)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="440" x="700" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="hT2PrA5A_NPWoq05b6bM-12" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fad7ac;strokeColor=#b46504;align=left;" value="&lt;br&gt;&lt;div&gt;&lt;div&gt;* 👤&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;역할 : 시스템의 핵심 사용자&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;니즈:&amp;nbsp; 빠른 도서 검색,&amp;nbsp; 간편한 대출/반납,&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 개인 대출 현황 조회&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;기대: 직관적인 UI, 3초 이내 응답&lt;/div&gt;" vertex="1">
+          <mxGeometry height="130" width="270" x="695" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="hT2PrA5A_NPWoq05b6bM-13" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fa6800;strokeColor=#C73500;fontColor=#000000;" value="&lt;b&gt;&lt;font style=&quot;color: rgb(255, 255, 255);&quot;&gt;도서관 회원(일반 사용자)&lt;/font&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="255" x="700" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="hT2PrA5A_NPWoq05b6bM-14" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b1ddf0;strokeColor=#10739e;align=left;" value="&lt;br&gt;&lt;div&gt;&lt;div&gt;* 🤹🏼&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;역할 : 시스템의 운영 및 데이터 관리&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;니즈:&amp;nbsp; 회원 도서 관리, 대출/반납 처리, 통계 조회&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;기대: 기존 엑셀 대비 업무 효율 향상&lt;/div&gt;" vertex="1">
+          <mxGeometry height="130" width="270" x="1000" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="hT2PrA5A_NPWoq05b6bM-15" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0050ef;strokeColor=#001DBC;fontColor=#ffffff;" value="&lt;b&gt;&lt;font style=&quot;color: rgb(255, 255, 255);&quot;&gt;도서관 사서 (관리자)&lt;/font&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="255" x="1005" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="hT2PrA5A_NPWoq05b6bM-16" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;gradientColor=#97d077;" value="&lt;br&gt;&lt;div&gt;&lt;div&gt;* 🏛️&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;역할 : 예산 승인, 최종 검수&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;니즈:&amp;nbsp; 도서관 운영 현황 대시보드, 비용 절감&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;기대: ROI (투자 대비 효율) 측정 가능한 시스템&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="270" x="692.5" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="hT2PrA5A_NPWoq05b6bM-17" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#008a00;strokeColor=#005700;fontColor=#ffffff;" value="&lt;b&gt;&lt;font style=&quot;color: rgb(255, 255, 255);&quot;&gt;도서관장(의사 결정자 / 발주자)&lt;/font&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="255" x="697.5" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="hT2PrA5A_NPWoq05b6bM-18" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d0cee2;strokeColor=#56517e;align=left;" value="&lt;br&gt;&lt;div&gt;&lt;div&gt;* 🖥️&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;역할 : 설계, 개발, 테스트&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;니즈:&amp;nbsp; 명확한 요구사항, 우선순위 지침&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;기대: 변경 최소화된 확정 명세서&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="270" x="997.5" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="hT2PrA5A_NPWoq05b6bM-19" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;" value="&lt;b&gt;&lt;font style=&quot;color: rgb(255, 255, 255);&quot;&gt;개발팀(시스템 구현자)&lt;/font&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="255" x="1002.5" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="hT2PrA5A_NPWoq05b6bM-20" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 22px;&quot;&gt;1.4 용어 정의 (Glossary)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="440" x="690" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="hT2PrA5A_NPWoq05b6bM-21" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#000000;" value="&lt;font style=&quot;color: rgb(255, 255, 255);&quot;&gt;&lt;b&gt;용어 | 정의&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="570" x="700" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="hT2PrA5A_NPWoq05b6bM-22" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#eeeeee;align=left;strokeColor=#36393d;" value="&lt;b&gt;회원 (Member) |&amp;nbsp; &amp;nbsp;&lt;/b&gt;도서관에 등록된 서비스 이용자. 로그인 후 대출 서비스 이용 가능" vertex="1">
+          <mxGeometry height="30" width="570" x="700" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="hT2PrA5A_NPWoq05b6bM-23" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;align=left;" value="&lt;b&gt;도서 (Book) |&amp;nbsp; &amp;nbsp;&lt;/b&gt;도서관이 보유한 물리적 서적. ISBN으로 고유 식별" vertex="1">
+          <mxGeometry height="30" width="570" x="700" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="hT2PrA5A_NPWoq05b6bM-24" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#eeeeee;align=left;strokeColor=#36393d;" value="&lt;b&gt;대출 (Loan) |&amp;nbsp; &amp;nbsp;&lt;/b&gt;회원이 도서를 빌리는 행위. 기간 최대 14일" vertex="1">
+          <mxGeometry height="30" width="570" x="700" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="hT2PrA5A_NPWoq05b6bM-25" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;align=left;" value="&lt;b&gt;연체 (Overdue) |&amp;nbsp; &amp;nbsp;&lt;/b&gt;반납예정일을 초과했으나 아직 반납하지 않은 상태" vertex="1">
+          <mxGeometry height="30" width="570" x="700" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="hT2PrA5A_NPWoq05b6bM-26" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#eeeeee;align=left;strokeColor=#36393d;" value="&lt;b&gt;재고 (Stock) |&amp;nbsp; &amp;nbsp;&lt;/b&gt;도서의 보유 수량 중 현재 대출 가능한 권수" vertex="1">
+          <mxGeometry height="30" width="570" x="700" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="hT2PrA5A_NPWoq05b6bM-27" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 22px;&quot;&gt;1.5 개발 일정 (Milestones)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="440" x="60" y="690" as="geometry" />
+        </mxCell>
+        <mxCell id="hT2PrA5A_NPWoq05b6bM-28" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#000000;" value="&lt;font style=&quot;color: rgb(255, 255, 255);&quot;&gt;&lt;b&gt;마일스톤 | 목표 일자 | 주요 내용&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="570" x="70" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="hT2PrA5A_NPWoq05b6bM-29" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;align=center;strokeColor=#82b366;" value="M1 - 요구사항 확정 | Week1 | SRS 최종 승인" vertex="1">
+          <mxGeometry height="30" width="570" x="70" y="750" as="geometry" />
+        </mxCell>
+        <mxCell id="hT2PrA5A_NPWoq05b6bM-34" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;" value="M2 - DB 설계 완료 | Week2 | ERD + DDL 검토 완료" vertex="1">
+          <mxGeometry height="30" width="570" x="70" y="780" as="geometry" />
+        </mxCell>
+        <mxCell id="hT2PrA5A_NPWoq05b6bM-35" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;align=center;strokeColor=#82b366;" value="M3 - 백엔드 개발 완료 | Week 3~5 | REST API + 단위테스트" vertex="1">
+          <mxGeometry height="30" width="570" x="70" y="810" as="geometry" />
+        </mxCell>
+        <mxCell id="hT2PrA5A_NPWoq05b6bM-36" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;" value="M4 - 통합 테스트 |&amp;nbsp; Week 6 | UI 연동 + QA" vertex="1">
+          <mxGeometry height="30" width="570" x="70" y="840" as="geometry" />
+        </mxCell>
+        <mxCell id="hT2PrA5A_NPWoq05b6bM-37" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;align=center;strokeColor=#d79b00;" value="&lt;font style=&quot;color: rgb(204, 102, 0);&quot;&gt;&lt;b&gt;M5 - 오픈 (Go-Live) | Week8 | 운영 서버 배포 완료 🚀&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="570" x="70" y="870" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="02_기능 요구사항 명세" id="D2hdDLVie0wavosIYdyo">
+    <mxGraphModel dx="1678" dy="989" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="syflFumukJMQPcpSDIdv-0" />
+        <mxCell id="syflFumukJMQPcpSDIdv-1" parent="syflFumukJMQPcpSDIdv-0" />
+        <mxCell id="syflFumukJMQPcpSDIdv-2" parent="syflFumukJMQPcpSDIdv-1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0037A4;fontColor=#ffffff;strokeColor=#001DBC;" value="" vertex="1">
+          <mxGeometry height="70" width="1660" as="geometry" />
+        </mxCell>
+        <mxCell id="syflFumukJMQPcpSDIdv-3" parent="syflFumukJMQPcpSDIdv-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;fontSize=16;" value="&lt;font color=&quot;#ffffff&quot;&gt;&lt;span style=&quot;font-size: 45px;&quot;&gt;&lt;b&gt;&amp;nbsp;CHAPTER 2 - 기능 요구사항 명세 (Functional Requirements)&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="1270" x="10" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="syflFumukJMQPcpSDIdv-4" parent="syflFumukJMQPcpSDIdv-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;rounded=0;fontSize=16;" value="&lt;font style=&quot;font-size: 20px; color: rgb(204, 204, 255);&quot;&gt;&lt;b style=&quot;&quot;&gt;온라인 도서관 시스템 SRS v1.0&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="450" x="1200" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="27-2T0a7DJLxjnQgvuQ8-0" parent="syflFumukJMQPcpSDIdv-1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" value="&lt;span style=&quot;font-size: 23px;&quot;&gt;우선순위&amp;nbsp;&lt;/span&gt;&lt;b style=&quot;color: rgb(255, 0, 0); font-size: 23px;&quot;&gt;■ P1 (Must Have)&amp;nbsp;&lt;/b&gt;&lt;b style=&quot;font-size: 23px;&quot;&gt;&lt;font style=&quot;color: rgb(180, 0, 0);&quot;&gt;■ P2 (Should Have)&amp;nbsp;&lt;/font&gt;&lt;/b&gt;&lt;font&gt;&lt;b style=&quot;font-size: 23px;&quot;&gt;&lt;font style=&quot;color: rgb(0, 0, 255);&quot;&gt;■ P3 (Nice to Have)&lt;/font&gt;&lt;/b&gt;&lt;b style=&quot;color: rgb(0, 0, 255); font-size: 23px;&quot;&gt;&lt;font style=&quot;color: rgb(180, 0, 0);&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;&lt;span style=&quot;font-size: 23px;&quot;&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;&lt;b&gt;&amp;nbsp;&lt;/b&gt;&lt;/font&gt;&lt;/span&gt;" vertex="1">
+          <mxGeometry height="60" width="1070" x="80" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="Py0FtadVT5d8KO_n3w0i-3" parent="syflFumukJMQPcpSDIdv-1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;" value="&lt;font style=&quot;font-size: 17px;&quot;&gt;&amp;nbsp;FR-01-1&lt;b&gt; [회원 등록] &lt;/b&gt;이름, 이메일(고유), 전화번호, 주소를 입력하여 회원을 등록한다.&lt;/font&gt;&lt;div&gt;&lt;span style=&quot;font-size: 17px;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 이메일은 형식 검증 및 중복 체크 필수.&amp;nbsp; 가입일은 자동 기록&amp;nbsp;&lt;br&gt;&lt;/span&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;&amp;nbsp;FR-01-2 &lt;b&gt;[회원 조회] &lt;/b&gt;이름 또는 이메일로 회원을 검색하고 상세 정보를 조회한다.&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;&amp;nbsp;FR-01-3 &lt;b&gt;[회원 수정]&lt;/b&gt; 전화번호, 주소 등 기본 정보를 수정할 수 있다. (이메일 변경 불가)&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;&amp;nbsp;FR-01-4 &lt;b&gt;[회원 삭제] &lt;/b&gt;대출 중인 도서가 없는 경우에만 회원을 비활성화 (소프트 딜리트) 한다.&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="160" width="1135" x="77.5" y="177" as="geometry" />
+        </mxCell>
+        <mxCell id="Py0FtadVT5d8KO_n3w0i-4" parent="syflFumukJMQPcpSDIdv-1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;align=left;" value="&lt;font style=&quot;font-size: 17px;&quot;&gt;&lt;b style=&quot;&quot;&gt;FR-01 | 회원 관리 (Member Management) [ P1 - Must Have ]&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="1132.5" x="77.5" y="157" as="geometry" />
+        </mxCell>
+        <mxCell id="Py0FtadVT5d8KO_n3w0i-5" parent="syflFumukJMQPcpSDIdv-1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;" value="&lt;font style=&quot;font-size: 17px;&quot;&gt;&amp;nbsp;FR-02-1&lt;b&gt; [도서 등록] &lt;/b&gt;ISBN(고유), 제목, 저자, 출판사, 출판연도, 분류, 보유수량을 등록한다.&lt;/font&gt;&lt;div&gt;&lt;span style=&quot;font-size: 17px;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 보유 수량은 0 이상이어야 하며, ISBN 중복 등록은 불가하다.&amp;nbsp;&lt;br&gt;&lt;/span&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;&amp;nbsp;FR-02-2 &lt;b&gt;[도서 검색] &lt;/b&gt;제목, 저자, ISBN, 분류로 도서를 검색할수 있다.&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;&amp;nbsp;FR-02-3 &lt;b&gt;[도서 수정]&lt;/b&gt;&amp;nbsp;도서 정보 및 보유수량을&amp;nbsp; 수정할 수 있다.&amp;nbsp;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;&amp;nbsp;FR-02-4 &lt;b&gt;[도서 폐기] &lt;/b&gt;대출 중인 도서를 폐기 처리(소프트 딜리트) 할수 있다.&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="160" width="1135" x="80" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="Py0FtadVT5d8KO_n3w0i-6" parent="syflFumukJMQPcpSDIdv-1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;align=left;" value="&lt;font style=&quot;font-size: 17px;&quot;&gt;&lt;b style=&quot;&quot;&gt;FR-02 | 도서 관리 (Book Management) [ P1 - Must Have ]&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="1132.5" x="80" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="Py0FtadVT5d8KO_n3w0i-7" parent="syflFumukJMQPcpSDIdv-1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;" value="&lt;font style=&quot;font-size: 17px;&quot;&gt;&amp;nbsp;FR-03-1&lt;b&gt; [대출 처리] &lt;/b&gt;회원이 도서를 대출한다. 대출일=오늘, 반납예정일=대출일+14일 자동 설정&lt;/font&gt;&lt;div&gt;&lt;span style=&quot;font-size: 17px;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 조건: 재고 수량 &amp;gt;= 1, 회원의 현재 대출 수 &amp;lt;= 7권, 연체 도서 없음&lt;br&gt;&lt;/span&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;&amp;nbsp;FR-03-2 &lt;b&gt;[반납 처리] &lt;/b&gt;대출 중인 도서를 반납 처리한다. 실제 반납일 기록, 재고 수량 + 1&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;&amp;nbsp;FR-03-3 &lt;b&gt;[대출 현황]&lt;/b&gt;&amp;nbsp;특정 회원의 현재 대출 목록을 출력한다.&amp;nbsp;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;&amp;nbsp;FR-03-4 &lt;b&gt;[연체 처리] &lt;/b&gt;반납예정일이 지난 대출 레코드의 상태를 &quot;연체&quot;로 자동 변경한다.&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="160" width="1135" x="76.25" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="Py0FtadVT5d8KO_n3w0i-8" parent="syflFumukJMQPcpSDIdv-1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;align=left;" value="&lt;font style=&quot;font-size: 17px;&quot;&gt;&lt;b style=&quot;&quot;&gt;FR-03 | 대출/반납 (Loan Management) [ P1 - Must Have ]&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="1132.5" x="76.25" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="Py0FtadVT5d8KO_n3w0i-9" parent="syflFumukJMQPcpSDIdv-1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;align=left;" value="&lt;font style=&quot;font-size: 17px;&quot;&gt;&amp;nbsp;FR-04-1&lt;b&gt; [전체 이력] &lt;/b&gt;관리자는 모든 대출/반납 이력을 날짜 기준으로 조회한다.&lt;/font&gt;&lt;div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;&amp;nbsp;FR-04-2 &lt;b&gt;[회원별 이력] &lt;/b&gt;특정 회원의 전체 대출 이력을 조회한다 (현재 대출 + 과거 반납 포함)&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;&amp;nbsp;FR-04-3 &lt;b&gt;[도서별 이력]&lt;/b&gt;&amp;nbsp;특정 도서의 대출 이력을 조회한다.&amp;nbsp;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="160" width="1135" x="73.75" y="810" as="geometry" />
+        </mxCell>
+        <mxCell id="Py0FtadVT5d8KO_n3w0i-10" parent="syflFumukJMQPcpSDIdv-1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0a30a;fontColor=#000000;strokeColor=#BD7000;align=left;" value="&lt;font style=&quot;font-size: 17px; color: rgb(255, 255, 255);&quot;&gt;&lt;b style=&quot;&quot;&gt;FR-04 | 대출 이력 조회 (Loan History Management) [ P2 - Should Have ]&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="1132.5" x="73.75" y="790" as="geometry" />
+        </mxCell>
+        <mxCell id="Py0FtadVT5d8KO_n3w0i-11" parent="syflFumukJMQPcpSDIdv-1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;align=left;" value="&lt;font style=&quot;font-size: 17px;&quot;&gt;&amp;nbsp;FR-05-1&lt;b&gt; [월별 대출 통계] &lt;/b&gt;월별 대출 건수 및 반납 건수 집계&lt;/font&gt;&lt;div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;&amp;nbsp;FR-05-2 &lt;b&gt;[인기 도서] &lt;/b&gt;기간별 대출 횟수 기준 TOP 10 도서 조회&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;&amp;nbsp;FR-05-3 &lt;b&gt;[연체 현황]&lt;/b&gt;&amp;nbsp;현재 연체 중인 도서 목록 및 연체일 조회&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;&amp;nbsp;FR-05-4&amp;nbsp;&lt;b&gt;[재고 현황]&lt;/b&gt;&amp;nbsp;전체 도서 보유/대출 기능 수량 요약&amp;nbsp;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="160" width="1135" x="1300" y="177" as="geometry" />
+        </mxCell>
+        <mxCell id="Py0FtadVT5d8KO_n3w0i-12" parent="syflFumukJMQPcpSDIdv-1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0a30a;fontColor=#000000;strokeColor=#BD7000;align=left;" value="&lt;font style=&quot;color: rgb(255, 255, 255);&quot;&gt;&lt;b style=&quot;color: rgb(255, 255, 255); font-size: 17px;&quot;&gt;FR-05 | 통계 대시보드 (&lt;/b&gt;&lt;font color=&quot;#ffffff&quot;&gt;&lt;span style=&quot;font-size: 17px;&quot;&gt;&lt;b&gt;Statistics Dashboard&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;b style=&quot;color: rgb(255, 255, 255); font-size: 17px;&quot;&gt;) [ P2 - Should Have ]&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="1132.5" x="1300" y="157" as="geometry" />
+        </mxCell>
+        <mxCell id="Py0FtadVT5d8KO_n3w0i-13" parent="syflFumukJMQPcpSDIdv-1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;align=left;" value="&lt;font style=&quot;font-size: 17px;&quot;&gt;&amp;nbsp;FR-06-1&lt;b&gt; [예약 등록] &lt;/b&gt;현재 대출 중인 도서를 예약할 수 있다&lt;/font&gt;&lt;div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;&amp;nbsp;FR-06-2 &lt;b&gt;[예약 취소] &lt;/b&gt;회원이 본인의 예약을 취소할 수 있다&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;&amp;nbsp;FR-06-3 &lt;b&gt;[예약 알림]&lt;/b&gt;&amp;nbsp;반납 완료 시 예약자에게 이메일, 문자 알림 발송&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="160" width="1135" x="1297.5" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="Py0FtadVT5d8KO_n3w0i-14" parent="syflFumukJMQPcpSDIdv-1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;align=left;" value="&lt;font style=&quot;color: rgb(255, 255, 255);&quot;&gt;&lt;b style=&quot;color: rgb(255, 255, 255); font-size: 17px;&quot;&gt;FR-06 | 도서 예약 (B&lt;/b&gt;&lt;span style=&quot;color: rgb(255, 255, 255);&quot;&gt;&lt;span style=&quot;font-size: 17px;&quot;&gt;&lt;b&gt;ook Reservation&lt;/b&gt;&lt;/span&gt;&lt;b style=&quot;color: rgb(255, 255, 255); font-size: 17px;&quot;&gt;) [ P3- Nice to Have ]&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="1132.5" x="1297.5" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="AaL5ZiCWITTYtJfDCE8c-0" parent="syflFumukJMQPcpSDIdv-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 22px; color: rgb(0, 0, 255);&quot;&gt;&lt;b&gt;📊&amp;nbsp; 기능 요구사항 우선순위 매트릭스&amp;nbsp;&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="440" x="1290" y="585" as="geometry" />
+        </mxCell>
+        <mxCell id="YkxuytvFUgKugVF7O_kK-0" parent="syflFumukJMQPcpSDIdv-1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#000000;" value="&lt;font style=&quot;color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;&lt;b style=&quot;&quot;&gt;요구사항 ID | 기능명 | 담당&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="1132.5" x="1297.5" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="YkxuytvFUgKugVF7O_kK-1" parent="syflFumukJMQPcpSDIdv-1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffcccc;align=center;strokeColor=#36393d;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;FR-01 | 회원 관리 |&amp;nbsp; P1&amp;nbsp; &amp;nbsp; &amp;nbsp; | 백엔드팀&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="1133.75" x="1296.25" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="YkxuytvFUgKugVF7O_kK-6" parent="syflFumukJMQPcpSDIdv-1" style="rounded=0;whiteSpace=wrap;html=1;align=center;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;FR-02 | 도서 관리 |&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&amp;nbsp;P1&amp;nbsp; &amp;nbsp; &amp;nbsp; | 백엔드팀&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="1133.75" x="1296.25" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="YkxuytvFUgKugVF7O_kK-7" parent="syflFumukJMQPcpSDIdv-1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" value="" vertex="1">
+          <mxGeometry height="20" width="20" x="1900" y="675" as="geometry" />
+        </mxCell>
+        <mxCell id="YkxuytvFUgKugVF7O_kK-8" parent="syflFumukJMQPcpSDIdv-1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" value="" vertex="1">
+          <mxGeometry height="20" width="20" x="1900" y="705" as="geometry" />
+        </mxCell>
+        <mxCell id="YkxuytvFUgKugVF7O_kK-9" parent="syflFumukJMQPcpSDIdv-1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffcccc;align=center;strokeColor=#36393d;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;FR-03 | 대출/반납 관리 |&amp;nbsp; P1&amp;nbsp; &amp;nbsp; &amp;nbsp; | 백엔드팀&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="1133.75" x="1296.88" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="YkxuytvFUgKugVF7O_kK-10" parent="syflFumukJMQPcpSDIdv-1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" value="" vertex="1">
+          <mxGeometry height="20" width="20" x="1920" y="735" as="geometry" />
+        </mxCell>
+        <mxCell id="YkxuytvFUgKugVF7O_kK-11" parent="syflFumukJMQPcpSDIdv-1" style="rounded=0;whiteSpace=wrap;html=1;align=center;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;FR-04 | 대출 이력 조회 |&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&amp;nbsp;P1&amp;nbsp; &amp;nbsp; &amp;nbsp; | 백엔드팀&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="1133.75" x="1296.25" y="760" as="geometry" />
+        </mxCell>
+        <mxCell id="YkxuytvFUgKugVF7O_kK-12" parent="syflFumukJMQPcpSDIdv-1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" value="" vertex="1">
+          <mxGeometry height="20" width="20" x="1920" y="765" as="geometry" />
+        </mxCell>
+        <mxCell id="YkxuytvFUgKugVF7O_kK-14" parent="syflFumukJMQPcpSDIdv-1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;align=center;strokeColor=#d6b656;gradientColor=#ffd966;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;FR-05 | 통계 대시 보드 |&amp;nbsp; P2&amp;nbsp; &amp;nbsp; &amp;nbsp; | 백엔드팀+프런트&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="1133.75" x="1296.25" y="790" as="geometry" />
+        </mxCell>
+        <mxCell id="YkxuytvFUgKugVF7O_kK-15" parent="syflFumukJMQPcpSDIdv-1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#FF8000;fontColor=#ffffff;strokeColor=#A50040;" value="" vertex="1">
+          <mxGeometry height="20" width="20" x="1890" y="795" as="geometry" />
+        </mxCell>
+        <mxCell id="YkxuytvFUgKugVF7O_kK-17" parent="syflFumukJMQPcpSDIdv-1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;align=center;strokeColor=#6c8ebf;gradientColor=#7ea6e0;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;FR-06 | 도서 예약 |&amp;nbsp; P3&amp;nbsp; &amp;nbsp; &amp;nbsp; | Phase 2 검토&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="1133.75" x="1296.25" y="820" as="geometry" />
+        </mxCell>
+        <mxCell id="YkxuytvFUgKugVF7O_kK-18" parent="syflFumukJMQPcpSDIdv-1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#3333FF;fontColor=#ffffff;strokeColor=#A50040;" value="" vertex="1">
+          <mxGeometry height="20" width="20" x="1870" y="825" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="03_비기능 요구사항 &amp; 제약조건" id="UrbL8usYyELa2gPd9-WQ">
+    <mxGraphModel dx="671" dy="393" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="mk1dQJ2sFOZbXaPj9xYI-0" />
+        <mxCell id="mk1dQJ2sFOZbXaPj9xYI-1" parent="mk1dQJ2sFOZbXaPj9xYI-0" />
+        <mxCell id="mk1dQJ2sFOZbXaPj9xYI-2" parent="mk1dQJ2sFOZbXaPj9xYI-1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0037A4;fontColor=#ffffff;strokeColor=#001DBC;" value="" vertex="1">
+          <mxGeometry height="70" width="1660" as="geometry" />
+        </mxCell>
+        <mxCell id="mk1dQJ2sFOZbXaPj9xYI-3" parent="mk1dQJ2sFOZbXaPj9xYI-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;fontSize=16;" value="&lt;font color=&quot;#ffffff&quot;&gt;&lt;span style=&quot;font-size: 45px;&quot;&gt;&lt;b&gt;&amp;nbsp;CHAPTER 3 - 비기능 요구사항 (Non-Functional Requirements)&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="1340" x="10" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="mk1dQJ2sFOZbXaPj9xYI-4" parent="mk1dQJ2sFOZbXaPj9xYI-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;rounded=0;fontSize=16;" value="&lt;font style=&quot;font-size: 20px; color: rgb(204, 204, 255);&quot;&gt;&lt;b style=&quot;&quot;&gt;온라인 도서관 시스템 SRS v1.0&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="450" x="1200" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="mk1dQJ2sFOZbXaPj9xYI-8" parent="mk1dQJ2sFOZbXaPj9xYI-1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;" value="&lt;br&gt;&lt;div&gt;&lt;div&gt;* 도서 검색 응답 시간 &lt;b&gt;3초 이내&lt;/b&gt; (동시 100명 기준)&lt;/div&gt;&lt;/div&gt;&lt;div&gt;* 대출/반납 처리 응답시간 &lt;b&gt;2초 이내&lt;/b&gt;&lt;/div&gt;&lt;div&gt;* 전체 대출 이력 조회 &lt;b&gt;5초 이내&lt;/b&gt; (최대 10만 건)&lt;/div&gt;&lt;div&gt;* 동시 접속시 &lt;b&gt;최대 500명&lt;/b&gt; 처리 가능&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;DB 설계 영향 : 검색 컬럼(title, author, isbn) 에 &lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;INDEX 생성 필수&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="140" width="340" x="40" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="mk1dQJ2sFOZbXaPj9xYI-9" parent="mk1dQJ2sFOZbXaPj9xYI-1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" value="&lt;b&gt;⏱️NFR-01 성능 (Performance)&amp;nbsp;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="335" x="45" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="mk1dQJ2sFOZbXaPj9xYI-21" parent="mk1dQJ2sFOZbXaPj9xYI-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 22px;&quot;&gt;1.4 용어 정의 (Glossary)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="440" x="690" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="mk1dQJ2sFOZbXaPj9xYI-22" parent="mk1dQJ2sFOZbXaPj9xYI-1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#000000;" value="&lt;font style=&quot;color: rgb(255, 255, 255);&quot;&gt;&lt;b&gt;용어 | 정의&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="570" x="700" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="mk1dQJ2sFOZbXaPj9xYI-23" parent="mk1dQJ2sFOZbXaPj9xYI-1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#eeeeee;align=left;strokeColor=#36393d;" value="&lt;b&gt;회원 (Member) |&amp;nbsp; &amp;nbsp;&lt;/b&gt;도서관에 등록된 서비스 이용자. 로그인 후 대출 서비스 이용 가능" vertex="1">
+          <mxGeometry height="30" width="570" x="700" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="mk1dQJ2sFOZbXaPj9xYI-24" parent="mk1dQJ2sFOZbXaPj9xYI-1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;align=left;" value="&lt;b&gt;도서 (Book) |&amp;nbsp; &amp;nbsp;&lt;/b&gt;도서관이 보유한 물리적 서적. ISBN으로 고유 식별" vertex="1">
+          <mxGeometry height="30" width="570" x="700" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="mk1dQJ2sFOZbXaPj9xYI-25" parent="mk1dQJ2sFOZbXaPj9xYI-1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#eeeeee;align=left;strokeColor=#36393d;" value="&lt;b&gt;대출 (Loan) |&amp;nbsp; &amp;nbsp;&lt;/b&gt;회원이 도서를 빌리는 행위. 기간 최대 14일" vertex="1">
+          <mxGeometry height="30" width="570" x="700" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="mk1dQJ2sFOZbXaPj9xYI-26" parent="mk1dQJ2sFOZbXaPj9xYI-1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;align=left;" value="&lt;b&gt;연체 (Overdue) |&amp;nbsp; &amp;nbsp;&lt;/b&gt;반납예정일을 초과했으나 아직 반납하지 않은 상태" vertex="1">
+          <mxGeometry height="30" width="570" x="700" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="mk1dQJ2sFOZbXaPj9xYI-27" parent="mk1dQJ2sFOZbXaPj9xYI-1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#eeeeee;align=left;strokeColor=#36393d;" value="&lt;b&gt;재고 (Stock) |&amp;nbsp; &amp;nbsp;&lt;/b&gt;도서의 보유 수량 중 현재 대출 가능한 권수" vertex="1">
+          <mxGeometry height="30" width="570" x="700" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="mk1dQJ2sFOZbXaPj9xYI-28" parent="mk1dQJ2sFOZbXaPj9xYI-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 22px;&quot;&gt;1.5 개발 일정 (Milestones)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="440" x="60" y="690" as="geometry" />
+        </mxCell>
+        <mxCell id="mk1dQJ2sFOZbXaPj9xYI-29" parent="mk1dQJ2sFOZbXaPj9xYI-1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#000000;" value="&lt;font style=&quot;color: rgb(255, 255, 255);&quot;&gt;&lt;b&gt;마일스톤 | 목표 일자 | 주요 내용&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="570" x="70" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="mk1dQJ2sFOZbXaPj9xYI-30" parent="mk1dQJ2sFOZbXaPj9xYI-1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;align=center;strokeColor=#82b366;" value="M1 - 요구사항 확정 | Week1 | SRS 최종 승인" vertex="1">
+          <mxGeometry height="30" width="570" x="70" y="750" as="geometry" />
+        </mxCell>
+        <mxCell id="mk1dQJ2sFOZbXaPj9xYI-31" parent="mk1dQJ2sFOZbXaPj9xYI-1" style="rounded=0;whiteSpace=wrap;html=1;align=center;" value="M2 - DB 설계 완료 | Week2 | ERD + DDL 검토 완료" vertex="1">
+          <mxGeometry height="30" width="570" x="70" y="780" as="geometry" />
+        </mxCell>
+        <mxCell id="mk1dQJ2sFOZbXaPj9xYI-32" parent="mk1dQJ2sFOZbXaPj9xYI-1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;align=center;strokeColor=#82b366;" value="M3 - 백엔드 개발 완료 | Week 3~5 | REST API + 단위테스트" vertex="1">
+          <mxGeometry height="30" width="570" x="70" y="810" as="geometry" />
+        </mxCell>
+        <mxCell id="mk1dQJ2sFOZbXaPj9xYI-33" parent="mk1dQJ2sFOZbXaPj9xYI-1" style="rounded=0;whiteSpace=wrap;html=1;align=center;" value="M4 - 통합 테스트 |&amp;nbsp; Week 6 | UI 연동 + QA" vertex="1">
+          <mxGeometry height="30" width="570" x="70" y="840" as="geometry" />
+        </mxCell>
+        <mxCell id="mk1dQJ2sFOZbXaPj9xYI-34" parent="mk1dQJ2sFOZbXaPj9xYI-1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;align=center;strokeColor=#d79b00;" value="&lt;font style=&quot;color: rgb(204, 102, 0);&quot;&gt;&lt;b&gt;M5 - 오픈 (Go-Live) | Week8 | 운영 서버 배포 완료 🚀&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="570" x="70" y="870" as="geometry" />
+        </mxCell>
+        <mxCell id="HSa6OCO3z7FlEbpNba52-0" parent="mk1dQJ2sFOZbXaPj9xYI-1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fad7ac;strokeColor=#b46504;align=left;" value="&lt;br&gt;&lt;div&gt;&lt;div&gt;* 서비스 가용성 &lt;b&gt;99.5%&lt;/b&gt;&amp;nbsp; 이상 (월간 다운타임 3.6시간 이내)&lt;/div&gt;&lt;/div&gt;&lt;div&gt;* 정기 점검 매주 일요일 오전 2~4시 (공지 후 진행)&lt;/div&gt;&lt;div&gt;* 장애 복구 목표시간(RTO)&lt;b&gt; 30분 이내&lt;/b&gt;&lt;/div&gt;&lt;div&gt;* 복구 목표 시점(RPO) &lt;b&gt;24시간 이내&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;DB 설계 영향 :&amp;nbsp; 백업 정책,&amp;nbsp; created_at / updated_at&amp;nbsp;&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;TIMESTAMP&amp;nbsp; 필수&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="140" width="390" x="410" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="HSa6OCO3z7FlEbpNba52-1" parent="mk1dQJ2sFOZbXaPj9xYI-1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0a30a;fontColor=#000000;strokeColor=#BD7000;" value="&lt;b&gt;&lt;font style=&quot;color: rgb(255, 255, 255);&quot;&gt;⏱️NFR-02 가용성 (Availability)&amp;nbsp;&lt;/font&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="375" x="415" y="100" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
