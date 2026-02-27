@@ -1,0 +1,493 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.2 Chrome/142.0.7444.265 Electron/39.6.1 Safari/537.36" version="29.5.2" pages="4">
+  <diagram name="01_DB 설계 로드맵 --- 요구사항에서 DDL까지" id="CVWZfRHKuXlYHBjIOiPW">
+    <mxGraphModel dx="1188" dy="701" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 26px;&quot;&gt;DB 설계 프로세스 --- 요구 사항에서&amp;nbsp; DDL까지&lt;/font&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="550" x="160" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#FF3333;strokeWidth=3;" value="" vertex="1">
+          <mxGeometry height="350" width="300" x="30" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fa6800;fontColor=#000000;strokeColor=#C73500;" value="&lt;font style=&quot;font-size: 16px; color: rgb(255, 255, 255);&quot;&gt;&lt;b&gt;요구사항 분석&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="180" x="100" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-4" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fa6800;fontColor=#000000;strokeColor=#C73500;" value="&lt;b&gt;&lt;font style=&quot;font-size: 15px; color: rgb(255, 255, 255);&quot;&gt;1&lt;/font&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="35" width="35" x="60" y="142.5" as="geometry" />
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-5" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b style=&quot;font-size: 18px;&quot;&gt;What: &lt;/b&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;고객/기획자의 요구를 수집,분석&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="272.5" x="47.5" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-6" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;entryX=0.961;entryY=0.989;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.02;exitY=0.989;exitDx=0;exitDy=0;exitPerimeter=0;fillColor=#fa6800;strokeColor=#C73500;strokeWidth=4;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="55.94999999999982" y="229.67000000000007" as="sourcePoint" />
+            <mxPoint x="312.37249999999995" y="229.67000000000007" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;b style=&quot;font-size: 18px;&quot;&gt;* &lt;/b&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;업무&lt;/font&gt;&lt;/font&gt;&lt;font style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 18px;&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;font style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 16px;&quot;&gt;규칙 파악&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;* 명사 --&amp;gt; 엔티티 후보 추출&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;* 동사 --&amp;gt; 관계 후보 추출&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;* 형용사 --&amp;gt; 속성/제약조건 후보&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 16px; color: rgb(255, 51, 51);&quot;&gt;&lt;i&gt;&quot;회원이 도서를 대출한다&quot;&lt;/i&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 16px; color: rgb(255, 51, 51);&quot;&gt;&lt;i&gt;--&amp;gt; 회원, 도서 = 엔티티&lt;/i&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 16px; color: rgb(255, 51, 51);&quot;&gt;&lt;i&gt;--&amp;gt; 대출한다 = 관계&lt;/i&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="160" width="272.5" x="40" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#FF3333;strokeWidth=3;" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px; color: rgb(255, 51, 51);&quot;&gt;산출물 : 요구사항 명세서&lt;/font&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="40" width="240" x="60" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="DBMS 독립적" vertex="1">
+          <mxGeometry height="30" width="110" x="130" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=3;" value="" vertex="1">
+          <mxGeometry height="350" width="300" x="410" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-11" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6d8764;fontColor=#ffffff;strokeColor=#3A5431;" value="&lt;font style=&quot;font-size: 16px; color: rgb(255, 255, 255);&quot;&gt;&lt;b&gt;개념적 모델링&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="180" x="480" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-12" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#6d8764;fontColor=#ffffff;strokeColor=#3A5431;" value="&lt;b&gt;&lt;font style=&quot;font-size: 15px; color: rgb(255, 255, 255);&quot;&gt;2&lt;/font&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="35" width="35" x="440" y="142.5" as="geometry" />
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b style=&quot;font-size: 18px;&quot;&gt;What: &lt;/b&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;현실 세계를 ERD로 추상화&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="272.5" x="427.5" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-14" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;entryX=0.961;entryY=0.989;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.02;exitY=0.989;exitDx=0;exitDy=0;exitPerimeter=0;fillColor=#fa6800;strokeColor=#C73500;strokeWidth=4;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="435.9499999999998" y="229.67000000000007" as="sourcePoint" />
+            <mxPoint x="692.3725" y="229.67000000000007" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-15" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;b style=&quot;font-size: 18px;&quot;&gt;* &lt;/b&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;엔티티(Entity) 확정&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;* 속성(Attribute) 정의&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;* 관계(Relationship)&amp;nbsp;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;* 식별자 (PK 후보) 선정&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#006633&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;i&gt;아직 테이블이 아니다!&lt;/i&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#006633&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;i&gt;--&amp;gt; 엔티티, 관계, 속성&lt;/i&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#006633&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;i&gt;--&amp;gt; DBMS 무관한 순수 설계&lt;/i&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="160" width="272.5" x="420" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-16" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;strokeWidth=3;" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px; color: rgb(0, 102, 51);&quot;&gt;산출물 : 개념적 ERD&lt;/font&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="40" width="240" x="440" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-17" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="DBMS 독립적" vertex="1">
+          <mxGeometry height="30" width="110" x="510" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-18" edge="1" parent="1" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;fillColor=#fa6800;strokeColor=#C73500;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="340" y="280" as="sourcePoint" />
+            <mxPoint x="400" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-19" edge="1" parent="1" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;fillColor=#006633;strokeColor=#C73500;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="720" y="280" as="sourcePoint" />
+            <mxPoint x="780" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-21" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b1ddf0;strokeColor=#10739e;strokeWidth=3;" value="" vertex="1">
+          <mxGeometry height="350" width="300" x="800" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-22" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" value="&lt;font style=&quot;font-size: 16px; color: rgb(255, 255, 255);&quot;&gt;&lt;b&gt;논리적 모델링&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="180" x="870" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-23" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" value="&lt;b&gt;&lt;font style=&quot;font-size: 15px; color: rgb(255, 255, 255);&quot;&gt;3&lt;/font&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="35" width="35" x="830" y="132.5" as="geometry" />
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-24" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b style=&quot;font-size: 18px;&quot;&gt;What: &lt;/b&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;테이블 구조로 변환&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="272.5" x="817.5" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-25" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;entryX=0.961;entryY=0.989;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.02;exitY=0.989;exitDx=0;exitDy=0;exitPerimeter=0;fillColor=#fa6800;strokeColor=#C73500;strokeWidth=4;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="825.9499999999998" y="219.67000000000007" as="sourcePoint" />
+            <mxPoint x="1082.3725" y="219.67000000000007" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-26" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;b style=&quot;font-size: 18px;&quot;&gt;* &lt;/b&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;엔티티 --&amp;gt; 테이블 (Table)&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;* 속성 --&amp;gt; 컬럼(Column)&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;* N:M --&amp;gt; 중간 테이블로 분해&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;* 정규화 검증 (1NF--&amp;gt;2NF--&amp;gt;3NF)&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#0000ff&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;i&gt;테이터 타입은 아직 추상적&lt;/i&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#0000ff&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;i&gt;--&amp;gt; &quot;문자열&quot;, &quot;정수&quot;, &quot;날짜&quot; 수준&lt;/i&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#0000ff&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;i&gt;--&amp;gt; 특정 DBMS에 종속되지 않음&lt;/i&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="160" width="272.5" x="810" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-27" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b0e3e6;strokeColor=#0e8088;strokeWidth=3;" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px; color: rgb(0, 102, 51);&quot;&gt;산출물 : 논리적 ERD&lt;/font&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="40" width="240" x="830" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-28" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="DBMS 독립적" vertex="1">
+          <mxGeometry height="30" width="110" x="900" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-29" edge="1" parent="1" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;fillColor=#0000FF;strokeColor=#C73500;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1120" y="280" as="sourcePoint" />
+            <mxPoint x="1180" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-31" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=3;" value="" vertex="1">
+          <mxGeometry height="350" width="300" x="1210" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-32" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6a00ff;fontColor=#ffffff;strokeColor=#3700CC;" value="&lt;font style=&quot;font-size: 16px; color: rgb(255, 255, 255);&quot;&gt;&lt;b&gt;물리적 모델링&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="180" x="1280" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-33" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#6a00ff;fontColor=#ffffff;strokeColor=#3700CC;" value="&lt;b&gt;&lt;font style=&quot;font-size: 15px; color: rgb(255, 255, 255);&quot;&gt;4&lt;/font&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="35" width="35" x="1240" y="132.5" as="geometry" />
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-34" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b style=&quot;font-size: 18px;&quot;&gt;What: &lt;/b&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;특정 DBMS에 맞춤 설계&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="272.5" x="1227.5" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-35" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;entryX=0.961;entryY=0.989;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.02;exitY=0.989;exitDx=0;exitDy=0;exitPerimeter=0;fillColor=#fa6800;strokeColor=#C73500;strokeWidth=4;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1235.9499999999998" y="219.67000000000007" as="sourcePoint" />
+            <mxPoint x="1492.3725" y="219.67000000000007" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-36" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;b style=&quot;font-size: 18px;&quot;&gt;* &lt;/b&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;구체적 데이터 타입 결정&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;(VARCHAR, BIGINT, TIMESTAMP...)&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;* 스토리지 엔진 선택 (InnoDB)&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;* 문자셋(utf8mb4)&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;* 인덱스 (INDEX) 전략 수립&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#0000ff&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;i&gt;여기서부터 MYSQL 전용!&lt;/i&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#0000ff&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;i&gt;--&amp;gt; 같은 논리 모델도 MySQL/Oracle&lt;/i&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#0000ff&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;i&gt;에서 물리 모델이 달라질 수 있음&lt;/i&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="160" width="272.5" x="1220" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-37" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d0cee2;strokeColor=#56517e;strokeWidth=3;" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px; color: rgb(127, 0, 255);&quot;&gt;산출물 : 믈리적 ERD + 데이터 사전&lt;/font&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="40" width="240" x="1240" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-38" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;DBMS 종속적 (MySQL)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="138.75" x="1280" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-39" edge="1" parent="1" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;fillColor=#B5739D;strokeColor=#C73500;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1530" y="280" as="sourcePoint" />
+            <mxPoint x="1590" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-40" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcccc;strokeColor=#36393d;strokeWidth=3;" value="" vertex="1">
+          <mxGeometry height="360" width="300" x="1620" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-41" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" value="&lt;font style=&quot;font-size: 16px; color: rgb(255, 255, 255);&quot;&gt;&lt;b&gt;DDL 구현&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="180" x="1690" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-42" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" value="&lt;b&gt;&lt;font style=&quot;font-size: 15px; color: rgb(255, 255, 255);&quot;&gt;5&lt;/font&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="35" width="35" x="1650" y="132.5" as="geometry" />
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-43" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b style=&quot;font-size: 18px;&quot;&gt;What: &lt;/b&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;물리 모델 --&amp;gt; SQL 코드로 변환&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="272.5" x="1637.5" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-44" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;entryX=0.961;entryY=0.989;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.02;exitY=0.989;exitDx=0;exitDy=0;exitPerimeter=0;fillColor=#fa6800;strokeColor=#C73500;strokeWidth=4;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1646.08" y="214.66000000000008" as="sourcePoint" />
+            <mxPoint x="1902.5025" y="214.66000000000008" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-45" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;&lt;b&gt;* &lt;/b&gt;CREATE DATABASE&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;* CREATE TABLE + 제약조건&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;* FOREIGN KEY 설정&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;* INDEX 생성&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;* 테스트 데이터 INSERT&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#ea6b66&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;i&gt;설계가 탄탄하면 DDL은&amp;nbsp;&lt;/i&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#ea6b66&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;i&gt;거의 자동으로 나온다!&lt;/i&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#ea6b66&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;i&gt;--&amp;gt; 설계 없는 코딩 = 기술 부재&lt;/i&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="160" width="272.5" x="1630" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-46" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcc99;strokeColor=#36393d;strokeWidth=3;" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px; color: rgb(102, 51, 0);&quot;&gt;산출물 : . sql 파일 (실행가능한 DDL)&lt;/font&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="40" width="240" x="1650" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-47" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;DBMS 종속적 (MySQL)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="138.75" x="1690" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="9nzTOD2toeesHIKlp4Bj-48" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#EA6B66;dashed=1;dashPattern=8 8;strokeWidth=2;" value="&lt;font style=&quot;font-size: 19px; color: rgb(234, 107, 102);&quot;&gt;&lt;b&gt;건축에 비유하면?&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 19px;&quot;&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;① 요구 사항 = &quot;3층짜리 카페 겸 주택을 짖고 싶어요&quot; --&amp;gt;&amp;nbsp;&lt;/font&gt;&lt;/font&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;b style=&quot;background-color: transparent; font-size: 19px;&quot;&gt;②&lt;/b&gt;&lt;span style=&quot;font-size: 19px; background-color: transparent;&quot;&gt;&amp;nbsp;개념 설계 = 대략적인 배치도 (방 몇 개, 층별 용도) --&amp;gt;&amp;nbsp;&lt;/span&gt;&lt;/font&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;b style=&quot;background-color: transparent; font-size: 19px;&quot;&gt;③&lt;/b&gt;&lt;span style=&quot;background-color: transparent; font-size: 19px;&quot;&gt;&amp;nbsp;논리 설계 = 상세 평면도 (벽 위치, 문/창문 배치)&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font&gt;&lt;span style=&quot;font-size: 19px;&quot;&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;b&gt;④ &lt;/b&gt;물리 설계 = 자제 선정 (콘크리트? 철골?, 배관 규격) --&amp;gt;&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;/font&gt;&lt;span style=&quot;background-color: transparent; font-size: 19px;&quot;&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;b&gt;⑤ &lt;/b&gt;DDL = 실제 시공 (= SQL 실행)&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 19px; color: rgb(234, 107, 102);&quot;&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="170" width="1700" x="50" y="510" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="u-uwq1gkVmdhfzV7PwIE" name="02_STEP -- 요구사항 분석">
+    <mxGraphModel dx="1055" dy="601" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="DaWH2oN6KhjL7Vnl3aZd-1" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fa6800;fontColor=#000000;strokeColor=#C73500;" value="&lt;b&gt;&lt;font style=&quot;font-size: 15px; color: rgb(255, 255, 255);&quot;&gt;1&lt;/font&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="35" width="35" x="70" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lm96Io0nbKgJCSDtATR3-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;span style=&quot;font-size: 26px;&quot;&gt;&lt;b&gt;&lt;font style=&quot;color: rgb(204, 102, 0);&quot;&gt;STEP 1 -- 요구사항 분석 (Requirement Analysis)&lt;/font&gt;&lt;/b&gt;&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="650" x="105" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="TrZsdiXPjQdw9zO7qV3g-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 15px; color: rgb(131, 131, 131);&quot;&gt;&quot;고객이 원하는 것&quot;을 정확히 파악하는 단계 -- 모든 설계의 출발점&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="530" x="148" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="TrZsdiXPjQdw9zO7qV3g-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;📖 요구 사항 문서 예시 : 온라인 도서관 시스템&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="450" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="TrZsdiXPjQdw9zO7qV3g-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+          <mxGeometry height="540" width="680" x="73" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="TrZsdiXPjQdw9zO7qV3g-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f0a30a;fontColor=#000000;strokeColor=#BD7000;" value="&lt;font style=&quot;color: rgb(255, 255, 255); font-size: 17px;&quot;&gt;&lt;b&gt;온라인 도서관 시스템 -- 요구사항 명세서 (간략)&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="680" x="70" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="TrZsdiXPjQdw9zO7qV3g-5" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;&amp;nbsp;1. 업무 개요&lt;/b&gt;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;도서관에서 &lt;b&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;회원&lt;/font&gt;&lt;/b&gt;이 &lt;b&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;도서&lt;/font&gt;&lt;/b&gt;를 &lt;font style=&quot;color: rgb(0, 0, 255);&quot;&gt;&lt;b&gt;대출&lt;/b&gt;&lt;/font&gt;하고 &lt;b&gt;&lt;font style=&quot;color: rgb(0, 0, 255);&quot;&gt;반납&lt;/font&gt;&lt;/b&gt;하는 과정을 관리한다.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;&amp;nbsp;2. 상세 요구 사항&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;&amp;nbsp;&lt;/b&gt;R1. &lt;b&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;회원&lt;/font&gt;&lt;/b&gt;은 &lt;u&gt;&lt;font style=&quot;color: rgb(0, 102, 51);&quot;&gt;이름, 이메일(고유), 전화번호, 주소&lt;/font&gt;&lt;/u&gt;를 가진다.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&amp;nbsp;R2. &lt;b&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;도서&lt;/font&gt;&lt;/b&gt;는 &lt;font style=&quot;color: rgb(0, 102, 51);&quot;&gt;&lt;u&gt;ISBN(고유), 제목, 저자, 출판사, 출판연도, 분류, 보유수량&lt;/u&gt;&lt;/font&gt;을 가진다.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;&amp;nbsp;&lt;/b&gt;R3. 한 명의 &lt;b&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;회원&lt;/font&gt;&lt;/b&gt;이 여러 권의 &lt;b&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;도서&lt;/font&gt;&lt;/b&gt;를 대출할 수 있다. (1:N)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;&amp;nbsp;&lt;/b&gt;R4. 하나의 &lt;b&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;도서&lt;/font&gt;&lt;/b&gt;가 여러 번 &lt;b&gt;&lt;font style=&quot;color: rgb(0, 0, 255);&quot;&gt;대출&lt;/font&gt;&lt;/b&gt; 될 수 있다. (1: N)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;&amp;nbsp;&lt;/b&gt;R5. &lt;b&gt;&lt;font style=&quot;color: rgb(0, 0, 255);&quot;&gt;대출 &lt;/font&gt;&lt;/b&gt;시 &lt;u&gt;&lt;font style=&quot;color: rgb(0, 102, 51);&quot;&gt;대출일, 반납예정일, 실제반납일, 상태&lt;/font&gt;&lt;/u&gt;를 기록한다.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;&amp;nbsp;&lt;/b&gt;R6. 대출 &lt;u&gt;&lt;font style=&quot;color: rgb(0, 102, 51);&quot;&gt;상태&lt;/font&gt;&lt;/u&gt;는 &lt;font style=&quot;color: rgb(127, 0, 255);&quot;&gt;&quot;대출중&quot;, &quot;반납완료&quot;, &quot;연체&quot;&lt;/font&gt; 중 하나이다.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;3. 제약조건&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&amp;nbsp;C1. 회원 이메일은 &lt;b&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;중복 불가&lt;/font&gt;&lt;/b&gt; --&amp;gt; UNIQUE 제약조건&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&amp;nbsp;C2. 도서 보유수량은 &lt;b&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;0 이상&lt;/font&gt;&lt;/b&gt;이어야 한다. --&amp;gt; CHECK 제약조건&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&amp;nbsp;C3. 회원/도서가 삭제되면 관련 대출 기록은 &lt;b&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;보존&lt;/font&gt;&lt;/b&gt; --&amp;gt; ON DELETE RESTRICT&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="340" width="595" x="105" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="jWkJ3WSsh8O-79yOkGr2-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;🔎 요구 사항에서 핵심 요소 추출하기&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="450" x="760" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="SI7xmuKSd0szvzqrLr_n-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#FF3333;strokeWidth=3;" value="" vertex="1">
+          <mxGeometry height="170" width="600" x="920" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="SI7xmuKSd0szvzqrLr_n-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fa6800;fontColor=#000000;strokeColor=#C73500;" value="&lt;font style=&quot;color: rgb(255, 255, 255);&quot;&gt;&lt;b style=&quot;color: rgb(255, 255, 255); font-size: 16px;&quot;&gt;규칙 &lt;/b&gt;&lt;font color=&quot;#ffffff&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;①&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;b style=&quot;color: rgb(255, 255, 255); font-size: 16px;&quot;&gt;&amp;nbsp; 명사(名詞) --&amp;gt; 엔티티(Entity) 후보&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="530" x="950" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="SI7xmuKSd0szvzqrLr_n-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;요구사항의 &lt;b&gt;명사&lt;/b&gt;를 찾는다 --&amp;gt; 엔티티 후보가 된다&lt;br&gt;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;회원&lt;/font&gt;&lt;/b&gt;이 &lt;b&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;도서&lt;/font&gt;&lt;/b&gt;를 대출한다 --&amp;gt; 회원, 도서 = 엔티티 후보!&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;대출 &lt;/font&gt;&lt;/b&gt;기록을 관리한다 --&amp;gt; 대출 = 엔티티 후보!&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="452.5" x="970" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="uQXvNd7sD0qSZC-JTWNt-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;strokeWidth=3;" value="" vertex="1">
+          <mxGeometry height="170" width="600" x="915" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="uQXvNd7sD0qSZC-JTWNt-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" value="&lt;font style=&quot;color: rgb(255, 255, 255);&quot;&gt;&lt;b style=&quot;color: rgb(255, 255, 255); font-size: 16px;&quot;&gt;규칙 ②&lt;/b&gt;&lt;b style=&quot;color: rgb(255, 255, 255); font-size: 16px;&quot;&gt;&amp;nbsp; 동사(動詞) --&amp;gt; 관계(Relationship)후보&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="530" x="945" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="uQXvNd7sD0qSZC-JTWNt-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;요구사항의 &lt;b&gt;동사&lt;/b&gt;를 찾는다 --&amp;gt; 엔티티 간 관계가 된다&lt;br&gt;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;font&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;회원&lt;/font&gt;이 &lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;도서&lt;/font&gt;&lt;/font&gt;를 &lt;b&gt;&lt;font style=&quot;color: rgb(0, 0, 255);&quot;&gt;대출한다&lt;/font&gt;&lt;/b&gt; --&amp;gt; 회원 &amp;lt;--&amp;gt; 도서 사이의 &quot;대출&quot; 관계&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;여러 권을 대출 &lt;b&gt;&lt;font style=&quot;color: rgb(0, 0, 255);&quot;&gt;할 수 있다&lt;/font&gt;&lt;/b&gt; --&amp;gt; 1 : N 카디널리티 힌트!&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="452.5" x="965" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="zJCvSx8CGbE-xMss44Hg-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;strokeWidth=3;" value="" vertex="1">
+          <mxGeometry height="170" width="600" x="910" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="zJCvSx8CGbE-xMss44Hg-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;" value="&lt;font style=&quot;color: rgb(255, 255, 255);&quot;&gt;&lt;b style=&quot;color: rgb(255, 255, 255); font-size: 16px;&quot;&gt;규칙 ③&lt;/b&gt;&lt;b style=&quot;color: rgb(255, 255, 255); font-size: 16px;&quot;&gt;&amp;nbsp; 형용사, 수식어&amp;nbsp; --&amp;gt; 속성(Attribute) / 제약조건&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="530" x="940" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="zJCvSx8CGbE-xMss44Hg-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;요구사항의 &lt;b&gt;형용사, 수식어&lt;/b&gt;를 찾는다 --&amp;gt; 속성/제약이 된다&lt;br&gt;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;이메일은 &lt;b&gt;&lt;font style=&quot;color: rgb(0, 102, 51);&quot;&gt;고유&lt;/font&gt;&lt;/b&gt;하다 --&amp;gt; UNIQUE 제역조건&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&amp;nbsp;보유수량은 &lt;b&gt;&lt;font style=&quot;color: rgb(0, 102, 51);&quot;&gt;0 이상&lt;/font&gt;&lt;/b&gt;이어야 한다 --&amp;gt; CHECK(quantity &amp;gt;= 0)&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="452.5" x="960" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="zJCvSx8CGbE-xMss44Hg-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 21px;&quot;&gt;✅ &lt;b style=&quot;&quot;&gt;추출 결과 요약&amp;nbsp;&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="280" y="800" as="geometry" />
+        </mxCell>
+        <mxCell id="zJCvSx8CGbE-xMss44Hg-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#000000;" value="&lt;font style=&quot;color: rgb(255, 255, 255); font-size: 16px;&quot;&gt;&lt;b style=&quot;&quot;&gt;구분&amp;nbsp; &amp;nbsp; &amp;nbsp; |&amp;nbsp; &amp;nbsp; 추출 근거&amp;nbsp; &amp;nbsp; &amp;nbsp; |&amp;nbsp; &amp;nbsp; &amp;nbsp;추출 결과&amp;nbsp;&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="1010" x="40" y="860" as="geometry" />
+        </mxCell>
+        <mxCell id="zJCvSx8CGbE-xMss44Hg-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;align=center;strokeColor=#82b366;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;엔티티 (명사)&lt;/b&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; |&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&quot;회원이 도서를 대출한다&quot;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;|&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;회원(members), 도서 (books), 대출 (loans)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="1010" x="40" y="890" as="geometry" />
+        </mxCell>
+        <mxCell id="zJCvSx8CGbE-xMss44Hg-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;" value="&lt;b style=&quot;font-size: 16px;&quot;&gt;괸계 (동사)&lt;/b&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; |&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&quot;대출한다 / 반납한다&quot;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;|&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;회원 ---&amp;gt; 대출 (1 : N),&amp;nbsp; &amp;nbsp; 도서 ---&amp;gt; 대출 (1 : N)&amp;nbsp;&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="1010" x="40" y="920" as="geometry" />
+        </mxCell>
+        <mxCell id="zJCvSx8CGbE-xMss44Hg-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;align=center;strokeColor=#82b366;" value="&lt;b style=&quot;font-size: 16px;&quot;&gt;속성 (수식어)&lt;/b&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; |&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&quot;이름, 이메일(고유), ISBN, 제목...&quot;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;|&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;각 엔티티의 컬럼 후보&amp;nbsp;&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="1010" x="40" y="950" as="geometry" />
+        </mxCell>
+        <mxCell id="zJCvSx8CGbE-xMss44Hg-9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;" value="&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;제약 조건&lt;/b&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;|&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&quot;고유 / 0 이상 / 보존&quot;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;|&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;UNIQUE, CHECK, ON DELETE RESTRICT&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="1010" x="40" y="980" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="MYsQASGhSXWJcgKb2jQO" name="03_STEP2 -- 개념적 모델링 (ERD)">
+    <mxGraphModel dx="844" dy="481" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="WkbQtVPpD3m08Hru4guj-5" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;" value="&lt;b&gt;&lt;font style=&quot;font-size: 15px; color: rgb(255, 255, 255);&quot;&gt;2&lt;/font&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="35" width="35" x="100" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-6" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;span style=&quot;font-size: 26px;&quot;&gt;&lt;b&gt;&lt;font style=&quot;color: rgb(0, 102, 51);&quot;&gt;STEP 2 -- 개념적 모델링 (Conceptual Modeling)&lt;/font&gt;&lt;/b&gt;&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="650" x="135" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 15px; color: rgb(131, 131, 131);&quot;&gt;요구사항에서 추출한 엔티티, 관계, 속성을 ERD로 시각화하는 단계&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="530" x="178" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-8" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;📐 ERD 표기규칙 (Chen 표기법)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="450" x="30" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#d6b656;strokeWidth=3;fillColor=#fff2cc;gradientColor=#ffd966;" value="&lt;font style=&quot;color: rgb(204, 102, 0); font-size: 16px;&quot;&gt;&lt;b style=&quot;&quot;&gt;회원&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="100" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;= 엔티티 (Entity) -- 사각형으로 표기&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;span style=&quot;color: rgb(131, 131, 131); font-size: 15px;&quot;&gt;관리 대상이 되는 실체 (회원, 도서, 대출)&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="270" x="240" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-11" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#0000FF;strokeWidth=4;" value="&lt;font style=&quot;color: rgb(0, 0, 255); font-size: 14px;&quot;&gt;&lt;b style=&quot;&quot;&gt;대출&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="80" width="110" x="105" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;= 관계 (Relationship) --&amp;nbsp; 마름모로 표기&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;span style=&quot;color: rgb(131, 131, 131); font-size: 15px;&quot;&gt;엔티티 간의 연결 (대출한다, 소속된다)&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="270" x="230" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-13" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#006633;strokeWidth=4;" value="&lt;font style=&quot;color: rgb(0, 102, 51); font-size: 15px;&quot;&gt;&lt;b style=&quot;&quot;&gt;이름&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="80" width="120" x="95" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-14" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;= 속성 (Attribute) -- 타원으로 표기&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 15px; color: rgb(131, 131, 131);&quot;&gt;엔티티의 세부 정보 (이름, 이메일, ISBN)&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="270" x="230" y="415" as="geometry" />
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-15" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#FFD966;strokeWidth=4;" value="&lt;font style=&quot;font-size: 15px; color: rgb(164, 140, 66);&quot;&gt;&lt;b style=&quot;&quot;&gt;&lt;u style=&quot;&quot;&gt;id(PK)&lt;/u&gt;&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="80" width="120" x="95" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-16" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;= 기본키 (PK) 속성 -- 밑줄 타원으로 표기&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 15px; color: rgb(131, 131, 131);&quot;&gt;엔티티를 고유하게 식별하는 속성&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="300" x="220" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-17" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;🔢 &lt;b&gt;카디널리티 (Cardinality) -- 관계의 수량&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="450" x="20" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-18" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;align=left;" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;&amp;nbsp; 1 : 1 (일대일) --- &lt;/b&gt;한 사람 &amp;lt;--&amp;gt; 하나의 여권 (드문 경우)&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;&amp;nbsp; 1 : N (일대다) ---&amp;nbsp;&lt;/b&gt;한 회원 &amp;lt;--&amp;gt; 여러 대출 기록&amp;nbsp; &amp;nbsp; ⭐ 가장 흔한 관계!&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;&amp;nbsp; N : M (다대다) ---&lt;/b&gt; 여러 학생&lt;b&gt;&amp;nbsp;&lt;/b&gt;&amp;lt;--&amp;gt; 여러 과목&amp;nbsp; &amp;nbsp; (중간 테이블로 분해 필요)&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="610" x="90" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-19" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;📊&amp;nbsp;&lt;b&gt;산출물 : 온라인 도서관 개념적 ERD&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="450" x="890" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-20" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#d6b656;strokeWidth=3;fillColor=#fff2cc;gradientColor=#ffd966;" value="&lt;font style=&quot;color: rgb(204, 102, 0); font-size: 16px;&quot;&gt;&lt;b style=&quot;&quot;&gt;회원&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;color: rgb(204, 102, 0); font-size: 16px;&quot;&gt;&lt;b style=&quot;&quot;&gt;(MEMBER)&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="900" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-21" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#d6b656;strokeWidth=3;fillColor=#fff2cc;gradientColor=#ffd966;" value="&lt;font color=&quot;#cc6600&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;도서&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;div&gt;&lt;font color=&quot;#cc6600&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;(BOOK)&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="1290" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-22" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#0000FF;strokeWidth=4;" value="&lt;font style=&quot;color: rgb(0, 0, 255); font-size: 14px;&quot;&gt;&lt;b style=&quot;&quot;&gt;대출&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="80" width="110" x="1100" y="335" as="geometry" />
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-23" edge="1" parent="1" source="WkbQtVPpD3m08Hru4guj-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.016;entryY=0.443;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;" target="WkbQtVPpD3m08Hru4guj-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-24" edge="1" parent="1" source="WkbQtVPpD3m08Hru4guj-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.021;entryY=0.593;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;" target="WkbQtVPpD3m08Hru4guj-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-25" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1" vertex="1">
+          <mxGeometry height="30" width="60" x="1010" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-26" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="N" vertex="1">
+          <mxGeometry height="30" width="60" x="1230" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-27" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#006633;strokeWidth=1;" value="&lt;font style=&quot;color: rgb(0, 102, 51);&quot;&gt;&lt;b style=&quot;&quot;&gt;이름&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="35" width="70" x="935" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-28" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#FFD966;strokeWidth=2;" value="&lt;font style=&quot;color: rgb(164, 140, 66);&quot;&gt;&lt;b style=&quot;&quot;&gt;&lt;u style=&quot;&quot;&gt;id(PK)&lt;/u&gt;&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="70" x="870" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-29" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#006633;strokeWidth=1;" value="&lt;font color=&quot;#006633&quot;&gt;&lt;b&gt;전화번호&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="35" width="70" x="1010" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-30" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#006633;strokeWidth=1;" value="&lt;font color=&quot;#006633&quot;&gt;&lt;b&gt;이메일&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="35" width="70" x="1020" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-36" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#006633;strokeWidth=1;" value="&lt;font style=&quot;color: rgb(0, 102, 51);&quot;&gt;&lt;b style=&quot;&quot;&gt;제목&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="35" width="70" x="1315" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-37" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#FFD966;strokeWidth=2;" value="&lt;font style=&quot;color: rgb(164, 140, 66);&quot;&gt;&lt;b style=&quot;&quot;&gt;&lt;u style=&quot;&quot;&gt;ISBN(PK)&lt;/u&gt;&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="70" x="1250" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-38" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#006633;strokeWidth=1;" value="&lt;font color=&quot;#006633&quot;&gt;&lt;b&gt;저자&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="35" width="70" x="1390" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-39" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#006633;strokeWidth=1;" value="&lt;font color=&quot;#006633&quot;&gt;&lt;b&gt;수량&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="35" width="70" x="1400" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-43" edge="1" parent="1" source="WkbQtVPpD3m08Hru4guj-20" style="endArrow=none;html=1;rounded=0;entryX=0.633;entryY=1.004;entryDx=0;entryDy=0;entryPerimeter=0;" target="WkbQtVPpD3m08Hru4guj-28" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="827" y="360" as="sourcePoint" />
+            <mxPoint x="877" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-44" edge="1" parent="1" source="WkbQtVPpD3m08Hru4guj-20" style="endArrow=none;html=1;rounded=0;entryX=0.602;entryY=1.008;entryDx=0;entryDy=0;entryPerimeter=0;" target="WkbQtVPpD3m08Hru4guj-27" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="948" y="334" as="sourcePoint" />
+            <mxPoint x="930" y="314" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-45" edge="1" parent="1" source="WkbQtVPpD3m08Hru4guj-20" style="endArrow=none;html=1;rounded=0;entryX=0.412;entryY=1.024;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.75;exitY=0;exitDx=0;exitDy=0;" target="WkbQtVPpD3m08Hru4guj-29" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1040" y="385" as="sourcePoint" />
+            <mxPoint x="1051" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-46" edge="1" parent="1" source="WkbQtVPpD3m08Hru4guj-20" style="endArrow=none;html=1;rounded=0;entryX=0.302;entryY=0.935;entryDx=0;entryDy=0;entryPerimeter=0;" target="WkbQtVPpD3m08Hru4guj-30" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1030" y="444" as="sourcePoint" />
+            <mxPoint x="1079" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-47" edge="1" parent="1" source="WkbQtVPpD3m08Hru4guj-21" style="endArrow=none;html=1;rounded=0;entryX=0.404;entryY=0.946;entryDx=0;entryDy=0;entryPerimeter=0;" target="WkbQtVPpD3m08Hru4guj-37" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1200" y="350" as="sourcePoint" />
+            <mxPoint x="1221" y="341" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-48" edge="1" parent="1" source="WkbQtVPpD3m08Hru4guj-21" style="endArrow=none;html=1;rounded=0;exitX=0.46;exitY=-0.007;exitDx=0;exitDy=0;exitPerimeter=0;" target="WkbQtVPpD3m08Hru4guj-36" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1281" y="412" as="sourcePoint" />
+            <mxPoint x="1250" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-49" edge="1" parent="1" source="WkbQtVPpD3m08Hru4guj-21" style="endArrow=none;html=1;rounded=0;exitX=0.683;exitY=-0.007;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.086;entryY=0.78;entryDx=0;entryDy=0;entryPerimeter=0;" target="WkbQtVPpD3m08Hru4guj-38" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1350" y="415" as="sourcePoint" />
+            <mxPoint x="1354" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-50" edge="1" parent="1" source="WkbQtVPpD3m08Hru4guj-21" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="WkbQtVPpD3m08Hru4guj-39" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1380" y="503" as="sourcePoint" />
+            <mxPoint x="1404" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-51" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;strokeWidth=1;" value="&lt;font color=&quot;#006633&quot;&gt;&lt;b&gt;대출일&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="35" width="70" x="1060" y="435" as="geometry" />
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-52" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;strokeWidth=1;" value="&lt;font color=&quot;#006633&quot;&gt;&lt;b&gt;반납예정일일&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="35" width="70" x="1171" y="435" as="geometry" />
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-53" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;strokeWidth=1;" value="&lt;font color=&quot;#006633&quot;&gt;&lt;b&gt;상태&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="35" width="70" x="1120" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-54" edge="1" parent="1" source="WkbQtVPpD3m08Hru4guj-51" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" target="WkbQtVPpD3m08Hru4guj-22" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1120" y="419" as="sourcePoint" />
+            <mxPoint x="1141" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-55" edge="1" parent="1" source="WkbQtVPpD3m08Hru4guj-53" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.429;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" target="WkbQtVPpD3m08Hru4guj-22" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1130" y="480" as="sourcePoint" />
+            <mxPoint x="1163" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-56" edge="1" parent="1" source="WkbQtVPpD3m08Hru4guj-52" style="endArrow=none;html=1;rounded=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" target="WkbQtVPpD3m08Hru4guj-22" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1190" y="535" as="sourcePoint" />
+            <mxPoint x="1195" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WkbQtVPpD3m08Hru4guj-57" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;&amp;nbsp; 해설 :&lt;br&gt;&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;&amp;nbsp; * &lt;/b&gt;회원(1) --&amp;gt; 대출 (N) : 한 회원이 여러 번 대출 가능&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&amp;nbsp; * 도서(1) --&amp;gt; 대출 (N) : 한 도서가 여러 번 대출 됨&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&amp;nbsp; * 대출은 회원 도서를 연결하는 &lt;b&gt;관계 엔티티&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&amp;nbsp; * 대출일, 반납예정일, 상태는 &lt;b&gt;관계의 속성&amp;nbsp;&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="610" x="900" y="550" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="6KCKJzFC56uhn7ozPFaZ" name="04_STEP3 -- 논리적 모델링">
+    <mxGraphModel dx="1846" dy="580" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="jbKR3BrqJLaBT2sdlGsm-1" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" value="&lt;b&gt;&lt;font style=&quot;font-size: 15px; color: rgb(255, 255, 255);&quot;&gt;3&lt;/font&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="35" width="35" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jbKR3BrqJLaBT2sdlGsm-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;span style=&quot;font-size: 26px;&quot;&gt;&lt;b&gt;&lt;font style=&quot;color: rgb(0, 0, 255);&quot;&gt;STEP 3 -- 논리적 모델링 (Logical Modeling)&lt;/font&gt;&lt;/b&gt;&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="650" x="35" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="jbKR3BrqJLaBT2sdlGsm-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font color=&quot;#838383&quot;&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;개념적 ERD를 테이블 컬럼 키 구조로 변환하는 단계 -- 아직 DBMS에 독립적!&lt;/span&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="530" x="78" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="F1JTIERj2Wdyj42mSTzG-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;🔃 개념적 --&amp;gt; 논리적 변환 규칙&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="450" x="-110" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="18mt_ojSseanaAJ32kz1-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;strokeWidth=3;" value="" vertex="1">
+          <mxGeometry height="80" width="510" x="-10" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="18mt_ojSseanaAJ32kz1-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;엔티티 --&amp;gt; 테이블 (Table)&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;font style=&quot;&quot;&gt;&amp;nbsp; &lt;/font&gt;&lt;font style=&quot;&quot;&gt;회원 --&amp;gt; members 테이블,&amp;nbsp; 도서 --&amp;gt; books 테이블&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="452.5" x="45" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="18mt_ojSseanaAJ32kz1-4" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" value="&lt;span style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;1&lt;/b&gt;&lt;/span&gt;" vertex="1">
+          <mxGeometry height="35" width="35" y="232.5" as="geometry" />
+        </mxCell>
+        <mxCell id="18mt_ojSseanaAJ32kz1-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;strokeWidth=3;" value="" vertex="1">
+          <mxGeometry height="80" width="510" x="-12.5" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="18mt_ojSseanaAJ32kz1-6" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;속성 --&amp;gt; 컬럼 (Column)&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;font style=&quot;&quot;&gt;&amp;nbsp; 이름&lt;/font&gt;&lt;font style=&quot;&quot;&gt;&amp;nbsp;--&amp;gt; name 컬럼,&amp;nbsp; 이메일 --&amp;gt;&amp;nbsp; email 컬럼&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="452.5" x="42.5" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="18mt_ojSseanaAJ32kz1-7" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" value="&lt;span style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;2&lt;/b&gt;&lt;/span&gt;" vertex="1">
+          <mxGeometry height="35" width="35" x="-2.5" y="322.5" as="geometry" />
+        </mxCell>
+        <mxCell id="18mt_ojSseanaAJ32kz1-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;strokeWidth=3;" value="" vertex="1">
+          <mxGeometry height="80" width="510" x="-12.5" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="18mt_ojSseanaAJ32kz1-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;기본키(PK) 속성 --&amp;gt; PRIMARY KEY 컬럼&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;font style=&quot;&quot;&gt;&amp;nbsp; id(PK)&lt;/font&gt;&lt;font style=&quot;&quot;&gt;&amp;nbsp;--&amp;gt; BIGINT AUTO_INCREMENT PRIMARY KEY&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="452.5" x="42.5" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="18mt_ojSseanaAJ32kz1-10" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" value="&lt;span style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;3&lt;/b&gt;&lt;/span&gt;" vertex="1">
+          <mxGeometry height="35" width="35" x="-2.5" y="412.5" as="geometry" />
+        </mxCell>
+        <mxCell id="18mt_ojSseanaAJ32kz1-12" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=3;gradientColor=#ffd966;" value="" vertex="1">
+          <mxGeometry height="80" width="510" x="-15" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="18mt_ojSseanaAJ32kz1-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;1 : N 관계 --&amp;gt; N쪽 테이블에 FK 컬럼 추가 ⭐&lt;/b&gt;핵심!&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;font style=&quot;&quot;&gt;&amp;nbsp; 회원 (1) : 대출 (N) --&amp;gt; loads 테이블에 member_id (FK) 추가&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;font style=&quot;&quot;&gt;&amp;nbsp; 도서&lt;/font&gt;&lt;/font&gt;&lt;span style=&quot;font-size: 15px; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;(1) : 대출 (N) --&amp;gt; loads 테이블에 book_id (FK) 추가&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="452.5" x="40" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="18mt_ojSseanaAJ32kz1-14" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fa6800;fontColor=#000000;strokeColor=#C73500;" value="&lt;span style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;&lt;font style=&quot;color: rgb(255, 255, 255);&quot;&gt;4&lt;/font&gt;&lt;/b&gt;&lt;/span&gt;" vertex="1">
+          <mxGeometry height="35" width="35" x="-5" y="502.5" as="geometry" />
+        </mxCell>
+        <mxCell id="u4Uzc3o8otd2KHYB28tB-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fad9d5;strokeColor=#ae4132;strokeWidth=3;" value="" vertex="1">
+          <mxGeometry height="80" width="510" x="-17.5" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="u4Uzc3o8otd2KHYB28tB-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;N : M 관계 --&amp;gt; 중간(Junction) 테이블로 분배 ⭐ &lt;/b&gt;반드시 기억!&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;font style=&quot;&quot;&gt;&amp;nbsp; 학생 (N) : 과목 (M) --&amp;gt; 수강(enrollment) 중간 테이블 생성&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;font style=&quot;&quot;&gt;&amp;nbsp; 중간 테이블에 양쪽 FK를 모두 포함 (student_id, course_id)&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="452.5" x="37.5" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="u4Uzc3o8otd2KHYB28tB-3" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" value="&lt;span style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;&lt;font style=&quot;color: rgb(255, 255, 255);&quot;&gt;5&lt;/font&gt;&lt;/b&gt;&lt;/span&gt;" vertex="1">
+          <mxGeometry height="35" width="35" x="-7.5" y="592.5" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
