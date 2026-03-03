@@ -1,0 +1,21 @@
+1. GROUP BY 핵심 규칙
+    1) 규칙 1
+        - SELECT에는 GROUP BY에 있는 컬럼 또는 집계함수만 올 수 있음 
+    2) 규칙 2
+        - GROUP BY에 없는 컬럼을 SELECT에 넣으면 오류!
+        - (MySQL은 WARNING이지만 다른 DB는 오류)
+
+2. 집계함수 (GROUP BY와 함께 사용)
+    1) COUNT(*) - 행 수 
+    2) SUM(컬럼) - 합계
+    3) AVG(컬럼) - 평균
+    4) MAX(컬럼) - 최대값
+    5) MIN(컬럼) - 최소값 
+
+3. WHERE vs HAVING   
+
+            WHERE                           HAVING
+        - GROUP BY 이전에 실행             - GROUP BY 이후에 실행
+        - 개별 행(row)을 필터링             - 그룹 결과를 필터링 
+        - 집계 함수 사용 불가!              - 집계함수 사용 가능!
+         
