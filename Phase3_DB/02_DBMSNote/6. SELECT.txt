@@ -19,13 +19,14 @@
 
 
        실행(처리) 순서    
-            ① FROM  -- 테이블 접근 & JOIN 처리            
-            ② WHERE -- 행 필터 
-            ③ GROUP BY -- 그룹화 
-            ④ HAVING -- 그룹 필터링 
-            ⑤ SELECT -- 컬럼 선택, 계산, 별칭 생성
-            ⑥ ORDER BY 정렬 (SELECT 별칭 참조 가능)
-            ⑦ LIMIT 결과 건수 제한 
+            ① FROM  -- 테이블 결정
+            ② JOIN + on 테이블 결합 (여기서 join 실행)
+            ③ WHERE -- 행 필터 
+            ④ GROUP BY -- 그룹화 
+            ⑤ HAVING -- 그룹 필터링 
+            ⑥ SELECT -- 컬럼 선택, 계산, 별칭 생성
+            ⑦ ORDER BY 정렬 (SELECT 별칭 참조 가능)
+            ⑧ LIMIT 결과 건수 제한 
 
     3) WHERE 문으로 조건에 맞는 데이터 조회하기 
         - = 연산자로 특정 값 조회 
