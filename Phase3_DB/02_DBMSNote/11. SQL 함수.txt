@@ -1,0 +1,11 @@
+1. 집계 함수 (Aggregate Functions)
+    1) count : 데이터 개수 집계 
+        - count(*) : NULL 포함 전체 행 수 
+        - count(col) : null 제외 행 수 
+        - count(distinct col) : 중복 제거 후 행수 
+
+        HAVING 절과 함께 사용
+        GROUP BY 결과에 조건을 걸 때 WHERE 대신 HAVING을 사용 
+            - 예) 전체 고객 몇 명?  ----> GROUP BY 없음 
+                  매장별 고객 몇 명? ---> GROUP BY store_id
+                  매장별 + 활성여부 별 몇 명? ----> GROUP BY store_id, active 
