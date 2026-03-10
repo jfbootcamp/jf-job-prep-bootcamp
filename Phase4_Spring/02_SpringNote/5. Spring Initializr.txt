@@ -1,0 +1,52 @@
+1. Spring Intializr로 프로젝트 생성하기 
+
+    1) Step 1
+        - https://start.spring.io/ 접속
+
+    2) Step 2
+        - 빌드 도구 선택 
+         (Gradle - Groovy)
+
+    3) Step 3
+        - 언어 Java 
+         (Java  버전 21)
+
+    4) Step 4
+        - Spring Boot 
+          버전 4.0.3                  
+
+    5) Step 5
+        - Group: com.example
+        - Artifact: mybatis 
+
+    6) Step 6
+        - 의존성 추가 
+            - Spring Web 
+            - MyBatis Framework
+            - MySQL Driver
+            - Lombok
+            - Spring Boot Dev Tools
+
+    7) Step 7
+        - GENERATE 클릭 --> zip 다운로드 
+
+    8) Step 8
+        - zip 압축 해제 후 IntelliJ에서 열기 
+
+    9) Step 9
+        - Gradle 빌드 자동 실행 
+        - 의존성 다운로드          
+
+2. Java 패키지 구조 
+    1) 계층별 역할 
+
+                            @SpringBootApplication
+                            MybatisApplication.java 
+                                - 애플리케이션 진입점
+                                - main() 메서드가 있는 클래스 
+                                - Spring Boot를 시작시키는 역할
+
+                            controller/
+                           BookController.java      
+                    
+

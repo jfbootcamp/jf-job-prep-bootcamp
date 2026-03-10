@@ -1,0 +1,12 @@
+1. 빌드 도구가 필요한 이유
+    1) 빌드 도구 없이 개발한다면?                               Gradle을 사용하면?
+        - 라이브러리를 웹에서 수동으로 다운로드                     - build.gradle에 한 줄 추가로 자동 다운로드 
+        - JAR 파일을 프로젝트 classpath에 직접 추가               - 의존성을 자동으로 관리하고 classpath 설정   
+        - javac: 명령어로 직접 컴파일                            - gradle build 한 번으로 컴파일 + 테스트 + 패키징 
+        - 배포 파일(WAR/JAR)을 수동으로 패키징                    - JAR/WAR 파일 자동 생성 
+        - 라이브러리 버전 충돌을 직접 해결                         - Spring Boot Starter가 호환 버전 자동 결정 
+
+    2) 빌드 도구 
+        = 라이브러리 관리 + 컴파일 + 테스트 + 패키징을 자동화하는 도구  
+            - 자바 진영
+                - Maven(XML 기반)  vs Gradle(Groovy/Kotlin 기반)             

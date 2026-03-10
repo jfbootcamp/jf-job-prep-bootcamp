@@ -1,0 +1,38 @@
+1. Spring Boot 
+    1) Spring Framework을 쉽고 빠르게 사용하기 위한 도구 
+        - 개발자가 비즈니스 로직에만 집중할 수 있도록 나머지를 자동해주는 프레임워크 
+    2) 자동 설정 (Auto Configuration)
+        - 복잡한 XML 설정이 필요 없음!
+        - Spring Boot가 알아서 설정해 줌 
+    3) 내장 톰캣 (Embedded Tomcat)
+        - 웹 서버를 별도로 설치할 필요 없음!
+        - Spring Boot 안에 톰켓이 내장 
+    4) Starter 의존성 
+        - 관련 라이브러리를 묶어서 한번에 추가!
+        - spring-boot-starter-web 하나만 추가하면 됨  
+    5) 빠른 개발 
+        - 최소한의 설정으로 바로 웹 애플리케이션 시작 가능!
+        - main() 실행 한번이면 OK   
+
+2. 비교
+
+    기존 Spring Framework                           Spring Boot (현재방식)
+        (과거방식)
+   -----------------------------------------------------------------------
+        web.xml 설정 필수                           설정 자동화 
+     (서블릿 매핑, 필터 등은                         (Spring Boot가 자동으로
+      XML로 일일이 작성)                             필요한 설정을 해줌)
+
+      톰캣(Tomcat) 별도 설치 및 설정 필요              내장 톰캣 
+      (WAS를 따로 다운받아 설치하고 경로 설정)          (별도 설치없이 앱안에 톰캣이
+                                                    내장되어 있음)
+
+      수많은 xml 설정 파일                            application.yaml 하나로 관리           
+      (applicationContext.xml, sevlet-context.xml)   (모든 설정을 한 파일에서 간단하게 관리)                                           
+                 
+      WAR 파일로 패키징 후 톰켓에 배포                    JAR 파일로 바로 실행  
+      (빌드 --> WAR 생성 --> 톰캣 webapps에 복사)        (java -jar app.jar 한줄이면 서버 시작)   
+
+      라이브러리 버전 충돌 직접 해결                      Starter가 호환 버전 자동 관리   
+      (어떤 버전끼리 호환되는지 일일이 확인)                (Spring Boot가 검증된 버전 조합을 제공)
+
