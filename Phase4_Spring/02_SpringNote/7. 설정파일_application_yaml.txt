@@ -1,0 +1,54 @@
+1. application.yaml 
+    1) 앱의 모든 설정을 담는 파일 
+    2) Spring Boot는 application.yaml (또는 application.properties) 파일 하나로 
+       앱의 모든 동작을 설정함 
+
+       - 서버 설정 : 포트번호, 컨텍스트 경로 
+       - 뷰 (view) 설정 : JSP 파일 경로 (prefix / suffix)
+       - 데이터소스 설정 : DB 연결 정보 (URL,계정)
+
+    3) yaml 형식 주의사항 
+        - 들여쓰기는 스페이스(Space)만 사용 (탭 Tap 사용 불가)
+        - 들여쓰기는 계층 구조를 표현 (2칸씩 들여쓰기 권장)
+        - 콜론(:)뒤에 반드시 스페이스 필요 (key: value)    
+
+2. 서버 설정 상세
+    1) port: 8081     
+        - 웹 서버가 8081번 포트에서 실행 
+        - 기본값은 8080
+        - 다른 앱과 충돌 방지를 위해 변경 
+        - 브라우저:   http://localhost:8081
+
+    2) context-path: /mybatis    
+        - 모든 URL 앞에 /mybatis가 붙음
+        - 하나의 서버에서 여러 앱을 구분하는 역할 
+        - http://localhost:8081/mybatis/         
+
+        - URL 구조 분해 
+            http://    localhost    :8081     /mybatis      /bookList  
+           --------    ---------    ------    ---------     ---------
+           프로토콜       호스트        포트     컨텍스트패스      요청경로 
+
+3. JSP 뷰 (view) 설정           
+    1) ViewResolver의 동작 
+    2) prefix = /WEB-INF/views/
+        - JSP 파일 경로의 앞부분 
+    3) suffix = .jsp 
+        - JSP 파일 경로의 뒷부분 
+    4) 공식 
+        - prefix + Controller 리턴값 + suffix 
+        - = JSP 파일 경로    
+    5) WEB-INF 폴더 안의 JSP는 브라우저에서 직접 URL로 접근 불가! 
+        - 반드시 Controller를 통해서만 접근 가능 (보안!)    
+
+4. 데이터소스(DataSource) 설정
+    1) DB 연결 정보 
+    2) driver-class-name
+        - com.mysql.cj.jdbc.Driver
+        - 어떤 DB를 사용할지 결정하는 드라이버 
+        - MySQL을 사용하므로 MySQL 드라이버 지정 
+    3) url 분해 
+        jdbc:mysql://   localhost     :3306        /shopmall 
+        -------------   ---------     ----------   ---------------
+        jdbc 프로토콜     DB서버 주소    MySQL 포트    데이터베이스 이름
+                         (내컴퓨터)     (기본 3306)

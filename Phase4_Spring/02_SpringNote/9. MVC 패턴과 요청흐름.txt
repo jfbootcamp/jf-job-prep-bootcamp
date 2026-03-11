@@ -1,0 +1,68 @@
+1. MVC (Model - View - Controller) 패턴 
+    1) 사용자 (브라우저)
+        - (1) 요청 --------------> Controller (컨트롤러)
+                                  요청을 받고 처리하는 곳 
+                                  URL 요청을 받아서 데이터(Model)를 준비하고
+                                  화면(View)을 연결하는 역할 (BookController.java)
+
+        - (2) 데이터 준비 -----------> Model (모델)
+                                     데이터를 담는 그릇 
+                                     화면에 보여줄 데이터를 담아서
+                                     View에 전달하는 역할  (Book 객체, 도서목록 List)
+
+        - (3) 데이터 전달 -----------> View (뷰)
+                                     사용자에게 보여지는 화면
+                                     Model에서 받은 데이터를 HTML로 
+                                     표현하는 역할 (index.jsp, bookList.jsp)
+
+    2) MVC 패턴 
+        - 역할을 분리하여 코드를 깔끔하게 관리하는 설계 방식
+        - Controller에서 화면을 만들지 않고, 
+          View에서 DB를 접근하지 않음!
+
+2. Spring MVC 요청 처리 흐름
+    1) 브라우저 localhost:8081/mybatis/bookList 입력 
+    2) 내장 톰캣이 요청을 받음 
+    3) DispatcherServlet 이 요청을 분석 
+    4) @GetMapping("/bookList") 
+       매핑된 Controller 메서드 호출 
+    5) Controller가 Model에 데이터를 담음 
+        - model.addAttribute("list", list);
+    6) Controller가 뷰 이름을 리턴 
+        - return "bookList"
+    7) ViewResolver가 뷰 이름을 실제 경로로 변환 
+        - /WEB-INF/views/bookList.jsp 
+    8) JSP가 Model의 데이터를 사용하여 HTML을 생성 
+    9) 완성된 HTML이 브라우저에 응답으로 전송!  
+
+        - 개발자는 Controller와 JSP만 작성하면 됨
+        - DispatcherServlet, ViewResolver는 Spring Boot가 자동으로 처리! 
+
+3. 3계층 아키텍쳐 
+    1) Presentation Layer (표현 계층)
+        - BookController (@Controller)
+        - 역할 : HTTP 요청/응답 처리, URL 매핑, 뷰 연결 
+        - 어노테이션 : @Controller, @GetMapping
+                            |
+                            |  호출
+                           \|/                               Entity (Book)                       
+    2) Business Layer (비즈니스 계층)                           - 모든 계층에서
+        - BookService (@Service)                                사용되는 데이터 객체 
+        - 역할 : 비즈니스 로직, 데이터 가공, 업무 규칙 적용
+        - 어노테이션 : @Service  
+                            |
+                            |  호출
+                           \|/
+    3) Data Access Layer (데이터 접근 계층)                                                                              
+        - BookMapper (@Mapper) + BookMapper.xml 
+        - 역할 : DB와 통신, SQL 실행, 결과 매핑 
+        - 어노테이션 : @Mapper
+                            |
+                            |  실행
+                           \|/
+                        MySQL DB     
+
+        - 각 계층은 자기 역할만 수행함 
+        - Controller에서 SQL을 직접 쓰지 않고,
+          Mapper에서 화면 처리를 하지 않음.                        
+
