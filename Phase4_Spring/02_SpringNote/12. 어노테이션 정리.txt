@@ -1,0 +1,23 @@
+1. Spring Boot 핵심 어노테이션
+    1) @SpringBootApplication
+        - 앱의 시작점 
+        - 자동 설정 + 컴포넌트 스캔 + 설정을 합친 것 
+    2) @Controller
+        - 웹 요청을 처리하는 컨트롤러 클래스 
+        - JSP 뷰 이름을 리턴 
+    3) @Service
+        - 비즈니스 로직을 처리하는 서비스 클래스 
+    4) @Configuration
+        - 설정 클래스 
+        - @Bean 메서드를 포함하여 Spring 빈을 등록 
+    5) @Bean 
+        - 메서드의 리턴값을 Spring 빈으로 등록 (SqlSessionFactory 등)
+
+2. URL 매핑 어노테이션
+    1) @GetMapping("경로")
+        - GET 요청 매핑 --> 조회, 페이지/폼 표시 
+    2) @PostMapping("경로")
+        - POST 요청 매핑 --> 등록/수정/삭제 처리 
+    3) @PathVariable
+        - URL 경로의 {변수}를 메서드 파라미터로 매핑 
+        - /bookView/{id}  ----> @PathVariable Long id                     

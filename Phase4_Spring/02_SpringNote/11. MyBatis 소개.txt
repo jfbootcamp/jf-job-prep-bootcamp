@@ -1,0 +1,82 @@
+1. MyBatis
+    1) SQL 매퍼 프레임워크 
+    2) Java 코드와 SQL을 분리하여 관리하는 프레임워크
+    3) Java 인터페이스 메서드를 호출하면 --> XML에 작성된 SQL이 자동 실행됨 
+
+2. 발전 단계 
+    1) JDBC (직접 SQL)
+        - 저수준 SQL을 Java 코드 안에 직접 작성 
+        - 코드가 매우 길고 복합 
+
+    2) MyBatis (SQL 매퍼)
+        - 중간 수준
+        - SQL은 XML에 분리
+        - Java는 인터페이스만 선언      
+
+    3) JPA / Hibernate (ORM)  
+        - 고수준 
+        - SQL도 자동 생성 
+        - 객체 중심 개발
+        - 복잡한 쿼리는 어려울 수 있음 
+
+3. 왜 MyBatis를 알아야 하는가?
+    1) SQL을 직접 작성하므로 복잡한 쿼리도 자유롭게 처리 가능 
+    2) SI / 금융 / 공공 프로젝트에서 가장 많이 사용되는 기술 
+    3) 취업 시장에서 MyBatis 경험을 요구하는 회사가 많음          
+
+4. MyBatis Mapper
+    1) Java Interface + XML SQL 
+    2) 인터페이스 
+        - BookMapper.java 
+        - 메서드만 선언, 구현 코드 없음
+    3) XML 
+        - BookMapper.xml (SQL 정의) 
+        - 실제 실행될 SQL을 작성 
+    4) 연결 규칙
+        - Interface 메서드 이름 = XML의 id ---> 자동 연결!
+        - namespace = Interface의 패키지.클래스명 --> 이걸로 매칭!
+
+    5) 호출 흐름
+        - Controller --> Service --> BookMapper.findAll() 호출 
+          --> XML의 <select id="findAll"> SQL 실행 
+          --> 결과가 List<Book>으로 자동 변환    
+
+5. BookMapper.xml에서 사용하는 주요 태그 
+    1) <mapper namespace="...">
+        - 루트 태그.
+        - namespace로 Java 인터페이스와 연결 
+
+    2) <select id="..." resultType="...">
+        - SELECT 쿼리. resultType = 결과를 매핑할 Java 클래스  
+
+        - 참고
+            - resultType  vs resultMap
+                - resultType : 컬럼명과 필드명이 같을 때 --> 자동 매핑 (간단!)
+                - resultMap : 컬럼명과 필드명이 다를 때 --> 수동 매핑 지정 필요 
+                    - 예: created_at <---> createdAt 
+
+
+6. /bookLists 요청이 처리되는 전체 흐름 
+    1) 준비 단계 (앱 시작 시 자동으로 일어나는 일)
+                                                                 DI(주입)                           DI(주입) 
+        - application.yaml 읽음 ---->      HikariDataSource   ------------->    SqlSessionFactory  ----------->   SqlSessionTemplate
+                                        (커넥션 풀-Conn 10개)
+                                        (Spring Boot가 자동 생성)
+
+    2) 요청 처리 단계 (사용자가 /bookLists를 요청)
+        ①                                    ②                                             ③ BookService                  ④ BookMapper                      ⑤ BookMapper.xml                      ⑥ MySQL   
+      http://localhost:8081   ------>    @GetMapping("/bookLists")      ------------>  bookMapper.findAll() ---------->    (java 인터페이스)    ---------->  <select id="findAll">  ----------->     sboot.book 
+      /mybatis/bookLists                 public String bookLists() {                                                          findAll() 호출                  select * from book                        |
+                                                                                                                                                                                                       |     
+                                                                                                                                                                                                      \|/                 
+                                                                                                                                                             MyBatis 자동 매핑 <------------------   DB 결과                               
+     브라우저   <------- bookList.jsp <----- model.addAttribute("list", list); <-------------------      Service     <-------------------------------           List<Book>                          ResultSet 
+     HTML 화면 표시      JSTL로 ${list} 반복 출력                                                         return list 
+
+
+7. #{파라미터명} -- 파라미터 바인딩   
+    - WHERE id = #{id} 
+
+    - #{id} 
+        - PreparedStatement의 ?와 같은 역할 
+        - SQL Injection 공격을 자동으로 방지!
