@@ -34,10 +34,16 @@
             - JSTL 포맷 태그 사용 (fmt: 접두사)
 
     3) EL(Expression Language) 표현식 
-        - ${hello}
-            - Model에서 "hello" 키의 값을 출력 
-        - ${book.title}
-            - book 객체의 title 필드값 출력 (getter 호출)    
+        - 단순 값 출력
+            - ${hello}
+                - Model에서 "hello" 키의 값을 출력 
+            - ${book.title}
+                - book 객체의 title 필드값 출력 (getter 호출)  
+        - 비교 연산 
+            - ${not empty list} : list가 비어있지 않으면 true 
+            - ${book.price > 30000} : 가격이 3만원 초과면 true 
+            - ${book.title == '자바'} : 제목이 '자바'이면 true                
+            - ${empty list} : list가 null이거나 비어있으면 true 
 
     4) Context Path 변수 설정
         - <c:set var="contextPath"  value="${pageContext.request.contextPath}"/>
@@ -71,4 +77,11 @@
     2) c:if - 조건문 
     3) c:set - 변수 설정 
 
-    4) fmt:formatDate - 날짜 포맷팅                     
+    4) fmt:formatDate - 날짜 포맷팅     
+
+    5) 다중 조건 (switch~case)
+    	<c:choose>
+            <c:when test=""></c:when>
+            <c:when test=""></c:when>
+            <c:otherwise></c:otherwise>
+	    </c:choose>                

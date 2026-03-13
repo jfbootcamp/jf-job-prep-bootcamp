@@ -55,6 +55,9 @@
                 - resultMap : 컬럼명과 필드명이 다를 때 --> 수동 매핑 지정 필요 
                     - 예: created_at <---> createdAt 
 
+    3) <update id="">
+         UPDATE 쿼리.  데이터 수정    
+       </update>
 
 6. /bookLists 요청이 처리되는 전체 흐름 
     1) 준비 단계 (앱 시작 시 자동으로 일어나는 일)

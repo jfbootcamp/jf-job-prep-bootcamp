@@ -25,10 +25,18 @@
             GET /             ---->    @GetMapping("/") --> index                   홈 페이지 
         GET /bookList         ---->    @GetMapping("/bookList") --> bookList        목록(하드코딩)
         GET /bookLists        ---->    @GetMapping("/bookLists") --> bookList       목록(DB 조회) 
+        GET /bookView/{id}    ---->    @GetMapping("/bookView/{id}) --> bookView    상세 조회
+        GET /bookUpdate/{id}  ---->    @GetMapping("/bookUpdate/{id}) --> bookUpdateForm   수정 폼 
+        GET /bookCreate       ---->    @GetMapping("/bookCreate) --> bookCreateForm        등록 폼
 
+    2) POST 요청 - 데이터 변경 (등록/수정/삭제)
+
+        POST /bookCreate      ---->    @PostMapping("/bookCreate")                  등록 처리 --> redirect
+        POST /bookUpdate      ---->    @PostMapping("/bookUpdate")                  수정 처리 --> redirect 
+        POST /bookDelete/{id} ---->    @PostMapping("/bookDelete/{id}")             삭제 처리 --> redirect  
 
 5. GET vs POST 정리 
 
-             @GetMapping                                    @PostMapping
-         데이터 조회, 페이지/폼 표시                      데이터 변경 (등록/수정/삭제)  
-            ---> JSP 이름 리턴                            --->  redirect:/bookLists 리턴                                               
+             @GetMapping                                    @PostMapping                            {id} = @PathVariable
+         데이터 조회, 페이지/폼 표시                      데이터 변경 (등록/수정/삭제)                       URL에서 값을 추출
+            ---> JSP 이름 리턴                            --->  redirect:/bookLists 리턴                 /bookView/3 ---> id=3                                
