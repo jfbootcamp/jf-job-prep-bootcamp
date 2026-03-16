@@ -40,3 +40,5 @@
              @GetMapping                                    @PostMapping                            {id} = @PathVariable
          데이터 조회, 페이지/폼 표시                      데이터 변경 (등록/수정/삭제)                       URL에서 값을 추출
             ---> JSP 이름 리턴                            --->  redirect:/bookLists 리턴                 /bookView/3 ---> id=3                                
+
+            

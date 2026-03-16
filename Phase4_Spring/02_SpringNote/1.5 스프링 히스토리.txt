@@ -1,0 +1,52 @@
+1. Spring Framework 탄생과 발전 (2002 ~ 2013)
+    - EJB의 복잡함에서 벗어나, 경량 프레임워크의 시대를 염
+
+    1) 2002
+        - Rod Johnson expert one-on-one J2EE 출간 
+    2) 2003
+        - Spring 프로젝트 시작 
+        - 오픈소스화 
+        - Spring Framework으로 이름 변경 
+          - J2EE에 봄(Spring)을! 
+    3) 2004
+        - Spring 1.0 Release 
+            - IoC / DI (제어의 역전)
+            - AOP (관점 지향)
+            - XML 기반 설정 
+        - EJB 없이 엔터프라이즈 개발이 가능해짐! 
+    4) 2006
+        - Spring 2.0
+        - XML 네임스페이스 지원
+        - AspectJ 통합 AOP 
+        - Bean Scope 확장
+        - JPA 지원 시작  
+
+    5) 2007 ~ 2009
+        - Spring 2.5 / 3.0
+        - 2.5 (2007)
+            - @Autowired 어노테이션
+            - @Component 스캔 
+        - 3.0 (2009)
+            - Java Config (@Configration)
+            - SpEL (표현식 언어)
+            - REST 지원 강화 
+        - XML --> 어노테이션 전환기!   
+
+    6) 2013
+        - Spring 4.0
+            - Java 8 지원 (람다, Stream)
+            - WebSocket 지원 
+            - @RestController 추가    
+
+2. Spring Boot 혁명 (2014 ~ 2022)
+        - "Just Run" - 설정은 줄이고, 개발에 집중하는 시대 
+
+    1) 2014
+        - Spring Boot 1.0
+            - 게임 체인저
+            - Auto Configration (설정 지옥에서 해당)
+            - 내장 Tomcat (WAR 배포 불필요)
+            - Starter 의존성 묶음 
+            - application.properies 
+            - 실행 가능한 JAR 
+

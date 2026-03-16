@@ -1,0 +1,43 @@
+1. STS4 (Spring Tool Suite 4)
+    1) Eclipse 기반 + Spring 개발에 특화된 무료 IDE 
+    2) 오픈소스 
+    3) Spring Boot 프로젝트 생성 / 실행에 최적화 
+    4) Spring Initailze 내장 (프로젝트 바로 생성)
+    5) Gradle & Maven 둘 다 지원 
+    6) JSP 편집기 기본 미포함 --> 플러그인 설치 필요 
+        - Eclipse Web Developer Tools 플러그인 
+
+2. Jsp는 결국 Servlet임. 
+    1) 실행원리       변환(톰캣이 자동)                             컴파일 (javac)                          실행(JVM)
+        - bookList.jsp -------->   bookList_jsp.java         ---------------->  bookList_jsp.class   ------------>  순수 HTML 
+          ------------             -----------------------                      -------------------                ----------------- 
+          개발자가 작성한 파일         Servlet 소스 (자동 생성)                       컴파일된 바이트코드                   브라우저로 전송  
+                                    JSP --> Java 코드로 변환                        JVM이 실행할 수 있는                  JSP 코드는 없음
+                                    out.write("	<h1>Hello JSP</h1>\r\n");          바이너리 파일  
+
+3. IDE 비교 
+
+    항목            VSCode              IntelliJ            STS4
+    -------------------------------------------------------------------
+    가격            무료                 Community 무료      무료 
+    Java 지원       Extension 필요       기본 내장            기본 내장 
+    Spring 지원     Extension 필요       Initailze           기본 내장 
+
+4. Java 컴파일러 옵션 설정
+    - '-parameters' flag를 추가 
+        - Spring Boot 4.0 (Spring Framework 7)부터 @PathVariable, @RequestParam 등의
+          파라미터 이름을 리플렉션으로 자동 감지하는 기능이 제거됨
+        - 이 플래그를 추가하면 컴파일 시 파라미터 이름 정보가 바이트코드(.class)에 
+          포함되어 Spring이 파라미터 이름을 정상적으로 인식할 수 있게 됨
+        - @PathVariable Long id 처럼 이름을 명시하지 않아도
+          Spring이 알아서 매핑해줌 
+    - Spring 7에서 왜 자동 감지를 제거했나?
+        - 성능 문제 
+            - 리플렉션으로 파라미터 이름을 읽는 것은 런타임 비용이 큼 
+              컴파일 타임에 미리 바이트코드에 포함시키는 것이 훨씬 효율적임
+        - 불안정성 문제 
+        - 명시적 설정 강제 
+            - "마법처럼 알아서 되는 것보다, 명확하게 설정한 것만 동작하게 함"
+            - 개발자가 의도를 명확히 하고 예측 가능한 동작 보장하도록 함 
+                - 즉, 이 플래그를 추가함으러써 개발자가 
+                  "나는 파라미터 이름 감지를 원한다"는 의사를 명확히 표현하게 됨.                             
