@@ -1,0 +1,30 @@
+1. Spring Boot Auto Configuration 원리 
+    1) 포함된 라이브러리를 기반으로 애플리케이션을 자동으로 설정하고 구성함 
+
+    2) 기본값과 구성 규칙에 대한 Spring Boot의 고유한 접근 방식 
+        - 포함된 라이브러리 기반으로 자동으로 설정하고 구성
+        - 합리적인 기본값으로 수동 구성의 양을 줄임
+        - 유연하고 외부화된 구성 관리 (properies / yaml)
+        - 프로필별 구성으로 환경 간 전환을 단순화     
+
+2. Auto Configuration 동작 흐름
+    1) @SpringBootApplication
+        - 이 어노테이션이 모든 것의 시작!
+        - 내부에 3개가 합쳐 있음 
+            - @SpringBootConfiguration
+            - @ComponentScan
+            - @EnableAutoConfiguration 
+    2) Classpath 스캔 
+        - pom.xml의 Starter 의존성을 보고 
+          어떤 라이브러리가 있는지 확인  
+        - Classpath
+            - 프로젝트가 사용할 수 있는 모든 라이브러리(.jar)의 목록                    
+        - 예) starter-webmvc가 있으면 --> "아, 웹개발이구나"
+    3) 자동 설정 적용!
+        - DispatcherServlet 자동 등록
+        - 내장 Tomcat 자동 구성
+        - Jackson JSON 변환기 설정
+        - ViewResolver 자동 설정
+        - DataSource 자동 구성 (JPA)
+    4) 개발자는 비즈니스 로직만!
+               
