@@ -1,0 +1,64 @@
+
+        Client (브라우저)
+        http://localhost:8082/home 
+                    |
+                    |
+                   \|/ 
+        ① Servlet Container(내장 Apache Tomcat/11.0.x)
+                        ②                         ③
+           Tomcat 엔진 -----> DispatcherServlet -----> HandlerMapping 
+          (HTTP 수신 & 파싱)  (Front Controller)       (URL->Controller 매핑) 
+
+
+
+       ④ @GetMapping("/home") 매칭
+
+
+        Spring Container (AnnotationConfigServletWebServerApplicationContext)
+        ---------------------------------------------------------------------------------------------------------------------------------------------------------------
+        (Bean 생성, 관리, DI, 생명주기, Environment)
+
+
+        우리코드 (HelloBootApplication) -- 비즈니스 로직 흐름                                                    자동 구성 (Auto Configuration)이 만든 Bean들 
+                            ⑤                       ⑥                  ⑦ JDBC/JPA 
+           HomeController  ----> HomeServiceImpl  ----> HomeRepository  -------->  MySQL DB                   DispatcherServlet       HandlerMapping    Templates
+             @Controller           @Service              JpaRepository                                        ViewResolver            Thymeleaf/ViewResolver     
+                                                                                                              MessageConverters       EntityManagerFactory                 
+                      ⑧ ResultSet 반환  
+           MyBean      Member
+            @Bean     @Entity
+
+
+
+* 요청 / 응답 흐름 정리
+    1. 요청 (Request)
+        1) Client --> HTTP GET /home 요청 
+        2) Tomcat 엔진이 수신 --> DispatcherServlet에 전달
+        3) DispatcherServlet --> HandlerMapping에 URL 매핑 요청 
+        4) HandlerMapping이 @GetMapping("/home") --> HomeController 매칭 
+
+    2. 처리 (Processing)
+        5) HomeController --> HomeServiceImpl 호출 (DI)      
+        6) HomeServiceImpl --> HomeRepository 호출 (DI)
+        7) HomeRepository --> MySQL DB에 JDBC/JPA 쿼리 
+        8) DB --> ResultSet 반환  
+
+    3. 응답 (Response)
+        9) Controller가 return "home" --> ViewResolver에 뷰 이름 전달
+        10) ThymeleafViewResolver가 home.html 템플릿 랜더링 
+        11) 완성된 HTML --> Tomcat --> Client 응답 전달   
+
+* 면접 핵심 QA 
+    Q: Spring Boot에서 HTTP 요청이 처리되는 전체 흐름을 설명하세요. 
+    A: Client --> Tomcat(Servlet Container)이 HTTP 요청 수신 -->
+       DispatcherServlet --> HandlerMapping이 URL에 맞는 Controller 매칭 -->
+       Controller --> Service --> Repository  순서로 비즈니스 로직 처리 -->
+       DB 조회 후 결과를 ViewResolver --> Thymeleaf로 HTML 랜더링                 
+
+    Q: DispatcherServlet의 역할은?
+    A: Front Controller 패턴의 구현체입니다. 모든 HTTP 요청을 하나의 
+       진입점에서 받아 HandlerMapping, ViewResolver 등에 위임하여 처리합니다. 
+
+    Q: Controller가 return "home"을 하면 어떤 일이 일어나나요?
+    A: ViewResolver가 뷰 이름 "home"을 받아 ThymeleafViewResolver에 전달하고,
+       templates/home.html 파일을 찾아 Model 데이터와 합쳐 HTML을 랜더링합니다.         

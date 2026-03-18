@@ -1,0 +1,62 @@
+1. Spring Boot 애플리케이션 실행하기 
+    1) main() --> SpringApplication.run() 
+    2) 현재 프로젝트 (pom.xml)
+        - Space Boot 4.0.3
+        - Java 21
+        - groupId : com.example
+        - artifactId : HelloBoot
+        - 의존성 
+            - spring-boot-starter-webmvc, thymeleaf, data-jpa, devtools, lombok, mysql
+    3) 4.0.x 변경점 
+        - spring-boot-starter-web --> spring-boot-starter-webmvc로 이름 변경
+            - 기능 동일, 명확한 네이밍 
+        - Jakarta EE 11 기반 
+        - Java 17+ 
+
+2. https://github.com/spring-io/start.spring.io/issues/2099 
+    1) start.spring.io UI 변경 (2026-03-16)
+        - UI에서 Name 필드가 제거됨
+            - name 파라미터 미전송 
+                - pom.xml : <name/> (빈 값)
+                - 메인 클래스 : Application.java (기본값)
+        - 생성 시점에 따라 클래스 이름 달라지는 것일 뿐임
+            - 어떤 이름이든 정상임 
+
+3. Spring Boot가 실제로 요구하는 3가지
+    1) @SpringBootApplication 어노테이션
+    2) main() 메서드 
+    3) SpringApplication.run(클래스.class, args)
+
+4. @SpringBootApplication 세가지 주석을 겹합한 메타 주석 
+    1) @SpringBootConfiguration - 설정 클래스 (== @Configuration)
+    2) @EnableAutoConfiguration - classpath 기반 자동 구성 활성화 
+    3) @ComponentScan - 이 패키지 하위의 Bean 자동 탐색 
+
+5. SpringApplication.run()
+    1) 이 한줄이 Spring Boot 앱의 모든 시작 
+        - 첫 번째 인자 : Application.class
+            - 이 클래스를 Primary Source(시작점)로 사용 
+        - 두 번째 인자 : args (커멘드라인 인자)
+            - 실행 시 전달받은 옵션 (예: -server.port=9090)
+
+6. 실행 흐름 한눈에 보기
+    
+    JVM 시작         -------------------------> main() 호출 --------------------> SpringApplication.run() 실행 ------> Environment 준비 + Context 생성 -----> Bean 등록 + Tomcat 시작 ----> 실행 완료  
+    --------                                  ------------                                                                                                                             (HTTP 요청 대기)             
+    java -jar HelloBoot-0.0.1-SNAPSHOT.jar      Java 프로그램 진입점
+
+7. 면접 핵심 QA
+    1) main()이 왜 필요한가?
+        - Java 프로그램의 진입점이며, SpringApplication.run()을 호출하여
+          Spring Container를 부트스트랩함.
+    2) SpringApplication.run()이 하는 일?
+        - Environment 수집, ApplicationContext 생성, Bean 등록, 내장 서버 시작 등
+          앱 실행에 필요한 모든 초기화를 수행함.
+
+8. 중간 요약                    
+    1) Spring Boot는 @SpringBootApplication	하나 + main() 한 줄이면
+       내장 톰캣 + Bean 등록 + ApplicationContext 생성을 모두 자동으로 처리함. 
+
+
+            
+

@@ -1,0 +1,62 @@
+1. 개념 이해
+    1) Java 세계 (비유)
+        HomeService - interface(스펙 / 계약)
+                      이런 기능을 제공해야 한다.
+        HomeServiceImpl - class (구현체 / 제품)
+                          실제로 기능을 수행한다.     
+
+    2) Servlet 세계 (실제)
+        Servlet Container - 스펙 (Jakarta Servlet 6.1) 
+                            "HTTP 수신, Servlet 관리를 해야 한다" 
+        Apache Tomcat 11.0.x - 구현체 (Spring Boot 4.0 기본 내장)
+                               "실제로 HTTP를 수신하고 Servlet을 관리함" 
+
+2. Tomcat(= Servlet Container 구현체) 내부 구조 
+    1) HTTP 요청이 DispatcherServlet에 도달하기까지의 내부 구조 
+
+
+                                  < Tomcat (Servlet Container)의 역할 >      
+                   ① TCP/HTTP                 ②                           ③ 
+        Client    -----------> Connector   -------> Engine (Catalina)  ------> Host (localhost)  -----> Context (/)
+    (HTTP GET /home)          (port 8082)           적절한 Host에 라우팅         역할 가상 호스트           하나의 웹 애플리케이션
+                                                                                                         = HelloBoot   
+                                                                                                               |       
+                                                                                                               |  URL 패턴 매칭 (/)   
+                                                                                                               |
+                                                                                                               |                
+                                                                                                              \|/  <Spring Container 영역(여기서부터 Spring이 관리)         
+                                                                                                      DispatcherServlet                  HomeController
+                                                                                                      (Front Controller)   --------->     --> Service --> Repository 
+                                                                                                        모든 요청의 진입점                   --> DB --> 응답
+    * Context 내부에 Servlet 매핑 테이블 있음 
+        URL 패턴 
+      --------------------
+        /   --->  DispatcherServlet       <--- Spring Boot가 자동 등록 
+
+    * "/" 패턴인가?
+      : "/" = 모든 URL을 의미 
+        /home, /api/data, /login 등 
+        어떤 경로든 전부 DispatcherServlet을 통해 
+        정확한 Controller를 찾아감       
+
+3. 핵심 정리 
+    1) Servlet Container
+        - HTTP를 받아서 Servlet에 넘겨주는 역할/스펙 
+    2) Apache Tomcat 
+        - 그 역할을 실제로 수행하는 제품 (구현체)
+    3) Spring Boot 4.0은 기본으로 Tomcat 11 내장하므로,
+       우리 HelloBoot 프로젝트에서는 Servlet Container = Tomcat
+       - pom.xml에 별도 설정 없으면 --> Tomcat 자동 내장 
+       - spring-boot-starter-jetty로 교체하면 --> Jetty가 Servlet Container 역할 
+    4) 어떤 구현체를 쓰든 Spring 코드는 변경 없음 
+        - Controller, Service 등    
+
+4. 면접 핵심 QA 
+    Q1) Servlet Container와 Tomcat의 관계는?
+    A1) Servlet Container는 Jakarta Servlet 스펙이 정의한 역할(HTTP 수신, Servlet 관리)이고,
+        Tomcat은 그 스펙을 구현한 제품입니다. Java의 인터페이스와 구현 클래스 관계와 같습니다.        
+
+    Q2) Tomcat 내부에서 요청이 처리되는 순서는?
+    A2) Connector(포트 수신) ---> Engine(라우팅) --> Host(가상 호스트) --> Context(웹앱)
+        --> DispatcherServlet(Spring 진입점) 순서로 전달됩니다.             
+
