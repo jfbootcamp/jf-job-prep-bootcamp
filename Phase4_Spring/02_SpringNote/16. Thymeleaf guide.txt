@@ -1,0 +1,30 @@
+1. Thymeleaf(타임리프) 란?
+    1) Spring Boot 공식 권장 템플릿 엔진 
+        - spring-boot-starter-thymeleaf 의존성 하나로 자동 설정 완료
+    2) Natural Template
+        - .html 파일 그대로 브라우저에서 열어도 디자인 확인 가능 (JSP는 불가)
+    3) Java 기반 서버 사이드 템플릿 엔진 
+        - Controller에서 Model에 담은 데이터를 HTML에서 동적으로 렌더링 
+    4) 확장자
+        - .html (표준 html 확장자 사용)
+    5) 위치 
+        - src/main/resources/templates (Spring Boot Convention)
+
+2. th: 속성 가이드 
+    1) 자주 쓰는 th: 속성 
+
+      속성                   용도                    예    
+     --------------------------------------------------------------------------------------------------
+      th:href       링크 URL 동적 생성 
+      th:object     객체 바인딩 (폼/상세)    <form th:object="${member}"> --> 내부에서 *{username} 사용 가능
+      th:text       텍스트 출력
+      th:action     폼 전송 url    
+      th:field      폼 필드 양방향 바인드 
+
+    2) 표현식 (Expression)
+        - ${...}            변수 표현식 
+        - @{...}            URL 표현식 
+            - context-path 자동 포함 URL 
+        - *{...}            선택 변수 표현식 
+            - th:object로 지정한 객체의 필드 
+               *{username} = ${username}             
