@@ -1,0 +1,225 @@
+<templateSet group="Thymeleaf">
+
+  <!-- ==================== 텍스트 출력 ==================== -->
+  <template name="thtext" value='th:text="${$EXPR$}"' description="th:text - 텍스트 출력" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="&quot;value&quot;" alwaysStopAt="true"/>
+    <context><option name="HTML" value="true"/></context>
+  </template>
+
+  <template name="thutext" value='th:utext="${$EXPR$}"' description="th:utext - HTML 이스케이프 없이 출력" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="&quot;htmlContent&quot;" alwaysStopAt="true"/>
+    <context><option name="HTML" value="true"/></context>
+  </template>
+
+  <!-- ==================== 조건문 ==================== -->
+  <template name="thif" value='th:if="${$CONDITION$}"' description="th:if - 조건부 렌더링" toReformat="false" toShortenFQNames="true">
+    <variable name="CONDITION" expression="" defaultValue="&quot;condition&quot;" alwaysStopAt="true"/>
+    <context><option name="HTML" value="true"/></context>
+  </template>
+
+  <template name="thunless" value='th:unless="${$CONDITION$}"' description="th:unless - 조건 반전 렌더링" toReformat="false" toShortenFQNames="true">
+    <variable name="CONDITION" expression="" defaultValue="&quot;condition&quot;" alwaysStopAt="true"/>
+    <context><option name="HTML" value="true"/></context>
+  </template>
+
+  <template name="thswitch" value='th:switch="${$VAR$}"' description="th:switch - switch문" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="&quot;value&quot;" alwaysStopAt="true"/>
+    <context><option name="HTML" value="true"/></context>
+  </template>
+
+  <template name="thcase" value='th:case="$VALUE$"' description="th:case - case절" toReformat="false" toShortenFQNames="true">
+    <variable name="VALUE" expression="" defaultValue="&quot;value&quot;" alwaysStopAt="true"/>
+    <context><option name="HTML" value="true"/></context>
+  </template>
+
+  <!-- ==================== 반복문 ==================== -->
+  <template name="theach" value='th:each="$ITEM$ : ${$LIST$}"' description="th:each - 반복문" toReformat="false" toShortenFQNames="true">
+    <variable name="ITEM" expression="" defaultValue="&quot;item&quot;" alwaysStopAt="true"/>
+    <variable name="LIST" expression="" defaultValue="&quot;list&quot;" alwaysStopAt="true"/>
+    <context><option name="HTML" value="true"/></context>
+  </template>
+
+  <template name="theachstat" value='th:each="$ITEM$, $STAT$ : ${$LIST$}"' description="th:each + status - 반복문 (상태변수 포함)" toReformat="false" toShortenFQNames="true">
+    <variable name="ITEM" expression="" defaultValue="&quot;item&quot;" alwaysStopAt="true"/>
+    <variable name="STAT" expression="" defaultValue="&quot;stat&quot;" alwaysStopAt="true"/>
+    <variable name="LIST" expression="" defaultValue="&quot;list&quot;" alwaysStopAt="true"/>
+    <context><option name="HTML" value="true"/></context>
+  </template>
+
+  <!-- ==================== 링크/URL ==================== -->
+  <template name="thref" value='th:href="@{$URL$}"' description="th:href - URL 링크" toReformat="false" toShortenFQNames="true">
+    <variable name="URL" expression="" defaultValue="&quot;/path&quot;" alwaysStopAt="true"/>
+    <context><option name="HTML" value="true"/></context>
+  </template>
+
+  <template name="threfparam" value='th:href="@{$URL$(${PARAM}=${VALUE})}"' description="th:href - URL + 파라미터" toReformat="false" toShortenFQNames="true">
+    <variable name="URL" expression="" defaultValue="&quot;/path&quot;" alwaysStopAt="true"/>
+    <variable name="PARAM" expression="" defaultValue="&quot;id&quot;" alwaysStopAt="true"/>
+    <variable name="VALUE" expression="" defaultValue="&quot;item.id&quot;" alwaysStopAt="true"/>
+    <context><option name="HTML" value="true"/></context>
+  </template>
+
+  <template name="thsrc" value='th:src="@{$URL$}"' description="th:src - 이미지/스크립트 경로" toReformat="false" toShortenFQNames="true">
+    <variable name="URL" expression="" defaultValue="&quot;/images/logo.png&quot;" alwaysStopAt="true"/>
+    <context><option name="HTML" value="true"/></context>
+  </template>
+
+  <template name="thaction" value='th:action="@{$URL$}"' description="th:action - 폼 액션 URL" toReformat="false" toShortenFQNames="true">
+    <variable name="URL" expression="" defaultValue="&quot;/submit&quot;" alwaysStopAt="true"/>
+    <context><option name="HTML" value="true"/></context>
+  </template>
+
+  <!-- ==================== 폼 관련 ==================== -->
+  <template name="thobject" value='th:object="${$OBJ$}"' description="th:object - 폼 객체 바인딩" toReformat="false" toShortenFQNames="true">
+    <variable name="OBJ" expression="" defaultValue="&quot;dto&quot;" alwaysStopAt="true"/>
+    <context><option name="HTML" value="true"/></context>
+  </template>
+
+  <template name="thfield" value='th:field="*{$FIELD$}"' description="th:field - 폼 필드 바인딩" toReformat="false" toShortenFQNames="true">
+    <variable name="FIELD" expression="" defaultValue="&quot;fieldName&quot;" alwaysStopAt="true"/>
+    <context><option name="HTML" value="true"/></context>
+  </template>
+
+  <template name="thvalue" value='th:value="${$VALUE$}"' description="th:value - value 속성" toReformat="false" toShortenFQNames="true">
+    <variable name="VALUE" expression="" defaultValue="&quot;value&quot;" alwaysStopAt="true"/>
+    <context><option name="HTML" value="true"/></context>
+  </template>
+
+  <template name="therrors" value='th:errors="*{$FIELD$}"' description="th:errors - 검증 에러 표시" toReformat="false" toShortenFQNames="true">
+    <variable name="FIELD" expression="" defaultValue="&quot;fieldName&quot;" alwaysStopAt="true"/>
+    <context><option name="HTML" value="true"/></context>
+  </template>
+
+  <template name="therrorclass" value='th:errorclass="$CLASS$"' description="th:errorclass - 에러 시 CSS 클래스" toReformat="false" toShortenFQNames="true">
+    <variable name="CLASS" expression="" defaultValue="&quot;is-invalid&quot;" alwaysStopAt="true"/>
+    <context><option name="HTML" value="true"/></context>
+  </template>
+
+  <!-- ==================== 속성 설정 ==================== -->
+  <template name="thclass" value='th:class="${$EXPR$}"' description="th:class - 동적 클래스" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="&quot;className&quot;" alwaysStopAt="true"/>
+    <context><option name="HTML" value="true"/></context>
+  </template>
+
+  <template name="thclassappend" value='th:classappend="${$CONDITION$} ? '$CLASS$'"' description="th:classappend - 조건부 클래스 추가" toReformat="false" toShortenFQNames="true">
+    <variable name="CONDITION" expression="" defaultValue="&quot;condition&quot;" alwaysStopAt="true"/>
+    <variable name="CLASS" expression="" defaultValue="&quot;active&quot;" alwaysStopAt="true"/>
+    <context><option name="HTML" value="true"/></context>
+  </template>
+
+  <template name="thstyle" value='th:style="$STYLE$"' description="th:style - 동적 스타일" toReformat="false" toShortenFQNames="true">
+    <variable name="STYLE" expression="" defaultValue="&quot;'color:' + ${color}&quot;" alwaysStopAt="true"/>
+    <context><option name="HTML" value="true"/></context>
+  </template>
+
+  <template name="thattr" value='th:attr="$ATTR$=${$VALUE$}"' description="th:attr - 임의 속성 설정" toReformat="false" toShortenFQNames="true">
+    <variable name="ATTR" expression="" defaultValue="&quot;data-id&quot;" alwaysStopAt="true"/>
+    <variable name="VALUE" expression="" defaultValue="&quot;item.id&quot;" alwaysStopAt="true"/>
+    <context><option name="HTML" value="true"/></context>
+  </template>
+
+  <!-- ==================== 레이아웃 / Fragment ==================== -->
+  <template name="thinsert" value='th:insert="~{$TEMPLATE$ :: $FRAGMENT$}"' description="th:insert - 프래그먼트 삽입" toReformat="false" toShortenFQNames="true">
+    <variable name="TEMPLATE" expression="" defaultValue="&quot;fragments/common&quot;" alwaysStopAt="true"/>
+    <variable name="FRAGMENT" expression="" defaultValue="&quot;header&quot;" alwaysStopAt="true"/>
+    <context><option name="HTML" value="true"/></context>
+  </template>
+
+  <template name="threplace" value='th:replace="~{$TEMPLATE$ :: $FRAGMENT$}"' description="th:replace - 프래그먼트로 교체" toReformat="false" toShortenFQNames="true">
+    <variable name="TEMPLATE" expression="" defaultValue="&quot;fragments/common&quot;" alwaysStopAt="true"/>
+    <variable name="FRAGMENT" expression="" defaultValue="&quot;header&quot;" alwaysStopAt="true"/>
+    <context><option name="HTML" value="true"/></context>
+  </template>
+
+  <template name="thfragment" value='th:fragment="$NAME$"' description="th:fragment - 프래그먼트 정의" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="&quot;fragmentName&quot;" alwaysStopAt="true"/>
+    <context><option name="HTML" value="true"/></context>
+  </template>
+
+  <template name="thfragparam" value='th:fragment="$NAME$($PARAM1$, $PARAM2$)"' description="th:fragment - 파라미터 있는 프래그먼트" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="&quot;fragmentName&quot;" alwaysStopAt="true"/>
+    <variable name="PARAM1" expression="" defaultValue="&quot;param1&quot;" alwaysStopAt="true"/>
+    <variable name="PARAM2" expression="" defaultValue="&quot;param2&quot;" alwaysStopAt="true"/>
+    <context><option name="HTML" value="true"/></context>
+  </template>
+
+  <!-- ==================== 블록 태그 / 기타 ==================== -->
+  <template name="thblock" value='&lt;th:block th:$ATTR$="$VALUE$"&gt;&#10;  $CONTENT$&#10;&lt;/th:block&gt;' description="th:block - 보이지 않는 컨테이너" toReformat="false" toShortenFQNames="true">
+    <variable name="ATTR" expression="" defaultValue="&quot;each&quot;" alwaysStopAt="true"/>
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true"/>
+    <variable name="CONTENT" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context><option name="HTML" value="true"/></context>
+  </template>
+
+  <template name="thwith" value='th:with="$VAR$=${$VALUE$}"' description="th:with - 지역 변수 선언" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="&quot;varName&quot;" alwaysStopAt="true"/>
+    <variable name="VALUE" expression="" defaultValue="&quot;expr&quot;" alwaysStopAt="true"/>
+    <context><option name="HTML" value="true"/></context>
+  </template>
+
+  <template name="thremove" value='th:remove="$MODE$"' description="th:remove - 요소 제거 (all/body/tag/all-but-first/none)" toReformat="false" toShortenFQNames="true">
+    <variable name="MODE" expression="enum(&quot;all&quot;, &quot;body&quot;, &quot;tag&quot;, &quot;all-but-first&quot;, &quot;none&quot;)" defaultValue="&quot;all&quot;" alwaysStopAt="true"/>
+    <context><option name="HTML" value="true"/></context>
+  </template>
+
+  <template name="thinline" value='[[${$EXPR$}]]' description="[[...]] - 인라인 표현식" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="&quot;value&quot;" alwaysStopAt="true"/>
+    <context><option name="HTML" value="true"/></context>
+  </template>
+
+  <!-- ==================== 자주 쓰는 조합 패턴 ==================== -->
+  <template name="thformfull" value='&lt;form th:action="@{$URL$}" th:object="${$DTO$}" method="post"&gt;&#10;  &lt;input type="text" th:field="*{$FIELD$}" /&gt;&#10;  &lt;span th:if="${#fields.hasErrors('$FIELD$')}" th:errors="*{$FIELD$}" class="text-danger"&gt;&lt;/span&gt;&#10;  &lt;button type="submit"&gt;$BTN_TEXT$&lt;/button&gt;&#10;&lt;/form&gt;' description="폼 전체 패턴 (action + object + field + errors)" toReformat="true" toShortenFQNames="true">
+    <variable name="URL" expression="" defaultValue="&quot;/submit&quot;" alwaysStopAt="true"/>
+    <variable name="DTO" expression="" defaultValue="&quot;formDto&quot;" alwaysStopAt="true"/>
+    <variable name="FIELD" expression="" defaultValue="&quot;name&quot;" alwaysStopAt="true"/>
+    <variable name="BTN_TEXT" expression="" defaultValue="&quot;저장&quot;" alwaysStopAt="true"/>
+    <context><option name="HTML" value="true"/></context>
+  </template>
+
+  <template name="thtable" value='&lt;table&gt;&#10;  &lt;thead&gt;&#10;    &lt;tr&gt;&lt;th&gt;$COL1$&lt;/th&gt;&lt;th&gt;$COL2$&lt;/th&gt;&lt;/tr&gt;&#10;  &lt;/thead&gt;&#10;  &lt;tbody&gt;&#10;    &lt;tr th:each="$ITEM$ : ${$LIST$}"&gt;&#10;      &lt;td th:text="${$ITEM$.$PROP1$}"&gt;&lt;/td&gt;&#10;      &lt;td th:text="${$ITEM$.$PROP2$}"&gt;&lt;/td&gt;&#10;    &lt;/tr&gt;&#10;  &lt;/tbody&gt;&#10;&lt;/table&gt;' description="테이블 반복 출력 패턴" toReformat="true" toShortenFQNames="true">
+    <variable name="COL1" expression="" defaultValue="&quot;번호&quot;" alwaysStopAt="true"/>
+    <variable name="COL2" expression="" defaultValue="&quot;이름&quot;" alwaysStopAt="true"/>
+    <variable name="ITEM" expression="" defaultValue="&quot;item&quot;" alwaysStopAt="true"/>
+    <variable name="LIST" expression="" defaultValue="&quot;list&quot;" alwaysStopAt="true"/>
+    <variable name="PROP1" expression="" defaultValue="&quot;id&quot;" alwaysStopAt="true"/>
+    <variable name="PROP2" expression="" defaultValue="&quot;name&quot;" alwaysStopAt="true"/>
+    <context><option name="HTML" value="true"/></context>
+  </template>
+
+  <template name="thpaging" value='&lt;nav&gt;&#10;  &lt;ul class="pagination"&gt;&#10;    &lt;li th:each="i : ${#numbers.sequence(1, $TOTAL_PAGES$)}"&#10;        th:classappend="${i == $CURRENT$} ? &apos;active&apos;"&gt;&#10;      &lt;a th:href="@{$URL$(page=${i})}" th:text="${i}"&gt;&lt;/a&gt;&#10;    &lt;/li&gt;&#10;  &lt;/ul&gt;&#10;&lt;/nav&gt;' description="페이징 네비게이션 패턴" toReformat="true" toShortenFQNames="true">
+    <variable name="TOTAL_PAGES" expression="" defaultValue="&quot;totalPages&quot;" alwaysStopAt="true"/>
+    <variable name="CURRENT" expression="" defaultValue="&quot;currentPage&quot;" alwaysStopAt="true"/>
+    <variable name="URL" expression="" defaultValue="&quot;/list&quot;" alwaysStopAt="true"/>
+    <context><option name="HTML" value="true"/></context>
+  </template>
+
+  <template name="thlayout" value='&lt;!DOCTYPE html&gt;&#10;&lt;html xmlns:th="http://www.thymeleaf.org"&gt;&#10;&lt;head&gt;&#10;  &lt;meta charset="UTF-8"&gt;&#10;  &lt;title th:text="${pageTitle}"&gt;타이틀&lt;/title&gt;&#10;  &lt;link rel="stylesheet" th:href="@{/css/style.css}" /&gt;&#10;&lt;/head&gt;&#10;&lt;body&gt;&#10;  &lt;div th:replace="~{fragments/common :: header}"&gt;&lt;/div&gt;&#10;&#10;  &lt;main&gt;&#10;    $CONTENT$&#10;  &lt;/main&gt;&#10;&#10;  &lt;div th:replace="~{fragments/common :: footer}"&gt;&lt;/div&gt;&#10;  &lt;script th:src="@{/js/app.js}"&gt;&lt;/script&gt;&#10;&lt;/body&gt;&#10;&lt;/html&gt;' description="Thymeleaf 페이지 기본 레이아웃" toReformat="true" toShortenFQNames="true">
+    <variable name="CONTENT" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context><option name="HTML" value="true"/></context>
+  </template>
+
+  <!-- ==================== Security (Spring Security 연동) ==================== -->
+  <template name="thsec" value='sec:authorize="$EXPR$"' description="sec:authorize - Spring Security 권한 체크" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="&quot;isAuthenticated()&quot;" alwaysStopAt="true"/>
+    <context><option name="HTML" value="true"/></context>
+  </template>
+
+  <!-- ==================== 유틸리티 객체 ==================== -->
+  <template name="thdates" value='${#temporals.format($DATE$, &apos;$PATTERN$&apos;)}' description="#temporals.format - 날짜 포맷팅 (Java 8+)" toReformat="false" toShortenFQNames="true">
+    <variable name="DATE" expression="" defaultValue="&quot;localDate&quot;" alwaysStopAt="true"/>
+    <variable name="PATTERN" expression="" defaultValue="&quot;yyyy-MM-dd&quot;" alwaysStopAt="true"/>
+    <context><option name="HTML" value="true"/></context>
+  </template>
+
+  <template name="thnumbers" value='${#numbers.formatInteger($NUM$, $DIGITS$)}' description="#numbers.formatInteger - 숫자 포맷팅" toReformat="false" toShortenFQNames="true">
+    <variable name="NUM" expression="" defaultValue="&quot;number&quot;" alwaysStopAt="true"/>
+    <variable name="DIGITS" expression="" defaultValue="&quot;3&quot;" alwaysStopAt="true"/>
+    <context><option name="HTML" value="true"/></context>
+  </template>
+
+  <template name="thstrings" value='${#strings.isEmpty($STR$)}' description="#strings.isEmpty - 문자열 비어있는지 체크" toReformat="false" toShortenFQNames="true">
+    <variable name="STR" expression="" defaultValue="&quot;str&quot;" alwaysStopAt="true"/>
+    <context><option name="HTML" value="true"/></context>
+  </template>
+
+</templateSet>
