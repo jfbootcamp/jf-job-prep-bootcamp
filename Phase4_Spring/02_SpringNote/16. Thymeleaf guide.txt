@@ -20,6 +20,7 @@
       th:text       텍스트 출력
       th:action     폼 전송 url    
       th:field      폼 필드 양방향 바인드 
+      th:if / th:unless   조건부 랜더링 
 
     2) 표현식 (Expression)
         - ${...}            변수 표현식 
@@ -28,3 +29,21 @@
         - *{...}            선택 변수 표현식 
             - th:object로 지정한 객체의 필드 
                *{username} = ${username}             
+
+3. Thymeleaf 유틸리티 객체 (Thymeleaf Utility Objects)
+    1) 개념
+        - 표현식(${...}) 안에서 사용 할 수 있는 내장 헬퍼 객체 
+        - Java의 유틸리티 클래스 (Math, String, Collection 등)와 비슷한 역할을 
+          HTML 템플릿에서 직접 수행할 수 있게 해줌.
+
+    2) 핵심 특징 
+        - #으로 시작 --> ${#객체명.메서드()} 형태로 호출 
+        - 별도 import나 Bean 등록 불필요 --> Thymeleaf가 자동으로 제공 
+        - View(HTML)에서 간단한 데이터 가공에 사용 (포맷팅, 변환 등)
+        - 자바 코드 없이 HTML 만으로 표현 가능 
+
+    3) 유틸리티 객체 목록
+           객체명             역할                         대표 메서드                              Java 대응 클래스     
+        - #lists       리스트 검사 (비어있는지, 크기)    isEmpty(), size(), contains(), sort()    Collections, List   
+
+       

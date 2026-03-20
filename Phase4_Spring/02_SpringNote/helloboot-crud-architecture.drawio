@@ -1,0 +1,173 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1" pages="2">
+  <diagram name="1. 전체 시스템 아키텍쳐" id="RwXyIElYECXQRiicVbOl">
+    <mxGraphModel dx="983" dy="580" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="xuT7BZzk5qq24Y8qSuHt-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;HelloBoot 전체 시스템 아키텍쳐&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="400" x="540" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xuT7BZzk5qq24Y8qSuHt-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Spring Boot 4.0 + JPA + Thymeleaf + MySQL&amp;nbsp; |&amp;nbsp; Context-Path: /helloboot" vertex="1">
+          <mxGeometry height="30" width="450" x="510" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xuT7BZzk5qq24Y8qSuHt-23" edge="1" parent="1" source="xuT7BZzk5qq24Y8qSuHt-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="xuT7BZzk5qq24Y8qSuHt-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xuT7BZzk5qq24Y8qSuHt-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Client (Browser)&lt;div&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;http://localhost:8082/helloboot&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="50" width="280" x="600" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="xuT7BZzk5qq24Y8qSuHt-7" edge="1" parent="1" source="xuT7BZzk5qq24Y8qSuHt-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="xuT7BZzk5qq24Y8qSuHt-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xuT7BZzk5qq24Y8qSuHt-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="/helloboot (context-path)&lt;div&gt;application.yaml에서 설정&lt;/div&gt;" vertex="1">
+          <mxGeometry height="50" width="280" x="600" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="xuT7BZzk5qq24Y8qSuHt-10" edge="1" parent="1" source="xuT7BZzk5qq24Y8qSuHt-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="xuT7BZzk5qq24Y8qSuHt-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xuT7BZzk5qq24Y8qSuHt-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="MemberController&lt;div&gt;@RequestMapping(&quot;/member&quot;)&lt;/div&gt;&lt;div&gt;-------------------------------------------&lt;/div&gt;&lt;div&gt;GET&amp;nbsp; /list&lt;/div&gt;&lt;div&gt;GET /detail/{id}&lt;/div&gt;&lt;div&gt;GET&amp;nbsp; /form&lt;/div&gt;&lt;div&gt;GET&amp;nbsp; /form/{id}&lt;/div&gt;&lt;div&gt;POST&amp;nbsp; /save&lt;/div&gt;&lt;div&gt;GET&amp;nbsp; /delete/{id}&lt;/div&gt;" vertex="1">
+          <mxGeometry height="180" width="240" x="160" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="xuT7BZzk5qq24Y8qSuHt-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="&lt;b&gt;Controller 계층&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="130" x="450" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="xuT7BZzk5qq24Y8qSuHt-14" edge="1" parent="1" source="xuT7BZzk5qq24Y8qSuHt-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="xuT7BZzk5qq24Y8qSuHt-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xuT7BZzk5qq24Y8qSuHt-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="MemerServiceImpl&lt;br&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;-------------------------------------------&lt;/span&gt;&lt;/div&gt;&lt;div&gt;memberList()&lt;/div&gt;&lt;div&gt;memberDetail(id)&lt;/div&gt;&lt;div&gt;memberSave(member)&lt;/div&gt;&lt;div&gt;memberDelete(id)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="130" width="240" x="160" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="xuT7BZzk5qq24Y8qSuHt-11" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="&lt;b&gt;Service 계층&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="110" x="460" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="xuT7BZzk5qq24Y8qSuHt-17" edge="1" parent="1" source="xuT7BZzk5qq24Y8qSuHt-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="xuT7BZzk5qq24Y8qSuHt-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xuT7BZzk5qq24Y8qSuHt-13" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="MemberRepository&lt;div&gt;extends JpaRepository&amp;lt;Member, Long&amp;gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="50" width="240" x="160" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="xuT7BZzk5qq24Y8qSuHt-15" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="&lt;b&gt;Repository 계층&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="110" x="460" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="xuT7BZzk5qq24Y8qSuHt-16" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#f8cecc;strokeColor=#b85450;" value="MySQL Database&lt;div&gt;helloboot&lt;/div&gt;&lt;div&gt;-------------------------------------------&lt;/div&gt;&lt;div&gt;member 테이블 | book 테이블&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="220" x="405" y="840" as="geometry" />
+        </mxCell>
+        <mxCell id="xuT7BZzk5qq24Y8qSuHt-18" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="&lt;b&gt;Database&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="110" x="295" y="880" as="geometry" />
+        </mxCell>
+        <mxCell id="xuT7BZzk5qq24Y8qSuHt-19" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fad9d5;strokeColor=#ae4132;" value="MemberController&lt;div&gt;-------------------------------------&lt;br&gt;&lt;div&gt;GET&amp;nbsp; /member/list --&amp;gt; list.html&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="50" width="280" x="650" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="xuT7BZzk5qq24Y8qSuHt-20" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;div&gt;Thymeleaf Templates&lt;/div&gt;&lt;div&gt;-------------------------------------&lt;br&gt;&lt;div&gt;templates/member/&amp;nbsp; |&amp;nbsp; &amp;nbsp;templates/book/&lt;/div&gt;&lt;/div&gt;&lt;div&gt;memberList.html&amp;nbsp; |&amp;nbsp; bookList.html&lt;/div&gt;&lt;div&gt;memberDetail. html&amp;nbsp; |&amp;nbsp; bookDetail.html&lt;/div&gt;&lt;div&gt;memberForm.html&amp;nbsp; |&amp;nbsp; bookForm.html&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="380" x="590" y="450" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="s0di7FmHjFfAJ0TjXhgv" name="2. Member CRUD 흐름">
+    <mxGraphModel dx="570" dy="336" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="6MLmWtrMusV-DhGIeARG-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;Member(회원) CRUD 전체 흐름&lt;/b&gt;&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="400" x="190" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6MLmWtrMusV-DhGIeARG-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;dashed=1;dashPattern=8 8;align=left;" value="" vertex="1">
+          <mxGeometry height="190" width="750" x="90" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="6MLmWtrMusV-DhGIeARG-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font color=&quot;#009900&quot;&gt;&lt;b&gt;CREATE (등록)&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="110" x="110" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="6MLmWtrMusV-DhGIeARG-7" edge="1" parent="1" source="6MLmWtrMusV-DhGIeARG-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="6MLmWtrMusV-DhGIeARG-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6MLmWtrMusV-DhGIeARG-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="[등록] 버튼 클릭&lt;div&gt;memberList.html&lt;/div&gt;" vertex="1">
+          <mxGeometry height="40" width="100" x="110" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="6MLmWtrMusV-DhGIeARG-9" edge="1" parent="1" source="6MLmWtrMusV-DhGIeARG-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="6MLmWtrMusV-DhGIeARG-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6MLmWtrMusV-DhGIeARG-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="GET /member/form&lt;div&gt;--&amp;gt; 빈 Member 객체&lt;/div&gt;&lt;div&gt;--&amp;gt; memberForm.html&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="150" x="264" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="6MLmWtrMusV-DhGIeARG-11" edge="1" parent="1" source="6MLmWtrMusV-DhGIeARG-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="6MLmWtrMusV-DhGIeARG-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6MLmWtrMusV-DhGIeARG-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="폼 입력 후 (저장)&lt;div&gt;POST /member/save&lt;/div&gt;&lt;div&gt;--&amp;gt; memberSave(member)&lt;/div&gt;&lt;div&gt;--&amp;gt; repository save()&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="150" x="460" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="6MLmWtrMusV-DhGIeARG-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="redirect&lt;div&gt;/member/list&lt;/div&gt;&lt;div&gt;(PRG 패턴)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="150" x="660" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="6MLmWtrMusV-DhGIeARG-12" parent="1" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#ffff88;strokeColor=#36393d;" value="JPA save() 동작&lt;div&gt;id가 null --&amp;gt; INSERT(신규)&lt;/div&gt;&lt;div&gt;id가 존재 --&amp;gt; UPDATE(수정)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="160" x="490" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="6MLmWtrMusV-DhGIeARG-13" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;dashed=1;dashPattern=8 8;align=left;" value="" vertex="1">
+          <mxGeometry height="190" width="750" x="90" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="6MLmWtrMusV-DhGIeARG-14" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font color=&quot;#009900&quot;&gt;&lt;b&gt;&amp;nbsp;READ (조회)&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="110" x="110" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="6MLmWtrMusV-DhGIeARG-18" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;" value="GET /member/list&lt;div&gt;--&amp;gt; memberList()&lt;/div&gt;&lt;div&gt;--&amp;gt; findAll()&lt;/div&gt;&lt;div&gt;--&amp;gt; memberList.html&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="150" x="130" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="6MLmWtrMusV-DhGIeARG-22" parent="1" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#ffff88;strokeColor=#36393d;align=left;" value="[목록 조회]&lt;div&gt;th:each=&quot;member : ${members}&quot;&lt;/div&gt;&lt;div&gt;--&amp;gt; 테이블 행 반복 생성&lt;/div&gt;&lt;div style=&quot;&quot;&gt;[상세 조회]&lt;/div&gt;&lt;div style=&quot;&quot;&gt;th:object=&quot;${member}&quot;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;--&amp;gt;&quot;*{username}&quot; 으로 필드 접근&lt;/div&gt;" vertex="1">
+          <mxGeometry height="140" width="200" x="480" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="6MLmWtrMusV-DhGIeARG-23" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;" value="GET /member/list/{id}&lt;div&gt;--&amp;gt; memberDetal(id)&lt;/div&gt;&lt;div&gt;--&amp;gt; findById(id)&lt;/div&gt;&lt;div&gt;--&amp;gt; memberDetal.html&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="150" x="300" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="6MLmWtrMusV-DhGIeARG-24" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;dashed=1;dashPattern=8 8;align=left;" value="" vertex="1">
+          <mxGeometry height="190" width="750" x="90" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="6MLmWtrMusV-DhGIeARG-25" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font color=&quot;#009900&quot;&gt;&lt;b&gt;UPDATE (수정)&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="110" x="110" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="6MLmWtrMusV-DhGIeARG-26" edge="1" parent="1" source="6MLmWtrMusV-DhGIeARG-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="6MLmWtrMusV-DhGIeARG-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6MLmWtrMusV-DhGIeARG-27" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="[수정] 버튼 클릭&lt;div&gt;memberDetail.html&lt;/div&gt;" vertex="1">
+          <mxGeometry height="40" width="107" x="103" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="6MLmWtrMusV-DhGIeARG-28" edge="1" parent="1" source="6MLmWtrMusV-DhGIeARG-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="6MLmWtrMusV-DhGIeARG-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6MLmWtrMusV-DhGIeARG-29" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="GET /member/form/{id}&lt;div&gt;--&amp;gt;&amp;nbsp; 기존 데이터 조회&lt;/div&gt;&lt;div&gt;--&amp;gt; memberForm.html&lt;/div&gt;&lt;div&gt;(폼에 기존 값 채움)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="150" x="264" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="6MLmWtrMusV-DhGIeARG-30" edge="1" parent="1" source="6MLmWtrMusV-DhGIeARG-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="6MLmWtrMusV-DhGIeARG-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6MLmWtrMusV-DhGIeARG-31" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="수정 후 (저장)&lt;div&gt;POST /member/save&lt;/div&gt;&lt;div&gt;--&amp;gt;&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;save() (UPDATE)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;--&amp;gt; id가 존재하므로&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="150" x="460" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="6MLmWtrMusV-DhGIeARG-32" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="redirect&lt;div&gt;/member/list&lt;/div&gt;&lt;div&gt;(PRG 패턴)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="150" x="660" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="6MLmWtrMusV-DhGIeARG-34" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;dashed=1;dashPattern=8 8;align=left;" value="" vertex="1">
+          <mxGeometry height="190" width="750" x="90" y="850" as="geometry" />
+        </mxCell>
+        <mxCell id="6MLmWtrMusV-DhGIeARG-35" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;color: rgb(255, 0, 0);&quot;&gt;&lt;b style=&quot;&quot;&gt;DELETE (삭제)&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="110" x="110" y="860" as="geometry" />
+        </mxCell>
+        <mxCell id="6MLmWtrMusV-DhGIeARG-36" edge="1" parent="1" source="6MLmWtrMusV-DhGIeARG-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="6MLmWtrMusV-DhGIeARG-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6MLmWtrMusV-DhGIeARG-37" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="[ 삭제] 버튼 클릭&lt;div&gt;conform() 확인창&lt;/div&gt;" vertex="1">
+          <mxGeometry height="40" width="107" x="103" y="890" as="geometry" />
+        </mxCell>
+        <mxCell id="6MLmWtrMusV-DhGIeARG-38" edge="1" parent="1" source="6MLmWtrMusV-DhGIeARG-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="460" y="910" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6MLmWtrMusV-DhGIeARG-39" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="GET /member/delete/{id}&lt;div&gt;--&amp;gt;&amp;nbsp; memberDelete(id)&lt;/div&gt;&lt;div&gt;--&amp;gt; deleteById(id)&lt;/div&gt;&lt;div&gt;--&amp;gt; DELETE FROM member&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="160" x="260" y="880" as="geometry" />
+        </mxCell>
+        <mxCell id="6MLmWtrMusV-DhGIeARG-42" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="redirect&lt;div&gt;/member/list&lt;/div&gt;&lt;div&gt;(PRG 패턴)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="150" x="460" y="880" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
