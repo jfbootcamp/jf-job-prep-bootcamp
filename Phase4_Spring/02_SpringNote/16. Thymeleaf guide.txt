@@ -43,7 +43,17 @@
         - 자바 코드 없이 HTML 만으로 표현 가능 
 
     3) 유틸리티 객체 목록
-           객체명             역할                         대표 메서드                              Java 대응 클래스     
-        - #lists       리스트 검사 (비어있는지, 크기)    isEmpty(), size(), contains(), sort()    Collections, List   
+           객체명             역할                         대표 메서드                                      Java 대응 클래스     
+        - #lists       리스트 검사 (비어있는지, 크기)    isEmpty(), size(), contains(), sort()                  Collections, List   
+        - #numbers     숫자 포맷팅 (콤마, 소수점, %)    formatInteger(), formatDecimal(), formatPercent()       DecimalFormat          
 
-       
+4.  반복문 , 조건문 
+    1) th:each 
+    2) th:if / th:unless
+       th:switch / th:case  
+    3) 상태변수(iterStat) 속성들
+        - index              0부터 시작하는 인덱스 
+        - count              1부터 시작하는 순번 
+        - size               전체 요소 수
+        - even / odd         짝수/홀수 여부 (boolean)
+        - first / last       첫 번째/마지막 여부 
