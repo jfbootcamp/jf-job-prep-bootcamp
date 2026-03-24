@@ -21,3 +21,15 @@
     3) @PathVariable
         - URL 경로의 {변수}를 메서드 파라미터로 매핑 
         - /bookView/{id}  ----> @PathVariable Long id                     
+
+3. JPA 핵심 어노테이션
+    1) @Entity
+        - 이 클래스가 DB 테이블과 매핑됨 
+        - 클래스명 --> 테이블명 (자동)
+    2) @Id
+        - 이 필드가 기본키 (PK)
+    3) @GeneratedValue(strategy = GenerationType.IDENTITY)
+        - MySQL AUTO_INCREMENT 사용 
+        - INSERT 시 DB가 자동 번호 부여 
+    4) @Data (Lombok)
+        - getter / setter / toString / equals / hashCode         
