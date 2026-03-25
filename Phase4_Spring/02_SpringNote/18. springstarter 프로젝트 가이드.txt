@@ -1,0 +1,35 @@
+1. MVC 패턴 
+
+                            사용자 (브라우저)
+                        http://localhost:8083/web/
+                                    |
+                                    | HTTP 요청 
+                                   \|/
+                        [Controller] - 요청을 받아서 Service를 호출
+                             BookController, HomeController
+                                "교통 정리를 경찰관" 역할
+                                    |
+                                    | 데이터 처리 요청 
+                                   \|/     
+                        [Service] - 비즈니스 로직을 처리 
+                             BookService, ReviewService
+                            "실제 업무를 처리하는 담당자" 역할 
+                                    |
+                                    |
+                                   \|/
+                        [Repository] - DB와 직접 통신 (SQL 실행) 
+                             BookRepository, ReviewRepository
+                             "창고에서 물건을 꺼내오는 사람" 역할   
+                                    |
+                                    | 데이터 반환 
+                                   \|/  
+                        [Model] - Controller가 View에 전달할 데이터를 담는 그릇 
+                             model.addAttribute("books", books);
+                                    |
+                                    | 데이터 전달 
+                                   \|/
+                        [View] - 사용자에게 보여줄 화면 (Thymeleaf HTML)  
+                            list.html, detail.html, fragments/*.html 
+                            "최종적으로 고객에게 보여주는 결과물" 역할          
+
+2. InitDataConfig - 앱 시작 시 자동 데이터 생성                            

@@ -46,6 +46,7 @@
            객체명             역할                         대표 메서드                                      Java 대응 클래스     
         - #lists       리스트 검사 (비어있는지, 크기)    isEmpty(), size(), contains(), sort()                  Collections, List   
         - #numbers     숫자 포맷팅 (콤마, 소수점, %)    formatInteger(), formatDecimal(), formatPercent()       DecimalFormat          
+        - #temporals   날짜/시간 포맷팅                format(), day(), month(), year()                        DateTimeFormatter
 
 4.  반복문 , 조건문 
     1) th:each 
