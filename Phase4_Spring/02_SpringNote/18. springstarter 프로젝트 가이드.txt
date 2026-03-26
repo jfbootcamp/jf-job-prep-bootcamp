@@ -32,4 +32,20 @@
                             list.html, detail.html, fragments/*.html 
                             "최종적으로 고객에게 보여주는 결과물" 역할          
 
-2. InitDataConfig - 앱 시작 시 자동 데이터 생성                            
+2. InitDataConfig - 앱 시작 시 자동 데이터 생성    
+
+3. RESTful URL 설계 원칙 
+     1) REST에서 URL은 리소스(명사)를 나타내고, 행위는 HTTP 메서드로 구분함 
+          - 변경 전 (비추천)
+               GET  /                   --> 목록 (리소스명이 URL에 드러나지 않음)
+               GET  /detail/{id}        --> 상세 ("detail"은 동사성 표현 --> REST 안티패턴)
+          - 변경 후 (권장)
+               GET /books               --> 목록 (리소스명을 URL에 명시)
+               GET /books/{id}          --> 상세 (리소스 계층 구조로 표현)               
+     
+     2)  /books 기준으로 통일하면 나중에 CRUD 확장이 자연스러움 
+          GET     /books               --> 목록  
+          GET     /books/{id}          --> 상세 
+          POST    /books               --> 등록  
+          PUT     /books/{id}          --> 수정  
+          DELETE  /books/{id}          --> 삭제 

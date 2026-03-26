@@ -21,6 +21,7 @@
       th:action     폼 전송 url    
       th:field      폼 필드 양방향 바인드 
       th:if / th:unless   조건부 랜더링 
+      th:classappend      조건부 CSS 클래스 추가   <tr th:classappend="${stat.odd} ? 'bg-gray' ">   --> 기존 class에 조건부로 클래스 추가 (홀수행이면 bg-gray)
 
     2) 표현식 (Expression)
         - ${...}            변수 표현식 
