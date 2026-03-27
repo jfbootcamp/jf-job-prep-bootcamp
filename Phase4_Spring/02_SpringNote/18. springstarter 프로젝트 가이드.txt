@@ -49,3 +49,46 @@
           POST    /books               --> 등록  
           PUT     /books/{id}          --> 수정  
           DELETE  /books/{id}          --> 삭제 
+
+4. 리뷰 삭제 시 동작 순서 
+     1) 사용자가 "삭제" 클릭
+     2) form이 제출되기 직전에 confirm() 팝업이 뜸 
+     3) A. "확인" 
+          - confirm()이 true 반환 --> form 제출됨 (서버로 DELETE 요청)
+        B. "취소"
+          - confirm()이 false 반환 --> form 제출 중단 (아무 일도 안 일어남) 
+
+5. 리뷰 삭제 후 알림(alert) 처리 
+     1) 사용자가 "삭제" 클릭 --> confirm 팝업 --> "확인"
+     2) form이 POST 전송 --> ReviewController.deleteReview() 실행
+     3) Controller가 redirect:/books/{id}?deleted=true 로 응답 
+     4) 브라우저가 새 페이지를 로딩 --> 이 스크립트가 실행됨
+     5) URL에 ?deleted=true가 있으면 --> alert('리뷰가 삭제되었습니다') 표시
+     6) alert 닫은 후 --> URL에서 ?deleted=true 제거 (새로고침해도 alert 안 뜨게) 
+
+6. URLSearchParams 
+     1) URL 파라미터 읽기 
+
+          http://localhost?8083/web/books/1?deleted=true&page=2 
+
+
+     window.location.pathname                window.location.search
+     --> /web/books/1 (경로 부분)       --> ?deleted=true&page=2 (쿼리 파라미터 부분)
+                        
+7. "더 보기" 버튼 
+     1) 3개 초과 리뷰를 펼치는 토클 버튼 
+     2) th:if="${book.reviews.size() > 3}"
+          -> 리뷰가 4개 이상일 때만 이 버튼을 HTML에 렌더링 
+        th:text="${book.reviews.size() - 3}
+          -> 숨겨진 리뷰 개수 계산 (예: 7개면 "4개")       
+
+     3) JS onclick
+          - querySelectorAll('.review-hidden')
+               - 숨겨진 리뷰 요소들을 전부 찾음(4번째, 5번째,...)  
+          - .forEach(el => el.classList.toggle('.review-hidden'))   
+               - forEach: 찾은 요소들을 하나씩 반복
+               - toggle(): 클래스가 있으면 제거, 없으면 추가 (스위치 ON/OFF)
+                    - 지금은 review-hidden이 있는 상태이므로 -> 제거됨 
+                    - CSS display:none 해제 -> 숨겨진 리뷰가 보임
+          - this.style.display='none'
+               - 버튼 자기 자신을 숨김                                         
