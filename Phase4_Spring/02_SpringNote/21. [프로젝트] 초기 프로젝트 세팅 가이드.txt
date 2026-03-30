@@ -1,0 +1,16 @@
+1. 기술 스택 
+    1) Java 21 + Spring Boot 4.0.5 + gradle
+    2) MySQL 8 + JPA (ddl-auto: update) 
+    3) Thymeleaf + Spring Security (세션 기반)
+    4) context-path: /hometop, port: 8090
+
+2. PM이 해야 할 초기 작업 
+    1) 프로젝트 생성 
+        - Spring Intializr 또는 IDE에서 생성 
+        - Group: com.hometalk
+        - Artifact : onepass
+        - Dependencies : Web, JPA, Security, Thymeleaf, Validation, MySQL, Lombok, DevTools     
+
+    2) GitHub 저장소  + 브랜치      
+        - git init    
+        

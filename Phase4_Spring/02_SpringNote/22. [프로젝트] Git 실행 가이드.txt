@@ -1,0 +1,94 @@
+1. 전체 흐름도 
+
+    [PM 작업]                           [팀원 각각의 작업]
+    1) 프로젝트 생성
+    2) GitHub 저장소 생성
+    3) develop 브랜치 생성 + push 
+    4) 공통 테이블 + 인증 구현 
+    5) develop에 커밋 + push             6) clone + develop checkout     
+                                        7) feature 브랜치 생성
+                                            - 각자 모듈 개발 + 커밋
+                                            - develop에 머지 
+
+2. PM 작업 --반드시 먼저 완료
+    1) Spring Boot 프로젝트 생성
+    2) 로컬 Git 초기화 
+        - git init 
+        - .gitignore 확인 (Spring Intializr가 자동 생성)
+    3) GitHub 저장소 연결
+        - GitHub에서 빈 저장소 생성 후 
+            - git remote add origin xxx.git 
+        - main 브랜치 push 
+            - git push -u origin main 
+    4) develop 브랜치 생성
+        - git checkout -b develop  
+    5) 공통 테이블 + 작업                   
+        - develop 브랜치에서 작업 
+            - PM은 공통이므로 별도 feature 브랜치 불필요 
+            - 또는 feature/auth 브랜치에서 작업해도 됨 
+        - BaseEntity (createdAt, updatedAt)    
+        - User Entity 
+        - Security
+        - 로그인/회원가입
+        - 시드 데이터 
+        - application.yaml
+
+    6) 팀원에게 알림
+        - develop 브랜치에 공통 테이블 + 작업이 올라갔습니다.
+          각자 git pull origin develop 후 feature 브랜치를 생성해주세요.
+
+3. 팀원 작업 --PM 완료 후 시작 
+    1) 저장소 clone 
+        - git clone https://github.com/jfbootcamp/Home-Talk-One-Pass.git
+
+    2) feature 브랜치 생성
+        - git checkout develop
+        - git pull origin develop
+        - git checkout -b feature/{모듈명}
+    3) 패키지 구조 생성 
+    4) 개발 + 커밋 (반복)
+        - 구현 순서 
+            - Entity 작성 --> Repository --> Service --> Controller
+            --> Template 순서 
+        - git status 
+          git add .
+          git add src/main/java/com/hometalk/onepass/notice/entity/Notice.java    
+          git commit -m "[공지] feat: Notice Entity + Repository 작성"
+
+4. 커밋 규칙 
+    1) [모듈명] 타입: 설명 
+        - 타입 
+            - feat(기능)
+            - fix(버그)
+            - docs(문서)
+            - style(포맷)
+            - refactor(리펙토링)
+    2) 예
+        - git commit -m "~~~~"
+                        ------
+                        [주차]feat: 차량 등록 API 구현   
+                        [관리비]fix: 미납 필터 쿼리 수정          
+
+5. 머지 규칙 
+    1) feature/* 에서 작업
+    2) 작업 완료 후 develop에 머지 
+    3) 충돌 시 PM이 조율 
+    4) 중간 / 최종 발표 전 develop + main 머지 
+
+6. develop 브랜치의 최신 코드 동기화 (수시로)
+    1) 다른 팀원이 develop에 머지한 코드를 내 브랜치에 반영함 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
