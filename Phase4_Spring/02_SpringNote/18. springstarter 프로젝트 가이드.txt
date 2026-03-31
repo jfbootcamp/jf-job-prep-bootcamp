@@ -92,3 +92,41 @@
                     - CSS display:none 해제 -> 숨겨진 리뷰가 보임
           - this.style.display='none'
                - 버튼 자기 자신을 숨김                                         
+
+8. 인라인 편집 패턴 (Inline Edit Pattern)
+     1) 같은 위치에서 읽기 모드 <---> 편집 모드를 display 속성으로 
+        전환하는 JavaScript UI 패턴
+
+     2) 패턴 원리
+
+          읽기 모드 (기본)                                            편집 모드 (수정 중) 
+       -------------------------                                 -------------------------     
+        읽기 영역         (display:block)                             읽기 영역         (display:none)
+          : 사용자에게 보여주는 데이터 
+            예-리뷰 본문, 별점, 날짜, 수정/삭제 버튼 
+
+        편집 영역         (display:none)                              편집 영역         (display:block) 
+          : 숨겨져 있음 -- 사용자에게 안 보임 
+
+        사용자가 보는 화면 : 데이터만 보임 (읽기 전용)                    사용자가 보는 화면 :  수정 폼만 보임 (편집 가능)
+
+     3) 패턴 코드 
+          - 데이터 흐름
+               - DB (Review 테이블)                          BookController.java                                                     detail.html  
+               -------------------------------               Book book = bookService.getById(1);                                   th:each ="review : ${book.reviews}"
+                id   content  rating  book_id                                                                                      th:id="review-body-" + ${review.id}                          
+                3     좋아요     5        1       ------>     //book안에 reviews가 이미 포함됨                             ----->    
+                5     도움됨     4        1                     book.reviews = [Review(id=3),Review(id=5),Review(id=8)] 
+                8     감사       3        1                     model.addAttribute("book", book); 
+
+          - HTML 구조 (detail.html)
+               리뷰 본문
+               th:id = "review-body-" + ${review.id}
+
+               날짜 + 수정/삭제
+               th:id = "review-meta-" + ${review.id}
+
+          - JavaScript 함수 (detail.html)
+               - 영역별 id로 찾음 
+                 const reviewBody =   getElementById('review-body-' + reviewId)   
+                 const metaArea =   getElementById('review-meta-' + reviewId)                 
