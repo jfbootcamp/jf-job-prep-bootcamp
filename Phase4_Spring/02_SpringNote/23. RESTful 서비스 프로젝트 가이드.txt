@@ -1,0 +1,67 @@
+1. RESTful 서비스 
+    1) REST 
+        - Representational State Transfer
+        - 자원을 URL로 표현, HTTP Method로 행위 구분 
+
+    2) 기존
+        - 중앙 집중식 (모놀리식)
+        - Back-End : 모든 Service가 하나의 서버 
+          Front-End : Thymeleaf, JSP (서버 종속)
+        - 문제점
+            - 하나 수정 --> 전체 재배포 
+            - 프런트/백 강결합 
+            - 프런트 개발자가 벡앤드 코드 필요 
+            - 팀프로젝트 시 역할 분리 어려움       
+    3) REST API 
+        - 독립형 서비스 (마이크로 서비스, MSA)
+        - Front-End: React, Vue.js (독립)
+        - 통신 : GET/POST/PUT/DELETE + JSON
+        - 장점
+            - 프런트/백 독립 개발 & 배포 
+            - JSON 표준으로 어디서든 소비 가능 
+            - 팀프로젝트: 역할 분리 명확            
+
+2. REST API 
+    1) 요청 방식 + URL
+    2) 고유한 주소(자원의 엔드포인트)로 자원에 접근하는 표준 방식 
+    3)      HTTP Method        Endpoint URL         설명          Spring 어노테이션  
+           -----------------------------------------------------------------------
+             GET                /api/books        전체목록조회       @GetMapping
+             GET                /api/books/{id}   특정데이터조회     @GetMapping    
+             POST               /api/books        데이터 등록       @PostMapping 
+             PUT                /api/books/{id}   데이터 수정       @PutMapping
+             DELETE             /api/books/{id}   데이터 삭제       @DeleteMapping
+    4) URL은 자원(명사) 중심, 행위는 HTTP Method로 표현
+        -  /api/books     (O)
+        -  /api/getBooks  (X) 
+
+3. 왜 @Controller에서 @RestController로?
+    1) 과거 
+        - 서버가 HTML을 만들던 시절
+        - @Controller + Thymeleaf
+        - 서버가 HTML을 직접 만들어서 반환 
+            - 브라우저는 받은 HTML을 그냥 표시 
+        - 이슈
+            - 모바일 앱에서 HTML을 못 씀 
+            - React 같은 프런트와 연동 불가 
+            - 화면 + 서버 동시 작업 불가 
+    2) 전환점
+        - "데이터만 주세요!"
+            - "HTML 말고 데이터(JSON)만 주면 화면은 우리가 직접 만들게요"
+        - React, Vue.js, 모바일 앱의 등장 
+        - 프런트엔드 개발자
+            - 순수한 데이터(JSON)만 필요
+            - HTML 껍데기는 필요 없음
+            - API 문서만 있으면 됨 
+    3) 현재             
+        - @RestController
+            - JSON 데이터만 반환
+                - 브라우저, 앱, 다른 서버 누구든 소비 가능 
+                - 프런트/백 완전 분리 
+            - Swagger로 API 문서 자동      
+    4) @RestController를 사용하면 백엔드 팀은 API만 만들고,
+       프런트 팀은 React로 화면만 만들면 됨.
+       - JSON이라는 공통 언어로 소통 
+       - Swagger가 API 계약서 역할            
+
+4.                                             
