@@ -1,0 +1,40 @@
+1. 왜 Entity를 직접 반환하지 않고 DTO를 사용하는가?
+    1) Entity 직접 노출은 4가지 위험을 초래함
+        - API 계약 깨짐
+            - DB 컬럼 추가/제거 
+                --> Entity 필드 변경
+                --> API 응답도 변경
+                --> 프런트엔드 변경 
+        - 보안 위험 
+            - Entity에 민감 필드가 있으면(비밀번호, 주민번호 등)
+              그대로 JSON에 노출됨 
+              - DTO는 필요한 필드만 선택적으로 포함 
+        - 책임 혼재 
+            - 하나의 클래스에 3가지 역할이 섞임
+                - @Column (DB 매핑)
+                - @NotBlank (유효성 검증)  
+                - @Schema (Swagger 문서화)
+        - 순환 참조 
+            - @OneToMany 양방향 관계에서 Entity 직접 반환시
+              Jackson 무한 루프 발생
+
+    2) 해결 - DTO 패턴으로 역할 분리
+        - Book(Entity)
+            - 역할 : DB 테이블과 1:1 매핑 전용
+            - 어노테이션 : @Entity, @Column, @Id 
+            - @PrePersist, @PreUpdate
+            - 원칙 : Controller에서 직접 반환 금지 
+
+        - BookPayloadDTO (요청)
+            - 역할 : 클라이언트 --> 서버 (요청 데이터)
+            - 어노테이션 :  @NotBlank, @Min, @Schema
+            - 특징 : id, createAt 없음 (서버가 생성)           
+            - 사용 : POST, PUT 요청의 @RequestBody
+
+        - BookViewDTO (응답)
+            - 역할 : 서버 --> 클라이언트 (응답 데이터)
+            - 어노테이션 : @Schema (Swagger 문서화)
+            - 특징 : from(Book) 정적 팩토리 메서드 
+            - 사용 : 모든 API 응답의 ResponseEntity            
+
+
