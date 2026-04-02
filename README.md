@@ -8,5 +8,5 @@ Phase별로 프론트엔드, 백엔드, 데이터베이스, 스프링, AWS/DevOp
 - Phase 2: Java Core 
 - Phase 3: DB, JDBC, Servlet/JSP 
 - Phase 4: Spring Framework & Spring Boot (React)
-- Phase 5: AWS & DevOps 
+- Phase 5: GCP & DevOps 
 - Phase 6: Final Project & Job Preparation 
