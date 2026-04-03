@@ -25,7 +25,7 @@
             - @PrePersist, @PreUpdate
             - 원칙 : Controller에서 직접 반환 금지 
 
-        - BookPayloadDTO (요청)
+        - BookRequestDTO (요청)
             - 역할 : 클라이언트 --> 서버 (요청 데이터)
             - 어노테이션 :  @NotBlank, @Min, @Schema
             - 특징 : id, createAt 없음 (서버가 생성)           
@@ -37,4 +37,61 @@
             - 특징 : from(Book) 정적 팩토리 메서드 
             - 사용 : 모든 API 응답의 ResponseEntity            
 
+2. 직렬화 / 역직렬화 
+    1) 직렬화 (Serialization)
+        - Java 객체 --> JSON 문자열 
+        - 서버가 클라이언트에게 응답을 보낼 때
+          Java 객체는 네트워크로 직접 전송할 수 없으므로 
+          JSON 문자열로 변환해야 함 
+        - 담당 : Jackson(MappingJackson2HttpMessageConverter)  
+        - 시점 : Controller가 return할 때 자동 실행
+        - 과정 : BookViewDTO의 getter 스캔 --> JSON 키 생성
+
+    2) 역직렬화 (Deserialization)
+        - JSON 문자열 --> Java 객체
+        - 클라이언트가 서버에게 요청을 보낼 때
+          네트워크로 전달된 JSON 문자열을 
+          Java 객체로 복원해야 함.
+        - 담당 : Jackson + @RequestBody 
+        - 시점 : POST / PUT 요청의 Body를 받을 때 자동 실행 
+        - 조건 : JSON Body가 있는 요청만 (GET은 해당 없음)
+
+    3) 왜 필요한가?
+        - 네트워크는 바이트(문자열)만 전송할 수 있음
+            - Java 객체는 메모리에만 존재하므로,
+            - 보낼 때는 문자열로 변환(직렬화)하고
+            - 받을 때는 다시 객체로 복원(역직렬화)해야 함.
+    4) 핵심
+        - POST/PUT 요청 --> 역직렬화(JSON --> BookRequestDTO)
+        - 모든 응답 --> 직렬화 (BookViewDTO --> JSON)
+        - GET 요청은 Body가 없으므로 역직렬화 없음 
+
+3. HTTP 상태 코드 
+    1) 성공 응답 
+        - 200, OK
+            - 사용 : GET 조회 성공, PUT 수정 성공 
+            - 코드 예 : ResponseEntity.ok(body)
+            - 응답 : 요청한 데이터를 JSON으로 변환 
+        - 201, Created 
+            - 사용 : POST 새 리소스를 등록 성공 
+            - 코드 예 : ResponseEntity.status(201).body()
+            - 응답 : 생성된 데이터 (id, createAt 포함)
+        - 204, No Content 
+            - DELETE 삭제 성공 
+            - 코드 예 : ResponseEntity.noContent().build()
+            - 응답 : 본문 없음 (body가 비어있음)
+
+    2) 에러 응답 
+        - 400, Bad Request 
+            - 원인: @Valid 유효성 검증 실패 
+            - 예외: MethodArgumentNoValidException
+            - 응답: fieldErrors 
+        - 404, Not Found
+            - 원인: 존재하지 않는 리소스 조회
+            - 예외: ResourceNotFoundException
+            - 응답: message 
+        - 500, Internal Error 
+            - 원인: DB 연결 끊김, NPE 등 예측 불가 
+            - 예외: Exception 
+            - 응답: message (서버 내부 오류 메시지)                            
 
