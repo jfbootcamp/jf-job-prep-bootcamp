@@ -1,0 +1,46 @@
+1.  Spring Boot 글로벌 예외 처리 (Global Exception Handling)
+
+    1) 왜 글로벌 예외처리가 필요한가?
+
+        Client ----> Controller --> Service --> RuntimeException 발생!
+                                             |
+                                             |
+                                             \/
+                                    Spring 기본 에러 핸들러가 처리
+                                            |
+                                           \|/
+                                    500 Internal Server Error + 지저분한 JSON 응답 
+    2) 문제점
+        - 모든 에러가 500으로 응답됨 - 리소스를 못 찾아도 500, 입력값이 틀려도 500.
+        - 에러 응답 형식이 제각각 
+        - 보안 취약 (스택 트레이스가 클라이언트에게 노출될 수 있음)
+        - 프론트엔드 개발자 난감 (에러 형식이 일관되지 않아 파싱이 어려움)
+
+    3) 글로벌 예외처리가 있을 때
+        Client ----> Controller --> Service --> ResourceNotFoundException 발생
+                                                            |
+                                                            |
+                                                            \/
+                                                GlobalExceptionHandler가 가로채서 처리
+                                                             |
+                                                            \|/
+                                                404 Not Found <--- 통일된 JSON 에러 응답                                                                                 
+
+    4) 장점
+        - 정확한 HTTP 상태 코드 
+            - 404, 400, 409 등 상황에 맞는 코드 
+        - 통일된 에러 응답 구조 
+            - 프런트엔드가 항상 같은 형식으로 에러 처리 가능 
+        - 보안 강화
+            - 내부 정보 노출 차단, 사용자 친화적 메시지만 전달 
+        - 코드 간결화 
+            - Controller에서 try~catch 제거, 한 곳에서 일괄 관리 
+
+2. @RestControllerAdvice
+    1) = @ControllerAdvice + @ResposeBody                             
+        - 모든 RestController 예외를 여기서 처리 
+        - @ResposeBody 포함 --> 반환값(body)이 자동으로 JSON 직렬화 
+
+3. @RestControllerAdvice vs  @ControllerAdvice
+    1) @RestControllerAdvice = @ResposeBody 포함 --> 반환값 자동 JSON 직렬화
+    2) 일반 MVC --> @ControllerAdvice를 사용함        

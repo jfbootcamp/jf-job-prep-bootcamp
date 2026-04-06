@@ -130,3 +130,8 @@
                - 영역별 id로 찾음 
                  const reviewBody =   getElementById('review-body-' + reviewId)   
                  const metaArea =   getElementById('review-meta-' + reviewId)                 
+
+9. 이미지 업로드 (다중 이미지)
+     1) 책 하나(1)에는 여러 개의 이미지(N)가 포함됨 
+     2) type
+          - 1(섬네일 이미지), 2(기본 이미지), 3(상세 이미지)                 
