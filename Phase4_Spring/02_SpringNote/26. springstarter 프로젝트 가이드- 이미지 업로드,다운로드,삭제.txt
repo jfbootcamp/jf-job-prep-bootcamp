@@ -1,0 +1,27 @@
+1. 이미지 업로드 (POST)
+    1) POST  /books/{bookId}/images?type=1|2|3
+           Content-Type: multipart/form-data
+
+    2) BookController.uploadImages()  
+        - @RequestPart 
+            - multipart/form-data 요청에서 파일 파트를 꺼내 Java 객체로 바인딩  
+        - @PathVariable
+            - URL 경로의 {bookId} 부분을 메서드 파라미터로 바인딩 
+        - @RequestParam
+            - URL 쿼리 파라미터(?type=1)를 메서드 파라미터로 바인딩     
+        - 파일별 독립 처리, 일부 실패해도 계속 진행   
+
+    3) BookImageService.saveImage()    @Transactional 
+        - ① 빈 파일(isEmpty) 체크 
+        - ② MIME 타입 검증 -- image/png, jpg, jpeg 만 허용 
+        - ③ 파일 크기 검증 (최대 5MB)
+        - ④ 도서당 이미지 수 제한 (최대 10장)
+        - ⑤ 안전한 파일명 생성 - RandomStringUtils 10자리 + 확장자만 추출
+        - ⑥ 도서별 디렉토리 생성 + 절대 경로 반환 (ImageUtil.makePath()) 
+        - ⑦ type=1 --> Scalr 300px 리사이즈 + ImageIO.write() 저장 
+            type=2, 3 --> Files.copy() 원본 그대로 저장 
+        - ⑧ DB 저장 -- BookImageRepository.save()  
+            DB 저장 실패 시 Files.deleteIfExists() --> 디스크 롤백(고아 파일 방지)       
+
+    4) 200 OK  
+        - 파일별 성공/실패 분리 -- 일부 실패해도 전체 중단 없음                                   
