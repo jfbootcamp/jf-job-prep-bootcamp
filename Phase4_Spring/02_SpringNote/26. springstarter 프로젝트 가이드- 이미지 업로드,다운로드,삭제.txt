@@ -24,4 +24,33 @@
             DB 저장 실패 시 Files.deleteIfExists() --> 디스크 롤백(고아 파일 방지)       
 
     4) 200 OK  
-        - 파일별 성공/실패 분리 -- 일부 실패해도 전체 중단 없음                                   
+        - 파일별 성공/실패 분리 -- 일부 실패해도 전체 중단 없음             
+
+2. 이미지 다운로드 (GET - 서빙)
+    1) GET /books/{image_id}/imageSrc 
+        -> Text 형태로 브라우저 호출 
+
+    2) BookImageController.getImage() 
+        - @GetMapping  /{image_id}/imageSrc                                    
+            --> 서브스에 DB조회, 파일읽기, MediaType 결정 위임
+
+    3) BookImageService.getImageResource() 
+        - ① BookImageRepository.findById()
+            없으면 BookImageNotFoundException --> 404
+        - ② ImagUtil.getFileAsResource()
+            - 파일 경로 조회 
+        - ③ File.readAllBytes(path)
+            - 이미지 바이트 읽기 
+            - 없으면 IOException --> GlobalExceptionHandler --> 500 
+        - ④ resolveMediaType
+            - 확장자 기반 Content-type 결정 
+                - png -->IMAGE_PNG
+                - JPG -->IMAGE_JPEB
+                - gif -->IMAGE_GIF   
+
+3. BookImageResourceDTO
+    1) byte[] data + MediaType mediaType 
+        - 서비스가 ResponseEntity 직접 생성 않음
+        - 컨트롤러 DTO 받아 ResponseEntity로 포장 
+    2) 200 OK 
+        - Content-type: image/png | image/jpeg | image/gif    
