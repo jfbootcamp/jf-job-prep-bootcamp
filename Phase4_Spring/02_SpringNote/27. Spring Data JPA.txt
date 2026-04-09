@@ -1,0 +1,87 @@
+1. Spring Data JPA
+    1) Spring Framework의 모듈 중 하나 
+    2) JPA(Java Persistence API)를 기반으로 
+       데이터 접근 계층을 쉽게 구현할 수 있도록 도와주는 라이브러리(인터페이스)임.
+    3) 복잡한 데이터베이스 상호작용을 단순화하고,
+       반복적인 CRUD 작업을 자동화하며, 
+       데이터베이스와의 상호작용을 보다 간편하게 처리할 수 있는 다양한 기능 제공함        
+
+2. JPA 전체 연결 구조 
+    1) Entity Class 작성 
+        - @Entity 어노테이션을 붙인 Java 클래스 
+        - DB 테이블과 1:1 매핑
+        - 개발자 직접 작성 
+
+    2) Repository Interface 작성
+        - JpaRepository를 extends하는 인터페이스 
+        - 개발자가 직접 작성 
+        - CRUD 메서드 자동 상속 
+
+    3) extends JpaRepository
+        - Spring Data JPA 제공 인터페이스 
+        - 2)가 3)을 extends 하면 
+           save / findAll / delete 등 메서드 자동 생성   
+
+    4) EntityManager 동작 
+        - JPA 핵심 인터페이스 
+        - Repository 호출 시 내부 동작 
+        - 영속성 컨텍스트(캐시, 변경 감지)를 관리 
+
+    5) HikaroCP Connection 요청 
+        - Spring Boot 기본 커넥션 풀 
+        - DB 접근 시 풀에서 Connection을 꺼내 사용하고
+          반납하여 성능 최적화 
+
+    6) DataSource 연결 설정
+        - application.properties / yml 의 DB URL, 계정, 비밀번호 
+          정보를 읽어 실제 DB 연결을 담당하는 컴포넌트    
+
+    7) Hibernate SQL 생성
+        - EntityManager의 실체 구현체 (JPA 구현체)
+        - 객체 조작을 INSERT / SELECT / UPDATE / DELETE로 자동변환 
+
+    8) DataBase 실행
+        - Hibernate가 생성한 SQL이 실제 DB(MySQL)에 전달
+        - 데이터 저장, 조회, 수정, 삭제가 최종 완료됨 
+
+3. Spring Boot 스타터를 사용한 단순화된 데이터 엑세스 
+    1) spring-boot-starter-data-jpa  
+    2) ORM Mapping  
+
+            객체지향 프로그래밍                 관계형 데이터베이스 
+            Java Object                        DataBase Table 
+                               ORM 이 해결함                            
+                            <--------------->
+                              패러다임의 불일치
+                              데이터베이스에 의존적(종속적)인 프로그래밍?
+               상속?, 타입 불일치, 1:N 관계?                               
+
+           - 개발자는 객체지향적으로 프로그래밍을 하고,
+             JPA가 이를 관계형 데이터베이스에 맞게 SQL을 대신 생성해주는 기술
+
+4. EntityManager & Persistence Context 
+    1) JPA의 핵심 인터페이스 
+    2) 엔티티의 생명주기를 관리하고, DB와의 모든 상호작용을 담당
+    3) Spring Data JPA를 사용하면 EntityManager를 직접 다루지 않아도 됨
+        - Repository가 대신 처리 
+    4) 영속성 컨텍스트 
+        - 엔티티를 영구 저장하는 환경 
+        - 핵심 기능 
+            - 1차 캐시        
+                - 같은 트랜잭션 내에서 동일 ID로 조회 시 
+                    - 예) Book b1 = repo.findById(1L);   // SELECT 실행
+                          Book b1 = repo.findById(1L);   // 캐시에서 반환 (SQL 없음)
+            - 변경 감지 (Dirty Checking)
+                - 영속 상태의 엔티티를 수정하면 자동으로 UPDATE SQL 실행
+                    - 예) Book book = repo.findById(1L).get();
+                          book.setTitle("새제목");  // save() 없이도 자동 UPDATE! 
+            - 지연 쓰기 (Write-Behind)
+                - 여러 변경사항을 모아서 트랜잭션 커밋 시 한꺼번에 SQL 실행
+            - 동일성 보장 
+                - 같은 트랜잭션에서 같은 ID 조회 시
+                  항상 동일한 인스턴스 반환 
+                      
+
+
+        
+       
