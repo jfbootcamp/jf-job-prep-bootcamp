@@ -9,15 +9,22 @@
 
                 관계            부모(1측)       자식(N측)       부모 측 어노테이션       자식 측 어노테이션                 FK 컬럼             공통옵션
     -------------------------------------------------------------------------------------------------------------------------------------------------------    
-    1)  Book --> BookImage       Book         BookImage        @OneToMany             @ManyToOne                                        cascade=ALL
+    1)  Book --> BookImage       Book         BookImage        @OneToMany             @ManyToOne(LAZY)                                   cascade=ALL
                                                                (mappedBy="book")      @JoinColumn("book_id")    book_images.book_id     orphanRemoval=true
                                                                                                                     --> books.id        fetch=LAZY 
-    2) Customer --> Cart        Customer      Cart             @OneToMany              @ManyToOne 
+    2) Customer --> Cart        Customer      Cart             @OneToMany              @ManyToOne(LAZY) 
                                                                (mappedBy="customer")   @JoinColumn("customer")  carts.customer_id       cascade=ALL              
                                                                                                                    --> customers.id      orphanRemoval=true                                        
-                                                                                                                                         fetch=LAZY                                   
-                                                                                                                                                                                 
+    3) Book --> Review          Book          Review           @OneToMany              @ManyToOne(LAZY)                                 fetch=LAZY                                   
+                                                               (mappedBy="book")       @JoinColumn("book_id")   reviews.book_id         cascade=ALL                                                                                                
+                                                                                                                   --> books.id         orphanRemoval=true
+    4) Customer --> Review      Customer      Review            @OneToMany              @ManyToOne(LAZY)                                fetch=LAZY 
+                                                                (mappedBy="customer")   @JoinColumn("customer_id")
 
+    5) Book --> Cart          Book          Cart                @OneToMany              @ManyToOne(LAZY)        carts.book_id
+                                                                (mappedBy="book")       @JoinColumn("book_id")    --> books.id                                                         
+    
+                                                                                                                                             
 
 3. 엔티티 공통 설계 원칙
     1) @Setter 금지 --> 필드 변경 가능한 메서드로 허용 
