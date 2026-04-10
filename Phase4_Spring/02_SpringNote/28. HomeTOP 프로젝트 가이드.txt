@@ -1,0 +1,32 @@
+1. 5개의 엔티티와 5개의 관계 설정하기
+    1) 화살표 읽는 방법
+        - 방향 : 부모(1) --> 자식(N)
+            - 예: "Book은 여러 BookImage를 가진다"
+    2) FK (외래키)는 항상 화살표가 도착하는 쪽(N측)이 보유 
+        - 실제 DB에서 FK 컬럼이 존재하는 테이블 = N측 테이블     
+
+2. 5개 관계 비교
+
+                관계            부모(1측)       자식(N측)       부모 측 어노테이션       자식 측 어노테이션                 FK 컬럼             공통옵션
+    -------------------------------------------------------------------------------------------------------------------------------------------------------    
+    1)  Book --> BookImage       Book         BookImage        @OneToMany             @ManyToOne                                        cascade=ALL
+                                                               (mappedBy="book")      @JoinColumn("book_id")    book_images.book_id     orphanRemoval=true
+                                                                                                                    --> books.id        fetch=LAZY 
+    2) Customer --> Cart        Customer      Cart             @OneToMany              @ManyToOne 
+                                                               (mappedBy="customer")   @JoinColumn("customer")  carts.customer_id       cascade=ALL              
+                                                                                                                   --> customers.id      orphanRemoval=true                                        
+                                                                                                                                         fetch=LAZY                                   
+                                                                                                                                                                                 
+
+
+3. 엔티티 공통 설계 원칙
+    1) @Setter 금지 --> 필드 변경 가능한 메서드로 허용 
+    2) int --> Integer (null 안정성)
+    3) @ManyToOne --> LAZY 필수 (N+1 방지)
+    4) 5개 관계 모두 cascade 동일 패턴 
+
+4. 컬렉션 필드를 선언해서 사용 이유 
+    1) 반드시 필요한 거 아님 
+        - 없으면 자식--> 부모 단방향만 가능 
+        - 있으면 부모--> 자식 양방향 탐색 가능 
+            - cascade / orphanRemoval     
