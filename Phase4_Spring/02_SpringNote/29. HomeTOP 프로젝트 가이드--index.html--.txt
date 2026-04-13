@@ -1,0 +1,38 @@
+* 홈 화면(index.html) 구현 가이드 
+
+1. 접속 
+    1) http://localhost:8085/ 
+
+2. 와이어프레임
+                    fragments/nav.html 
+
+    side-menu       slider-track              
+
+                    slider-overlay
+
+                    fragments/footer.html
+
+3. Thymleaf Fragment 조립 
+
+                            MainController.java 
+                             @GetMapping("/")
+                               return "index"
+                                    |
+                                    |
+                                   \|/
+                            templates/index.html              
+                              메인 페이지 진입점 
+                              수개의 fragment 조립
+
+        fragments/head.html                              static/css/style.css 
+           (공통 영역)                                    static/js/main.js   
+        fragments/nav.html                               static/images/
+           (상단 내비게이션)
+        fragments/sidemenu.html 
+           (카테고리 사이드 메뉴)   
+        fragments/footer.html 
+           (하단 푸터)   
+
+4. 구현 순서 
+    1) nav.html 
+        - 아이콘 + HomeTOP 로고 + 로그인 버튼            
