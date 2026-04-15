@@ -33,6 +33,11 @@
         fragments/footer.html 
            (하단 푸터)   
 
-4. 구현 순서 
-    1) nav.html 
-        - 아이콘 + HomeTOP 로고 + 로그인 버튼            
+4. 회원 등록
+   1) 데이터 흐름
+
+      Controller           Service           Repository
+
+      CustomerRequestDto -->toEntity() ------> Customer (Entity)
+
+      CustomerResponseDto <--from(saved) <-----  saved Customer         
