@@ -30,7 +30,25 @@
         - @Query 필요 없음 
         - 메서드 이름만으로 동작 
 
-3. JPQL (Java Pesistence Query Language)
+3. 쿼리 메서드를 사용하는 방법   
+    1) Spring Data JPA를 사용하면 간단히 메소드 이름을 선언하여
+       저장소 인터페이스에서 쿼리 메서드를 정의할수 있음 
+       - 메서드 이름은  Spring Data JPA에 의해 구문 분석되어
+         적절한 SQL 쿼리를 생성함 
+       - 예
+          - userName으로 회원 단건 조회
+            - 생성되는 SQL 
+                - select * from customers where username = ? 
+
+    2) 메서드 이름 규칙 
+        키워드              메서드 예시                     생성되는 SQL 
+      --------------------------------------------------------------
+       findBy             findByTitle(String title)
+                          findByUsername(String userName)   
+
+
+
+4. JPQL (Java Pesistence Query Language)
     1) 엔티티(클래스) 기준으로 쿼리 작성 
     2) 예
         @Query("SELECT AVG(r.rating) FROM Review r WHERE r.book.id =:book_id")
@@ -43,7 +61,7 @@
         - DB 변경해도 코드 수정 최소화 
         - 실무에서 가장 많이 사용 
 
-4. Native Query (순수 SQL)
+5. Native Query (순수 SQL)
     1) 실제 DB 테이블/컬럼 기준으로 쿼리 작성 
     2) 예
         @Query(value="SELECT AVG(r.rating) FROM review r WHERE r.book_id"
@@ -56,7 +74,7 @@
         - DB 종류 바뀌면 쿼리도 수정 필요 
         - DB에 종속적 
 
-5. @Query 코드 완전 분해 
+6. @Query 코드 완전 분해 
 
     @Query("SELECT AVG(r.rating) FROM Review r WHERE r.book.id =:book_id")
     public Double findAverageRatingByBookId(@Param("book_id") Long book_id);

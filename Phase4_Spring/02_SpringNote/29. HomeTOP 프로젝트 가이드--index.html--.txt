@@ -41,3 +41,59 @@
       CustomerRequestDto -->toEntity() ------> Customer (Entity)
 
       CustomerResponseDto <--from(saved) <-----  saved Customer         
+
+5. data-*
+   1) HTML 태그는 정해진 표준 속성만 사용함
+      - 예 
+         <form action="..." method="post">
+   2) 개발자가 JS에서 사용할 데이터를 HTML에 실어 보내고 싶을 때 
+      - 예
+         <form username="hong">   --> 표준에 없는 속성 -> HTML 규칙 위반
+         <form data-username="hong">   -->  data- 접두사 --> HTML 표준 커스텀 속성
+   3) data- 뒤에는 아무 이름이나 자유롭게 붙일 수 있음
+      - 예
+         data-id="3"
+         data-role="admin"
+         data-user-id="5"
+         data-username="hong"                         
+   4) 브라우저는 dataset 객체로 data-* 속성을 자동 수집해줌
+      - 예
+         data-username -> form.dataset.username  (data- 제거)      
+         data-user-name -> form.dataset.userName
+   5) 요약
+      - 서버 데이터를 HTML 속성에 안전하게 심어두고, JS가 꺼내 쓰는 HTML5 표준 방법
+
+6. 더티 체킹(Dirty Checking)  
+   1) 동작 원리
+      @Transactional 시작
+         findById(id) -> Entity가 영속성 컨텍스트에 로딩 (스냅샷 저장)
+               |
+               |
+         entity.updateProfile(name, age, occupation) --> 메모리 내 필드 변경
+               |
+               |
+      @Transactional 종료 (커밋)
+               |
+               |
+        JPA가 스탭샷과 현재 Entity 비교 --> 변경 감지
+               |
+               |
+         UPDATE SQL 자동 실행 <--- save() 호출 없이!       
+
+7. updateForm 연결 흐름
+   1)  "updateForm"이라는 이름이 GET --> HTML --> POST 세 곳에서 
+        일치해야 폼 바인딩이 성립함 
+
+      - step 1
+         - GET /customer/3/edit -- editForm() 
+               : updateForm 객체를 Model에 담아 뷰로 전달
+
+      - step 2
+         - edit.html -- "updateForm"을 th:object로 폼에 바인딩
+
+      - step 3 
+         - POST /customer/3/edit -- update()
+            - 폼 데이터를 @ModelAttribute로 수신                          
+
+
+
