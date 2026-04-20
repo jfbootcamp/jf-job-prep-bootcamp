@@ -1,0 +1,91 @@
+1. 트랜잭션이란?
+    1) 데이터베이스 및 Spring 프레임워크의 컨텍스트에서 트랜잭션은 
+       분할할 수 없는 단일 작업 단위 
+        - 수행되는 일련의 작업을 나타냄 
+    2) 주요 특징
+        - ACID 
+            - Atomicity (원자성)
+                - 두 은행 계좌 간에 이체하는 경우 
+                  한 계좌의 출금과 다른 계좌의 입금이 동시에 이루어져야 함.
+                - 하나라도 실패하면 둘 다 기록되어서는 안됨.       
+            - Consistency (일관성)
+                - 거래에 두 계좌 간 자금 이체가 포함되는 경우 거래 전후의
+                  총 금액이 동일하게 유지되어야 함.
+            - Isolation (격리)
+                - 두 개의 거래가 동시에 발생하는 경우 각 거래는 완료될때까지
+                  다른 거래의 작업을 인식할 수 없음.
+            - Durability (내구성)
+                - 일단 은행 이체가 확인되면 거래 완료 직후 갑잡스러운 정전이
+                  발생하더라도 계좌 잔액 변경이 유지되어야 함.   
+
+2. @Transactional을 사용하여 트랜잭션 관리
+    1) Method
+        - 단위 작업 (insert)
+        - 단위 작업 (update)
+
+        - All or Nothing -- 원자성을 설명하는 비유적인 표현임 
+            - 트랜잭션이 반드시 완전히 성공하거나,
+              그렇지 않으면 아무것도 수행되지 않는 상태로 남아야 함을 의미함 
+            - 트랜잭션 내의 모든 작업이 성공적으로 완료(commit)되어야 하며,
+              그렇지 않으면 그 트랜잭션이 수행된 모든 변경 사항이 원래 상태로
+              롤백(rollback) 되어야 함.
+
+    2) Spring의 트랜잭션 관리 시스템
+
+         EntityManager -----> Entity     지속성
+                       -----> Entity  <--------> DB 
+                       -----> Entity   
+
+         EntityManager는 지속성 컨텍스트 
+            - 기본적으로 엔티티 변경 사항을 추적하는 1차 수준 캐시 
+            - JPA 인터페이스임 
+            - 유지, 병합, 제거를 포함하여 엔티티의 수명 주기를 관리함 
+
+            - @Transactional
+                - 쓰기 작업이 포함된 메서드 (register, customerUpdate, customerDelete)
+            - @Transactional(readOnly = true)
+                - 읽기 전용 작업 (getAllCustomer, getById, login, getAge)
+                - 선택적으로 적용
+                    - 성능 최적화를 위해     
+
+3. 가져오기 전략 (FetchType)                    
+    1) JPA의 @OneToMany및 @ManyToMany 관계에 대한 기본 가져오기 유형은 
+       FetchType.LAZY임.
+       - 관련 엔티티(ex: Customer 클래스의 List<Review> reviews)가 
+         명시적으로 액세스될 때까지 데이터베이스에 로드되지 않음(지연 로드)을 의미함 
+    2) JPA의 @ManyToOne및 @OneToOne 관계에는 기본 가져오기 유형인 
+       FetchType.EAGER가 있음.
+       - 관련 엔티티가 기본 엔티티와 함께 즉시 로드된다는 의미임.  
+
+4.  LAZY는 Hibernate 세션(트랜잭션)이 열려있을 때만 추가 조회가 가능함. 
+    1) 정상 동작
+        @Transactional 시작 --> 세션 OPEN 
+                |
+               \|/
+             findById() --> Customer 조회 (reviews는 프록시)             
+                |
+               \|/
+            customer.getReviews() 접근 -->  이 시점에 SELECT * from reviews 실행 
+                |
+               \|/
+        @Transactional 종료 --> 세션 CLOSE 
+
+    2) 문제 발생 
+        @Transactional 시작 --> 세션 OPEN 
+                |
+               \|/
+             findById() --> Customer 조회 (reviews는 프록시) 
+                |
+               \|/
+        @Transactional 종료 --> 세션 CLOSE <-- 여기서 세션 닫힘
+                |
+               \|/
+            Controller --> customer 반환 
+                |
+               \|/
+             Thymeleaf 템플릿에서 customer.reviews  접근 
+                |
+               \|/
+             LazyInitializationException (세션이 이미 닫혀있음)    
+
+
