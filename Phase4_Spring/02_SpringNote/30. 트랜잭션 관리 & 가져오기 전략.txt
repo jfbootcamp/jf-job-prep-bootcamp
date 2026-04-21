@@ -88,4 +88,16 @@
                \|/
              LazyInitializationException (세션이 이미 닫혀있음)    
 
+    3) 해결책
+        - 트랜잭션이 살아있는 동안 reviews를 DTO로 변환해서 꺼내오기 
+        - 
 
+        Controller                 Service                           View
+          review() 호출    ---->  findCustomerByIdWithReviews() ---> customer.reviews 접근
+                                    ① Customer 조회                    이미 List<ReviewResponseDto>
+                                    ② customer.getReviews() 접근           로 변환된 상태
+                                      (트랜잭션 내 -> 세션 있음 -> Ok)
+                                    ③ ReviewResponseDto로 반환
+                                     (bookTitle, bookAuthor 포함)
+                                     CustomerResponseDto 반환  
+                                     [트랜잭션 종료]
