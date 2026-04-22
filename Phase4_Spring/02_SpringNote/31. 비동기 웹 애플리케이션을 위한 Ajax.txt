@@ -17,7 +17,78 @@
         - 다양한 모의 데이터를 제공함   
 
 3. JavaScript 비동기 전송 기술 
-    1) XMLHttpRequest(XHR)
+    1) XMLHttpRequest(XHR) 
         - 2000년대 초 Ajax의 시작점임 
         - 레거시 코드에 여전히 등장함                
+        - 콜백 기반 비동기 처리 기술 
 
+    2) 콜백이란?
+        - 나중에 호출될 함수를 미리 등록해두는 패턴 
+        - onreadystatechange에 함수를 등록하면 브라우저가 상태 변화 시
+          자동으로 호출함.
+        - 등록 순서 주의
+            - 콜백 함수는 반드시 send() 호출 이전에 등록해야 함
+            - 이후에 등록하면 초기 상태 변화(1~3)를 놓칠 수 있음     
+    
+    3) XHR 콜백 (vs fetch/axios)  
+        - XHR은 콜백 함수로 이벤트를 처리함 
+        - 주요 목록
+            - 상태 관련
+                - onreadystatechange  
+                    - readyState가 변할 때마다 호출 (0+1+2+3+4)
+                - onloadstart
+                    - 요청이 시작될 때 (send() 직후)
+                - onload 
+                    - 요청이 완료됐을 때 (한 번만 호출)
+                - onloadend 
+                    - 성공/실패 상관없이 요청이 끝났을 때                                            
+            - 오류 관련
+                - onerror
+                    - 네트워크 오류 (DNS 실패, 연결 거부 등)
+                - ontimeout 
+                    - xhr.timeout 시간 초과 시 
+                - onabort
+                    - xhr.abort()로 요청을 강제 취소했을 때    
+
+    4) fetch + Promise(.then 체이닝) 구조  
+        - Promise의 3가지 상태
+            - 대기 (Pending) 
+                - fetch() 호출 직후 응답을 기다리는 중 
+            - 이행 (Fulfilled)
+                - 응답 도착 
+                - .then() 실행됨 (200이든 404든!) 
+            - 거부,실패 (Rejected)
+                - 네트워크 오류, DNS 실패 등 
+                - .catch() 실행됨    
+        
+        - .then() 체이닝  
+            - fetch(url) 호출 
+                -> Promise<Response> 반환
+                -> JS는 여기서 멈추지 않고 계속 실행
+
+            - 첫번째 .then(response => ....)                                                                                    
+                -> response.ok 확인 -> json() 호출 -> Promise<Data> 반환
+
+            - 두번째 .then(data => ....)
+                -> 실제 데이터 사용, 화면 랜더링 
+
+            - .catch(error => ....)
+                -> 오류 처리, 체인 어디서든 throw하면 여기로 점프  
+    
+    5) async / await                       
+
+4. XHR vs FETCH 비교 
+
+    항목                            XHR                                             FETCH
+   -----------------------------------------------------------------------------------------------------
+    비동기 처리 방식       onreadystatechange 콜백등록                  .then().then().catch()  Promise 체이닝
+    JSON 파싱            JSON.parse(xhr.responseText) 직접 파싱        response.json() 호출 (Promise 반환) 
+    404/500 처리         xhr.status !== 200  직접 확인                 response.ok 확인 후 throw  필요 
+    네트워크 오류         별도 onerror 이벤트 등록 필요                   .catch() 하나로 처리
+    가독성               중첩 콜백  -- 들여쓰기 깊어짐                    체이닝 -- 흐름이 위->아래로 읽힘   
+
+5. fetch + async / await  
+    1) Promise를 동기 스타일로 표현함 
+        - Promise의 문법적 설탕(syntactic sugar)임
+        - 비동기 코드를 동기처럼 읽히게 해줌 
+        - 현재 가장 널리 쓰이는 표준 패턴임 
