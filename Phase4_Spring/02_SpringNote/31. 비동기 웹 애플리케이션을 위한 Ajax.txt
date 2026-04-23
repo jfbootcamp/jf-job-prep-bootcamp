@@ -75,7 +75,8 @@
             - .catch(error => ....)
                 -> 오류 처리, 체인 어디서든 throw하면 여기로 점프  
     
-    5) async / await                       
+    5) async / await       
+    6) axios                
 
 4. XHR vs FETCH 비교 
 
@@ -90,5 +91,70 @@
 5. fetch + async / await  
     1) Promise를 동기 스타일로 표현함 
         - Promise의 문법적 설탕(syntactic sugar)임
+            - 내부적으로 .then() 체이닝과 완전히 동일하게 동작함 
+            - 더 읽기 쉬운 문법을 제공함 
         - 비동기 코드를 동기처럼 읽히게 해줌 
-        - 현재 가장 널리 쓰이는 표준 패턴임 
+        - 현재 가장 널리 쓰이는 표준 패턴임
+    2) async 함수
+        - async function f()으로 선언하면 해당 함수는 항상 Promise를 반환함 
+       await 키워드 
+        - Promise가 완료될 때까지 해당 줄에서 실행을 일시 중단함 
+        - async 함수 안에서만 사용 가능함      
+       try / catch
+        - .catch() 대신 try / catch로 에러를 처리함 
+    3) 03-async.js
+        - 순차 실행 vs 병렬 실행 타임라인 비교 
+            - 순차 실행
+                - 요청1 ------------
+                - 요청2             -----------
+                - 총 소요 = 요청1 + 요청2 = 901ms
+            - 병렬 실행                               
+                - 요청1 ------------
+                - 요청2 ---------
+                - 총 소요 = max(요청1,요청2) = 
+
+6. axios 가이드 
+    1) 자동 JSON 변환 
+        - 응답 body를 자동으로 파싱함 
+            - response.json() 호출이 불필요함 
+            - 파싱된 데이터가 response.data에 바로 담김 
+    2) 4xx/5xx 자동 throw 
+        - HTTP 에러 상태를 자동으로 감지해 catch로 보냄 
+        - fetch처럼 if(!res.ok)를 직접 확인할 필요가 없음 
+    3) 인터셉터 
+        - 모든 요청/응답에 공통 로직을 삽입함 
+        - 인증 토큰 자동 주입, 에러 공통 처리 등에 활용함                     
+
+7. Ajax 기술 발전 흐름 비교 (정리)
+    1) XHR (XMLHttpRequest)
+        - 가장 오랜된 방식, 콜백 기반 
+        - 순서
+            - xhr.open('GET', url, true);
+            - xhr.onload = function() { JSON.parse(xhr.responseText) }
+            - xhr.send()
+                - 콜백 중첩 심화 시 "콜백 지옥" 발생
+                - 에러 처리 (onerror, ontimeout, onabort)를 각각 별도로 등록 
+
+    2) fetch 
+        - 브라우저 내장 Promise 기반 API 
+        - fetch(url)
+            .then(res => res.json())
+            .then(data => console.log(data))
+            .catch(e => console.log(e));
+        - Promise 체이닝으로 콜백 지옥 해결 
+        - 단점 : 4xx/5xx가 와도 reject 안 됨 --> response.ok 직접 확인 필요
+                JSON 파싱(.json())을 매번 직접 호출해야 함 
+                Content-Type 헤더와 JSON.stringify()를 매번 직접 작성해야 함 
+
+    3) async / await
+        - fetch를 동기 코드처럼 읽히게 만드는 문법 설탕 
+        - const res = await fetch(url);
+          const data = await res.json();   // 파싱 여전히 직접 필요
+        - 가독성 향상, 하지만 fetch의 단점은 그대로 유지 
+
+    4) axios
+        - fetch를 감싼 서드파티 라이브러리 
+        - .json() 파싱 불필요 - 응답 body가 .data에 자동으로 파싱됨
+        - Content-Type, JSON.stringify() 불필요 -- POST/PUT 시 자동 처리 
+        - 4xx/5xx 자동 reject -> catch 블록에서 일괄 처리 
+        - error.response.status로 상태 코드 접근 가능            
