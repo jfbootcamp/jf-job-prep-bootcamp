@@ -51,3 +51,13 @@
         - 조회(loadItems)
             - loadItems()   -----------> GET /api/items    -----------> 서버  ---------> 200 OK    ------> renderTable()
             페이지로드/버튼 클릭        keyword 있으면 ?keyword=값         DB 조회           Item[] 배열          행 동적 삽입 
+
+        - 등록 / 수정 (submitForm)
+            - submitForm()  --> currentEditId 확인 --> POST /api/items  --> 201 Cread 
+                                     false/true         신규등록               생성된 Item 
+                                                  --> PUT /api/items/{id} --> 200 OK  --> resetForm() + loadItems() 
+                                                        수정                  수정된 Item      폼 초기화 + 목록 새로고침 
+        - 삭제 (deleteItem)
+            - 삭제 버튼 --------->  confirm()   --------->  DELETE /api/items/{id}   -----> 204 Not Content ---> loadItems()
+                deleteItem(id)      사용자 확인                body 없음 - URL에 id만            body 없음          목록 새로고침 
+

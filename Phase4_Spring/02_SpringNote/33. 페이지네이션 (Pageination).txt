@@ -1,0 +1,33 @@
+1. 목표 
+    1) 전체 목록을 한 번에 가져오는 대신, 한 페이지에 N건씩 나누어 조회함 
+
+2. 왜 필요한가
+    1) 현재 
+        - findAllCustomers() -> SELECT * FROM customers 
+            - 회원 10명 : 문제없음    
+            - 회원 1,000명 : 느려지기 시작
+            - 회원 100,000명 : 페이지 로딩 수 초, 메모리 부족 가능 
+    2) Pageable(page=0, size=20) -> SELECT * FROM customers LIMIT 20 OFFSET 0
+                                 -> 항상 20건만 조회 -> 데이터 수에 관계없이 일정한 속도 
+
+3. 핵심 인터페이스 
+    1) Spring Data의 Pageable
+        - 페이지 번호 + 페이지 크기 + 정렬 정보를 담는 객체 
+    2) Page
+        - getContent() : 현제 페이지의 데이터 목록                                               
+        - getTotalPages() : 전체 페이지 수                                                  
+        - getTotalElements() : 전체 데이터 수                                                  
+        - getNumber() : 현재 페이지 번호 (0부터 시작)
+        - hasNext() : 다음 페이지 존재 여부 
+        - hasPrevious() : 이전 페이지 존재 여부
+        - isFirst() : 첫 번째 페이지 여부 
+        - isLast() : 마지막 페이지 여부       
+
+4. 구현 단계
+    1) CustomerRepository 
+        - Page 반환 메서드 
+            - List<Customer> findByDeletedAtIsNull(Pageable pageable);
+
+    2) CustomerService
+        - 인터페이스 메서드 수정
+            -                                                               
