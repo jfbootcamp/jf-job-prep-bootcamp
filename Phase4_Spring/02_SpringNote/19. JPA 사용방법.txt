@@ -78,6 +78,14 @@
 
         - DB 종류 바뀌면 쿼리도 수정 필요 
         - DB에 종속적 
+    4) @Query 속성
+        - value         // 실행할 메인 쿼리 (필수)
+        - nativeQuery   // true (Native SQL)
+        - countQuery    // Page<T> 반환 시 전체 건수 계산용 쿼리 
+
+
+
+
 
 6. @Query 코드 완전 분해 
 

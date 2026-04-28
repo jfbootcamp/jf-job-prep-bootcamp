@@ -1,0 +1,78 @@
+1. 목표 
+    1) 전체 목록을 한 번에 가져오는 대신, 한 페이지에 N건씩 나누어 조회함 
+
+2. 왜 필요한가
+    1) 현재 
+        - findAllCustomers() -> SELECT * FROM customers 
+            - 회원 10명 : 문제없음    
+            - 회원 1,000명 : 느려지기 시작
+            - 회원 100,000명 : 페이지 로딩 수 초, 메모리 부족 가능 
+        - 회원 10만 건 --> 브라우저 전송 데이터 폭증
+            - 응답 지연 / OOM(Out Of Memory) 위험 
+
+    2) 페이지네이션 해결
+        - N건만 LIMIT/OFFSET으로 잘라서 조회
+        - 메모리 사용 최소화 - 빠른 응답 속도 
+        - 페이지 버튼 UI / 무한 스크롤 구현 가능 
+        - 서버, DB, 네트워크 모두 부하 감소 
+            - Pageable(page=0, size=20) -> SELECT * FROM customers LIMIT 20 OFFSET 0
+                                 -> 항상 20건만 조회 -> 데이터 수에 관계없이 일정한 속도 
+
+3. LIMIT / OFFSET SQL 원리
+    1) OFFSET = (page - 1) * size 
+        - 1 페이지 (page=1, size=10) --> OFFSET = 0
+            - SELECT * FROM customers
+              ORDER BY id DESC LIMIT 10 OFFSET 0;
+              --> 1번 ~ 10번 행 반환 
+        - 2 페이지 (page=2, size=10) --> OFFSET = 10
+            - SELECT * FROM customers
+              ORDER BY id DESC LIMIT 10 OFFSET 10;
+              --> 11번 ~ 20번 행 반환 
+        - N 페이지 (page=N, size=S) --> OFFSET = (N-1)*S                          
+            - SELECT * FROM customers
+              ORDER BY id DESC LIMIT S OFFSET (N-1)*S;
+
+4. 핵심 요소  
+    1) Spring Data의 Pageable
+        - 페이지 번호 + 페이지 크기 + 정렬 정보를 담는 객체 
+    2) Page (현재 페이지 번호)
+        - 0-based : 스프링에서 page=0 --> 1페이지 
+        - getContent() : 현제 페이지의 데이터 목록                                               
+        - getTotalPages() : 전체 페이지 수                                                  
+        - getTotalElements() : 전체 데이터 수 (레코드 수)                                                  
+        - getNumber() : 현재 페이지 번호 (0부터 시작)
+        - hasNext() : 다음 페이지 존재 여부 
+        - hasPrevious() : 이전 페이지 존재 여부
+        - isFirst() : 첫 번째 페이지 여부 
+        - isLast() : 마지막 페이지 여부 
+    3) size (페이지당 조회 건수)
+        - SQL LIMIT 값과 동일 역할 
+        - @PageableDefault(size=10) --> 기본 page=0              
+
+5. 요청 흐름 전체 구조 
+    1) Browser(Client)
+        - GET /customer?page=0&size=10&sortBy=id&direction=desc
+    2) CustomerController
+        - index(model, searchType, keyword, sortBy, direction
+            , @PageableDefault Pageable)
+    3) CustomerService
+        - findAllCustomers(Pageable)
+    4) CustomerServiceImpl
+    5) CustomerRepository
+        - findByDeletedAtIsNull(Pageable)     
+            --> JPA: LIMIT/OFFSET   
+    6) Customer (Entity)
+
+6. Spring Pageable / Page<T>
+    1) @PageableDefault(size = 10) Pageable pageable)
+        - Controller 파라미터 선언 
+        - URL  
+            ?page=2&size=10 ---> page=2, size=10 자동 바인딩,
+            파라미터 없으면 page=0, size=10 기본값 적용 
+
+    2) PageRequest.of() 
+        - 정렬 포함  Pageable 수동 생성           
+
+
+
+                                                       
