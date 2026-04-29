@@ -47,7 +47,17 @@
            객체명             역할                         대표 메서드                                      Java 대응 클래스     
         - #lists       리스트 검사 (비어있는지, 크기)    isEmpty(), size(), contains(), sort()                  Collections, List   
         - #numbers     숫자 포맷팅 (콤마, 소수점, %)    formatInteger(), formatDecimal(), formatPercent()       DecimalFormat          
+                       정수 시퀀스 생성                sequence(시작,끝)
         - #temporals   날짜/시간 포맷팅                format(), day(), month(), year()                        DateTimeFormatter
+        - #fields      
+            - "th:object="${customerForm}"으로 바인딩된 폼 안에서만 사용 가능
+            - 내부적으로 Spring의 BindingResult에 접근해 오류 정보를 가져옴 
+            - @Valid 검증 결과가 BindingResult -> #fields를 통해 뷰로 전달됨 
+                - #fields.hasErrors('username')
+                    - BindingResult에서 'username' 필드에 오류가 1개라도 있으면
+                      true 반환
+                    - @NotBlank 위반, @Size 위반 등 어떤 오류든 하나라도 있으면 
+                      true 반환  
 
 4.  반복문 , 조건문 
     1) th:each 
@@ -59,3 +69,8 @@
         - size               전체 요소 수
         - even / odd         짝수/홀수 여부 (boolean)
         - first / last       첫 번째/마지막 여부 
+
+5. 검증 오류 메시지 출력
+    1) th:errors 
+        - @NotBlank, @Size 등 메시지가 표시됨 
+        - 오류 없으면 이 요소 자체가 랜더링 안됨
