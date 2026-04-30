@@ -22,3 +22,21 @@
     @Min(value)         최솟값 이상 
     @Max(value)         최대값 이하 
     @Email              이메일 형식 
+
+3. 회원 등록 흐름 
+    1) register()     GET /register 
+        - 빈 폼 화면을 랜더링 함 
+        - 빈 CustomerRequestDto를 Model에 담아 register.html을 반환함 
+
+    2) checkUserName()    GET /check-username?username=xxx  (JS fetch 호출)
+        - 사용자가 아이디를 입력창에서 포커스를 벗어나는 순간 브라우저가 비동기로 호출함
+        - 폼 제출 없이 실시간으로 중복 여부만 확인하는 보조 기능임 
+        - 화면 이동 없이 { "available": true/false } JSON만 반환함 
+
+    3) register()        POST /register
+        - 사용자가 등록 버튼을 눌러 폼을 제출하면 실행됨
+        - @Valid 검증 -> username 중복 확인 -> DB 저장 순으로 처리함 
+        - 성공 시 목록 페이지로 리다이렉트, 실패 시 폼 화면으로 다시 돌아감 
+    
+    => 흐름 요약
+        - [폼 열기] -> [아이디 입력 후 포커스 이탈 -> 실시간 중복 확인] -> [등록 버튼 클릭 -> 서버 처리] 
