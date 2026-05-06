@@ -1,17 +1,26 @@
+0. Intro
+    1) 게시글 서비스 
+        - 내 게시글 보여줘 <------> WAS <----> DB Server
+                                             WAS 
+                                             WAS  
+                         <--응답전에 당신이 누구인지 증명하세요 
+                            아무나 게시글을 보여줄순 없어요                         
+
 1. Spring Security 란?
+    0) Spring을 사용한다면 사실상 최선의 Security Framework 
     1) Spring 기반 애플리케이션에 인증(Authentication)과 인가(Authorization) 기능을
        제공하는 프레임워크임
-       -    용어                        의미                        예
-         -------------------------------------------------------------------------------------
-         인증(Authentication)      이 사람이 누구인가?              로그인 = 신원 확인 
-         인가(Authorization)       이 사람이 무엇을 할 수 있는가?    ADMIN만 관리자 페이지 접근 가능
-       
-       - 인증 없이는 인가도 없음. 
-            - 먼저 "누구인지" 확인하고, 그 다음 "무엇을 할 수 있는지" 판단함 
+        -    용어                        의미                        예
+            -------------------------------------------------------------------------------------
+            인증(Authentication)      이 사람이 누구인가?              로그인 = 신원 확인 
+            인가(Authorization)       이 사람이 무엇을 할 수 있는가?    ADMIN만 관리자 페이지 접근 가능
+        
+        - 인증 없이는 인가도 없음. 
+                - 먼저 "누구인지" 확인하고, 그 다음 "무엇을 할 수 있는지" 판단함 
 
 
     2) build.gradle에 의존성을 추가하는 순간 
-       모든 요청을 대해 인증을 요구하는 상태로 자동 활성화됨     
+       모든 요청에 대해 인증을 요구하는 상태로 자동 활성화됨     
         - SecurityFilterChain 구성을 커스터마이징해야 함      
 
 2. 적용 전과 적용 후
@@ -47,5 +56,35 @@
                model.addAttribute("members", memberService.findAll());
                return "admin"; 
             }
+
+3. 전체 구조 
+
+4. 공통 Config 패키지 
+    1) 패스워드 비평문으로 저장하는 빈 등록 (PasswordEncoderConfig)
+        - 보통 BCryptPasswordEncoder를 사용함 
+    2) JPA Auditing을 가용하게 하는 설정 파일 
+    3) 단순 페이지 이동용 ViewController를 등록하는 설정 파일  
+
+5. User 도메인 구현 
+    1) JPA Entity (User.java)
+    2) UserRegisterDto.java 
+    3) UserRepository.java       
+    4) 예외 클래스     
+    5) UserService.java 
+        - 회원 가입 처리 
+        - 관리자 계정 생성 처리 
+        - username으로 사용자 조회 
+        - 비밀번호 암호화 
+
+6. Spring Security와 사용자 연결
+    1) CustomUserDetails.java   
+
+        - User Entity = 애플리케이션 도메인 객체 
+        - CustomUserDetails = Spring Security에 맞춘 어댑터
+            - UserDetails = Spring Security 인증용 객체
+        - UserDetailService = username으로 로그인 사용자를 조회하는 연결 지점 
+
+
+
 
 
