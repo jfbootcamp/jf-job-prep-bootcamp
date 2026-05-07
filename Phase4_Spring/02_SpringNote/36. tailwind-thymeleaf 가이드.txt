@@ -1,0 +1,9 @@
+1. Fragment 연결 구조 
+    1) 
+
+
+                            fragments.html (공통 화면)
+                th:fragment="pageHead"              th:fragment="topNav" 
+
+ 
+        index.html (홈화면)    login.html     signup.html    announcement/index.html   note/index.html   admin/index.html                     

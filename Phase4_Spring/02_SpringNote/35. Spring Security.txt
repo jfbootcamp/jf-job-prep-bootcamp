@@ -75,6 +75,8 @@
         - 관리자 계정 생성 처리 
         - username으로 사용자 조회 
         - 비밀번호 암호화 
+    6) 회원 가입과 로그인 화면 
+        - SingUpController.java         
 
 6. Spring Security와 사용자 연결
     1) CustomUserDetails.java   
