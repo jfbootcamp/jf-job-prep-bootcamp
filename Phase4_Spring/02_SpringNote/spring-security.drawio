@@ -271,7 +271,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="Spring Security 연동 클래스" id="8aNOoHPOGQNRFT52lHsK">
-    <mxGraphModel dx="1586" dy="783" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1103" dy="544" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="OqIrYHuQcyIiyOLnkkOe-0" />
         <mxCell id="OqIrYHuQcyIiyOLnkkOe-1" parent="OqIrYHuQcyIiyOLnkkOe-0" />
@@ -360,6 +360,14 @@
         </mxCell>
         <mxCell id="1qDYSmTSJHU38zhsVTXJ-10" edge="1" parent="OqIrYHuQcyIiyOLnkkOe-1" source="1qDYSmTSJHU38zhsVTXJ-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.467;entryY=0.975;entryDx=0;entryDy=0;entryPerimeter=0;" target="1qDYSmTSJHU38zhsVTXJ-8">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cZ9TSsG-PtEgJywN2Z6v-1" edge="1" parent="OqIrYHuQcyIiyOLnkkOe-1" source="cZ9TSsG-PtEgJywN2Z6v-0" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="580" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cZ9TSsG-PtEgJywN2Z6v-0" parent="OqIrYHuQcyIiyOLnkkOe-1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="SignUpController" vertex="1">
+          <mxGeometry height="60" width="120" x="380" y="660" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

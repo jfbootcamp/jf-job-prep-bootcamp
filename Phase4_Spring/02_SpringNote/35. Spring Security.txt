@@ -86,6 +86,51 @@
             - UserDetails = Spring Security 인증용 객체
         - UserDetailService = username으로 로그인 사용자를 조회하는 연결 지점 
 
+7. 로그인 인증 완성 
+    1) 상태 요약
+        - 완료 항목                             비고
+          -------------------------------------------------
+          회원가입 처리                     SignUpController   
+          회원가입 성공 후 /login redirect 
+          CustomUserDetails 
+
+    2) 구현 흐름
+        - 로그인 화면 구현 (공통 화면 구조 정리)
+        - 사용자 기능 구현  
+        - 관리자 기능 구현 
+        - 최종 검증 
+
+    3) 로그인 인증 마무리 
+        - Spring Security 기본 규칙
+            - 항목                      값
+            ----------------------------------
+             form action             /login 
+             method                  post
+             아이디(input name)       username   <--- 별도 설정 없이 인증진행됨
+             비밀번호(input name)     password 
+             자동 로그인(input name)   remember-me  
+
+8. 사용자 기능 구현  
+    1) 레이어 흐름
+        - 요청 흐름
+            - 브라우저 -> Controller -> Service -> Repository -> DB 
+        - 구현 순서 
+            - Entity -> Repository -> DTO -> Service -> Controller -> View -> Security             
+
+    2) Entity
+        - 개인 노트 한 건을 DB 테이블에 매핑하는 도메인 객체 
+
+    3) NoteRepository  
+
+    4) NoteRegisterRequest, NoteResponse              
+        - 클라이언트에서 전달하는 노트 등록 폼 데이터를 담는 객체 
+
+    5) NoteService
+        - 노트 조회/작성/삭제의 비즈니스 로직을 처리하는 계층 
+        - 역할에 따른 조회 분기      
+
+    6) NoteController
+
 
 
 
