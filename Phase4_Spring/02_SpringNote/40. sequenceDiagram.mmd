@@ -1,0 +1,31 @@
+sequenceDiagram
+    participant USER as 사용자 
+    participant HTML as report/index.html 
+    participant JS as fragments.html JS
+    participant DOM as DOM 
+
+    Note over JS: DOMContentLoaded
+    JS ->> DOM: ①querySelectorAll('[data-modal-open]') 스캔 -> 클릭 이벤트 등록
+    JS ->> DOM: ①querySelectorAll('[data-modal-close]') 스캔 -> 클릭 이벤트 등록(x 버튼, 닫기 버튼 각각)
+    JS ->> DOM: ①querySelectorAll('[data-toast-close]') 스캔 -> 클릭 이벤트 등록
+    JS ->> DOM: ①querySelectorAll('[data-toast-auto-hide]') 스캔 -> 4초 타이머 등록
+    Note over JS, DOM : 이벤트 등록 완료
+
+    USER ->> HTML: ②글쓰기 버튼 클릭
+    HTML ->> JS: ③data-modal-open="newReportModal" 이벤트 발생 
+    JS ->> DOM: ④getElementById("newReportModal").classList.remove('hidden')
+    DOM -->> USER: ⑤모달 표시 됨 
+
+    USER ->> HTML: ⑥ x 또는 닫기 버튼 클릭 
+    HTML ->> JS: ⑦data-modal-close="newReportModal" 이벤트 발생 
+    JS ->> DOM: ⑧getElementById("newReportModal").classList.add('hidden')
+    DOM -->> USER: ⑨모달 닫힘   
+
+    Note over DOM: 페이지 로드 후 4초 경과
+    JS->>DOM: golbalToast.classList.add('hidden')
+    DOM-->>USER: 토스트 자동 닫힘     
+
+    USER->>HTML: 토스트 x 버튼 클릭 
+    HTML->>JS: data-toast-close="golbalToast" 이벤트 발생 
+    JS->>DOM: getElementById("golbalToast").classList.add('hidden')
+    DOM-->>USER: 토스트 즉시 닫힘   

@@ -1,0 +1,30 @@
+graph TD
+    subgraph FRAG["fragments.html(모든 페이지가 공유하는 공통 뼈대)"]
+        JS["공통 JS 스크립트\nDOMContentLoaded 시점에\ndata-* 속성 가진 요소들\n전체 페이지에서 스캔 후 이벤트 등록"]
+    end    
+    
+    subgraph REPORT["report/index.html (JS 없음 - data-* 속성 선언만)"]
+        BTN_OPEN["글쓰기 버튼\ndata-modal-open='newReportModal'"] 
+        MODAL["모달\nid='newReportModal'\nclass='... hidden ...'"]  
+        BTN_CLOSE_X["x 버튼\ndata-modal-close='newReportModal'"]  
+        BTN_CLOSE["닫기 버튼\ndata-modal-close='newReportModal'"]              
+    end
+
+    subgraph FRAG2["fragments.html (topNav - golbalToast)"]
+        TOAST["golbalToast\nid='golbalToast'\ndata-toast-auto-hide"] 
+        BTN_TOAST_CLOSE["x 버튼\ndata-toast-close='golbalToast'"]               
+    end    
+
+    REPORT -->|"th:replace fragments.html::pageHead -> JS 통째로 포함"| FRAG
+
+    JS --> |"① 스캔 후 클릭 이벤트 등록 "| BTN_OPEN
+    BTN_OPEN --> |"② 클릭 시 remove('hidden')"| MODAL
+
+    JS --> |"① 스캔 후 클릭 이벤트 등록 "| BTN_CLOSE_X
+    JS --> |"① 스캔 후 클릭 이벤트 등록 "| BTN_CLOSE
+    BTN_CLOSE_X --> |"② 클릭 시 add('hidden')"| MODAL
+    BTN_CLOSE --> |"② 클릭 시 add('hidden')"| MODAL
+
+    JS --> |"① 스캔 후 4초 타이머 등록\n② 4초 후 add('hidden') "| TOAST
+    JS --> |"① 스캔 후 클릭 이벤트 등록"| BTN_TOAST_CLOSE
+    BTN_TOAST_CLOSE --> |"② 클릭 시 add('hidden')"| TOAST
