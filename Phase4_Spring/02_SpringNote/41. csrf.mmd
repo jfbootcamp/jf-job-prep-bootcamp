@@ -1,0 +1,31 @@
+flowchart TD
+    A["CSRF 정의"] --> B["Cross-Site Request Forgery의 약자"]
+    B --> C["사이트 간 요청 위조 공격"]
+    C --> D["로그인된 사용자의 권한을 악용해"]
+    D --> E["사용자가 의도하지 않은 요청을 Hometalk 서버로 보내게 만드는 공격"]
+
+    E --> F["예시"]
+    F --> G["사용자가 Hometalk에 로그인한 상태"]
+    G --> H["다른 악성 사이트에 접속함"]
+    H --> I["악성 사이트가 몰래 글쓰기 삭제 로그아웃 같은 요청을 보냄"]
+    I --> J["브라우저는 Hometalk 로그인 쿠키를 자동으로 같이 보냄"]
+    J --> K["Hometalk Spring Boot 서버는 정상 사용자의 요청처럼 착각할수 있음"]
+
+    K --> L["Spring Security의 방어 방법"]
+    L --> M["Hometalk Spring Boot 서버가 CSRF 토큰을 발급함"]
+    M --> N["정상 화면의 form 안에 숨겨진 값으로 토큰을 넣음"]
+    N --> O["사용자가 정상 form을 제출하면 토큰도 함께 전송됨"]
+    O --> P["Hometalk Spring Boot 서버가 토큰을 검증함"] 
+    P --> Q["토큰이 맞으면 요청 허용"]
+    P --> R["토큰이 없거나 틀리면 요청 차단"]
+
+    M --> S["이번 모달 실행 에러와의 관계"]
+    S --> T["login html의  form th:action처리 시 CSRF 토큰이 필요함"]
+    T --> U["하지만 fragment.html의 head가 먼저 랜더링됨"]
+    U --> V["head 안의 주석과 자바스크립트가 많아 응답이 먼저 시작됨"]
+    V --> W["응답이 이미 시작되면 Hometalk 서버가 세션 쿠키 같은 헤더를 수정할수 없음"] 
+    W --> X["그 뒤 CSRF 토큰을 만들려고 하면서 에러 발생"]
+
+    X --> Y["해결 방법"]
+    Y --> Z["CsrfCookieFilter가 화면 랜더링 전에 CSRF 토큰을 미리 생성함"]
+    Z --> AA["form th action 처리 시 이미 토큰이 있어서 정상 동작함"]
