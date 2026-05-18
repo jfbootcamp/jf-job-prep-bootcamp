@@ -1,0 +1,27 @@
+1. AWS 서비스로 우리 서비스 배포하기 
+    1) 계정 생성
+        - aws console에서 계정 생성 버튼 클릭 
+        - 언어를 한국어 변경하기
+    2) 과금 정보 및 비용 관리 설정
+
+2. AWS 서비스 구성 (배포)
+    1) EC2(Amazon Elastic Compute Cloud) : AWS에서 제공하는 원격 서버  
+    2) 오토 스케일링 그룹 (유동적으로 EC2를 관리)  
+        - 대상 그룹 
+        - 로드 밸런서 (요청을 분산시켜줌)    
+    3) RDS : AWS에서 제공하는 원격 데이터베이스 
+        - Amazon Relational Database Service(Amazon RDS) 
+
+3. 일래스틱 빈스토크
+    1) 과정 
+        - 애플리케이션 생성 --> 버전 업로드 --> 환경 생성 --> 환경 관리 
+
+4. 일래스틱 빈스토크(Amazon Elastic Beanstalk) 서버 구축하기 
+    1) 일래스틱 빈스토크 서비스 생성하기 
+        - IAM(Identity and Access Management) 검색해서 2개 추가 생성   
+            - elasticbeanstalk-service-role 
+            - aws-elasticbeanstalk-instance-role  
+
+    2) 일래스틱 빈스토크에서 RDS 생성하기             
+
+
