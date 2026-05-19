@@ -1,0 +1,24 @@
+1. VS 코드 설치 
+
+2. VS 코드 확장 프로그램
+    1) Auto Rename Tag, Prettier - Code formatter
+       CSS Peek, Auto Import - ES6, TS, JSX, TSX
+       ES7+ React/Redux/React-Native snippets
+
+3. node 설치 
+    1) node -v
+       npm -v
+
+4. 프로젝트 
+    1) 프로젝트 생성 
+        - npm create vite@latest react-basics
+            - 선택: React -> JavaScript
+
+    2) 폴더 이동
+        - cd react-basics
+
+    3) 기본 패키지 설치
+        - npm install        
+
+    4) 개발 서버 실행 확인
+        - npm run dev        
