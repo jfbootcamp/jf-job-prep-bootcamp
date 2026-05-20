@@ -5,7 +5,7 @@
        CSS Peek, Auto Import - ES6, TS, JSX, TSX
        ES7+ React/Redux/React-Native snippets
 
-3. node 설치 
+3. nodejs 설치 
     1) node -v
        npm -v
 
@@ -21,4 +21,59 @@
         - npm install        
 
     4) 개발 서버 실행 확인
-        - npm run dev        
+        - npm run dev   
+
+5. 프로젝트 핵심 흐름 
+    1) index.html 위치 
+        - 루트   
+    2) 진입 JS 파일 
+        - src/main.jsx     
+    3) 앱 컴포넌트 
+        - src/App.jsx를 랜더링           
+
+6. Dog.jsx (컴포넌트) 만들기 
+    1) 함수표현식으로 생성하기 
+        - 변수에 담아쓰는 방법 
+    2) 함수선언식으로 생성하기 
+        - 호이스팅    
+
+7. CSS 관리하는 방식
+    방식            예시                   특징
+    --------------------------------------------------
+    index.css      전역초기화           최소한만 작성
+    컴포넌트별 CSS                      컴포넌트마다 따라 관리
+    Tailwind CSS                      요즘 실무 1순위
+    styled-componets  JS안에 CSS 작성   대형프로젝트에서 사용
+
+8. 컴포넌트에 Style 입히기 
+    1) 인라인 스타일 
+        - style={{}}   머스태치(Mustache)    
+
+            - JavaScript 객체를 표현하는 JSX 문법 
+               - 바깥 {...} : JSX안에서 JavaScript 쓰겠다는 표시, JavaScript 표현식을 넣기 위한 괄호
+               - 안쪽 {...} : JavaScript 객체 리터럴 (스타일 정의용)
+               - JSX안에 객체를 넣는다. 
+
+    2) props로 스타일 적용하기 (Slider.jsx)
+        - props : 자식 컴포넌트가 전달받은 속성을 담는 객체
+                  properties(속성)의 줄임말
+                  부모 컴포넌트가 자식 컴포넌트에게 값을 전달할 때 사용하는 객체  
+                  props는 자식 컴포넌트가 외부 데이터를 전달받는 방법 
+
+    3) 스타일 변수 사용하기 (Main.jsx)    
+        - 예) style2 : 스타일 속성을 가진 객체 
+        - style={객체} 
+            - JSX에서 인라인 스타일을 적용하는 기본 문법
+            - JSX에서 style에 객체를 넣는 방식                
+
+    **                     Slider.jsx 방식            Main.jsx 방식            
+      ---------------------------------------------------------------------  
+        스타일 정의 위치   부모(App)에서 정의           자식(Main)내부에서 정의
+        전달 방식         props로 전달받음             변수로 직접 적용
+        유연성            부모가 스타일 바꿀수 있음      항상 고정된 스타일 
+        사용상황          스타일을 외부에서 바꿔야할 때   스타일이 항상 동일할 때
+
+    4) 외부 CSS 클래스 적용하기 (Footer.jsx)
+        - className 속성
+            - Footer 컴포넌트에서 외부 CSS 파일(App.css)의 클래스를 불러와서,
+              className 속성을 통해 JSX 요소에 스타일을 적용하는 방식         

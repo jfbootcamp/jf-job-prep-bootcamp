@@ -1,0 +1,8 @@
+1. JSX란?
+    1) 자바스크립트의 확장 문법 (JavaScript XML)
+    2) HTML처럼 보이는 코드를 자바스크립트의 안에서 사용할 수 있게 해줌.
+    3) 자바스크립트 문법을 기반으로 함 
+        - HTML의 class 속성 대신 className을 사용해야 함.
+    4) React에서 UI를 효율적으로 만들기 위한 문법 도구임 
+    5) HTML과 비슷하지만 실제로는 자바스크립트 코드라는 점이 핵심.
+        - html에 class 넣을 땐 className        
