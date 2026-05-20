@@ -1,0 +1,12 @@
+/* Footer 컴포넌트에 적용되는 스타일 클래스 */
+.footerStyle {
+  background-color: tomato;
+  color: #fff;
+  height: 100px;
+}
+
+.footerStyle2 {
+  background-color: red;
+  color: #fff;
+  height: 100px;
+}
