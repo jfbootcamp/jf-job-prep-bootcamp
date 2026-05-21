@@ -1,7 +1,7 @@
 const Snippet1 = () => {
     return (
         <>
-            <div>Hello</div>
+            <div>Hello world</div>
         </>
     )
 }

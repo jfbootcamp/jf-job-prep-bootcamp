@@ -1,0 +1,67 @@
+.jeju {
+    background-color: #2C3E50;
+    font-size: 18px;
+    color: #F1C40F;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.App {
+    max-width: 100%;
+    background-color: #ffffff;
+    min-height: 100vh;
+}
+
+.black-nav {
+    background-color: #0f172a;
+    color: #ffffff;
+    padding: 16px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 3px solid #6366f1;
+}
+
+.list {
+    margin: 24px;
+    padding: 24px;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    max-width: 480px;
+    box-shadow: 90 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.list h4 {
+    font-size: 17px;
+    color: #0f177a;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.list p {
+    font-size: 14px;
+    color: #475569;
+    line-height: 2;
+}
+
+.list button {
+    margin-top: 16px;
+    margin-right: 8px;
+    padding: 8px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: #374151;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.list button:hover {
+    background-color: #f3f4f6;
+    border-color: #9ca3af;
+    color: #111827;
+}
