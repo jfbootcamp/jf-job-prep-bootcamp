@@ -8,7 +8,12 @@ import './App.css'
 //import Snippet from './snippets/Snippet4_1'
 //import Snippet from './snippets/Snippet4_2'
 //import Snippet from './snippets/Snippet5_1'
-import Snippet from './snippets/Snippet5_2'
+//import Snippet from './snippets/Snippet5_2'
+//import Snippet from './snippets/Snippet5_3'
+//import Snippet from './snippets/Snippet6_1'
+//import Snippet from './snippets/Snippet6_2'
+//import Snippet from './snippets/Snippet7_1'
+import Snippet from './snippets/Snippet7_2'
 
 function App() {
 
