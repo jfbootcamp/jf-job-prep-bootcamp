@@ -1,0 +1,13 @@
+1. 설치
+    1) 패키지 설치 
+        - 설치 환경 : Vite + React 
+        - npm install -D tailwindcss @tailwindcss/vite 
+            - -D : devDependencies에 설치 (개발 시에만 필요, 배포 파일에는 미포함)
+    2) vite.config.js 수정
+        - plugins 배열에 tailwindcss()를 등록함
+            - JSX에서 사용한 클래스명을 Vite 빌드 시 실제 CSS로 변환하는 작업이 포함됨            
+    3) index.css 수정
+        - @import "tailwindcss";
+    4) 서버 재시작 
+        - npm run dev
+                
