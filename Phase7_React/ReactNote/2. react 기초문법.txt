@@ -117,4 +117,11 @@
     2) map안에서 꺼내는 방식 변화
         - 필드가 하나일 땐 item.name 하나만 사용함 
         - 객체 필드가 늘어나면서 element.name, element.address, element.phone처럼
-          각 필드를 따로 꺼내야 함.                         
+          각 필드를 따로 꺼내야 함.  
+
+8. Snippet9_3 
+    1) 객체 state + 단일 handleChange     
+        - input 3개 --> 핸들러 1개
+        - 어느 필드인지 = e.target.name  
+        - 해당 필드만 덮어쓰기 = [name]: value   
+        - 나머지 필드 유지 =  ...prevState                      
