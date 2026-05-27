@@ -1,0 +1,98 @@
+<mxfile host="Electron" pages="2">
+  <diagram name="페이지-1" id="yzvf1VpsxiOezFLmO707">
+    <mxGraphModel dx="589" dy="358" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="f9fGN-9BjXahahMGHxye-3" edge="1" parent="1" source="f9fGN-9BjXahahMGHxye-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="f9fGN-9BjXahahMGHxye-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f9fGN-9BjXahahMGHxye-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Input 타이핑&lt;div&gt;onChange 발생&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="50" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="f9fGN-9BjXahahMGHxye-5" edge="1" parent="1" source="f9fGN-9BjXahahMGHxye-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="f9fGN-9BjXahahMGHxye-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f9fGN-9BjXahahMGHxye-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="handleChange&lt;div&gt;setCustomer 호출&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="220" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="f9fGN-9BjXahahMGHxye-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="customer state&lt;div&gt;{name, address, phone}&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="170" x="390" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="f9fGN-9BjXahahMGHxye-8" edge="1" parent="1" source="f9fGN-9BjXahahMGHxye-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="f9fGN-9BjXahahMGHxye-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f9fGN-9BjXahahMGHxye-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="추가 버튼 클릭&lt;div&gt;onClick 발생&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="50" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="f9fGN-9BjXahahMGHxye-7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="handleCommit&lt;div&gt;두 state 모두 변경&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="220" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="f9fGN-9BjXahahMGHxye-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="customerList state&lt;div&gt;목록에 customer 추가&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="170" x="390" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="f9fGN-9BjXahahMGHxye-10" edge="1" parent="1" source="f9fGN-9BjXahahMGHxye-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.012;entryY=0.598;entryDx=0;entryDy=0;entryPerimeter=0;" target="f9fGN-9BjXahahMGHxye-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f9fGN-9BjXahahMGHxye-11" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcc99;strokeColor=#36393d;" value="customer 초기화&lt;div&gt;{&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;name, address, phone&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;}&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="170" x="390" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="f9fGN-9BjXahahMGHxye-12" edge="1" parent="1" source="f9fGN-9BjXahahMGHxye-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.004;entryY=0.43;entryDx=0;entryDy=0;entryPerimeter=0;" target="f9fGN-9BjXahahMGHxye-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="Cl4iH9ZYzYVqfbilC1U4" name="페이지-2">
+    <mxGraphModel dx="589" dy="358" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="BkvJm0TWj8mLE-zZIvWf-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;verticalAlign=top;" value="React 내부 엔진" vertex="1">
+          <mxGeometry height="230" width="240" x="540" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="BkvJm0TWj8mLE-zZIvWf-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;verticalAlign=top;" value="함수형 컴포넌트" vertex="1">
+          <mxGeometry height="220" width="170" x="250" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BkvJm0TWj8mLE-zZIvWf-5" edge="1" parent="1" source="BkvJm0TWj8mLE-zZIvWf-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="540" y="73" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BkvJm0TWj8mLE-zZIvWf-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="useState()" vertex="1">
+          <mxGeometry height="30" width="90" x="290" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BkvJm0TWj8mLE-zZIvWf-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;state 저장소&lt;/b&gt;&lt;div&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;값기억, 변경 시 리렌더&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="35" width="120" x="600" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="BkvJm0TWj8mLE-zZIvWf-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="useEffect()" vertex="1">
+          <mxGeometry height="30" width="90" x="290" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="BkvJm0TWj8mLE-zZIvWf-7" edge="1" parent="1" source="BkvJm0TWj8mLE-zZIvWf-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.014;entryY=0.437;entryDx=0;entryDy=0;entryPerimeter=0;" target="BkvJm0TWj8mLE-zZIvWf-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BkvJm0TWj8mLE-zZIvWf-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;생명주기 시스템&lt;/b&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;마운트, 업데이트, 언마운트&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="35" width="120" x="600" y="97.5" as="geometry" />
+        </mxCell>
+        <mxCell id="BkvJm0TWj8mLE-zZIvWf-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;DOM 참조 시스템&lt;/b&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;실제 DOM 요소 접근&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="35" width="120" x="600" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="BkvJm0TWj8mLE-zZIvWf-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="useXXX()" vertex="1">
+          <mxGeometry height="30" width="90" x="290" y="145" as="geometry" />
+        </mxCell>
+        <mxCell id="BkvJm0TWj8mLE-zZIvWf-11" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="useXXX()" vertex="1">
+          <mxGeometry height="30" width="90" x="290" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="BkvJm0TWj8mLE-zZIvWf-12" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;훅 합성 시스템&lt;/b&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;훅 안에서 훅 사용 가능&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="35" width="120" x="600" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="BkvJm0TWj8mLE-zZIvWf-13" edge="1" parent="1" source="BkvJm0TWj8mLE-zZIvWf-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.696;entryDx=0;entryDy=0;entryPerimeter=0;" target="BkvJm0TWj8mLE-zZIvWf-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BkvJm0TWj8mLE-zZIvWf-14" edge="1" parent="1" source="BkvJm0TWj8mLE-zZIvWf-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.004;entryY=0.878;entryDx=0;entryDy=0;entryPerimeter=0;" target="BkvJm0TWj8mLE-zZIvWf-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
