@@ -51,7 +51,22 @@ const Snippet10_1 = () => {
 
     return (
         <>
-        
+            <div className="p-4 max-w-sm">
+                <ul className="space-y-2">
+                    {list.map((item) => (       // () => () : 암묵적 변환 -- return 생략 + 여러 줄 JSX를 하나의 표현식으로 묶음 
+                        <ListItem 
+                            key={item.id}
+                            item={item}
+                            isEditing={editingId === item.id}
+                            inputValue={inputValue}
+                            onEdit={handleEdit}
+                            onSave={handleSave}
+                            onCancel={handleCancel}
+                            onInputChange={(e) => setInputValue(e.target.value)}
+                        />
+                    ))}
+                </ul>
+            </div>
         </>
     )
 }
@@ -60,7 +75,28 @@ const ListItem = ({item, isEditing, inputValue, onEdit, onSave, onCancel, onInpu
 
     return (
         <>
-        
+            <li className="flex items-center gap-2 p-3 border border-gray-200 rounded-lg">
+                {isEditing ? (
+                    // 편집 모드
+                    <>
+                        <input type="text" value={inputValue} onChange={onInputChange}
+                               autoFocus  // 편집 모드 진입 시 자동 포커스
+                               className="flex-1 border border-blue-300 rounded px-2 py-1 text-sm outline-none focus:border-blue-500" />
+                        <button onClick={() => onSave(item.id)}
+                            className="px-3 py-1 bg-blue-500 text-white text-sm rounded hover:bg-blue-600">저장</button>  
+                        <button onClick={onCancel}
+                            className="px-3 py-1 text-sm rounded hover:bg-gray-100">취소</button>                             
+                    </>
+                ) : (
+                    // 읽기 모드
+                    <>
+                        <span className="flex-1 text-sm">{item.title}</span>
+                        <button 
+                            onClick={() => onEdit(item)}
+                            className="px-3 py-1 rounded text-sm hover:bg-gray-100">편집</button>
+                    </>
+                )}
+            </li>
         </>
     )
 }
