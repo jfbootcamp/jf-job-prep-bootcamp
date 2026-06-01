@@ -1,29 +1,32 @@
 /*
-    API 응답 구조 (JSONPlaceholder / todos)
-    {userId, id, title, completed}
+    추가할 사항
+        1) state : saveError, setSaveError 추가
+        2) handleSave : 동기 + async + fetch 요청 + try/catch/finally
+
 */
 
 import { useEffect, useState } from "react"
 
 // 전체 200 중 10개만 요청
-const API = 'https://jsonplaceholder.typicode.com/todos?_limit=10'
+const BASE_URL = 'https://jsonplaceholder.typicode.com/todos'
 
 
-const Snippet10_1a = () => {
+const Snippet10_1b = () => {
 
     //state 선언
     const [list,        setList      ] = useState([])      // API 응답 데이터
     const [loading,     setLoading   ] = useState(true)    // 초기값 true --> 마운트 즉시 스피너
-    const [error,       setError     ] = useState(null)
+    const [error,       setError     ] = useState(null)    // 초기 데이터 로딩 에러 
     const [editingId,   setEditingId ] = useState(null)    // null --> 편집 중인 항목 없음  
-    const [inputValue,  setInputValue] = useState('')   
+    const [inputValue,  setInputValue] = useState('') 
+    const [saveError,   setSaveError]  = useState(null)    // PATCH 저장 에러  
     
     //데이터 패칭
     useEffect(() => {
         const fetchList = async () => {
             try{
                 setLoading(true)    // 요청 시작 -> 스피너 표시 
-                const res = await fetch(API)    // API 서버에 HTTP GET 요청 - 응답이 올때까지 다음 줄로 넘어가지 않음
+                const res = await fetch(`${BASE_URL}?_limit=10`)    // API 서버에 HTTP GET 요청 - 응답이 올때까지 다음 줄로 넘어가지 않음
                 if(!res.ok) throw new Error(`서버 오류: ${res.status}`)
                 const data = await res.json()    
                 setList(data)
@@ -36,28 +39,50 @@ const Snippet10_1a = () => {
         fetchList()
     }, [])      // [] : 마운트 시 1번만 실행 
 
-    // 편집 핸들러
+    // 편집 핸들러 (편집 모드 진입)
     const handleEdit = (item) => {
+        setSaveError(null)    // 이전 저장 에러 초기화
         setEditingId(item.id)
         setInputValue(item.title)  // 기존 title을 input에 미리 채움
     }
 
     // 저장
-    const handleSave = (id) => {
+    /*
+        10_1a : 동기 함수 (메모리만 변경)
+        10_1b : async 함수 -> 서버 PATCH -> 성공 시 setList (서버 + 메모리 동시 변경)
+                서버 성공 확인 후 setList 호출 -> DB와 화면 동기화 보장
+    */
+    const handleSave = async (id) => {
         if (!inputValue.trim()) return
-        setList((prev) => 
-            prev.map((item) => 
-                item.id === id 
-                ? {...item, title: inputValue}      // 해당 항목만 title 교체, 나머지 필드 유지
-                : item                              // 다른 항목은 원본 그대로
+
+        try {
+            const res = await fetch(`${BASE_URL}/${id}`, {
+                method: 'PATCH',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ title: inputValue }),  // 변경할 필드만 전송
+            })
+            if(!res.ok) throw new Error(`저장 실패: ${res.status}`)
+
+            setList((prev) => 
+                prev.map((item) => 
+                    item.id === id 
+                    ? {...item, title: inputValue}      // 해당 항목만 title 교체, 나머지 필드 유지
+                    : item                              // 다른 항목은 원본 그대로
+                )
             )
-        )
-        setEditingId(null)
-        setInputValue('')
+            setSaveError(null)                
+        } catch (err) {
+            setSaveError(err.message)                   // 서버 수정 실패 (state는 변경 안함)
+        } finally {
+            setEditingId(null)
+            setInputValue('')
+        }
+
     }
 
     // 취소
     const handleCancel = () => {
+        setSaveError(null)
         setEditingId(null)
         setInputValue('')        
     }
@@ -88,6 +113,12 @@ const Snippet10_1a = () => {
                 <h2 className="text-sm font-medium text-gray-500 mb-3">
                     할 일 목록 ({list.length}개) - 제목을 클릭해서 편집하세요
                 </h2>
+
+                {saveError && (
+                    <div className="mb-3 p-3 bg-red-50 border border-red-200 rounded-lg text-red-600 text-sm">
+                        저장 중 오류가 발생했습니다: {saveError}
+                    </div>
+                )}
 
                 <ul className="space-y-2">
                     {list.map((item) => (
@@ -148,4 +179,4 @@ const ListItem = ({ item, isEditing, inputValue, onEdit, onSave, onCancel, onInp
     )
 }
 
-export default Snippet10_1a
+export default Snippet10_1b

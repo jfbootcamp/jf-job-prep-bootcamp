@@ -24,7 +24,8 @@ import './App.css'
 //import Snippet from './snippets2/Snippet9_2b'
 //import Snippet from './snippets2/Snippet9_2c'
 //import Snippet from './snippets2/Snippet10_1'
-import Snippet from './snippets2/Snippet10_1a'
+//import Snippet from './snippets2/Snippet10_1a'
+import Snippet from './snippets2/Snippet10_1b'
 
 function App() {
 
