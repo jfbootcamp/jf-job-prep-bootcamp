@@ -1,0 +1,41 @@
+1. GCP 연결 흐름 
+    1) 브라우저 
+        - http://34.47.115.41:8085/
+
+    2) GCP VM (hometop-server)
+       Ubuntu 22.04 / e2-medium 
+
+    3) Spring Boot JAR  
+       port:8085 / profile: prod   
+
+    4) MySQL 8.0 (VM 로컬)
+       DB: bookjpa     
+
+2. 배포 단계 
+    1) GCP 설정 
+        - 프로젝트 생성  
+        - VM: e2-medium, Ubuntu 22.04, 30GB
+        - 외부 고정 IP 예약 
+        - 방화벽 TCP:8085 오픈 
+
+    2) Java + MySQL 설치 
+        - SSH 접속
+        - openjdk-21 설치
+        - mysql-server 설치 
+            - systemctl enable mysql 
+
+    3) DB + 유저 생성
+        - CREATE DATABASE bookjpa
+        - CREATE USER hometop@localhost    
+          GRANT ALL PRIVIEGES
+          FLUSH PRIVIEGES
+
+    4) prod yaml 작성
+
+    5) 빌드 + 업로드 
+        - gradlew bat clean bootJar 
+        - GCP SSH 파일 업로드
+            - JAR + yaml 파일 업로드 
+
+    6) VM에서 실행                                 
+
