@@ -8,7 +8,7 @@
 import { useEffect, useState } from "react"
 
 // 전체 200 중 10개만 요청
-const BASE_URL = 'https://jsonplaceholder.typicode.com/todos'
+const BASE_URL = 'http://localhost:8085/api/customers'
 
 
 const Snippet10_1c = () => {
@@ -20,15 +20,24 @@ const Snippet10_1c = () => {
     const [editingId,   setEditingId ] = useState(null)    // null --> 편집 중인 항목 없음  
     const [inputValue,  setInputValue] = useState('') 
     const [saveError,   setSaveError]  = useState(null)    // PATCH 저장 에러  
+
+    // 등록 폼 관련 state
+    const [showForm,        setShowForm ] = useState(false)     // 폼 열기/닫기 여부
+    const [registerForm,    SetRegisterForm] = useState({       // 등록 폼 입력값 객체
+        username:'', password: '', customerName: '', age: '',
+        occupation: '', email: '', phone: '',
+    })
+
     
-    //데이터 패칭
+    //초기 데이터 패칭
+    //GET  /api/customers -> CustomerResponseDto
     useEffect(() => {
         const fetchList = async () => {
             try{
                 setLoading(true)    // 요청 시작 -> 스피너 표시 
-                const res = await fetch(`${BASE_URL}?_limit=10`)    // API 서버에 HTTP GET 요청 - 응답이 올때까지 다음 줄로 넘어가지 않음
+                const res = await fetch(BASE_URL)    // API 서버에 HTTP GET 요청 - 응답이 올때까지 다음 줄로 넘어가지 않음
                 if(!res.ok) throw new Error(`서버 오류: ${res.status}`)
-                const data = await res.json()    
+                const data = await res.json()  // HTTP 응답 body (JSON 문자열) -> JS 배열로 파싱 
                 setList(data)
             } catch (err) {
                 setError(err.message)
@@ -43,7 +52,7 @@ const Snippet10_1c = () => {
     const handleEdit = (item) => {
         setSaveError(null)    // 이전 저장 에러 초기화
         setEditingId(item.id)
-        setInputValue(item.title)  // 기존 title을 input에 미리 채움
+        setInputValue(item.customerName)  // 기존 이름을 input에 미리 채움
     }
 
     // 저장
@@ -56,19 +65,25 @@ const Snippet10_1c = () => {
         if (!inputValue.trim()) return
 
         try {
+            const target = list.find((item) => item.id === id)
             const res = await fetch(`${BASE_URL}/${id}`, {
                 method: 'PATCH',
                 headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({ title: inputValue }),  // 변경할 필드만 전송
+                body: JSON.stringify({  // JS 객체 -> JSON 문자열 변환. 
+                    customerName: inputValue,       // 수정할 이름 (새 값)
+                    age: target.age,                // 기존 나이 유지
+                    occupation: target.occupation,   // 기존 직업 유지
+                    email: target.email,             // 기존 이메일 유지
+                    phone: target.phone,            // 기존 전화번호 유지
+                    }),  
             })
             if(!res.ok) throw new Error(`저장 실패: ${res.status}`)
+            
+            const updated = await res.json();  // HTTP 응답 body (JSON 문자열) -> JS 객체로 파싱. 서버가 저장후 반환한 최신 CustomerResponseDto              
 
+            // 해당 항목만 customerName 교체, 나머지 필드 유지 // 다른 항목은 원본 그대로
             setList((prev) => 
-                prev.map((item) => 
-                    item.id === id 
-                    ? {...item, title: inputValue}      // 해당 항목만 title 교체, 나머지 필드 유지
-                    : item                              // 다른 항목은 원본 그대로
-                )
+                prev.map((item) => item.id === id ? updated : item)
             )
             setSaveError(null)                
         } catch (err) {
@@ -86,6 +101,38 @@ const Snippet10_1c = () => {
         setEditingId(null)
         setInputValue('')        
     }
+
+    // 삭제
+    const handleDelete = async (id) => {
+        if (!window.confirm('정말 삭제하시겠습니까?')) return 
+
+        try {
+            const res = await fetch(`${BASE_URL}/${id}`, {
+                method: 'DELETE',})      // 리소스 삭제 요청 - body 없음
+            
+            if (!res.ok) throw new Error(`삭제 실패: ${res.status}`)   
+            // filter : 조건이 true인 항목만 남김 -> id 가 다른 항목만 유지 = 해당 항목 제거    
+            setList((prev) => prev.filter((item) => item.id !== id))                
+
+        } catch (err) {
+            setSaveError(err.message)
+        }
+    }
+
+    // 폼 입력 변경
+    /*
+        e.target.name 으로 어느 필드인지 식별 --> registerForm 객체에서 해당 필드만 덮어씀 
+        단일 핸들러로 7개 input을 모두 처리 
+    */
+    const handleFormChange = (e) => {
+        const {name, value} =  e.target
+        SetRegisterForm((prev) => ({...prev, [name]: value}))
+    }
+
+    // 등록 : Spring Boot POST
+
+    
+
 
     // loading --> error
     if(loading) return (
@@ -111,7 +158,7 @@ const Snippet10_1c = () => {
         <>
             <div className="p-4 max-w-lg">
                 <h2 className="text-sm font-medium text-gray-500 mb-3">
-                    할 일 목록 ({list.length}개) - 제목을 클릭해서 편집하세요
+                    회원 목록 ({list.length}명)
                 </h2>
 
                 {saveError && (
@@ -122,7 +169,7 @@ const Snippet10_1c = () => {
 
                 <ul className="space-y-2">
                     {list.map((item) => (
-                        <ListItem 
+                        <CustomerItem 
                             key={item.id}
                             item={item}
                             isEditing={editingId === item.id}
@@ -130,6 +177,7 @@ const Snippet10_1c = () => {
                             onEdit={handleEdit}
                             onSave={handleSave}
                             onCancel={handleCancel}
+                            onDelete={handleDelete}     // 삭제 핸들러 전담
                             onInputChange={(e) => setInputValue(e.target.value)}
                         />
                     ))
@@ -141,7 +189,18 @@ const Snippet10_1c = () => {
     )
 }
 
-const ListItem = ({ item, isEditing, inputValue, onEdit, onSave, onCancel, onInputChange }) => {
+// 자식 컴포넌트 
+const CustomerItem = ({ item, isEditing, inputValue, onEdit, onSave, onCancel, onDelete,  onInputChange }) => {
+
+    // 등급별 배지 색상
+    const ratingColor = {
+        BRONZE:     'bg-amber-100 text-amber-700',
+        SILVER:     'bg-gray-100 text-gray-600',
+        GOLD:       'bg-yellow-100 text-yellow-700',
+        PLATINUM:   'bg-blue-100 text-blue-700',
+        VIP:        'bg-purple-100 text-purple-700',
+    }
+
     return (
         <>
             <li className="flex items-center gap-2 p-3 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
@@ -166,11 +225,30 @@ const ListItem = ({ item, isEditing, inputValue, onEdit, onSave, onCancel, onInp
                 ) : (
                     // 읽기 모드
                     <>
-                        <span className={`text-lg ${item.completed ? 'opacity-100' : 'opacity-20'}`}>✓</span>
-                        <span className={`flex-1 text-sm ${item.completed ? 'line-through text-gray-400' : ''}`}>{item.title}</span>
-                        <button onClick={() => onEdit(item)}
+                        <span className={`text-xs px-2 py-0.5 rounded-full font-medium shrink-0 ${ratingColor[item.rating]}`}>
+                            {item.rating}
+                        </span>
+                        <div className="flex-1 min-w-0">
+                            <div>
+                                <span className="text-sm font-medium">{item.customerName}</span>
+                                <span className="text-xs text-gray-400 ml-2">{item.username}</span>
+                            </div>
+                            {(item.email || item.phone) && (
+                                <div className="text-xs text-gray-400 mt-0.5">
+                                    {item.email && <span>{item.email}</span>}
+                                    {item.phone && <span>{item.phone}</span>}                             
+                                </div>
+                            )}
+                        </div>
+                        <span className="text-xs text-gray-400 shrink-0">{item.age}세</span>
+                        <button
+                            onClick={() => onEdit(item)}
                             className="px-3 py-1 text-sm rounded hover:bg-gray-100 shrink-0">편집</button>
-                    </>
+                        <button
+                            onClick={() => onDelete(item.id)}
+                            className="px-3 py-1 text-sm rounded text-red-400 hover:bg-red-50 hover:text-red-600 shrink-0">삭제</button>
+
+                     </>
                 )
 
                 }
