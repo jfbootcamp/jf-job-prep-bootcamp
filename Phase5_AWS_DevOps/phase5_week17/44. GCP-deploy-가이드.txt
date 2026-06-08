@@ -1,0 +1,10 @@
+1. springstarter -- React 연동 사전 설정
+    1) context-path가 /web으로 설정되어 있음 --> 수정하기 (/)
+        - fetch('http://localhost:8083/web/books/1/images')
+            - /web이 모든 URL 앞에 붙어 가독성이 나쁘고 에러 유발
+        - 컨트롤러 코드는 수정 불필요
+        - Thymeleaf 템플릿도 수정 불필요            
+
+    2) CORS 설정 추가 
+        - React(:5173) -> Spring Boot(:8083) 요청을
+          브라우저가 Same-Origin Policy로 차단
