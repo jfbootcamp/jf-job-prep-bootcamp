@@ -1,0 +1,55 @@
+1. springstarter -- React 연동 사전 설정
+    1) context-path가 /web으로 설정되어 있음 --> 수정하기 (/)
+        - fetch('http://localhost:8083/web/books/1/images')
+            - /web이 모든 URL 앞에 붙어 가독성이 나쁘고 에러 유발
+        - 컨트롤러 코드는 수정 불필요
+        - Thymeleaf 템플릿도 수정 불필요            
+
+    2) CORS 설정 추가 
+        - React(:5173) -> Spring Boot(:8083) 요청을
+          브라우저가 Same-Origin Policy로 차단
+
+2. 파일 업로드 방식 
+    1) 데이터 타입 불일치 
+        - JSON = 텍스트(문자열) 기반 데이터 포맷
+        - 파일 = 바이너리(binary) 데이터 
+                0과 1로 이루어진 바이트 덩어리 
+                문자열로 표현할 수 없는 바이트가 포함됨 
+    2) Base64 인코딩
+        - Base64 문자열로 변환하면 JSON에 담을 수 있음
+        - 실무에서 거의 사용 안함
+            - 파일 크기가 약 33% 증가
+            - 서버에서 Base64 디코딩 작업 추가 필요 
+            - 메모리 부담 
+                - 대용량 파일을 문자열로 통째로 올리면 브라우저 메모리 급증  
+    3) FormData 방식으로 파일 전송
+        - 단일 파일
+            - formData.append('files', file)
+        - 다중 파일
+            - 배열을 만들어  여러 번 append함  
+
+3. 개발 vs 배포 환경 비교
+
+    항목                개발 환경                           배포 환경
+    ------------------------------------------------------------------------
+    IDE              VS Code + IntelliJ IDEA (2개)        불필요 (서버만 실행)  
+    서버 수           2개 (Vite : 5173, Tomcat : 8083)     1개 (:8083)  
+    Origin           2개 -> 다른 Origin                    1개 -> Same-Origin
+    CORS 필요 여부    필요 (CorsConfig)                     불필요 
+    React 실행       Vite 개발 서버 (VS Code)               Spring Boot static/
+    API 호출 URL     http://localhost:8083/api/books       /api/books (상대경로)
+    빌드 산출물       없음 (실시간 HMR)                      JAR 1개 (React 포함)
+
+4. 개발 환경에서 React BASE_URL 처리 
+    1) 개발/배포 환경에 따라 API URL이 달라지므로 환경변수로 관리함
+        - Vite 환경변수 방식
+            react-syntax/
+                |
+                |-- .env.development   <-- 개발용    
+                |-- .env.production    <-- 배포용  
+
+        - # .env.development
+          VITE_API_URL=http://localhost:8083 
+
+        - # .env.production 
+          VITE_API_URL=                                
